@@ -26,16 +26,16 @@ export default function Home() {
       { label: 'Interface guide', desc: 'Layout, personas, alerts, CCTV, and map navigation', href: '/docs/02-interface-guide', cover: '02-interface-header.jpg' },
     ]},
     { title: 'Persona Views', desc: 'The four operator roles and what each one sees.', links: [
-      { label: 'Guest Experience Manager', desc: 'Guest flow and experience, station by station', href: '/docs/03-gxm', cover: '03-gxm-lod1-1.jpg' },
-      { label: 'Operations Manager', desc: 'Fleet, utilization, safety, and EV charging', href: '/docs/04-ops', cover: '04-ops-lod1-1.jpg' },
-      { label: 'Environment Manager', desc: 'Air, wind, water, and violation detection', href: '/docs/05-env', cover: '05-env-lod1-1.jpg' },
-      { label: 'Marine Operations Manager', desc: 'Reef health, dive capacity, and response', href: '/docs/06-mo', cover: '06-mo-lod1-1.jpg' },
+      { label: 'Guest Experience Manager', desc: 'Guest flow and experience, station by station', href: '/docs/03-gxm', cover: '03-gxm-lod3-pre-trip.jpg' },
+      { label: 'Operations Manager', desc: 'Fleet, utilization, safety, and EV charging', href: '/docs/04-ops', cover: '04-ops-lod3-fleet-availability.jpg' },
+      { label: 'Environment Manager', desc: 'Air, wind, water, and violation detection', href: '/docs/05-env', cover: '05-env-lod3-safety-violation-detection.jpg' },
+      { label: 'Marine Operations Manager', desc: 'Reef health, dive capacity, and response', href: '/docs/06-mo', cover: '06-mo-lod3-active-response.jpg' },
     ]},
     { title: 'Simulation', desc: 'Rehearse crowd and fleet what-ifs on the twin.', links: [
       { label: 'Simulation', desc: 'Crowd and fleet traffic forecasts', href: '/docs/07-simulation', cover: '07-simulation-after.jpg' },
     ]},
     { title: 'Reference', desc: 'Glossary of shared terms.', links: [
-      { label: 'Reference', desc: 'Glossary of shared terms', href: '/docs/08-reference', cover: '06-mo-lod3-active-response.jpg' },
+      { label: 'Reference', desc: 'Glossary of shared terms', href: '/docs/08-reference', cover: '02-interface-cctv.jpg' },
     ]},
   ]
 
@@ -73,7 +73,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="mb-8 p-4 sm:p-6 rounded-lg flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-8" style={{ background: 'hsl(var(--muted))', border: '1px solid hsl(var(--border))' }}>
+        <div className="mb-8 p-4 sm:p-6 rounded-lg flex flex-col sm:flex-row sm:items-end justify-between gap-4 sm:gap-8" style={{ background: '#ECE3D5', border: '1px solid hsl(var(--border))' }}>
           <div>
             <p className="text-xs uppercase tracking-wide mb-2" style={{ color: 'hsl(var(--muted-foreground))' }}>Getting started</p>
             <h2 className="text-base font-medium mb-1" style={{ color: 'hsl(var(--foreground))' }}>New to the RSG IOC?</h2>
