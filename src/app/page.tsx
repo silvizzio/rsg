@@ -8,8 +8,7 @@ export default function Home() {
   const sections = [
     { title: 'Getting Started', desc: 'Start here: what the IOC is and how the interface works.', links: [
       { label: 'Overview', desc: 'Personas, map detail levels, and coverage', href: '/docs/01-overview' },
-      { label: 'Interface guide', desc: 'Persona bar, map canvas, panels, and alert tray', href: '/docs/02-interface-guide' },
-      { label: 'Reference', desc: 'Glossary, shortcuts, and shared status values', href: '/docs/11-reference' },
+      { label: 'Interface guide', desc: 'Layout, personas, alerts, CCTV, and map navigation', href: '/docs/02-interface-guide' },
     ]},
     { title: 'Persona Views', desc: 'The four operator roles and what each one sees.', links: [
       { label: 'Guest Experience Manager', desc: 'Guest flow and experience, station by station', href: '/docs/03-gxm' },
@@ -17,10 +16,11 @@ export default function Home() {
       { label: 'Environment Manager', desc: 'Air, wind, water, and violation detection', href: '/docs/05-env' },
       { label: 'Marine Operations Manager', desc: 'Reef health, dive capacity, and response', href: '/docs/06-mo' },
     ]},
-    { title: 'Operations Workflows', desc: 'Alerts, CCTV, and simulation across the twin.', links: [
-      { label: 'Alerts and Incidents', desc: 'The alert lifecycle from Open to Resolved', href: '/docs/07-alerts' },
-      { label: 'CCTV Monitoring', desc: 'Camera grid, selection, and full-screen review', href: '/docs/08-cctv' },
-      { label: 'Simulation', desc: 'Rehearse guest-number and weather what-ifs', href: '/docs/09-simulation' },
+    { title: 'Simulation', desc: 'Rehearse guest-number and weather what-ifs on the twin.', links: [
+      { label: 'Simulation', desc: 'Crowd, traffic, mobility, and weather scenarios', href: '/docs/07-simulation' },
+    ]},
+    { title: 'Reference', desc: 'Glossary, shortcuts, and shared status values.', links: [
+      { label: 'Reference', desc: 'Glossary, shortcuts, and shared status values', href: '/docs/08-reference' },
     ]},
   ]
 
@@ -73,7 +73,7 @@ export default function Home() {
               Interface guide
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
             </Link>
-            <Link href="/docs/11-reference" className="inline-flex items-center gap-1.5 text-xs rounded-md px-3 py-1.5" style={{ background: 'transparent', color: 'hsl(var(--foreground))', border: '1px solid hsl(var(--border))', whiteSpace: 'nowrap' }}>
+            <Link href="/docs/08-reference" className="inline-flex items-center gap-1.5 text-xs rounded-md px-3 py-1.5" style={{ background: 'transparent', color: 'hsl(var(--foreground))', border: '1px solid hsl(var(--border))', whiteSpace: 'nowrap' }}>
               Reference
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
             </Link>
