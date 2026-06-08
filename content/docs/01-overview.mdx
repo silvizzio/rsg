@@ -7,11 +7,11 @@ description: "What the RSG IOC Digital Twin is, the four operator personas, the 
 
 The RSG Integrated Operations Centre (IOC) Digital Twin is Vizzio's live 3D operational picture of Red Sea Global destinations. It gives four operator personas (Guest Experience Manager, Operations Manager, Environment Manager, and Marine Operations Manager) a role-specific view of the destination across three map detail levels, all on a single Mapbox GL JS canvas.
 
-<ScreenshotPlaceholder caption="IOC default state, Shura Island, Guest Experience Manager persona, map LOD 1" />
+![The IOC at startup: Shura Island in the Guest Experience Manager view, map LOD 1.](03-gxm-lod1-1.jpg)
 
 ## What the IOC does
 
-The IOC renders Red Sea Global destinations as an interactive 3D twin. Operators switch between personas to load a view tuned to their role, drill from a destination-wide overview down to a single site, watch live closed-circuit television (CCTV) feeds, respond to alerts as they surface, and replay scripted scenarios in simulation mode. The map is the shared surface: every persona, panel, and alert resolves to a place on it.
+The IOC renders Red Sea Global destinations as an interactive 3D twin. Operators switch between personas to load a view tuned to their role, drill from a destination-wide overview down to a single site, watch live closed-circuit television (CCTV) feeds, respond to alerts as they surface, and replay scripted scenarios in simulation. The map is the shared surface: every persona, panel, and alert resolves to a place on it.
 
 ## Personas
 
@@ -32,29 +32,18 @@ The IOC uses three map detail levels, written here as map LOD to keep them disti
 - **Map LOD 2, district zoom**: a selected district or zone with its metrics, status, and neighbouring zones
 - **Map LOD 3, site detail**: a single site or asset with full context, live feeds, and recommended actions
 
-<ScreenshotPlaceholder caption="Shura Island, map LOD 1, destination overview" />
+![Map LOD 1, the destination overview, here in the Operations Manager view.](04-ops-lod1-1.jpg)
 
-<ScreenshotPlaceholder caption="Shura Island, map LOD 2, district zoom" />
+![Map LOD 2, a district zoom, here in the Environment Manager view.](05-env-lod2-2.jpg)
 
-<ScreenshotPlaceholder caption="Shura Island, map LOD 3, site detail" />
+![Map LOD 3, a single site, here in the Marine Operations Manager view.](06-mo-lod3-active-response.jpg)
 
 ## Coverage
 
 | Destination | Status | Notes |
 |---|---|---|
 | Shura Island | Active | Hero destination, all personas and map LOD 1/2/3 |
-| Additional RSG destinations | Planned | Pending data and 3D tile availability |
-
-<Callout type="note">
-Coverage above is the prototype baseline. Confirm the active destination list against the RSG IOC Technical statement of work before publishing.
-</Callout>
-
-## Data sources
-
-- **Base map and terrain**: Mapbox GL JS with RSG 3D tiles
-- **Live feeds**: CCTV streams, environmental sensors, vessel and traffic telemetry
-- **Simulation data**: scripted scenario datasets replayed through simulation mode
 
 ## What is in this guide
 
-This guide is organised in four parts. Getting Started covers the platform and the interface. Persona Views documents each of the four operator personas. Operations Workflows covers alerts, CCTV, simulation mode, and crowd and traffic visualization. Reference holds the glossary, shortcuts, and shared status values.
+This guide is organised in four parts. Getting Started covers the platform and the interface, including the alert tray and CCTV. Persona Views documents each of the four operator personas. Simulation covers the guest-number and weather scenarios, with crowd and traffic shown on the map. Reference holds the glossary, shortcuts, and shared status values.
