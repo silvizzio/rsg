@@ -5,17 +5,17 @@ section: "Getting Started"
 description: "The anatomy of the IOC: every region around the 3D map, what it shows, the pattern it follows, and how to use it, the same way across all four personas."
 ---
 
-The IOC is a single 3D map wrapped in a fixed frame of regions: a header across the top, a metrics panel on the left, a summary strip along the bottom, a legend and a recommended-action card over the map, a camera panel on the right, and a tool strip on the right edge. The frame stays the same for every persona and every destination. Only the content inside each region changes. The examples below show one persona, but each region works the same way for all four.
+The IOC is built around a single three-dimensional map, wrapped in a fixed frame of regions: a header across the top, a metrics panel down the left, a summary strip along the bottom, a legend and a recommended-action card laid over the map, a camera panel on the right, and a slim tool strip on the right edge. That frame never moves. It stays the same for every persona and every destination, and only the content inside each region changes with the role you are signed in as. The walkthrough below uses one persona for its examples, but every region behaves the same way for all four.
 
 ## The header
 
-The header runs across the top and does not change. On the left it names the operations centre and the destination in focus, here Shura Island. The bar in the middle is a compass and orientation readout for the 3D view. To its right is a live environment readout, wind, sea, air, and air quality, which is destination-wide and the same whatever persona you are in. On the right sit the account menu and the clock. Your login is tied to a single persona, so everything you see belongs to that persona, and the menu shows who you are signed in as.
+The header runs across the top of the screen and stays constant wherever you are. On the left it names the operations centre and the destination currently in focus, here Shura Island. The element in the centre is a compass and orientation readout for the three-dimensional view, so you always know which way the map is facing. To its right sits a live environment readout, wind, sea, air, and air quality, which is measured for the whole destination and reads the same in every persona. On the far right are the account menu and the clock. Because each login is tied to a single persona, everything on screen belongs to that persona, and the account menu simply shows who you are signed in as.
 
 ![The header. Destination identity on the left, the live wind, sea, air, and air-quality readout in the centre right, and the account menu and clock on the right.](02-interface-header.jpg)
 
 ## The left panel
 
-The left panel holds the active persona's numbers for whatever place is in focus. The top names the persona and the place, here Guest Experience at the Marina. Below it an analysis window switches the reading between Now, Daily, and Weekly. The rest is a stack of metric cards grouped into labelled sections. The sections and cards are whatever that persona tracks. The example here splits the guest trip into Pre-Trip, Trip, and After-Trip, but the layout, a window toggle above grouped cards, is the same in every persona.
+The left panel holds the active persona's numbers for whatever place is in focus. The top of the panel names the persona and the place, here Guest Experience at the Marina. Directly below, an analysis window switches the whole reading between Now, Daily, and Weekly, so the same metrics can be read as a live snapshot or as a trend. The rest of the panel is a stack of metric cards grouped into labelled sections, and those sections are whatever the persona tracks. In this example the guest trip is split into Pre-Trip, Trip, and After-Trip, but the underlying layout, a window toggle sitting above grouped cards, is identical in every persona.
 
 <div className="doc-third">
 
@@ -25,17 +25,17 @@ The left panel holds the active persona's numbers for whatever place is in focus
 
 ## The bottom strip
 
-The strip along the bottom is a quick read of the headline numbers, grouped by theme. It rescopes with the map detail level. At the wide view it reads the whole destination.
+The strip along the bottom is a fast read of the headline numbers, grouped by theme so the state of the destination is legible at a glance. It rescopes with the map detail level. At the wide view it summarises the whole destination.
 
 ![The bottom strip at the wide view, reading the whole destination.](02-interface-bottom-lod1.jpg)
 
-Drill into a district and the same strip rescopes to that district. The title picks up the district name and the fields shift to district-scoped versions, such as stations over capacity for that district. Same persona, narrower scope.
+Drill into a district and the same strip rescopes to that district: the title picks up the district name and the fields shift to district-scoped versions, such as the number of stations over capacity within that district. It is the same persona and the same themes, read at a narrower scope.
 
 ![The same strip at the district view, rescoped to one district, with the district name added to the title.](02-interface-bottom-lod2.jpg)
 
 ## The map legend
 
-The legend sits at the bottom left of the map. The severity key colour-codes items from Critical down to Low and Info, with a live count beside each, so you can see at a glance how many things need attention and how serious they are. Below it, the data inputs line names the feed driving the current view and shows whether it is live. Collapse the legend with the chevron when you need the map space.
+The legend sits at the bottom left of the map. Its severity key colour-codes items from Critical down through to Low and Info, with a live count beside each level, so you can see at a glance both how many things need attention and how serious they are. Below the key, the data inputs line names the feed driving the current view and shows whether that feed is live. When you need the map space back, collapse the legend with the chevron.
 
 <div className="doc-half">
 
@@ -45,7 +45,7 @@ The legend sits at the bottom left of the map. The severity key colour-codes ite
 
 ## The recommended action card
 
-This is what makes the IOC proactive. When the system spots something, it raises a card over the map: a badge naming the trigger state, here Temp Rising, a plain recommended action as the headline, a live camera of the place, a one-line reason with the numbers behind it, and two buttons. The primary button carries the action out, Remind me later defers it, and the X dismisses it. The card pattern is identical in every persona, only the trigger and the action change. These cards appear at the close-up level when a threshold is crossed.
+This card is what makes the IOC proactive rather than merely informative. When the system detects something that warrants attention, it raises a card over the map that carries everything an operator needs to act, in one place: a badge naming the trigger state, here Temp Rising, a plain-language recommended action as the headline, a live camera of the location, a one-line reason with the numbers behind it, and a pair of buttons. The primary button carries the action out, Remind me later defers it, and the X dismisses it. The pattern is identical in every persona; only the trigger and the recommended action change. These cards appear at the close-up level, the moment a threshold is crossed.
 
 <div className="doc-half">
 
@@ -55,7 +55,7 @@ This is what makes the IOC proactive. When the system spots something, it raises
 
 ## The CCTV panel
 
-The right side is the camera wall for the area in focus. The header carries two viewing modes, Auto Roaming and Virtual Patrol, a breadcrumb of where you are, a search box, a grid-size selector, and the camera count. Below are the live tiles, each labelled with its name and ID. Page through with the controls at the bottom, change the grid size to show more or fewer at once, search for a specific camera, and open any tile full-screen for a closer look. Selecting a tile also focuses its location on the map. The panel appears wherever cameras are available for the persona.
+The right side of the screen is the camera wall for the area in focus. Its header carries two viewing modes, Auto Roaming and Virtual Patrol, a breadcrumb showing where you are, a search box, a grid-size selector, and the current camera count. Below the header are the live tiles, each labelled with its name and identifier. You can page through the tiles with the controls at the bottom, change the grid size to show more or fewer cameras at once, search for a specific camera, and open any tile full-screen for a closer look. Selecting a tile also focuses its location on the map, so the camera and the map stay in step. The panel appears wherever cameras are available for the persona.
 
 <div className="doc-third">
 
@@ -65,7 +65,7 @@ The right side is the camera wall for the area in focus. The header carries two 
 
 ## The toolbar
 
-A slim tool strip runs down the right edge in two groups. The top group holds the weather overlay, the history and time control, and simulation. The bottom group holds search and the zoom controls. Simulation opens from the top group and has its own section. Everything here is the same for every persona.
+A slim tool strip runs down the right edge in two groups. The top group holds the weather overlay, the history and time control, and simulation. The bottom group holds search and the zoom controls. Simulation opens from the top group and is covered in its own chapter. As with the rest of the frame, the toolbar is the same in every persona.
 
 <div className="doc-narrow">
 
@@ -75,9 +75,11 @@ A slim tool strip runs down the right edge in two groups. The top group holds th
 
 ## Personas and your login
 
-The IOC has four persona views: Guest Experience Manager, Operations Manager, Environment Manager, and Marine Operations Manager, each covered in its own chapter. Your login is tied to one of them. When you sign in, the whole interface, the left panel, bottom strip, legend feed, and cameras, loads for your persona, and that is the view you work in. Each persona is a separate signed-in experience, so you only ever see your own.
+The IOC has four persona views, Guest Experience Manager, Operations Manager, Environment Manager, and Marine Operations Manager, each documented in its own chapter. Your login is tied to one of them. When you sign in, the entire interface, the left panel, the bottom strip, the legend feed, and the cameras, loads for that persona, and that is the view you work in. Each persona is a separate signed-in experience, so you only ever see your own.
 
 ## Navigating map detail
+
+Moving through the map is the same gesture at every level: select to go deeper, and zoom out to step back.
 
 1. Start at the wide view for the whole destination.
 2. Select a district to drop to the district view, and watch the bottom strip rescope.
@@ -85,5 +87,5 @@ The IOC has four persona views: Guest Experience Manager, Operations Manager, En
 4. Zoom back out with the toolbar, or step up one level at a time.
 
 <Callout type="tip">
-The frame is constant but everything inside it is persona-scoped. The numbers, cameras, and alerts you see always belong to your persona, which is set by your login.
+The frame is constant, but everything inside it is persona-scoped. The numbers, cameras, and alerts you see always belong to your persona, which is set by your login.
 </Callout>

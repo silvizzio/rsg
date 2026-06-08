@@ -5,13 +5,17 @@ section: "Getting Started"
 description: "What the RSG IOC Digital Twin is, the four operator personas, the map detail levels, and current destination coverage"
 ---
 
-The RSG Integrated Operations Centre (IOC) Digital Twin is Vizzio's live 3D operational picture of Red Sea Global destinations. It gives four operator personas (Guest Experience Manager, Operations Manager, Environment Manager, and Marine Operations Manager) a role-specific view of the destination across three map detail levels, all on a single Mapbox GL JS canvas.
+The RSG Integrated Operations Centre (IOC) Digital Twin is Vizzio's live, three-dimensional operational picture of Red Sea Global destinations. It brings every operational layer of a destination, the guests, the fleet that moves them, the environment they move through, and the marine ecosystem the destination is built to protect, onto a single interactive map. The result is one shared, real-time view of the destination rather than a patchwork of separate dashboards.
+
+The IOC gives four operator personas, the Guest Experience Manager, the Operations Manager, the Environment Manager, and the Marine Operations Manager, a role-specific view of that same destination. Each persona sees the metrics, cameras, and alerts that matter to its work, and each can move across three map detail levels, from a destination-wide overview down to a single site. Everything renders on one Mapbox GL JS canvas, so the map is always the common ground.
 
 ![The IOC at startup: Shura Island in the Guest Experience Manager view, map LOD 1.](03-gxm-lod1-1.jpg)
 
 ## What the IOC does
 
-The IOC renders Red Sea Global destinations as an interactive 3D twin. Each operator signs into a persona view tuned to their role, drills from a destination-wide overview down to a single site, watches live closed-circuit television (CCTV) feeds, responds to alerts as they surface, and replays scripted scenarios in simulation. The map is the shared surface: every persona, panel, and alert resolves to a place on it.
+The IOC renders each Red Sea Global destination as an interactive three-dimensional twin that mirrors what is happening on the ground in real time. An operator signs in to the persona that matches their role and immediately sees the destination through that lens. From there they can drill from the destination-wide overview down to a single site, watch live closed-circuit television (CCTV) feeds, respond to alerts the moment they surface, and rehearse what-if scenarios in simulation before they ever play out for real.
+
+What ties all of this together is the map. Every persona, every panel, and every alert resolves to a place on it, so a number in a panel, a camera tile, and an alert in the tray all point back to the same physical location. That shared surface is what lets the teams move from reacting to a problem after a guest has felt it to seeing the problem build and acting first.
 
 {/* SYSTEM_MAP_START */}
 
@@ -23,7 +27,7 @@ The IOC renders Red Sea Global destinations as an interactive 3D twin. Each oper
 
 ## Personas
 
-The IOC ships with four operator personas. Confirm the exact expansions against the RSG IOC Technical statement of work.
+The IOC ships with four operator personas, each built around a single operational mission. Between them they cover the guest journey, the fleet that carries guests, the environment guests move through, and the marine ecosystem offshore. The expansions below are the working titles used throughout this guide; confirm the exact wording against the RSG IOC Technical statement of work.
 
 | Persona | Expansion | Focus |
 |---|---|---|
@@ -34,11 +38,11 @@ The IOC ships with four operator personas. Confirm the exact expansions against 
 
 ## Map levels of detail
 
-The IOC uses three map detail levels, written here as map LOD to keep them distinct from the documentation layering pattern. Each level changes what the map and the analysis panel show.
+The IOC uses three map detail levels, written here as map LOD so they stay distinct from the documentation layering pattern. Moving between them is the core navigation of the product: each level changes both what the map shows and what the analysis panel reads, so an operator can travel from the whole destination to a single asset without ever leaving the twin.
 
-- **Map LOD 1, destination overview**: the full destination with aggregate KPIs across all active layers
-- **Map LOD 2, district zoom**: a selected district or zone with its metrics, status, and neighbouring zones
-- **Map LOD 3, site detail**: a single site or asset with full context, live feeds, and recommended actions
+- **Map LOD 1, destination overview**: the full destination with aggregate KPIs drawn from every active layer, the altitude at which patterns across the destination become visible.
+- **Map LOD 2, district zoom**: a selected district or zone with its own metrics, status, and neighbouring zones, where a destination-wide signal narrows to the area driving it.
+- **Map LOD 3, site detail**: a single site or asset in full context, with live feeds and the recommended actions that turn a reading into a decision.
 
 ![Map LOD 1, the destination overview, here in the Operations Manager view.](04-ops-lod1-1.jpg)
 
@@ -48,10 +52,12 @@ The IOC uses three map detail levels, written here as map LOD to keep them disti
 
 ## Coverage
 
+The prototype runs on a single hero destination today, with further Red Sea Global destinations to follow as their data and 3D tiles become available.
+
 | Destination | Status | Notes |
 |---|---|---|
 | Shura Island | Active | Hero destination, all personas and map LOD 1/2/3 |
 
 ## What is in this guide
 
-This guide is organised in four parts. Getting Started covers the platform and the interface, including the alert tray and CCTV. Persona Views documents each of the four operator personas. Simulation covers the guest-number and weather scenarios, with crowd and traffic shown on the map. Reference holds the glossary, shortcuts, and shared status values.
+This guide is organised in four parts. Getting Started introduces the platform and walks through the interface, including the alert tray and the CCTV grid. Persona Views documents each of the four operator personas in turn, the numbers they read and the decisions the view is built to support. Simulation covers how operators rehearse a scenario on the twin and read the forecast it returns, with crowd and traffic shown on the map as the scenario plays. Reference holds the glossary, the keyboard shortcuts, and the status values shared across every persona.
