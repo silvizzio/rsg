@@ -21,11 +21,6 @@ export default function Home() {
   const heroInterface = cover('04-ops-lod1-1.jpg')
 
   const sections = [
-    { title: 'Getting Started', desc: 'Start here: what the IOC is and how the interface works.', links: [
-      { label: 'Overview', desc: 'Personas, map detail levels, and coverage', href: '/docs/01-overview', cover: '03-gxm-lod1-1.jpg' },
-      { label: 'Interface guide', desc: 'Layout, personas, alerts, CCTV, and map navigation', href: '/docs/02-interface-guide', cover: '02-interface-header.jpg' },
-      { label: 'Reference', desc: 'Glossary of shared terms', href: '/docs/08-reference', cover: '02-interface-cctv.jpg' },
-    ]},
     { title: 'Persona Views', desc: 'The four operator roles and what each one sees.', links: [
       { label: 'Guest Experience Manager', desc: 'Guest flow and experience, station by station', href: '/docs/03-gxm', cover: '03-gxm-lod3-pre-trip.jpg' },
       { label: 'Operations Manager', desc: 'Fleet, utilization, safety, and EV charging', href: '/docs/04-ops', cover: '04-ops-lod3-fleet-availability.jpg' },
@@ -35,6 +30,9 @@ export default function Home() {
     { title: 'Simulation', desc: 'Rehearse crowd and fleet what-ifs on the twin.', links: [
       { label: 'Crowd', desc: 'Crowd density forecasts on the twin', href: '/docs/07-simulation', cover: '07-simulation-after.jpg' },
       { label: 'Traffic', desc: 'Fleet and vehicle flow forecasts', href: '/docs/07-simulation', cover: '07-simulation-ops-after.jpg' },
+    ]},
+    { title: 'Reference', desc: 'Glossary of shared terms.', links: [
+      { label: 'Reference', desc: 'Glossary of shared terms', href: '/docs/08-reference', cover: '02-interface-cctv.jpg' },
     ]},
   ]
 
