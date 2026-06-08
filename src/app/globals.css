@@ -249,7 +249,9 @@ article ul > li > p {
   margin-bottom: 0.25rem !important;
 }
 
-/* Half-width centered doc images, display only */
+/* Sized centered doc images, display only */
 .doc-half { max-width: 50%; margin-left: auto; margin-right: auto; }
-.doc-half * { max-width: 100% !important; }
-.doc-half canvas, .doc-half img { width: 100% !important; height: auto !important; }
+.doc-third { max-width: 32%; margin-left: auto; margin-right: auto; }
+.doc-narrow { max-width: 12%; margin-left: auto; margin-right: auto; }
+.doc-half *, .doc-third *, .doc-narrow * { max-width: 100% !important; }
+.doc-half canvas, .doc-half img, .doc-third canvas, .doc-third img, .doc-narrow canvas, .doc-narrow img { width: 100% !important; height: auto !important; }
