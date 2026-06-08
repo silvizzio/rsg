@@ -2,7 +2,7 @@
 title: "Simulation"
 order: 7
 section: "Simulation"
-description: "Rehearse a guest-flow what-if on the twin: set up an event, intensity, and response plan, run it, and read the forecast the system returns."
+description: "Rehearse a guest-flow what-if on the twin: set up an event, intensity, and response plan, run it, then read the crowd heatmap and the forecast."
 ---
 
 Simulation lets operators rehearse a what-if on the twin without touching live data or live operations. You build a scenario, run it, and read the forecast the system returns, using the same recommended-action thinking that drives live operation. In effect it lets a team walk a busy day through from start to finish before it ever happens, and decide in advance which response holds the service level best.
@@ -13,30 +13,21 @@ Simulation opens from the top button on the right toolbar.
 
 This is the setup screen as it appears before a run, shown here in the Guest Experience view with the Pre-Trip phase selected.
 
-![The simulation setup before running. The left rail builds the scenario, the right rail shows the live baseline it runs against, and Run Simulation starts it.](07-simulation-before.jpg)
+![Before running. The left rail builds the scenario, the right rail shows the live baseline it will run against, and Run Simulation starts it.](07-simulation-before.jpg)
 
-The left rail is where you build the scenario, read top to bottom. Event to simulate is the list of conditions to model, such as a Peak Arrival Surge or a VIP Convoy, each with a one-line note on its effect; tick the ones you want, or use New Event to add your own. Guest volume sets how many guests are expected on the island. Intensity preset, Normal, Peak, Surge, or VIP, is a one-tap starting point that sets the scenario to a known pattern you can then fine-tune. Pre-trip variables hold the assumptions the run leans on, here the marina capacity per hour and the buffer time. Response plan is the response you want to test against the event, from Baseline, which does nothing, through Recall and Relieve or Reroute and Advise, each showing how many actions it would take. The right rail shows the live baseline the run measures against: the analysis window, transfer variance, booking requests, available vehicles, average request age, and the stations asking for the most transfers. When the scenario is set, Run Simulation produces the forecast.
+The left rail is where you build the scenario, read top to bottom. Event to simulate is the list of conditions to model, such as a Peak Arrival Surge or a VIP Convoy, each with a one-line note on its effect; tick the ones you want, or use New Event to add your own. Guest volume sets how many guests are expected on the island. Intensity preset, Normal, Peak, Surge, or VIP, is a one-tap starting point that sets the scenario to a known pattern you can then fine-tune. Pre-trip variables hold the assumptions the run leans on, here the marina capacity per hour and the buffer time. Response plan is the response you want to test against the event, from Baseline, which does nothing, through Recall and Relieve or Reroute and Advise, each showing how many actions it would take. The right rail shows the live baseline the run measures against, here a transfer variance of +18, 412 booking requests, 28 of 46 vehicles free, an average request age of 2.4 minutes, and the Marina as the top station requesting. When the scenario is set, Run Simulation produces the forecast.
 
-## Reading the forecast
+## After running: the crowd and the forecast
 
-<div className="doc-split">
-<div className="doc-split-text">
+Running the scenario does two things at once. It fills the map with a crowd heatmap, and it switches the right rail from the live baseline to the forecast.
 
-The forecast panel is the result of the run, read top to bottom. It opens with the forecasted outcome, a plain risk verdict such as Moderate Risk, with a one-line summary of what the run predicts and whether action is needed to hold the service level. Below it, projected key metrics give the headline numbers the run expects, each shown against now so you can see the change: guests, wait time, transfer variance, available vehicles, average request age, crowd risk zones, capacity gap, and affected stations. At the bottom, the forecast spec records how the run was made so it can be trusted and repeated: the model, the forecast type, the window, the buildings and stations included, the scenario, the seed, and the time of the last run.
+![After running. The map fills with a crowd density heatmap and the right rail switches to the forecast: the forecasted outcome, the resource demand, the mobility health index, and the projected KPIs read against the baseline.](07-simulation-after.jpg)
 
-</div>
-<div className="doc-split-media">
+On the map, the heatmap shows where guests and vehicles are predicted to build up as the scenario plays, reading from cool blue where flow is light through to red where it is heaviest. This turns the pressure points into places rather than numbers, so a developing crowd is visible exactly where it would form. A sustained heavy area is the same signal that raises a crowd density alert in live operation, which makes the simulation a safe way to find those hotspots in advance.
 
-![The forecast panel: the forecasted outcome, the projected key metrics read against now, and the forecast spec.](07-simulation-forecast.jpg)
+The right rail reads top to bottom as the forecast. Forecasted outcome is the headline verdict, here Capacity at risk, with a one-line reason, that the guest increase outpaces fleet and charger capacity within 45 minutes, and a count of recommended actions to address it. Forecasted resource demand translates that verdict into what the scenario would need, with vehicles needed rising to 52 and EV chargers needed to 18. The mobility health index scores the network as a whole, here 68 out of 100, strained at 2,400 guests per hour against a healthy threshold of 85. Projected KPI then lists the headline numbers the run expects, each read against the baseline you started from: transfer variance climbing from +18 to +34, booking requests from 412 to 680, available vehicles falling from 28 to 18, and average request age at 2.2 minutes, with the Marina still the top station requesting.
 
-</div>
-</div>
-
-## Crowd and traffic on the map
-
-While a simulation runs, crowd density and traffic flow are drawn straight onto the map, so you can watch where people and vehicles build up as the scenario plays out. Density reads as High, Medium, or Low, and a sustained High area is exactly what raises a crowd density alert in live operation, which makes the simulation a safe way to find those hotspots in advance.
-
-<ScreenshotPlaceholder caption="Crowd density and traffic flow during a simulation, Shura Island" />
+Two controls sit at the bottom of the run. Compare to Baseline holds the forecast against the live now so the change is explicit, and Exit Simulation returns the twin to live data.
 
 ## Running a simulation
 
@@ -44,8 +35,8 @@ While a simulation runs, crowd density and traffic flow are drawn straight onto 
 2. Pick the events to simulate and choose an intensity preset.
 3. Set the guest volume and the pre-trip variables.
 4. Choose the response plan you want to test.
-5. Run the simulation and read the forecast.
-6. Close simulation to return to live data.
+5. Run the simulation, then read the crowd heatmap on the map and the forecast in the right rail.
+6. Use Compare to Baseline to see the change against now, and Exit Simulation to return to live data.
 
 <Callout type="warning">
 While simulation is on, the alert tray shows scenario alerts, not live ones. Live incidents are held until you close simulation.
