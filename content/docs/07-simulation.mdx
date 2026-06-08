@@ -2,41 +2,62 @@
 title: "Simulation"
 order: 7
 section: "Simulation"
-description: "Rehearse a guest-flow what-if on the twin: set up an event, intensity, and response plan, run it, then read the crowd heatmap and the forecast."
+description: "Rehearse a what-if on the twin in two operator views: a Guest Experience simulation that forecasts where guests build up, and an Operations simulation that forecasts the fleet, charging, and road traffic."
 ---
 
 Simulation lets operators rehearse a what-if on the twin without touching live data or live operations. You build a scenario, run it, and read the forecast the system returns, using the same recommended-action thinking that drives live operation. In effect it lets a team walk a busy day through from start to finish before it ever happens, and decide in advance which response holds the service level best.
 
-Simulation opens from the top button on the right toolbar.
+Simulation is available in the operator views that run scenarios. This chapter covers the two built so far. The Guest Experience simulation forecasts where guests build up. The Operations simulation forecasts how the fleet and the road network hold up. Both open from the top button on the right toolbar, and both follow the same rhythm: set up a scenario, run it, read the forecast, and dispatch a response.
 
-## Before running: building a scenario
+## Guest Experience simulation: the crowd
 
-This is the setup screen as it appears before a run, shown here in the Guest Experience view with the Pre-Trip phase selected.
+The Guest Experience simulation answers where guests build up across the destination.
 
-![Before running. The left rail builds the scenario, the right rail shows the live baseline it will run against, and Run Simulation starts it.](07-simulation-before.jpg)
+### Before running
+
+This is the setup screen as it appears before a run, shown here with the Pre-Trip phase selected.
+
+![Guest Experience simulation, before running. The left rail builds the scenario, the right rail shows the live baseline, and Run Simulation starts it.](07-simulation-before.jpg)
 
 The left rail is where you build the scenario, read top to bottom. Event to simulate is the list of conditions to model, such as a Peak Arrival Surge or a VIP Convoy, each with a one-line note on its effect; tick the ones you want, or use New Event to add your own. Guest volume sets how many guests are expected on the island. Intensity preset, Normal, Peak, Surge, or VIP, is a one-tap starting point that sets the scenario to a known pattern you can then fine-tune. Pre-trip variables hold the assumptions the run leans on, here the marina capacity per hour and the buffer time. Response plan is the response you want to test against the event, from Baseline, which does nothing, through Recall and Relieve or Reroute and Advise, each showing how many actions it would take. The right rail shows the live baseline the run measures against, here a transfer variance of +18, 412 booking requests, 28 of 46 vehicles free, an average request age of 2.4 minutes, and the Marina as the top station requesting. When the scenario is set, Run Simulation produces the forecast.
 
-## After running: the crowd and the forecast
+### After running
 
-Running the scenario does two things at once. It fills the map with a crowd heatmap, and it switches the right rail from the live baseline to the forecast.
+![Guest Experience simulation, after running. A crowd heatmap fills the map and the right rail reads the capacity outlook, the resource demand, the mobility health index, and the projected KPIs against the baseline.](07-simulation-after.jpg)
 
-![After running. The map fills with a crowd density heatmap and the right rail switches to the forecast: the forecasted outcome, the resource demand, the mobility health index, and the projected KPIs read against the baseline.](07-simulation-after.jpg)
+Running the scenario fills the map with a crowd heatmap, reading from cool blue where flow is light through to red where it is heaviest. This turns the pressure points into places rather than numbers, so a developing crowd is visible exactly where it would form. A sustained heavy area is the same signal that raises a crowd density alert in live operation, which makes the simulation a safe way to find those hotspots in advance.
 
-On the map, the heatmap shows where guests and vehicles are predicted to build up as the scenario plays, reading from cool blue where flow is light through to red where it is heaviest. This turns the pressure points into places rather than numbers, so a developing crowd is visible exactly where it would form. A sustained heavy area is the same signal that raises a crowd density alert in live operation, which makes the simulation a safe way to find those hotspots in advance.
+The right rail switches from the live baseline to the forecast. Forecasted outcome is the headline verdict, here Capacity at risk, with a one-line reason, that the guest increase outpaces fleet and charger capacity within 45 minutes, and a count of recommended actions. Forecasted resource demand translates that verdict into what the scenario would need, with vehicles needed rising to 52 and EV chargers needed to 18. The mobility health index scores the network as a whole, here 68 out of 100, strained at 2,400 guests per hour against a healthy threshold of 85. Projected KPI then lists the headline numbers, each read against the baseline you started from: transfer variance climbing from +18 to +34, booking requests from 412 to 680, available vehicles falling from 28 to 18, and average request age at 2.2 minutes. Compare to Baseline holds the forecast against the live now, and Exit Simulation returns the twin to live data.
 
-The right rail reads top to bottom as the forecast. Forecasted outcome is the headline verdict, here Capacity at risk, with a one-line reason, that the guest increase outpaces fleet and charger capacity within 45 minutes, and a count of recommended actions to address it. Forecasted resource demand translates that verdict into what the scenario would need, with vehicles needed rising to 52 and EV chargers needed to 18. The mobility health index scores the network as a whole, here 68 out of 100, strained at 2,400 guests per hour against a healthy threshold of 85. Projected KPI then lists the headline numbers the run expects, each read against the baseline you started from: transfer variance climbing from +18 to +34, booking requests from 412 to 680, available vehicles falling from 28 to 18, and average request age at 2.2 minutes, with the Marina still the top station requesting.
+## Operations simulation: the fleet and traffic
 
-Two controls sit at the bottom of the run. Compare to Baseline holds the forecast against the live now so the change is explicit, and Exit Simulation returns the twin to live data.
+The Operations simulation answers how the fleet and the road network hold up under the same kind of pressure.
+
+### Before running
+
+In the Operations Manager view, Simulation sits as a tab alongside Fleet, Utilization, Drivers, and EV.
+
+![Operations simulation, before running. The Simulation tab sets the forecast type, the scenario, and the fleet assumptions, with the live baseline on the right.](07-simulation-ops-before.jpg)
+
+The left rail builds the run. Forecast type chooses what it models, Vehicle, Charging, or Combined. A scenario preset of Normal, Peak, Surge, or Maintenance sets a known starting pattern. The sliders below carry the assumptions: the guest volume expected on the island, the number of vehicles available, the average vehicle capacity, the active EV chargers, and the average speed on the road. The right rail shows the live baseline the run measures against, the same destination figures the Guest Experience run starts from, a transfer variance of +18, 412 booking requests, 28 of 46 vehicles free, an average request age of 2.4 minutes, and the Marina as the top station requesting.
+
+### After running
+
+![Operations simulation, after running. A traffic heatmap lights the road network and the right rail reads the fleet capacity outlook, the projected metrics, and the forecast spec.](07-simulation-ops-after.jpg)
+
+Running the scenario lights the road network with a traffic heatmap, reading from cool blue where roads are clear through to red where they are congested, so the bottlenecks show up as the roads that would actually jam.
+
+The right rail switches to the fleet forecast. Forecasted outcome is the verdict, here Fleet Capacity Risk, with a one-line reason, that 8 vehicles are over-utilized at peak within 45 minutes and 3 chargers are projected to reach capacity. Projected key metrics give the numbers the run expects, each against now: vehicles needed rising to 52, utilization at peak at 96%, idle time down to 6%, a maintenance backlog of 2, charging demand at 84% with 3 chargers maxed, energy needed up by 620 kWh, a fatigue risk of 3 on the bridge drivers, and a fuel deficit of 2%. Forecast spec records how the run was made so it can be trusted and repeated: the model, the forecast type, the window, the buildings and stations included, the scenario, the seed, and the time of the last run.
 
 ## Running a simulation
 
 1. Open simulation from the top button on the right toolbar.
-2. Pick the events to simulate and choose an intensity preset.
-3. Set the guest volume and the pre-trip variables.
-4. Choose the response plan you want to test.
-5. Run the simulation, then read the crowd heatmap on the map and the forecast in the right rail.
-6. Use Compare to Baseline to see the change against now, and Exit Simulation to return to live data.
+2. Build the scenario for your view: the events and response plan in Guest Experience, or the forecast type and fleet assumptions in Operations.
+3. Choose an intensity or scenario preset.
+4. Run the simulation.
+5. Read the forecast, the crowd outlook in Guest Experience or the fleet and traffic outlook in Operations.
+6. Dispatch a recommended action to its team, or use Compare to Baseline to see the change against now.
+7. Exit Simulation to return to live data.
 
 <Callout type="warning">
 While simulation is on, the alert tray shows scenario alerts, not live ones. Live incidents are held until you close simulation.
