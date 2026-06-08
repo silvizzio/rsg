@@ -34,7 +34,7 @@ export default function Home() {
     ]},
     { title: 'Simulation', desc: 'Rehearse crowd and fleet what-ifs on the twin.', links: [
       { label: 'Crowd', desc: 'Crowd density forecasts on the twin', href: '/docs/07-simulation', cover: '07-simulation-after.jpg' },
-      { label: 'Traffic', desc: 'Fleet and vehicle flow forecasts', href: '/docs/07-simulation', cover: '07-simulation-before.jpg' },
+      { label: 'Traffic', desc: 'Fleet and vehicle flow forecasts', href: '/docs/07-simulation', cover: '07-simulation-ops-after.jpg' },
     ]},
   ]
 
@@ -104,7 +104,7 @@ export default function Home() {
               <div style={{ padding: '16px 20px 20px' }}>
                 <h3 style={{ fontSize: '14px', fontWeight: 600, marginBottom: '6px', color: 'hsl(var(--foreground))' }}>{section.title}</h3>
                 <p style={{ fontSize: '11px', color: 'hsl(var(--muted-foreground))', lineHeight: 1.5, marginBottom: '12px' }}>{section.desc}</p>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '8px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '8px' }}>
                   {section.links.map((link: { label: string, desc: string, href: string, cover?: string }) => {
                     const img = link.cover ? cover(link.cover) : null
                     return (
