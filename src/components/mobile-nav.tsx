@@ -29,8 +29,8 @@ export default function MobileNav({ docsBySection, currentSlug }: { docsBySectio
           >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 16px 16px', borderBottom: '1px solid hsl(var(--border))', marginBottom: '12px' }}>
               <div>
-                <p style={{ fontSize: '12px', fontWeight: 500 }}>RSG Integrated Operations Centre</p>
-                <p style={{ fontSize: '10px', color: 'hsl(var(--muted-foreground))' }}>v1.0 · April 2026</p>
+                <p style={{ fontSize: '12px', fontWeight: 500 }}>RSG IOC</p>
+                <p style={{ fontSize: '10px', color: 'hsl(var(--muted-foreground))' }}>v1.0 · June 2026</p>
               </div>
               <button onClick={() => setOpen(false)} style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'hsl(var(--muted-foreground))', padding: '4px' }}>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 6 6 18M6 6l12 12"/></svg>

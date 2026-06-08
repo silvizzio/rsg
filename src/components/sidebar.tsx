@@ -30,8 +30,8 @@ export default function Sidebar({ docsBySection }: Props) {
               </svg>
             </div>
             <div>
-              <p style={{ fontSize: '12px', fontWeight: 500, lineHeight: 1.3 }}>RSG Integrated Operations Centre</p>
-              <p style={{ fontSize: '10px', color: 'hsl(var(--muted-foreground))' }}>v1.0 · April 2026</p>
+              <p style={{ fontSize: '12px', fontWeight: 500, lineHeight: 1.3 }}>RSG IOC</p>
+              <p style={{ fontSize: '10px', color: 'hsl(var(--muted-foreground))' }}>v1.0 · June 2026</p>
             </div>
           </div>
         </div>
