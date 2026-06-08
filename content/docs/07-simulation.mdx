@@ -53,6 +53,23 @@ The map fills with a crowd heatmap, cool blue where flow is light through red wh
 
 Compare to Baseline holds the forecast against now, and Exit Simulation returns to live data.
 
+### Reading the crowd forecast
+
+Read it in three moves: the heatmap shows where pressure builds, the mobility health index shows how bad, and the projected KPIs show why.
+
+| Metric | What it measures | Watch when |
+| --- | --- | --- |
+| Mobility health index | Whole-network health, 0 to 100, against a healthy threshold of 85 | Falls below 85; the lower it goes, the closer to capacity |
+| Transfer variance | Gap between planned and actual transfers | Climbs off the baseline, here +18 to +34 |
+| Booking requests | Demand on the mobility service | Rises faster than vehicles can clear, here 412 to 680 |
+| Available vehicles | Free vehicles against the fleet | Falls toward zero, here 28 to 18 |
+| Request age | How long the average request has waited | Rises past the service target |
+
+| Verdict | What it means | Recommended action |
+| --- | --- | --- |
+| Healthy | Demand sits within capacity | Hold the baseline |
+| Capacity at risk | Guest increase outpaces fleet and charger capacity within the horizon | Dispatch Recall and Relieve, or Reroute and Advise, to mobility |
+
 ## Operations simulation: the fleet and traffic
 
 Answers how the fleet and the road network hold up under the same pressure. The shift: from a manager who finds out something is wrong too late, to one who always knows what is running, what is at risk, and what is out of service. In the Operations Manager view, Simulation sits alongside Fleet, Utilization, Drivers, and EV.
@@ -94,6 +111,24 @@ Forecasted outcome: Fleet Capacity Risk, 8 vehicles over-utilized at peak within
 
 Forecast spec: model Guest Flow AI v2, forecast type Guest Flow, window Now +60 minutes, buildings 6 of 6, stations 12 of 14, scenario Normal, seed #8836, last run 14:32 AST.
 
+### Reading the fleet forecast
+
+Read the verdict first, then the metric that drove it: utilization and charging set capacity risk, while fatigue and maintenance set continuity risk.
+
+| Metric | What it measures | Watch when |
+| --- | --- | --- |
+| Utilization at peak | Share of the fleet in use at peak | Approaches 100%, here 96% |
+| Idle time | Share of the fleet sitting unused | Very low means over-stretched, very high means waste |
+| Charging demand | Load on the EV chargers | Chargers hit capacity, here 3 maxed at 84% |
+| Energy needed | Extra energy the scenario draws | Rises against typical, here +620 kWh |
+| Maintenance backlog | Vehicles waiting on service | Grows across the shift, here +2 by end of shift |
+| Fatigue risk | Drivers near a fatigue limit | Any count above zero, here 3 on the bridge |
+
+| Verdict | What it means | Recommended action |
+| --- | --- | --- |
+| Nominal | Fleet sits within capacity | Hold |
+| Fleet Capacity Risk | Vehicles over-utilized at peak and chargers projected at capacity within the horizon | Dispatch the vehicle or charging action the run surfaces |
+
 ## Marine Operations simulation: wind and storm
 
 Answers how wind and storm conditions hit the reef and outdoor activity. The shift: from a Marine Operations Manager who finds out conditions are unsafe once guests or the reef are already affected, to one who rehearses a wind change and sees the effect before it lands. In the Marine Operations view, Simulation sits alongside Reef Monitoring.
@@ -125,6 +160,29 @@ Forecasted outcome: a Wind Advisory with a one-line read on whether marine and o
 | Water turbidity | +18% | beach zone |
 
 Forecast spec: forecast type Environmental (marine lens), model Wind/Reef AI v1, horizon 60 minutes, seed #8835.
+
+### Reading the wind forecast
+
+Read wind against the dive threshold first, then turbidity and air, since those decide whether activity continues.
+
+| Metric | What it measures | Watch when |
+| --- | --- | --- |
+| Wind at reef | Wind over the dive zones | Crosses the dive threshold of 20 kn |
+| Wind at bridge | Wind at the crossing | Rises against now, here +6 |
+| Water turbidity | Sediment stirred into the water | Climbs in the beach zone, here +18% |
+| AQI shift | Air quality change, often dust | Moves up, here +6 |
+
+| Wind band | Wind | Posture |
+| --- | --- | --- |
+| Calm | under 6 kn | Settled |
+| Moderate | 10 to 14 kn | Breeze |
+| High Wind | 22 to 30 kn | Advisory |
+| Storm | 35 kn and up | Suspend |
+
+| Verdict | What it means | Recommended action |
+| --- | --- | --- |
+| Wind Advisory | Conditions noted, activity can continue | Advise the dive and mooring teams |
+| Suspend | Wind or turbidity past the safe limit | Hold dives and water activities, divert to sheltered zones |
 
 ## Running a simulation
 
