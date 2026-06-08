@@ -90,16 +90,24 @@ export function SystemMap() {
         <div style={{ marginTop: '18px' }}>
           <div style={{ textAlign: 'center', fontSize: '12px', fontWeight: 700, color: '#1f2937' }}>Map detail levels</div>
           <div style={{ textAlign: 'center', fontSize: '11px', color: '#6b7280', marginTop: '2px', marginBottom: '12px' }}>The 3D map is the shared surface. The detail level sets which panels show.</div>
-          {LODS.map((l) => (
-            <div key={l.n} style={{ background: '#FFFFFF', border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '9px', padding: '12px 14px', marginTop: '8px' }}>
-              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
-                <div style={{ fontWeight: 700, color: '#1f2937', fontSize: '12px', minWidth: '46px' }}>{l.n}</div>
-                <div>
-                  <div style={{ fontWeight: 700, color: '#1f2937', fontSize: '12px' }}>{l.t}</div>
-                  <div style={{ fontSize: '12px', color: '#6b7280', marginTop: '2px' }}>{l.s}</div>
+          {LODS.map((l, i) => (
+            <div key={l.n}>
+              {i > 0 ? (
+                <div style={{ textAlign: 'center', color: '#9aa0a6', margin: '4px 0 0' }}>
+                  <div style={{ fontSize: '16px' }}>↓</div>
+                  <div style={{ fontSize: '11px' }}>Zoom in</div>
                 </div>
+              ) : null}
+              <div style={{ background: '#FFFFFF', border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '9px', padding: '12px 14px', marginTop: '8px' }}>
+                <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
+                  <div style={{ fontWeight: 700, color: '#1f2937', fontSize: '12px', minWidth: '46px' }}>{l.n}</div>
+                  <div>
+                    <div style={{ fontWeight: 700, color: '#1f2937', fontSize: '12px' }}>{l.t}</div>
+                    <div style={{ fontSize: '12px', color: '#6b7280', marginTop: '2px' }}>{l.s}</div>
+                  </div>
+                </div>
+                <MiniFrame scope={l.frame.scope} left={l.frame.left} right={l.frame.right} bottom={l.frame.bottom} action={l.frame.action} />
               </div>
-              <MiniFrame scope={l.frame.scope} left={l.frame.left} right={l.frame.right} bottom={l.frame.bottom} action={l.frame.action} />
             </div>
           ))}
         </div>
