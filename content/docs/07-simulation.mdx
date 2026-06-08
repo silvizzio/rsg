@@ -2,69 +2,138 @@
 title: "Simulation"
 order: 7
 section: "Simulation"
-description: "Rehearse a what-if on the twin. Two families the client scoped: a mobility what-if across the Guest Experience and Operations views, and an environmental what-if on wind and conditions, each ending in recommended actions."
+description: "Rehearse a what-if on the twin across three operator views: Guest Experience forecasts where guests build up, Operations forecasts the fleet and road traffic, and Marine Operations forecasts how wind and storms hit the reef."
 ---
 
-Simulation lets operators rehearse a what-if on the twin without touching live data or live operations. You build a scenario, run it, and read the forecast the system returns, using the same recommended-action thinking that drives live operation. In effect it lets a team walk a busy day through from start to finish before it ever happens, and decide in advance which response holds the service level best.
+Simulation lets operators rehearse a what-if on the twin without touching live data or live operations. You build a scenario, run it, and read the forecast the system returns, using the same recommended-action thinking that drives live operation. It lets a team walk a busy day through from start to finish before it happens, and decide in advance which response holds best.
 
-The client scopes simulation as two what-if families, and both end in recommended actions you can dispatch. The first is mobility: a change in guest volume and its effect on movement, the fleet, charging, and the road network. It is built today across two operator views, the Guest Experience simulation, which forecasts where guests build up, and the Operations simulation, which forecasts how the fleet and roads hold up. The second is environmental: a change in weather, principally wind speed, and its effect on the conditions that keep guests and the reef safe. All of them open from the top button on the right toolbar and follow the same rhythm: set up a scenario, run it, read the forecast, and dispatch a response.
+The client scopes simulation as two what-if families, both ending in recommended actions:
+
+- Mobility: a change in guest volume and its effect on movement, the fleet, charging, and the road network. Built across the Guest Experience and Operations views.
+- Environmental: a change in weather, principally wind, and its effect on the reef and outdoor activity. Built in the Marine Operations view.
+
+All three open from the top button on the right toolbar and follow the same rhythm:
+
+1. Set up the scenario.
+2. Run it.
+3. Read the forecast.
+4. Dispatch a recommended action, or compare to the baseline.
+5. Exit to return to live data.
 
 ## Guest Experience simulation: the crowd
 
-The Guest Experience simulation answers where guests build up across the destination. It is the mobility what-if read from the guest side: from a Guest Experience Manager who finds out a station is overwhelmed when guests complain, to one who sees demand building and can respond before anyone waits too long. The run forecasts the guest-facing numbers the live view already tracks, transfer variance, booking requests, available vehicles, and request age by station, and rolls them into a single mobility health index that scores the network as a whole.
+Answers where guests build up across the destination. The shift: from a Guest Experience Manager who finds out a station is overwhelmed when guests complain, to one who sees demand building and acts before anyone waits too long.
 
 ### Before running
-
-This is the setup screen as it appears before a run, shown here with the Pre-Trip phase selected.
 
 ![Guest Experience simulation, before running. The left rail builds the scenario, the right rail shows the live baseline, and Run Simulation starts it.](07-simulation-before.jpg)
 
-The left rail is where you build the scenario, read top to bottom. Event to simulate is the list of conditions to model, such as a Peak Arrival Surge or a VIP Convoy, each with a one-line note on its effect; tick the ones you want, or use New Event to add your own. Guest volume sets how many guests are expected on the island. Intensity preset, Normal, Peak, Surge, or VIP, is a one-tap starting point that sets the scenario to a known pattern you can then fine-tune. Pre-trip variables hold the assumptions the run leans on, here the marina capacity per hour and the buffer time. Response plan is the response you want to test against the event, from Baseline, which does nothing, through Recall and Relieve or Reroute and Advise, each showing how many actions it would take. The right rail shows the live baseline the run measures against, here a transfer variance of +18, 412 booking requests, 28 of 46 vehicles free, an average request age of 2.4 minutes, and the Marina as the top station requesting. When the scenario is set, Run Simulation produces the forecast.
+| Control | What it sets |
+| --- | --- |
+| Event to simulate | Conditions to model such as Peak Arrival Surge or VIP Convoy, ticked or added with New Event |
+| Guest volume | Guests expected on the island |
+| Intensity preset | Normal, Peak, Surge, or VIP, a one-tap starting pattern |
+| Pre-trip variables | Marina capacity per hour and buffer time |
+| Response plan | Response to test: Baseline, Recall and Relieve, or Reroute and Advise |
+
+Live baseline on the right: transfer variance +18, 412 booking requests, 28 of 46 vehicles free, average request age 2.4 minutes, top station requesting Marina.
 
 ### After running
 
-![Guest Experience simulation, after running. A crowd heatmap fills the map and the right rail reads the capacity outlook, the resource demand, the mobility health index, and the projected KPIs against the baseline.](07-simulation-after.jpg)
+![Guest Experience simulation, after running. A crowd heatmap fills the map and the right rail reads the capacity outlook, the resource demand, the mobility health index, and the projected KPIs.](07-simulation-after.jpg)
 
-Running the scenario fills the map with a crowd heatmap, reading from cool blue where flow is light through to red where it is heaviest. This turns the pressure points into places rather than numbers, so a developing crowd is visible exactly where it would form. A sustained heavy area is the same signal that raises a crowd density alert in live operation, which makes the simulation a safe way to find those hotspots in advance.
+The map fills with a crowd heatmap, cool blue where flow is light through red where it is heaviest, so a developing crowd shows up exactly where it would form. A sustained heavy area is the same signal that raises a crowd density alert in live operation.
 
-The right rail switches from the live baseline to the forecast. Forecasted outcome is the headline verdict, here Capacity at risk, with a one-line reason, that the guest increase outpaces fleet and charger capacity within 45 minutes, and a count of recommended actions. Forecasted resource demand translates that verdict into what the scenario would need, with vehicles needed rising to 52 and EV chargers needed to 18. The mobility health index scores the network as a whole, here 68 out of 100, strained at 2,400 guests per hour against a healthy threshold of 85. Projected KPI then lists the headline numbers, each read against the baseline you started from: transfer variance climbing from +18 to +34, booking requests from 412 to 680, available vehicles falling from 28 to 18, and average request age at 2.2 minutes. Compare to Baseline holds the forecast against the live now, and Exit Simulation returns the twin to live data.
+| Forecast | Reading |
+| --- | --- |
+| Forecasted outcome | Capacity at risk: the guest increase outpaces fleet and charger capacity within 45 minutes |
+| Resource demand | Vehicles needed 52, EV chargers needed 18 |
+| Mobility health index | 68 of 100, strained at 2,400 guests per hour against a healthy threshold of 85 |
+| Projected KPI | Transfer variance +18 to +34, booking requests 412 to 680, available vehicles 28 to 18, request age 2.2 minutes |
+
+Compare to Baseline holds the forecast against now, and Exit Simulation returns to live data.
 
 ## Operations simulation: the fleet and traffic
 
-The Operations simulation answers how the fleet and the road network hold up under the same kind of pressure. It is the same mobility what-if read from operations: from a manager who finds out something is wrong when it is too late, to one who always knows what is running, what is at risk, and what is out of service. The run forecasts the fleet and infrastructure numbers the live view tracks, vehicles in service against maintenance, the split between over-utilized and idle assets, charging demand and EV station status, driver fatigue, and the road congestion that decides whether the fleet can move at all.
+Answers how the fleet and the road network hold up under the same pressure. The shift: from a manager who finds out something is wrong too late, to one who always knows what is running, what is at risk, and what is out of service. In the Operations Manager view, Simulation sits alongside Fleet, Utilization, Drivers, and EV.
 
 ### Before running
 
-In the Operations Manager view, Simulation sits as a tab alongside Fleet, Utilization, Drivers, and EV.
-
 ![Operations simulation, before running. The Simulation tab sets the forecast type, the scenario, and the fleet assumptions, with the live baseline on the right.](07-simulation-ops-before.jpg)
 
-The left rail builds the run. Forecast type chooses what it models, Vehicle, Charging, or Combined. A scenario preset of Normal, Peak, Surge, or Maintenance sets a known starting pattern. The sliders below carry the assumptions: the guest volume expected on the island, the number of vehicles available, the average vehicle capacity, the active EV chargers, and the average speed on the road. The right rail shows the live baseline the run measures against, the same destination figures the Guest Experience run starts from, a transfer variance of +18, 412 booking requests, 28 of 46 vehicles free, an average request age of 2.4 minutes, and the Marina as the top station requesting.
+| Control | What it sets |
+| --- | --- |
+| Forecast type | Vehicle, Charging, or Combined |
+| Scenario preset | Normal, Peak, Surge, or Maintenance |
+| Guest volume | Expected on-island, here 2,500 |
+| Number of vehicles | Available on-island, here 800 |
+| Vehicle capacity | Average per vehicle, here 2,500 |
+| Active EV chargers | Active charger count |
+| Speed on road | Average km/h, here 100 |
+
+Live baseline on the right: transfer variance +18, 412 booking requests, 28 of 46 vehicles free, average request age 2.4 minutes, top station requesting Marina.
 
 ### After running
 
 ![Operations simulation, after running. A traffic heatmap lights the road network and the right rail reads the fleet capacity outlook, the projected metrics, and the forecast spec.](07-simulation-ops-after.jpg)
 
-Running the scenario lights the road network with a traffic heatmap, reading from cool blue where roads are clear through to red where they are congested, so the bottlenecks show up as the roads that would actually jam.
+The road network lights with a traffic heatmap, cool blue where roads are clear through red where they are congested, so the bottlenecks show up as the roads that would jam.
 
-The right rail switches to the fleet forecast. Forecasted outcome is the verdict, here Fleet Capacity Risk, with a one-line reason, that 8 vehicles are over-utilized at peak within 45 minutes and 3 chargers are projected to reach capacity. Projected key metrics give the numbers the run expects, each against now: vehicles needed rising to 52, utilization at peak at 96%, idle time down to 6%, a maintenance backlog of 2, charging demand at 84% with 3 chargers maxed, energy needed up by 620 kWh, a fatigue risk of 3 on the bridge drivers, and a fuel deficit of 2%. Forecast spec records how the run was made so it can be trusted and repeated: the model, the forecast type, the window, the buildings and stations included, the scenario, the seed, and the time of the last run.
+Forecasted outcome: Fleet Capacity Risk, 8 vehicles over-utilized at peak within 45 minutes and 3 chargers projected at capacity.
 
-## Environmental simulation: wind and conditions
+| Metric | Reading | Against now |
+| --- | --- | --- |
+| Vehicles needed | 52 | +10 |
+| Utilization at peak | 96% | +5 |
+| Idle time | 6% | -8 |
+| Maintenance backlog | 2 | +2 by end of shift |
+| Charging demand | 84% | 3 chargers maxed |
+| Energy needed | +620 kWh | vs typical |
+| Fatigue risk | 3 | bridge drivers |
+| Fuel deficit | -2% | vs fleet |
 
-The Environmental simulation is the second what-if the client scoped, and it answers how a change in weather, principally wind speed, moves the conditions that affect guest safety and the reef. The value shift is the same shape as the others: from a Resort or Marine manager who finds out conditions are unsafe once guests or the reef are already affected, to one who can rehearse a wind change and see the effect before it lands.
+Forecast spec: model Guest Flow AI v2, forecast type Guest Flow, window Now +60 minutes, buildings 6 of 6, stations 12 of 14, scenario Normal, seed #8836, last run 14:32 AST.
 
-The setup follows the same rhythm. You set the weather input, here a wind speed increase or decrease, against the current baseline, then run it. The forecast reads the environmental numbers the live dashboards already track: the air quality index, wind speed across the resort, and water quality and color, with reef turbidity and temperature on the marine side. Each is read against the live now so the shift is legible, and a sustained move past a threshold raises the same kind of signal it would raise in live operation.
+## Marine Operations simulation: wind and storm
 
-The forecast closes with recommended actions in plain language, for example holding water activities while a wind-driven turbidity spike passes, or moving guests off an exposed stretch of shoreline, each dispatchable to its team the same way a live recommended-action card is. As with the other runs, Compare to Baseline holds the forecast against now and Exit Simulation returns the twin to live data.
+Answers how wind and storm conditions hit the reef and outdoor activity. The shift: from a Marine Operations Manager who finds out conditions are unsafe once guests or the reef are already affected, to one who rehearses a wind change and sees the effect before it lands. In the Marine Operations view, Simulation sits alongside Reef Monitoring.
+
+### Before running
+
+![Marine Operations simulation, before running. The left rail sets the wind scenario and the zones, with the projected conditions on the right.](07-simulation-storm-before.jpg)
+
+| Control | What it sets |
+| --- | --- |
+| Forecast type | Wind on Dive, Wind on Mooring, or Combined |
+| Wind condition | Calm (under 6 kn), Moderate (10-14 kn), High Wind (22-30 kn, advisory), or Storm (35 kn+, suspend) |
+| Wind speed | Projected gust, here 14 kn |
+| Zones included | Gaia Reef North, Gaia Reef South, Coral Garden E, House Reef |
+
+### After running
+
+![Marine Operations simulation, after running. A wind field sweeps the map and the right rail reads the forecasted outcome, the projected conditions, and the forecast spec.](07-simulation-storm-after.jpg)
+
+The map fills with a wind field streaming across the water, so the exposed stretches read as places rather than numbers.
+
+Forecasted outcome: a Wind Advisory with a one-line read on whether marine and outdoor activity is affected.
+
+| Condition | Reading | Note |
+| --- | --- | --- |
+| Wind at bridge | 2.4 kn | +6 vs now |
+| Wind at reef | 21 kn | dive threshold 20 |
+| AQI shift | 48 | +6, dust |
+| Water turbidity | +18% | beach zone |
+
+Forecast spec: forecast type Environmental (marine lens), model Wind/Reef AI v1, horizon 60 minutes, seed #8835.
 
 ## Running a simulation
 
 1. Open simulation from the top button on the right toolbar.
-2. Build the scenario for your view: the events and response plan in Guest Experience, the forecast type and fleet assumptions in Operations, or the wind change in Environmental.
-3. Choose an intensity or scenario preset.
+2. Build the scenario for your view: events and response plan in Guest Experience, forecast type and fleet assumptions in Operations, or wind condition and zones in Marine Operations.
+3. Choose an intensity, scenario, or wind preset.
 4. Run the simulation.
-5. Read the forecast: the crowd outlook in Guest Experience, the fleet and traffic outlook in Operations, or the conditions outlook in Environmental.
-6. Dispatch a recommended action to its team, or use Compare to Baseline to see the change against now.
+5. Read the forecast: the crowd outlook, the fleet and traffic outlook, or the wind and reef outlook.
+6. Dispatch a recommended action to its team, or use Compare to Baseline.
 7. Exit Simulation to return to live data.
 
 <Callout type="warning">
