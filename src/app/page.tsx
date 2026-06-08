@@ -31,9 +31,6 @@ export default function Home() {
       { label: 'Crowd', desc: 'Crowd density forecasts on the twin', href: '/docs/07-simulation', cover: '07-simulation-after.jpg' },
       { label: 'Traffic', desc: 'Fleet and vehicle flow forecasts', href: '/docs/07-simulation', cover: '07-simulation-ops-after.jpg' },
     ]},
-    { title: 'Reference', desc: 'Glossary of shared terms.', links: [
-      { label: 'Reference', desc: 'Glossary of shared terms', href: '/docs/08-reference', cover: '02-interface-cctv.jpg' },
-    ]},
   ]
 
   return (
