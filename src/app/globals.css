@@ -265,3 +265,9 @@ article ul > li > p {
 .doc-split-media.size-narrow { flex-basis: 6%; max-width: 6%; min-width: 48px; }
 .doc-split-media * { max-width: 100% !important; }
 .doc-split-media canvas, .doc-split-media img { width: 100% !important; height: auto !important; }
+
+/* Caption to the right of a narrow image */
+.doc-split-media.cap-right { flex-basis: 34%; max-width: 34%; }
+.doc-split-media.cap-right > p > span { display: flex !important; align-items: flex-start; gap: 12px; margin-bottom: 0 !important; }
+.doc-split-media.cap-right > p > span > canvas, .doc-split-media.cap-right > p > span > img { width: 60px !important; max-width: 60px !important; flex: 0 0 60px; }
+.doc-split-media.cap-right > p > span > span { text-align: left !important; margin-top: 0 !important; flex: 1 1 auto; }
