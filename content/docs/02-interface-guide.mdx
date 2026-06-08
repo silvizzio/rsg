@@ -2,37 +2,69 @@
 title: "Interface Guide"
 order: 2
 section: "Getting Started"
-description: "The IOC layout and the workflows that live in it: persona bar, map canvas, panels, the alert tray and alert lifecycle, the CCTV grid, and map navigation."
+description: "The anatomy of the IOC: every region around the 3D map, what it shows, the pattern it follows, and how to use it, the same way across all four personas."
 ---
 
-The IOC presents one 3D map canvas framed by a persona bar, two side panels, an alert tray, and a map detail selector. The same frame holds for every persona; only the panel content changes. This guide also covers the two workflows that run inside that frame: the alert tray and its lifecycle, and the CCTV grid.
+The IOC is a single 3D map wrapped in a fixed frame of regions: a header across the top, a metrics panel on the left, a summary strip along the bottom, a legend and a recommended-action card over the map, a camera panel on the right, and a tool strip on the right edge. The frame stays the same for every persona and every destination. Only the content inside each region changes. The examples below show one persona, but each region works the same way for all four.
 
-<ScreenshotPlaceholder caption="IOC interface, labelled regions, Operations Manager persona" />
+## The header
 
-## Layout regions
+The header runs across the top and does not change. On the left it names the operations centre and the destination in focus, here Shura Island. The bar in the middle is a compass and orientation readout for the 3D view. To its right is a live environment readout, wind, sea, air, and air quality, which is destination-wide and the same whatever persona you are in. On the right sit the persona selector and the clock. You switch persona from the selector here.
 
-| Field | Example | Context |
-|---|---|---|
-| Persona Bar | Guest Experience Manager | Top bar, switches the active operator persona |
-| Map Canvas | Shura Island | Central 3D twin, the shared surface for all views |
-| Left Panel | Layer controls | Toggles layers, filters, and map options |
-| Right Panel | Analysis | Persona metrics at the wide, district, and close-up levels |
-| Alert Tray | 4 open | Live alert feed for the active persona and sector |
-| Map Detail Selector | District | Switches the wide, district, and close-up detail levels |
-| Simulation | Off | Opens and closes simulation from the top button on the right toolbar |
+![The header. Destination identity on the left, the live wind, sea, air, and air-quality readout in the centre right, and the persona selector and clock on the right.](02-interface-header.jpg)
+
+## The left panel
+
+The left panel holds the active persona's numbers for whatever place is in focus. The top names the persona and the place, here Guest Experience at the Marina. Below it an analysis window switches the reading between Now, Daily, and Weekly. The rest is a stack of metric cards grouped into labelled sections. The sections and cards are whatever that persona tracks. The example here splits the guest trip into Pre-Trip, Trip, and After-Trip, but the layout, a window toggle above grouped cards, is the same in every persona.
+
+![The left panel. The persona and the place in focus at the top, an analysis window for Now, Daily, or Weekly, then the persona's metric cards grouped into sections.](02-interface-left-kpi.jpg)
+
+## The bottom strip
+
+The strip along the bottom is a quick read of the headline numbers, grouped by theme. It rescopes with the map detail level. At the wide view it reads the whole destination.
+
+![The bottom strip at the wide view, reading the whole destination.](02-interface-bottom-lod1.jpg)
+
+Drill into a district and the same strip rescopes to that district. The title picks up the district name and the fields shift to district-scoped versions, such as stations over capacity for that district. Same persona, narrower scope.
+
+![The same strip at the district view, rescoped to one district, with the district name added to the title.](02-interface-bottom-lod2.jpg)
+
+## The map legend
+
+The legend sits at the bottom left of the map. The severity key colour-codes items from Critical down to Low and Info, with a live count beside each, so you can see at a glance how many things need attention and how serious they are. Below it, the data inputs line names the feed driving the current view and shows whether it is live. Collapse the legend with the chevron when you need the map space.
+
+![The map legend. A severity key with live counts, and the data feed driving the view with a live indicator.](02-interface-map-legend.jpg)
+
+## The recommended action card
+
+This is what makes the IOC proactive. When the system spots something, it raises a card over the map: a badge naming the trigger state, here Temp Rising, a plain recommended action as the headline, a live camera of the place, a one-line reason with the numbers behind it, and two buttons. The primary button carries the action out, Remind me later defers it, and the X dismisses it. The card pattern is identical in every persona, only the trigger and the action change. These cards appear at the close-up level when a threshold is crossed.
+
+![A recommended-action card. A trigger badge, the suggested action, a live camera of the place, the reason, and act or defer buttons.](02-interface-popup.jpg)
+
+## The CCTV panel
+
+The right side is the camera wall for the area in focus. The header carries two viewing modes, Auto Roaming and Virtual Patrol, a breadcrumb of where you are, a search box, a grid-size selector, and the camera count. Below are the live tiles, each labelled with its name and ID. Page through with the controls at the bottom, change the grid size to show more or fewer at once, search for a specific camera, and open any tile full-screen for a closer look. Selecting a tile also focuses its location on the map. The panel appears wherever cameras are available for the persona.
+
+![The right CCTV panel. Roaming and patrol modes, search, grid size, the camera count, live tiles, and paging.](02-interface-cctv.jpg)
+
+## The toolbar
+
+A slim tool strip runs down the right edge in two groups. The top group holds the weather overlay, the history and time control, and simulation. The bottom group holds search and the zoom controls. Simulation opens from the top group and has its own section. Everything here is the same for every persona.
+
+![The right toolbar. The top group holds weather, history, and simulation; the bottom group holds search and zoom.](02-interface-toolbar.jpg)
 
 ## Switching personas
 
-1. Open the persona bar at the top of the screen.
-2. Select Guest Experience Manager, Operations Manager, Environment Manager, or Marine Operations Manager.
-3. Confirm the side panels and alert tray reload for the chosen persona.
+1. Open the persona selector in the header, top right.
+2. Choose Guest Experience Manager, Operations Manager, Environment Manager, or Marine Operations Manager.
+3. The left panel, bottom strip, legend feed, and cameras all reload for that persona. The frame stays put.
 
 ## Navigating map detail
 
 1. Start at the wide view for the whole destination.
-2. Select a district on the map to move to the district view.
-3. Select a site within the district to move to the close-up view.
-4. Use the map detail selector to step back out at any time.
+2. Select a district to drop to the district view, and watch the bottom strip rescope.
+3. Select a site to drop to the close-up view, where the recommended-action cards appear.
+4. Zoom back out with the toolbar, or step up one level at a time.
 
 ## Shortcuts
 
@@ -43,78 +75,5 @@ The IOC presents one 3D map canvas framed by a persona bar, two side panels, an 
 | Step out one map detail level | <Kbd>Esc</Kbd> |
 
 <Callout type="tip">
-The alert tray is persona-scoped. An alert raised for the Operations Manager does not appear in the Guest Experience Manager tray unless it crosses a threshold set for both.
-</Callout>
-
-## Alerts and the alert tray
-
-Alerts surface in the persona-scoped alert tray and resolve to a site on the map. Every alert moves through a fixed lifecycle, and operators advance it as they respond.
-
-<ScreenshotPlaceholder caption="Alert tray and selected incident, Operations Manager persona, close-up view" />
-
-| Field | Example | Context |
-|---|---|---|
-| Alert Type | Crowd density | Category of the incident |
-| Severity | High | See the severity values below |
-| Status | Open | See the status values below |
-| Location | Shura Marina | Site the alert resolves to on the map |
-
-**Severity**
-
-| Value | Meaning |
-|---|---|
-| Low | Informational, no action required |
-| Medium | Monitor, action may be needed |
-| High | Immediate attention required |
-
-**Status**
-
-| Value | Meaning |
-|---|---|
-| Open | New incident, not yet acknowledged |
-| Acknowledged | Operator has accepted the alert |
-| In Progress | Response dispatched |
-| Resolved | Closed and logged in history |
-
-To manage an incident:
-
-1. Select an alert in the tray to focus its site on the map.
-2. Acknowledge it to move it from Open to Acknowledged.
-3. Dispatch a response and confirm it advances to In Progress.
-4. Mark it Resolved once handled, which logs it to history.
-
-<Callout type="warning">
-A High severity alert raised for the Operations Manager can be set to mirror into the Guest Experience Manager tray. Confirm the mirror thresholds against the IOC configuration before relying on them.
-</Callout>
-
-## CCTV monitoring
-
-The closed-circuit television grid shows live camera tiles for the selected district. Cameras resolve to their position on the map, so selecting a tile focuses its location.
-
-<ScreenshotPlaceholder caption="CCTV grid, 3 by 3 layout, Operations Manager persona" />
-
-| Field | Example | Context |
-|---|---|---|
-| Grid Layout | 3 by 3 | Number of camera tiles shown at once |
-| Selected Camera | CAM-12 | The tile currently in focus |
-| District | Shura Marina | Sector the grid is filtered to |
-| Feed Status | Live | See the feed status values below |
-
-**Feed status**
-
-| Value | Meaning |
-|---|---|
-| Live | Streaming in real time |
-| Delayed | Buffering or reduced frame rate |
-| Offline | No signal from the camera |
-
-To review a camera:
-
-1. Select a district to load its CCTV grid.
-2. Choose a grid layout from 1 by 1 up to 3 by 3.
-3. Select a tile to focus its camera and highlight its position on the map.
-4. Open the tile full-screen for detailed review.
-
-<Callout type="tip">
-The CCTV grid is available in the Operations Manager view and, where configured, the Marine Operations Manager view for coastal cameras.
+The frame is constant but everything inside it is persona-scoped. The numbers, cameras, and alerts you see always belong to the active persona, and switching persona swaps all of it at once.
 </Callout>
