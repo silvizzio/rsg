@@ -1,21 +1,17 @@
-type Item = { t: string; s: string }
+import type { CSSProperties } from 'react'
 
 const NEUTRAL = { bg: '#F1F2F4', border: '#D7DAE0', text: '#374151', cardBg: '#E4E7EC', cardBorder: '#C4C9D2' }
 
-const SHELL_REGIONS: Item[] = [
-  { t: 'Header', s: 'Identity, environment, account' },
-  { t: 'Left panel', s: 'Metric shell' },
-  { t: 'Bottom strip', s: 'Themed KPIs' },
-  { t: 'Map legend', s: 'Severity and feed' },
-  { t: 'Recommended action', s: 'Act or defer' },
-  { t: 'CCTV panel', s: 'Live cameras' },
-  { t: 'Toolbar', s: 'Weather, history, simulation' },
-]
+type Frame = { scope: string; left: boolean; right: boolean; bottom: boolean; action: boolean }
+type Lod = { n: string; t: string; s: string; frame: Frame }
 
-const LODS = [
-  { n: 'LOD 1', t: 'Island level', s: 'Persona KPIs read across the whole island.' },
-  { n: 'LOD 2', t: 'District level', s: 'Reached by zooming into a district, the same view scoped to that district.' },
-  { n: 'LOD 3', t: 'Site level', s: 'The bottom strip drops away and the left and right panels activate.' },
+const LODS: Lod[] = [
+  { n: 'LOD 1', t: 'Island level', s: 'Persona KPIs read across the whole island.',
+    frame: { scope: 'Island', left: false, right: false, bottom: true, action: false } },
+  { n: 'LOD 2', t: 'District level', s: 'Reached by zooming into a district, the same view scoped to that district.',
+    frame: { scope: 'District', left: false, right: false, bottom: true, action: false } },
+  { n: 'LOD 3', t: 'Site level', s: 'The bottom strip drops away and the left and right panels activate.',
+    frame: { scope: 'Site', left: true, right: true, bottom: false, action: true } },
 ]
 
 type Persona = {
@@ -49,11 +45,68 @@ function Tag({ label, color, border }: { label: string; color: string; border: s
   )
 }
 
-function ShellCard({ c }: { c: Item }) {
+function RegionBox({ title, sub, style }: { title: string; sub: string; style?: CSSProperties }) {
   return (
-    <div style={{ flex: '0 1 230px', minHeight: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'center', background: NEUTRAL.cardBg, border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '9px', padding: '10px 12px', textAlign: 'center' }}>
-      <div style={{ fontWeight: 700, color: '#1f2937', fontSize: '12px' }}>{c.t}</div>
-      <div style={{ fontSize: '11px', color: '#6b7280', marginTop: '2px' }}>{c.s}</div>
+    <div style={{ background: NEUTRAL.cardBg, border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '8px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center', padding: '8px', ...style }}>
+      <div style={{ fontWeight: 700, color: '#1f2937', fontSize: '12px' }}>{title}</div>
+      <div style={{ fontSize: '11px', color: '#6b7280', marginTop: '2px' }}>{sub}</div>
+    </div>
+  )
+}
+
+function Overlay({ title, sub, style }: { title: string; sub: string; style: CSSProperties }) {
+  return (
+    <div style={{ position: 'absolute', background: '#FFFFFF', border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '8px', padding: '6px 10px', boxShadow: '0 1px 4px rgba(0,0,0,0.08)', ...style }}>
+      <div style={{ fontWeight: 700, fontSize: '11px', color: '#1f2937' }}>{title}</div>
+      <div style={{ fontSize: '10px', color: '#6b7280' }}>{sub}</div>
+    </div>
+  )
+}
+
+function FrameLayout() {
+  return (
+    <div style={{ marginTop: '16px', border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '10px', background: '#FBFCFD', padding: '8px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
+      <RegionBox title="Header" sub="Identity, environment, account" style={{ height: '40px' }} />
+      <div style={{ display: 'flex', gap: '8px', height: '230px' }}>
+        <RegionBox title="Left panel" sub="Metric shell" style={{ flex: '0 0 150px', height: 'auto' }} />
+        <div style={{ flex: 1, position: 'relative', background: '#EAF1F4', border: `1px dashed ${NEUTRAL.cardBorder}`, borderRadius: '8px', overflow: 'hidden' }}>
+          <div style={{ position: 'absolute', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', textAlign: 'center', color: '#64748b' }}>
+            <div style={{ fontWeight: 700, fontSize: '12px' }}>3D map</div>
+            <div style={{ fontSize: '11px', marginTop: '2px' }}>The shared surface</div>
+          </div>
+          <Overlay title="Recommended action" sub="Act or defer" style={{ top: '14px', left: '50%', transform: 'translateX(-50%)', textAlign: 'center' }} />
+          <Overlay title="Map legend" sub="Severity and feed" style={{ bottom: '10px', left: '10px', textAlign: 'left' }} />
+        </div>
+        <RegionBox title="CCTV panel" sub="Live cameras" style={{ flex: '0 0 150px', height: 'auto' }} />
+        <div style={{ flex: '0 0 34px', background: NEUTRAL.cardBg, border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <div style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)', fontWeight: 700, fontSize: '11px', color: '#1f2937' }}>Toolbar</div>
+        </div>
+      </div>
+      <RegionBox title="Bottom strip" sub="Themed KPIs" style={{ height: '40px' }} />
+    </div>
+  )
+}
+
+function MiniFrame({ scope, left, right, bottom, action }: Frame) {
+  const bar: CSSProperties = { background: NEUTRAL.cardBg, border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '6px', height: '22px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px', fontWeight: 700, color: '#1f2937' }
+  const panel: CSSProperties = { flex: '0 0 66px', background: NEUTRAL.cardBg, border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px', fontWeight: 700, color: '#1f2937', textAlign: 'center', padding: '4px' }
+  return (
+    <div style={{ marginTop: '10px', border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '8px', background: '#FBFCFD', padding: '6px', display: 'flex', flexDirection: 'column', gap: '6px' }}>
+      <div style={bar}>Header</div>
+      <div style={{ display: 'flex', gap: '6px', height: '88px' }}>
+        {left ? <div style={panel}>Left panel</div> : null}
+        <div style={{ flex: 1, position: 'relative', background: '#EAF1F4', border: `1px dashed ${NEUTRAL.cardBorder}`, borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <span style={{ fontSize: '11px', fontWeight: 700, color: '#64748b' }}>{scope}</span>
+          {action ? (
+            <div style={{ position: 'absolute', top: '6px', left: '50%', transform: 'translateX(-50%)', background: '#FFFFFF', border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '6px', padding: '3px 8px', fontSize: '9px', fontWeight: 700, color: '#1f2937', whiteSpace: 'nowrap', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>Recommended action</div>
+          ) : null}
+        </div>
+        {right ? <div style={panel}>CCTV panel</div> : null}
+        <div style={{ flex: '0 0 18px', background: NEUTRAL.cardBg, border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+          <span style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)', fontSize: '9px', fontWeight: 700, color: '#1f2937' }}>Toolbar</span>
+        </div>
+      </div>
+      {bottom ? <div style={bar}>Bottom strip</div> : null}
     </div>
   )
 }
@@ -76,19 +129,20 @@ export function SystemMap() {
         <div style={{ textAlign: 'center', fontWeight: 700, fontSize: '15px', color: '#1f2937' }}>Shared frame</div>
         <div style={{ textAlign: 'center', fontSize: '12px', color: NEUTRAL.text, opacity: 0.85, marginTop: '4px' }}>The interface, map, and navigation are identical for every persona</div>
         <div style={{ textAlign: 'center' }}><Tag label="Agnostic" color={NEUTRAL.text} border={NEUTRAL.cardBorder} /></div>
-        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px', marginTop: '16px' }}>
-          {SHELL_REGIONS.map((c) => <ShellCard key={c.t} c={c} />)}
-        </div>
+        <FrameLayout />
         <div style={{ marginTop: '18px' }}>
           <div style={{ textAlign: 'center', fontSize: '12px', fontWeight: 700, color: '#1f2937' }}>Map detail levels</div>
           <div style={{ textAlign: 'center', fontSize: '11px', color: '#6b7280', marginTop: '2px', marginBottom: '12px' }}>The 3D map is the shared surface. The detail level sets which panels show.</div>
           {LODS.map((l) => (
-            <div key={l.n} style={{ display: 'flex', alignItems: 'flex-start', gap: '14px', background: '#FFFFFF', border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '9px', padding: '10px 14px', marginTop: '8px' }}>
-              <div style={{ fontWeight: 700, color: '#1f2937', fontSize: '12px', minWidth: '46px' }}>{l.n}</div>
-              <div>
-                <div style={{ fontWeight: 700, color: '#1f2937', fontSize: '12px' }}>{l.t}</div>
-                <div style={{ fontSize: '12px', color: '#6b7280', marginTop: '2px' }}>{l.s}</div>
+            <div key={l.n} style={{ background: '#FFFFFF', border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '9px', padding: '12px 14px', marginTop: '8px' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
+                <div style={{ fontWeight: 700, color: '#1f2937', fontSize: '12px', minWidth: '46px' }}>{l.n}</div>
+                <div>
+                  <div style={{ fontWeight: 700, color: '#1f2937', fontSize: '12px' }}>{l.t}</div>
+                  <div style={{ fontSize: '12px', color: '#6b7280', marginTop: '2px' }}>{l.s}</div>
+                </div>
               </div>
+              <MiniFrame scope={l.frame.scope} left={l.frame.left} right={l.frame.right} bottom={l.frame.bottom} action={l.frame.action} />
             </div>
           ))}
         </div>
