@@ -18,6 +18,7 @@ import {
   CoreWorkflowDiagram,
 } from '@/components/mdx-components'
 import { DocImage } from '@/components/doc-image'
+import { SystemMap } from '@/components/system-map'
 
 export async function generateStaticParams() {
   const docs = getAllDocs()
@@ -45,7 +46,8 @@ export default async function DocPage({
     DetectionClassTable,
     ArchitectureDiagram,
     CoreWorkflowDiagram,
-    img: DocImage,
+    SystemMap,
+        img: DocImage,
   }
 
   return (
