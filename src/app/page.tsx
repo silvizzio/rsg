@@ -32,7 +32,8 @@ export default function Home() {
       { label: 'Marine Operations Manager', desc: 'Reef health, dive capacity, and response', href: '/docs/06-mo', cover: '06-mo-lod3-active-response.jpg' },
     ]},
     { title: 'Simulation', desc: 'Rehearse crowd and fleet what-ifs on the twin.', links: [
-      { label: 'Simulation', desc: 'Crowd and fleet traffic forecasts', href: '/docs/07-simulation', cover: '07-simulation-after.jpg' },
+      { label: 'Crowd', desc: 'Crowd density forecasts on the twin', href: '/docs/07-simulation', cover: '07-simulation-after.jpg' },
+      { label: 'Traffic', desc: 'Fleet and vehicle flow forecasts', href: '/docs/07-simulation', cover: '07-simulation-before.jpg' },
     ]},
     { title: 'Reference', desc: 'Glossary of shared terms.', links: [
       { label: 'Reference', desc: 'Glossary of shared terms', href: '/docs/08-reference', cover: '02-interface-cctv.jpg' },
@@ -47,8 +48,8 @@ export default function Home() {
 
         <div className="mb-12">
           <h1 className="text-3xl font-medium mb-2">RSG Integrated Operations Centre</h1>
-          <p className="text-muted-foreground text-sm max-w-xl">
-            Operator guide for the RSG IOC Digital Twin. Monitor Red Sea Global destinations across four operator roles and three map detail levels.
+          <p className="text-muted-foreground text-sm">
+            Operator guide for the RSG IOC Digital Twin. Monitor Shura Island across four operator roles and three map detail levels.
           </p>
         </div>
 
@@ -109,7 +110,7 @@ export default function Home() {
                   {section.links.map((link: { label: string, desc: string, href: string, cover?: string }) => {
                     const img = link.cover ? cover(link.cover) : null
                     return (
-                      <Link key={link.href} href={link.href} className="group block rounded-md border border-border overflow-hidden transition-all hover:border-foreground/20 hover:shadow-sm" style={{ background: 'hsl(var(--background))' }}>
+                      <Link key={link.href + link.label} href={link.href} className="group block rounded-md border border-border overflow-hidden transition-all hover:border-foreground/20 hover:shadow-sm" style={{ background: 'hsl(var(--background))' }}>
                         {img && (
                           <div style={{ height: '84px', backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
                         )}
