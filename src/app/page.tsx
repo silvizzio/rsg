@@ -1,26 +1,41 @@
 import Link from 'next/link'
+import fs from 'fs'
+import path from 'path'
 import DocHeader from '@/components/doc-header'
 import { getSearchIndex } from '@/lib/search'
 
+function cover(file: string): string | null {
+  try {
+    const buf = fs.readFileSync(path.join(process.cwd(), 'private/images/docs', file))
+    const ext = (file.split('.').pop() || '').toLowerCase()
+    const mime = ext === 'png' ? 'image/png' : ext === 'svg' ? 'image/svg+xml' : 'image/jpeg'
+    return `data:${mime};base64,${buf.toString('base64')}`
+  } catch {
+    return null
+  }
+}
+
 export default function Home() {
   const searchDocs = getSearchIndex()
+  const heroOverview = cover('03-gxm-lod1-1.jpg')
+  const heroInterface = cover('04-ops-lod1-1.jpg')
 
   const sections = [
     { title: 'Getting Started', desc: 'Start here: what the IOC is and how the interface works.', links: [
-      { label: 'Overview', desc: 'Personas, map detail levels, and coverage', href: '/docs/01-overview' },
-      { label: 'Interface guide', desc: 'Layout, personas, alerts, CCTV, and map navigation', href: '/docs/02-interface-guide' },
+      { label: 'Overview', desc: 'Personas, map detail levels, and coverage', href: '/docs/01-overview', cover: '03-gxm-lod1-1.jpg' },
+      { label: 'Interface guide', desc: 'Layout, personas, alerts, CCTV, and map navigation', href: '/docs/02-interface-guide', cover: '02-interface-header.jpg' },
     ]},
     { title: 'Persona Views', desc: 'The four operator roles and what each one sees.', links: [
-      { label: 'Guest Experience Manager', desc: 'Guest flow and experience, station by station', href: '/docs/03-gxm' },
-      { label: 'Operations Manager', desc: 'Fleet, utilization, safety, and EV charging', href: '/docs/04-ops' },
-      { label: 'Environment Manager', desc: 'Air, wind, water, and violation detection', href: '/docs/05-env' },
-      { label: 'Marine Operations Manager', desc: 'Reef health, dive capacity, and response', href: '/docs/06-mo' },
+      { label: 'Guest Experience Manager', desc: 'Guest flow and experience, station by station', href: '/docs/03-gxm', cover: '03-gxm-lod1-1.jpg' },
+      { label: 'Operations Manager', desc: 'Fleet, utilization, safety, and EV charging', href: '/docs/04-ops', cover: '04-ops-lod1-1.jpg' },
+      { label: 'Environment Manager', desc: 'Air, wind, water, and violation detection', href: '/docs/05-env', cover: '05-env-lod1-1.jpg' },
+      { label: 'Marine Operations Manager', desc: 'Reef health, dive capacity, and response', href: '/docs/06-mo', cover: '06-mo-lod1-1.jpg' },
     ]},
-    { title: 'Simulation', desc: 'Rehearse guest-number and weather what-ifs on the twin.', links: [
-      { label: 'Simulation', desc: 'Crowd, traffic, mobility, and weather scenarios', href: '/docs/07-simulation' },
+    { title: 'Simulation', desc: 'Rehearse crowd and fleet what-ifs on the twin.', links: [
+      { label: 'Simulation', desc: 'Crowd and fleet traffic forecasts', href: '/docs/07-simulation', cover: '07-simulation-after.jpg' },
     ]},
-    { title: 'Reference', desc: 'Glossary, shortcuts, and shared status values.', links: [
-      { label: 'Reference', desc: 'Glossary, shortcuts, and shared status values', href: '/docs/08-reference' },
+    { title: 'Reference', desc: 'Glossary of shared terms.', links: [
+      { label: 'Reference', desc: 'Glossary of shared terms', href: '/docs/08-reference', cover: '06-mo-lod3-active-response.jpg' },
     ]},
   ]
 
@@ -38,22 +53,22 @@ export default function Home() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-14">
-          <Link href="/docs/01-overview" className="group block rounded-lg border border-border overflow-hidden transition-colors" style={{ position: 'relative', minHeight: '150px', background: 'linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--background)) 100%)' }}>
+          <Link href="/docs/01-overview" className="group block rounded-lg border border-border overflow-hidden transition-colors" style={{ position: 'relative', minHeight: '180px', backgroundImage: heroOverview ? `linear-gradient(to top, rgba(10,12,16,0.82) 0%, rgba(10,12,16,0.35) 50%, rgba(10,12,16,0.1) 100%), url(${heroOverview})` : 'linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--background)) 100%)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <div style={{ position: 'absolute', top: '14px', right: '14px' }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--muted-foreground))" strokeWidth="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
             </div>
             <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '20px' }}>
-              <p style={{ fontSize: '14px', fontWeight: 500, color: 'hsl(var(--foreground))', marginBottom: '4px' }}>Platform overview</p>
-              <p style={{ fontSize: '12px', color: 'hsl(var(--muted-foreground))', lineHeight: 1.5 }}>What the IOC is, the four personas, the map detail levels, and destination coverage.</p>
+              <p style={{ fontSize: '15px', fontWeight: 600, color: '#fff', marginBottom: '4px' }}>Platform overview</p>
+              <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5 }}>What the IOC is, the four personas, the map detail levels, and destination coverage.</p>
             </div>
           </Link>
-          <Link href="/docs/02-interface-guide" className="group block rounded-lg border border-border overflow-hidden transition-colors" style={{ position: 'relative', minHeight: '150px', background: 'linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--background)) 100%)' }}>
+          <Link href="/docs/02-interface-guide" className="group block rounded-lg border border-border overflow-hidden transition-colors" style={{ position: 'relative', minHeight: '180px', backgroundImage: heroInterface ? `linear-gradient(to top, rgba(10,12,16,0.82) 0%, rgba(10,12,16,0.35) 50%, rgba(10,12,16,0.1) 100%), url(${heroInterface})` : 'linear-gradient(135deg, hsl(var(--muted)) 0%, hsl(var(--background)) 100%)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
             <div style={{ position: 'absolute', top: '14px', right: '14px' }}>
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="hsl(var(--muted-foreground))" strokeWidth="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.9)" strokeWidth="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
             </div>
             <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '20px' }}>
-              <p style={{ fontSize: '14px', fontWeight: 500, color: 'hsl(var(--foreground))', marginBottom: '4px' }}>Interface guide</p>
-              <p style={{ fontSize: '12px', color: 'hsl(var(--muted-foreground))', lineHeight: 1.5 }}>The persona bar, 3D map canvas, side panels, alert tray, and map LOD navigation.</p>
+              <p style={{ fontSize: '15px', fontWeight: 600, color: '#fff', marginBottom: '4px' }}>Interface guide</p>
+              <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5 }}>The persona bar, 3D map canvas, side panels, alert tray, and map LOD navigation.</p>
             </div>
           </Link>
         </div>
@@ -91,12 +106,20 @@ export default function Home() {
                 <h3 style={{ fontSize: '14px', fontWeight: 600, marginBottom: '6px', color: 'hsl(var(--foreground))' }}>{section.title}</h3>
                 <p style={{ fontSize: '11px', color: 'hsl(var(--muted-foreground))', lineHeight: 1.5, marginBottom: '12px' }}>{section.desc}</p>
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))', gap: '8px' }}>
-                  {section.links.map((link: { label: string, desc: string, href: string }) => (
-                    <Link key={link.href} href={link.href} className="group block rounded-md border border-border transition-all hover:border-foreground/20 hover:shadow-sm" style={{ background: 'hsl(var(--background))', padding: '12px 14px' }}>
-                      <p style={{ fontSize: '12px', fontWeight: 600, color: 'hsl(var(--foreground))', marginBottom: '2px', lineHeight: 1.3 }}>{link.label}</p>
-                      <p style={{ fontSize: '11px', color: 'hsl(var(--muted-foreground))', lineHeight: 1.4 }}>{link.desc}</p>
-                    </Link>
-                  ))}
+                  {section.links.map((link: { label: string, desc: string, href: string, cover?: string }) => {
+                    const img = link.cover ? cover(link.cover) : null
+                    return (
+                      <Link key={link.href} href={link.href} className="group block rounded-md border border-border overflow-hidden transition-all hover:border-foreground/20 hover:shadow-sm" style={{ background: 'hsl(var(--background))' }}>
+                        {img && (
+                          <div style={{ height: '84px', backgroundImage: `url(${img})`, backgroundSize: 'cover', backgroundPosition: 'center' }} />
+                        )}
+                        <div style={{ padding: '12px 14px' }}>
+                          <p style={{ fontSize: '12px', fontWeight: 600, color: 'hsl(var(--foreground))', marginBottom: '2px', lineHeight: 1.3 }}>{link.label}</p>
+                          <p style={{ fontSize: '11px', color: 'hsl(var(--muted-foreground))', lineHeight: 1.4 }}>{link.desc}</p>
+                        </div>
+                      </Link>
+                    )
+                  })}
                 </div>
               </div>
             </div>
