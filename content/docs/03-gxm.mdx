@@ -1,52 +1,62 @@
 ---
-title: "GXM View"
+title: "Guest Experience Manager"
 order: 3
-description: "The Guest Experience Management (GXM) view is the destination-wide executive picture of guest flow, occupancy, and experience health across Red Sea Global."
+section: "Persona Views"
+description: "Spot guest mobility problems before a guest feels them: demand building, who is on the move, and what a low rating traces back to."
 ---
 
-The Guest Experience Management (GXM) view is the destination-wide executive picture of guest flow, occupancy, and experience health across Red Sea Global. The GXM persona loads on the shared map canvas, with its own left and right panels and a persona-scoped alert tray.
+The Guest Experience Manager view is about spotting guest mobility problems before a guest ever feels them. Usually a station looks fine right up until people are queuing and complaining. This view shows demand building so the manager can act before anyone waits too long. It also gives a live picture of every guest on the move and what they are travelling in, and it ties a low rating back to the exact trip that caused it. This is a read and oversight view; the actual dispatching happens in the Operations Manager view.
 
-![GXM at map LOD 1, destination overview.](03-gxm-lod1-1.jpg)
+![The wide view across Red Sea Global. The strip along the bottom is the guest mobility read for the whole destination.](03-gxm-lod1-1.jpg)
 
 ## What you see
 
-| Field | Example | Context |
+| Field | Example | What it tells you |
 |---|---|---|
-| Experience Score | 92 | Composite guest experience index for the destination |
-| Occupancy | 78 percent | Current occupancy across active assets |
-| Guest Flow | Steady | Movement trend across key zones |
-| Experience Alerts | 2 | Open items affecting guest experience |
-| Active Layer | Guest Flow | The layer currently driving the map overlay |
+| Guest travel satisfaction | 4.4 of 5 | How guests are rating their transfers right now |
+| Guests travelling | 42 | Guests on the move from the focused station |
+| Transfer variance | +42% | How far transfer demand is running above or below plan |
+| Booking requests | 86 | Open mobility requests, flagged when over capacity |
+| Available vehicles | 6 of 12 | Vehicles free to assign |
+| Vehicle mix | 58% buggy, 32% shuttle | What guests are riding in |
+| Stations over capacity | 3 of 5 | Stations running beyond their limit |
+| Average trip | 6.8 min, 1.8 km | Typical travel time and distance |
 
-## Map LOD 2: the district view
+## The district view
 
-At map LOD 2 the GXM view holds the Marina District, with the guest experience strip running along the bottom.
+At the district level the view holds one district, here the Marina, with the guest mobility strip along the bottom.
 
-![GXM at map LOD 2, Marina District. The bottom strip reads 3 of 5 stations over capacity, 42 guests traveling from the Marina, 4.4 of 5 travel satisfaction, transfer variance of +42%, and 6 of 12 vehicles available.](03-gxm-lod2.jpg)
+![The Marina district. The bottom strip shows 3 of 5 stations over capacity, 42 guests on the move from the Marina, a 4.4 of 5 travel rating, transfer variance of +42%, and 6 of 12 vehicles free.](03-gxm-lod2.jpg)
 
-## Map LOD 3: the guest trip lifecycle
+## Following a guest trip
 
-At map LOD 3 the GXM view drills into the Marina and walks the guest trip across three phases, each surfacing its own recommended action.
+At the closest level the view walks one guest trip through three phases, and each phase surfaces its own recommended action.
 
-### Pre-trip
+### Before the trip
 
-![GXM at map LOD 3, Marina, pre-trip phase. The recommended action card, badged ABOVE CAPACITY, calls to request +6 transfer boats from OPS for the Marina, triggered by demand of 214 against the 150 marina capacity with 11 vehicles available and the oldest request at 8 min.](03-gxm-lod3-pre-trip.jpg)
+Before, an overwhelmed station only showed up once guests complained. Here, demand is visible early enough to act.
 
-### Trip
+![Close-up of the Marina, before the trip. The red card asks the Operations team for 6 more transfer boats, because demand has reached 214 against a capacity of 150, only 11 vehicles are free, and the oldest request has waited 8 minutes.](03-gxm-lod3-pre-trip.jpg)
 
-![GXM at map LOD 3, Marina, trip phase. The recommended action card, badged WATCH OCCUPANCY, calls to dispatch 2 buggies to the Spine Corridor, triggered by 318 guests traveling with the lead buggy at 5 of 6 seats.](03-gxm-lod3-trip.jpg)
+### During the trip
 
-### After-trip
+Before, there was no clear picture of how many guests were moving. Here, every guest in motion is visible, along with what they are riding in.
 
-![GXM at map LOD 3, Marina, after-trip phase. The recommended action card, badged OVER TARGET, calls to follow up on a low-rated arrival and review the Marina to villas leg, triggered by satisfaction averaging 4.1 of 5 with one group at 3.6 and travel time of 8.4 min against a 6.3 min target.](03-gxm-lod3-after-trip.jpg)
+![Close-up of the Marina, during the trip. The card suggests sending 2 buggies to the Spine Corridor, because 318 guests are on the move and the lead buggy is already at 5 of 6 seats.](03-gxm-lod3-trip.jpg)
 
-## Working in the GXM view
+### After the trip
 
-1. Open the GXM persona from the persona bar.
-2. Read the destination Experience Score at map LOD 1.
-3. Select a district to inspect its occupancy and flow at map LOD 2.
-4. Open an experience alert to see the affected site at map LOD 3.
+Before, satisfaction scores arrived with no link to a cause. Here, a low score points straight back to the leg that caused it.
+
+![Close-up of the Marina, after the trip. The card flags a low-rated arrival and suggests reviewing the Marina to villas leg, because the rating is averaging 4.1 of 5 with one group at 3.6 and travel time of 8.4 minutes against a 6.3 minute target.](03-gxm-lod3-after-trip.jpg)
+
+## Working in this view
+
+1. Open the Guest Experience Manager from the persona bar.
+2. Read the destination mobility strip at the wide view.
+3. Select a district to inspect its stations and demand.
+4. Open a station to follow its guest trip and read the recommended action.
 
 <Callout type="note">
-GXM is a read and oversight view. Dispatch and incident actions are performed in the OPS view.
+This is a read and oversight view. Dispatch and incident actions are carried out in the Operations Manager view.
 </Callout>

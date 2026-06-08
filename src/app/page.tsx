@@ -11,17 +11,16 @@ export default function Home() {
       { label: 'Interface guide', desc: 'Persona bar, map canvas, panels, and alert tray', href: '/docs/02-interface-guide' },
       { label: 'Reference', desc: 'Glossary, shortcuts, and shared status values', href: '/docs/11-reference' },
     ]},
-    { title: 'Persona Views', desc: 'The four operator personas and what each one sees.', links: [
-      { label: 'GXM', desc: 'Guest Experience Management: guest flow and experience KPIs', href: '/docs/03-gxm' },
-      { label: 'OPS', desc: 'Operations: incidents, CCTV grid, and dispatch', href: '/docs/04-ops' },
-      { label: 'ENV', desc: 'Environment: air quality, weather, and conservation', href: '/docs/05-env' },
-      { label: 'MO', desc: 'Marine Operations: vessel traffic, dive sites, coastal alerts', href: '/docs/06-mo' },
+    { title: 'Persona Views', desc: 'The four operator roles and what each one sees.', links: [
+      { label: 'Guest Experience Manager', desc: 'Guest flow and experience, station by station', href: '/docs/03-gxm' },
+      { label: 'Operations Manager', desc: 'Fleet, utilization, safety, and EV charging', href: '/docs/04-ops' },
+      { label: 'Environment Manager', desc: 'Air, wind, water, and violation detection', href: '/docs/05-env' },
+      { label: 'Marine Operations Manager', desc: 'Reef health, dive capacity, and response', href: '/docs/06-mo' },
     ]},
-    { title: 'Operations Workflows', desc: 'Alerts, CCTV, simulation, and crowd and traffic visualization across the twin.', links: [
+    { title: 'Operations Workflows', desc: 'Alerts, CCTV, and simulation across the twin.', links: [
       { label: 'Alerts and Incidents', desc: 'The alert lifecycle from Open to Resolved', href: '/docs/07-alerts' },
       { label: 'CCTV Monitoring', desc: 'Camera grid, selection, and full-screen review', href: '/docs/08-cctv' },
-      { label: 'Simulation Mode', desc: 'Replay scripted scenarios through the twin', href: '/docs/09-simulation-mode' },
-      { label: 'Crowd and Traffic Visualization', desc: 'Density heatmaps and flow lines', href: '/docs/10-crowd-traffic' },
+      { label: 'Simulation', desc: 'Rehearse guest-number and weather what-ifs', href: '/docs/09-simulation' },
     ]},
   ]
 
@@ -34,7 +33,7 @@ export default function Home() {
         <div className="mb-12">
           <h1 className="text-3xl font-medium mb-2">RSG Integrated Operations Centre</h1>
           <p className="text-muted-foreground text-sm max-w-xl">
-            Operator guide for the RSG IOC Digital Twin. Monitor Red Sea Global destinations across four personas (GXM/OPS/ENV/MO) and three map detail levels.
+            Operator guide for the RSG IOC Digital Twin. Monitor Red Sea Global destinations across four operator roles and three map detail levels.
           </p>
         </div>
 
@@ -108,7 +107,7 @@ export default function Home() {
 
       <footer style={{ borderTop: '1px solid hsl(var(--border))', padding: '16px', maxWidth: '1440px', width: '100%', margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: '8px', justifyContent: 'space-between', alignItems: 'center', marginTop: 'auto' }}>
         <p style={{ fontSize: '12px', color: 'hsl(var(--muted-foreground))' }}>RSG Integrated Operations Centre Documentation v1.0</p>
-        <p style={{ fontSize: '12px', color: 'hsl(var(--muted-foreground))' }}>Vizzio · June 2026 · Confidential</p>
+        <p style={{ fontSize: '12px', color: 'hsl(var(--muted-foreground))' }}>Vizzio June 2026 Confidential</p>
       </footer>
     </div>
   )

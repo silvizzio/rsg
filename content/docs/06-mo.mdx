@@ -1,44 +1,47 @@
 ---
-title: "MO View"
+title: "Marine Operations Manager"
 order: 6
-description: "The Marine Operations (MO) view covers vessel and marine traffic, dive sites, and coastal and marine conservation zones across the Red Sea destination."
+section: "Persona Views"
+description: "Protect the coral reef: live turbidity and temperature, dive and mooring capacity, and automatic response when a threshold is crossed."
 ---
 
-The Marine Operations (MO) view covers vessel and marine traffic, dive sites, and coastal and marine conservation zones across the Red Sea destination. The MO persona loads on the shared map canvas, with its own left and right panels and a persona-scoped alert tray.
+The Marine Operations Manager view exists to protect the coral reef, Red Sea Global most valuable natural asset. Reef damage happens quietly, and by the time it is visible it is usually permanent. This view gives live sight of reef turbidity and temperature, shows how many boats and divers are near the reef so it never gets overcrowded, and, when a threshold is crossed, raises the alarm and assigns the response automatically instead of leaving it to manual coordination.
 
-![MO, map LOD 1](06-mo-lod1-1.jpg)
+![The wide view of the destination waters. The bottom strip is the marine read: reef conditions, mooring, dive operation, and wind.](06-mo-lod1-1.jpg)
 
 ## What you see
 
-| Field | Example | Context |
+| Field | Example | What it tells you |
 |---|---|---|
-| Active Vessels | 12 | Tracked vessels in the destination waters |
-| Dive Sites | 5 open | Dive sites currently active |
-| Marine Alerts | 0 | Open marine and coastal items |
-| Map LOD | LOD 1 | Destination overview tier |
-| Active Layer | Vessel Traffic | The layer currently driving the map overlay |
+| Turbidity | 2.4, clear | Reef water cloudiness against a 5.0 threshold |
+| Reef temperature | 26.4 C | Sea temperature, with a bleach-risk flag above threshold |
+| Mooring | 18 of 24 used | Moorings in use and free |
+| Dive sites | 3 of 4 open | Sites open, with any closed |
+| Divers in water | 12 | Divers down across active sites |
+| Visibility | 18 m | Underwater visibility, tied to turbidity |
+| Wind on marine | 15.2 kn NW | Wind over the water, with a 20 kn dive-closure trigger |
 
-## Map LOD 2: the marine zone view
+## The marine zone view
 
-At map LOD 2 the MO view sits over the Shura Marina dive and mooring water, shown here from two vantages.
+At the district level the view sits over the dive and mooring water. Before, there was no count of boats and divers near the reef. Here, capacity is visible, so crowding is prevented before it harms the reef.
 
-![MO at map LOD 2, Shura Marina, over the dive and mooring water. The strip shows mooring full at 6 of 6 with capacity status Full and divert recommended, 4 divers in 2 groups, and visibility at 22 m.](06-mo-lod2-1.jpg)
+![The Shura Marina dive and mooring water. Mooring is full at 6 of 6 with a divert recommended, 4 divers are down in 2 groups, and visibility is 22 metres.](06-mo-lod2-1.jpg)
 
-![MO at map LOD 2, Shura Marina, wider vantage across the bay to the causeway.](06-mo-lod2-2.jpg)
+![The same water, wider, looking across the bay to the causeway.](06-mo-lod2-2.jpg)
 
-## Map LOD 3: active response
+## The close-up: active response
 
-At map LOD 3 the MO view drills into North Reef for active response.
+Before, a problem meant manually spotting it and coordinating a response. Here, the system raises the alarm and assigns the task automatically when a threshold is crossed.
 
-![MO at map LOD 3, North Reef, active response. The recommended action card, badged THRESHOLD BREACH, calls to divert dive groups from North Reef to Site C, triggered by turbidity at 5.2 NTU over the 5.0 threshold with 11 boats at the reef and the task auto-assigned to marine security.](06-mo-lod3-active-response.jpg)
+![Close-up of North Reef. The card diverts dive groups from North Reef to Site C, because turbidity has reached 5.2 against a 5.0 threshold with 11 boats at the reef, and the task is auto-assigned to marine security.](06-mo-lod3-active-response.jpg)
 
-## Working in the MO view
+## Working in this view
 
-1. Open the MO persona from the persona bar.
-2. Read vessel and marine traffic across the destination at map LOD 1.
-3. Select a marine zone to inspect vessels and dive sites at map LOD 2.
-4. Open a vessel or dive site to see its detail at map LOD 3.
+1. Open the Marine Operations Manager from the persona bar.
+2. Read reef conditions, mooring, and dive operation across the waters at the wide view.
+3. Select a marine zone to inspect dive and mooring capacity.
+4. Open a reef site to see the threshold breach and the automatic response.
 
 <Callout type="note">
-Coastal environmental bands shared with the ENV view are read-only here.
+Air and weather bands shared with the Environment Manager view are read-only here.
 </Callout>

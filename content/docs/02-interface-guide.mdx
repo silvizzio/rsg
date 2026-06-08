@@ -1,18 +1,19 @@
 ---
 title: "Interface Guide"
 order: 2
+section: "Getting Started"
 description: "The IOC layout: persona bar, 3D map canvas, side panels, alert tray, and map LOD navigation"
 ---
 
 The IOC presents one 3D map canvas framed by a persona bar, two side panels, an alert tray, and a map LOD selector. The same frame holds for every persona, only the panel content changes.
 
-<ScreenshotPlaceholder caption="IOC interface, labelled regions, OPS persona" />
+<ScreenshotPlaceholder caption="IOC interface, labelled regions, Operations Manager persona" />
 
 ## Layout regions
 
 | Field | Example | Context |
 |---|---|---|
-| Persona Bar | GXM | Top bar, switches the active operator persona |
+| Persona Bar | Guest Experience Manager | Top bar, switches the active operator persona |
 | Map Canvas | Shura Island | Central 3D twin, the shared surface for all views |
 | Left Panel | Layer controls | Toggles layers, filters, and map options |
 | Right Panel | Analysis | Persona metrics at map LOD 1/2/3 |
@@ -23,7 +24,7 @@ The IOC presents one 3D map canvas framed by a persona bar, two side panels, an 
 ## Switching personas
 
 1. Open the persona bar at the top of the screen.
-2. Select GXM, OPS, ENV, or MO.
+2. Select Guest Experience Manager, Operations Manager, Environment Manager, or Marine Operations Manager.
 3. Confirm the side panels and alert tray reload for the chosen persona.
 
 ## Navigating map levels of detail
@@ -42,5 +43,5 @@ The IOC presents one 3D map canvas framed by a persona bar, two side panels, an 
 | Step up one map LOD | <Kbd>Esc</Kbd> |
 
 <Callout type="tip">
-The alert tray is persona-scoped. An alert raised for OPS does not appear in the GXM tray unless it crosses a threshold configured for both.
+The alert tray is persona-scoped. An alert raised for Operations Manager does not appear in the Guest Experience Manager tray unless it crosses a threshold configured for both.
 </Callout>

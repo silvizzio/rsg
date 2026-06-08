@@ -1,48 +1,50 @@
 ---
-title: "ENV View"
+title: "Environment Manager"
 order: 5
-description: "The Environment (ENV) view tracks air quality, weather, and the regenerative and conservation metrics that Red Sea Global monitors across the destination."
+section: "Persona Views"
+description: "Keep air, wind, and water safe for guests, and catch violations like restricted-area swimming the moment they happen."
 ---
 
-The Environment (ENV) view tracks air quality, weather, and the regenerative and conservation metrics that Red Sea Global monitors across the destination. The ENV persona loads on the shared map canvas, with its own left and right panels and a persona-scoped alert tray.
+The Environment Manager view is about keeping air, wind, and water conditions safe for guests, and catching anything unsafe before guests are affected. It shows live conditions across the resort and, just as important, it watches the cameras for violations such as swimming in a restricted area and alerts security the moment one is detected, instead of after the fact.
 
-![ENV at map LOD 1, destination overview.](05-env-lod1-1.jpg)
+![The wide view of the destination, with the environmental read along the bottom: air quality, wind, and water.](05-env-lod1-1.jpg)
 
 ## What you see
 
-| Field | Example | Context |
+| Field | Example | What it tells you |
 |---|---|---|
-| Air Quality Index | Good | Current air quality band for the destination |
-| Weather | 31C, clear | Live conditions at the selected zone |
-| Conservation Status | Stable | Trend for the active conservation zone |
-| Environmental Alerts | 1 | Open environmental items |
-| Active Layer | Air Quality | The layer currently driving the map overlay |
+| Air quality | 44, Good | Air quality index for the destination |
+| Dust | PM2.5 14, PM10 +32 | Fine and coarse particulate readings |
+| Wind | 12.4 kn NW, Beaufort 4 | Speed and direction, with gusts |
+| Water quality | 7.4 of 10 | Overall water quality index |
+| Clarity | Light cloud, turbidity 4.2 | How clear the water is |
+| Surface temperature | 27.1 C | Sea surface temperature at the beach |
 
-## Map LOD 2: the zone view
+## The zone view
 
-At map LOD 2 the ENV view sits over Shura Marina with the environmental strip across the bottom, shown here from several vantages.
+At the district level the view sits over one zone, here Shura Marina, with the environmental strip along the bottom. Before, unsafe conditions were noticed once guests were already affected. Here, air, wind, and water are visible live, so safety calls come first.
 
-![ENV at map LOD 2, Shura Marina. The bottom strip carries air quality at AQI 44 with PM2.5 of 14 and PM10 of +32, wind at 12.4 kn from the NW, and water quality at an index of 7.4 of 10 with turbidity of 4.2 NTU.](05-env-lod2-2.jpg)
+![The Shura Marina zone. The bottom strip carries air quality at 44, wind at 12.4 knots from the northwest, and a water quality index of 7.4 of 10 with turbidity of 4.2.](05-env-lod2-2.jpg)
 
-![ENV at map LOD 2, Shura Marina, across the villa clusters flanking the channel.](05-env-lod2-3.jpg)
+![The Shura Marina zone, across the villa clusters along the channel.](05-env-lod2-3.jpg)
 
-![ENV at map LOD 2, Shura Marina, overhead of the resort core.](05-env-lod2-4.jpg)
+![The Shura Marina zone, looking down on the resort core.](05-env-lod2-4.jpg)
 
-![ENV at map LOD 2, Shura Marina, oblique across the villa island toward the next key.](05-env-lod2-5.jpg)
+![The Shura Marina zone, angled across the villa island toward the next key.](05-env-lod2-5.jpg)
 
-## Map LOD 3: safety and violation detection
+## The close-up: catching a violation
 
-At map LOD 3 the ENV view drills into Turtle Bay for safety and violation detection.
+Before, unauthorized access was discovered after the fact. Here, the cameras detect it and alert security in real time.
 
-![ENV at map LOD 3, Turtle Bay, safety and violation detection. The recommended action card, badged VIOLATION, calls to dispatch security to SLS Red Sea for unauthorized swimmers, triggered by 2 swimmers in a restricted reef zone with the alert 1 min old and water quality at 94.](05-env-lod3-safety-violation-detection.jpg)
+![Close-up of Turtle Bay. The red card calls security to SLS Red Sea for unauthorized swimmers, because 2 people are in a restricted reef zone, the alert is 1 minute old, and water quality reads 94.](05-env-lod3-safety-violation-detection.jpg)
 
-## Working in the ENV view
+## Working in this view
 
-1. Open the ENV persona from the persona bar.
-2. Read destination-wide environmental bands at map LOD 1.
-3. Select a conservation zone to inspect its metrics at map LOD 2.
-4. Open an environmental alert to see the affected site at map LOD 3.
+1. Open the Environment Manager from the persona bar.
+2. Read the destination air, wind, and water bands at the wide view.
+3. Select a zone to inspect its environmental detail.
+4. Open a violation alert to see the affected site and the recommended action.
 
 <Callout type="note">
-Marine and coastal environmental detail sits in the Marine Operations view.
+Reef and marine detail sits in the Marine Operations Manager view.
 </Callout>
