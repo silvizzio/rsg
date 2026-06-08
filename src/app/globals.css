@@ -255,3 +255,10 @@ article ul > li > p {
 .doc-narrow { max-width: 12%; margin-left: auto; margin-right: auto; }
 .doc-half *, .doc-third *, .doc-narrow * { max-width: 100% !important; }
 .doc-half canvas, .doc-half img, .doc-third canvas, .doc-third img, .doc-narrow canvas, .doc-narrow img { width: 100% !important; height: auto !important; }
+
+/* Text and media side by side */
+.doc-split { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; margin: 16px 0; }
+.doc-split-text { flex: 1 1 280px; min-width: 0; }
+.doc-split-media { flex: 0 0 300px; max-width: 300px; }
+.doc-split-media * { max-width: 100% !important; }
+.doc-split-media canvas, .doc-split-media img { width: 100% !important; height: auto !important; }

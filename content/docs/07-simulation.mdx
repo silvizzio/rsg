@@ -47,22 +47,32 @@ While simulation is on, the alert tray shows scenario alerts, not live ones. Liv
 
 ## Setting up a simulation
 
+<div className="doc-split">
+<div className="doc-split-text">
+
 The left panel is where you build a run. At the top you pick the forecast type, Guest Flow, Vehicle, or Combined, which sets what the run models. Below that you pick the forecast window, Now, Daily, or Weekly, which is how far ahead it looks. The middle of the panel holds the input sliders that carry the assumptions for the run: the guest volume expected on the island, the number of vehicles available, the average vehicle capacity, and the average speed. A scenario preset row, Normal, Peak, Surge, and VIP, gives you a one-tap starting point that sets those sliders to a known pattern, which you can then fine-tune. At the bottom, a list of buildings lets you tick which ones are included. When the inputs are set, the run produces the forecast in the right panel.
 
-<div className="doc-third">
+</div>
+<div className="doc-split-media">
 
 ![The simulation setup panel: forecast type and window at the top, the input sliders, the scenario presets, and the building toggles.](07-simulation-setup.jpg)
 
 </div>
+</div>
 
 ## Reading the forecast
 
+<div className="doc-split">
+<div className="doc-split-text">
+
 The right panel is the result of the run, read top to bottom. It opens with the forecasted outcome, a plain risk verdict such as Moderate Risk, with a one-line summary of what the run predicts and whether action is needed to hold the service level. Below it, projected key metrics give the headline numbers the run expects, each shown against now so you can see the change: guests, wait time, transfer variance, available vehicles, average request age, crowd risk zones, capacity gap, and affected stations. At the bottom, the forecast spec records how the run was made so it can be trusted and repeated: the model, the forecast type, the window, the buildings and stations included, the scenario, the seed, and the time of the last run.
 
-<div className="doc-third">
+</div>
+<div className="doc-split-media">
 
 ![The forecast panel: the forecasted outcome, the projected key metrics read against now, and the forecast spec.](07-simulation-forecast.jpg)
 
+</div>
 </div>
 
 {/* SIM_PANELS_END */}
