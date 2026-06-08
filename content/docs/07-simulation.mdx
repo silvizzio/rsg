@@ -2,28 +2,35 @@
 title: "Simulation"
 order: 7
 section: "Simulation"
-description: "Rehearse what-if scenarios on the twin: raise guest numbers or change the weather and watch the destination respond, with recommended actions."
+description: "Rehearse a guest-flow what-if on the twin: set up an event, intensity, and response plan, run it, and read the forecast the system returns."
 ---
 
-Simulation lets operators rehearse a what-if on the twin without touching live data. You raise or change one condition, then watch how the destination responds: how crowds and traffic move, where mobility or the environment comes under strain, and what the system would recommend. The same recommended-action cards that appear in live operation appear here, so a scenario can be walked through from start to finish before it ever happens.
+Simulation lets operators rehearse a what-if on the twin without touching live data. You build a scenario, run it, and read the forecast the system returns, with the same recommended-action thinking that appears in live operation. It is a way to walk a busy day through from start to finish before it ever happens.
 
-Simulation opens from the top button on the right toolbar. The button is in place; the simulation screens are being exported and will be added here.
+Simulation opens from the top button on the right toolbar.
 
-<ScreenshotPlaceholder caption="Simulation open from the top button on the right toolbar" />
+## Before running: building a scenario
 
-## What you can simulate
+This is the setup screen before a run, shown here in the Guest Experience view with the Pre-Trip phase selected.
 
-### Guest numbers
+![The simulation setup before running. The left rail builds the scenario, the right rail shows the live baseline it runs against, and Run Simulation starts it.](07-simulation-before.jpg)
 
-Raise the number of guests and watch the effect on mobility: the health of the transfer network, how many buses are needed, and the load on the EV chargers. The view returns sample recommended actions, such as adding vehicles or moving them to where demand is building.
+The left rail is where you build the scenario, read top to bottom. Event to simulate is the list of conditions to model, such as a Peak Arrival Surge or a VIP Convoy, each with a one-line note on its effect; tick the ones you want, or use New Event to add your own. Guest volume sets how many guests are expected on the island. Intensity preset, Normal, Peak, Surge, or VIP, is a one-tap starting point that sets the scenario to a known pattern you can then fine-tune. Pre-trip variables hold the assumptions the run leans on, here the marina capacity per hour and the buffer time. Response plan is the response you want to test against the event, from Baseline, which does nothing, through Recall and Relieve or Reroute and Advise, each showing how many actions it would take. The right rail shows the live baseline the run measures against: the analysis window, transfer variance, booking requests, available vehicles, average request age, and the stations asking for the most transfers. When the scenario is set, Run Simulation produces the forecast.
 
-<ScreenshotPlaceholder caption="Guest-number simulation with recommended actions" />
+## Reading the forecast
 
-### Weather
+<div className="doc-split">
+<div className="doc-split-text">
 
-Raise or lower the wind speed and watch the effect on the environment, with recommended actions for the new conditions.
+The forecast panel is the result of the run, read top to bottom. It opens with the forecasted outcome, a plain risk verdict such as Moderate Risk, with a one-line summary of what the run predicts and whether action is needed to hold the service level. Below it, projected key metrics give the headline numbers the run expects, each shown against now so you can see the change: guests, wait time, transfer variance, available vehicles, average request age, crowd risk zones, capacity gap, and affected stations. At the bottom, the forecast spec records how the run was made so it can be trusted and repeated: the model, the forecast type, the window, the buildings and stations included, the scenario, the seed, and the time of the last run.
 
-<ScreenshotPlaceholder caption="Wind-speed simulation with recommended actions" />
+</div>
+<div className="doc-split-media">
+
+![The forecast panel: the forecasted outcome, the projected key metrics read against now, and the forecast spec.](07-simulation-forecast.jpg)
+
+</div>
+</div>
 
 ## Crowd and traffic on the map
 
@@ -34,45 +41,12 @@ While a simulation runs, crowd density and traffic flow are drawn straight onto 
 ## Running a simulation
 
 1. Open simulation from the top button on the right toolbar.
-2. Pick what to change: guest numbers or wind speed.
-3. Adjust the level and let the scenario play.
-4. Read the recommended actions the system returns.
-5. Close simulation to return to live data.
+2. Pick the events to simulate and choose an intensity preset.
+3. Set the guest volume and the pre-trip variables.
+4. Choose the response plan you want to test.
+5. Run the simulation and read the forecast.
+6. Close simulation to return to live data.
 
 <Callout type="warning">
 While simulation is on, the alert tray shows scenario alerts, not live ones. Live incidents are held until you close simulation.
 </Callout>
-
-{/* SIM_PANELS_START */}
-
-## Setting up a simulation
-
-<div className="doc-split">
-<div className="doc-split-text">
-
-The left panel is where you build a run. At the top you pick the forecast type, Guest Flow, Vehicle, or Combined, which sets what the run models. Below that you pick the forecast window, Now, Daily, or Weekly, which is how far ahead it looks. The middle of the panel holds the input sliders that carry the assumptions for the run: the guest volume expected on the island, the number of vehicles available, the average vehicle capacity, and the average speed. A scenario preset row, Normal, Peak, Surge, and VIP, gives you a one-tap starting point that sets those sliders to a known pattern, which you can then fine-tune. At the bottom, a list of buildings lets you tick which ones are included. When the inputs are set, the run produces the forecast in the right panel.
-
-</div>
-<div className="doc-split-media">
-
-![The simulation setup panel: forecast type and window at the top, the input sliders, the scenario presets, and the building toggles.](07-simulation-setup.jpg)
-
-</div>
-</div>
-
-## Reading the forecast
-
-<div className="doc-split">
-<div className="doc-split-text">
-
-The right panel is the result of the run, read top to bottom. It opens with the forecasted outcome, a plain risk verdict such as Moderate Risk, with a one-line summary of what the run predicts and whether action is needed to hold the service level. Below it, projected key metrics give the headline numbers the run expects, each shown against now so you can see the change: guests, wait time, transfer variance, available vehicles, average request age, crowd risk zones, capacity gap, and affected stations. At the bottom, the forecast spec records how the run was made so it can be trusted and repeated: the model, the forecast type, the window, the buildings and stations included, the scenario, the seed, and the time of the last run.
-
-</div>
-<div className="doc-split-media">
-
-![The forecast panel: the forecasted outcome, the projected key metrics read against now, and the forecast spec.](07-simulation-forecast.jpg)
-
-</div>
-</div>
-
-{/* SIM_PANELS_END */}
