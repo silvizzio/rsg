@@ -259,6 +259,9 @@ article ul > li > p {
 /* Text and media side by side */
 .doc-split { display: flex; flex-wrap: wrap; gap: 24px; align-items: flex-start; margin: 16px 0; }
 .doc-split-text { flex: 1 1 280px; min-width: 0; }
-.doc-split-media { flex: 0 0 300px; max-width: 300px; }
+.doc-split-media { flex: 0 1 auto; }
+.doc-split-media.size-half { flex-basis: 50%; max-width: 50%; }
+.doc-split-media.size-third { flex-basis: 32%; max-width: 32%; }
+.doc-split-media.size-narrow { flex-basis: 6%; max-width: 6%; min-width: 48px; }
 .doc-split-media * { max-width: 100% !important; }
 .doc-split-media canvas, .doc-split-media img { width: 100% !important; height: auto !important; }
