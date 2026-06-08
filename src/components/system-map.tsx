@@ -48,6 +48,7 @@ function Tag({ label, color, border }: { label: string; color: string; border: s
 function MiniFrame({ scope, left, right, bottom, action }: Frame) {
   const bar: CSSProperties = { background: NEUTRAL.cardBg, border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '6px', height: '24px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px', fontWeight: 700, color: '#1f2937' }
   const panel: CSSProperties = { flex: '0 0 78px', background: NEUTRAL.cardBg, border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '10px', fontWeight: 700, color: '#1f2937', textAlign: 'center', padding: '4px' }
+  const toolbar: CSSProperties = { flex: '0 0 20px', background: NEUTRAL.cardBg, border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }
   return (
     <div style={{ marginTop: '10px', border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '8px', background: '#FBFCFD', padding: '7px', display: 'flex', flexDirection: 'column', gap: '7px' }}>
       <div style={bar}>Header</div>
@@ -59,10 +60,10 @@ function MiniFrame({ scope, left, right, bottom, action }: Frame) {
             <div style={{ position: 'absolute', top: '7px', left: '50%', transform: 'translateX(-50%)', background: '#FFFFFF', border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '6px', padding: '3px 8px', fontSize: '9px', fontWeight: 700, color: '#1f2937', whiteSpace: 'nowrap', boxShadow: '0 1px 3px rgba(0,0,0,0.08)' }}>Recommended action</div>
           ) : null}
         </div>
-        {right ? <div style={panel}>CCTV panel</div> : null}
-        <div style={{ flex: '0 0 20px', background: NEUTRAL.cardBg, border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+        <div style={toolbar}>
           <span style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)', fontSize: '9px', fontWeight: 700, color: '#1f2937' }}>Toolbar</span>
         </div>
+        {right ? <div style={panel}>CCTV panel</div> : null}
       </div>
       {bottom ? <div style={bar}>Bottom strip</div> : null}
     </div>
