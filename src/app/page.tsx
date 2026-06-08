@@ -24,6 +24,7 @@ export default function Home() {
     { title: 'Getting Started', desc: 'Start here: what the IOC is and how the interface works.', links: [
       { label: 'Overview', desc: 'Personas, map detail levels, and coverage', href: '/docs/01-overview', cover: '03-gxm-lod1-1.jpg' },
       { label: 'Interface guide', desc: 'Layout, personas, alerts, CCTV, and map navigation', href: '/docs/02-interface-guide', cover: '02-interface-header.jpg' },
+      { label: 'Reference', desc: 'Glossary of shared terms', href: '/docs/08-reference', cover: '02-interface-cctv.jpg' },
     ]},
     { title: 'Persona Views', desc: 'The four operator roles and what each one sees.', links: [
       { label: 'Guest Experience Manager', desc: 'Guest flow and experience, station by station', href: '/docs/03-gxm', cover: '03-gxm-lod3-pre-trip.jpg' },
@@ -34,9 +35,6 @@ export default function Home() {
     { title: 'Simulation', desc: 'Rehearse crowd and fleet what-ifs on the twin.', links: [
       { label: 'Crowd', desc: 'Crowd density forecasts on the twin', href: '/docs/07-simulation', cover: '07-simulation-after.jpg' },
       { label: 'Traffic', desc: 'Fleet and vehicle flow forecasts', href: '/docs/07-simulation', cover: '07-simulation-before.jpg' },
-    ]},
-    { title: 'Reference', desc: 'Glossary of shared terms.', links: [
-      { label: 'Reference', desc: 'Glossary of shared terms', href: '/docs/08-reference', cover: '02-interface-cctv.jpg' },
     ]},
   ]
 
@@ -80,7 +78,7 @@ export default function Home() {
             <h2 className="text-base font-medium mb-1" style={{ color: 'hsl(var(--foreground))' }}>New to the RSG IOC?</h2>
             <p className="text-xs leading-relaxed" style={{ color: 'hsl(var(--muted-foreground))' }}>Start with the overview to understand the personas and the map detail levels, then read the interface guide.</p>
           </div>
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+          <div style={{ display: 'flex', flexWrap: 'nowrap', gap: '8px' }}>
             <Link href="/docs/01-overview" className="inline-flex items-center gap-1.5 text-xs rounded-md px-3 py-1.5" style={{ background: 'transparent', color: 'hsl(var(--foreground))', border: '1px solid hsl(var(--border))', whiteSpace: 'nowrap' }}>
               Overview
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
