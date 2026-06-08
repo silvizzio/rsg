@@ -27,9 +27,10 @@ export default function Home() {
       { label: 'Environment Manager', desc: 'Air, wind, water, and violation detection', href: '/docs/05-env', cover: '05-env-lod3-safety-violation-detection.jpg' },
       { label: 'Marine Operations Manager', desc: 'Reef health, dive capacity, and response', href: '/docs/06-mo', cover: '06-mo-lod3-active-response.jpg' },
     ]},
-    { title: 'Simulation', desc: 'Rehearse crowd and fleet what-ifs on the twin.', links: [
+    { title: 'Simulation', desc: 'Rehearse crowd, fleet, and wind what-ifs on the twin.', links: [
       { label: 'Crowd', desc: 'Crowd density forecasts on the twin', href: '/docs/07-simulation', cover: '07-simulation-after.jpg' },
       { label: 'Traffic', desc: 'Fleet and vehicle flow forecasts', href: '/docs/07-simulation', cover: '07-simulation-ops-after.jpg' },
+      { label: 'Storm', desc: 'Wind and storm impact on the reef', href: '/docs/07-simulation', cover: '07-simulation-storm-after.jpg' },
     ]},
   ]
 
