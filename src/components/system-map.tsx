@@ -12,11 +12,10 @@ const SHELL_REGIONS: Item[] = [
   { t: 'Toolbar', s: 'Weather, history, simulation' },
 ]
 
-const SHELL_NAV: Item[] = [
-  { t: '3D map', s: 'The shared surface' },
-  { t: 'LOD 1', s: 'Destination' },
-  { t: 'LOD 2', s: 'District' },
-  { t: 'LOD 3', s: 'Site' },
+const LODS = [
+  { n: 'LOD 1', t: 'Island level', s: 'Persona KPIs read across the whole island.' },
+  { n: 'LOD 2', t: 'District level', s: 'Reached by zooming into a district, the same view scoped to that district.' },
+  { n: 'LOD 3', t: 'Site level', s: 'The bottom strip drops away and the left and right panels activate.' },
 ]
 
 type Persona = {
@@ -52,7 +51,7 @@ function Tag({ label, color, border }: { label: string; color: string; border: s
 
 function ShellCard({ c }: { c: Item }) {
   return (
-    <div style={{ background: NEUTRAL.cardBg, border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '9px', padding: '11px 10px', textAlign: 'center' }}>
+    <div style={{ flex: '0 1 230px', minHeight: '60px', display: 'flex', flexDirection: 'column', justifyContent: 'center', background: NEUTRAL.cardBg, border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '9px', padding: '10px 12px', textAlign: 'center' }}>
       <div style={{ fontWeight: 700, color: '#1f2937', fontSize: '12px' }}>{c.t}</div>
       <div style={{ fontSize: '11px', color: '#6b7280', marginTop: '2px' }}>{c.s}</div>
     </div>
@@ -77,11 +76,21 @@ export function SystemMap() {
         <div style={{ textAlign: 'center', fontWeight: 700, fontSize: '15px', color: '#1f2937' }}>Shared frame</div>
         <div style={{ textAlign: 'center', fontSize: '12px', color: NEUTRAL.text, opacity: 0.85, marginTop: '4px' }}>The interface, map, and navigation are identical for every persona</div>
         <div style={{ textAlign: 'center' }}><Tag label="Agnostic" color={NEUTRAL.text} border={NEUTRAL.cardBorder} /></div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '10px', marginTop: '16px' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '10px', marginTop: '16px' }}>
           {SHELL_REGIONS.map((c) => <ShellCard key={c.t} c={c} />)}
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))', gap: '10px', marginTop: '10px' }}>
-          {SHELL_NAV.map((c) => <ShellCard key={c.t} c={c} />)}
+        <div style={{ marginTop: '18px' }}>
+          <div style={{ textAlign: 'center', fontSize: '12px', fontWeight: 700, color: '#1f2937' }}>Map detail levels</div>
+          <div style={{ textAlign: 'center', fontSize: '11px', color: '#6b7280', marginTop: '2px', marginBottom: '12px' }}>The 3D map is the shared surface. The detail level sets which panels show.</div>
+          {LODS.map((l) => (
+            <div key={l.n} style={{ display: 'flex', alignItems: 'flex-start', gap: '14px', background: '#FFFFFF', border: `1px solid ${NEUTRAL.cardBorder}`, borderRadius: '9px', padding: '10px 14px', marginTop: '8px' }}>
+              <div style={{ fontWeight: 700, color: '#1f2937', fontSize: '12px', minWidth: '46px' }}>{l.n}</div>
+              <div>
+                <div style={{ fontWeight: 700, color: '#1f2937', fontSize: '12px' }}>{l.t}</div>
+                <div style={{ fontSize: '12px', color: '#6b7280', marginTop: '2px' }}>{l.s}</div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
 
@@ -94,7 +103,7 @@ export function SystemMap() {
         <div style={{ textAlign: 'center', fontWeight: 700, fontSize: '15px', color: '#1f2937' }}>Persona views</div>
         <div style={{ textAlign: 'center', fontSize: '12px', color: '#4b5563', opacity: 0.9, marginTop: '4px' }}>What fills the frame depends on the login, one persona per user</div>
         <div style={{ textAlign: 'center' }}><Tag label="Persona-based" color="#3a2e7d" border="#A294E4" /></div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '12px', marginTop: '16px' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '12px', marginTop: '16px', alignItems: 'start' }}>
           {PERSONAS.map((p) => (
             <div key={p.name} style={{ background: p.bg, border: `1px solid ${p.border}`, borderRadius: '12px', padding: '14px' }}>
               <div style={{ fontWeight: 700, color: p.text, fontSize: '13px', textAlign: 'center' }}>{p.name}</div>
