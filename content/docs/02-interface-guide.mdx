@@ -17,7 +17,11 @@ The header runs across the top and does not change. On the left it names the ope
 
 The left panel holds the active persona's numbers for whatever place is in focus. The top names the persona and the place, here Guest Experience at the Marina. Below it an analysis window switches the reading between Now, Daily, and Weekly. The rest is a stack of metric cards grouped into labelled sections. The sections and cards are whatever that persona tracks. The example here splits the guest trip into Pre-Trip, Trip, and After-Trip, but the layout, a window toggle above grouped cards, is the same in every persona.
 
+<div className="doc-half">
+
 ![The left panel. The persona and the place in focus at the top, an analysis window for Now, Daily, or Weekly, then the persona's metric cards grouped into sections.](02-interface-left-kpi.jpg)
+
+</div>
 
 ## The bottom strip
 
@@ -33,25 +37,41 @@ Drill into a district and the same strip rescopes to that district. The title pi
 
 The legend sits at the bottom left of the map. The severity key colour-codes items from Critical down to Low and Info, with a live count beside each, so you can see at a glance how many things need attention and how serious they are. Below it, the data inputs line names the feed driving the current view and shows whether it is live. Collapse the legend with the chevron when you need the map space.
 
+<div className="doc-half">
+
 ![The map legend. A severity key with live counts, and the data feed driving the view with a live indicator.](02-interface-map-legend.jpg)
+
+</div>
 
 ## The recommended action card
 
 This is what makes the IOC proactive. When the system spots something, it raises a card over the map: a badge naming the trigger state, here Temp Rising, a plain recommended action as the headline, a live camera of the place, a one-line reason with the numbers behind it, and two buttons. The primary button carries the action out, Remind me later defers it, and the X dismisses it. The card pattern is identical in every persona, only the trigger and the action change. These cards appear at the close-up level when a threshold is crossed.
 
+<div className="doc-half">
+
 ![A recommended-action card. A trigger badge, the suggested action, a live camera of the place, the reason, and act or defer buttons.](02-interface-popup.jpg)
+
+</div>
 
 ## The CCTV panel
 
 The right side is the camera wall for the area in focus. The header carries two viewing modes, Auto Roaming and Virtual Patrol, a breadcrumb of where you are, a search box, a grid-size selector, and the camera count. Below are the live tiles, each labelled with its name and ID. Page through with the controls at the bottom, change the grid size to show more or fewer at once, search for a specific camera, and open any tile full-screen for a closer look. Selecting a tile also focuses its location on the map. The panel appears wherever cameras are available for the persona.
 
+<div className="doc-half">
+
 ![The right CCTV panel. Roaming and patrol modes, search, grid size, the camera count, live tiles, and paging.](02-interface-cctv.jpg)
+
+</div>
 
 ## The toolbar
 
 A slim tool strip runs down the right edge in two groups. The top group holds the weather overlay, the history and time control, and simulation. The bottom group holds search and the zoom controls. Simulation opens from the top group and has its own section. Everything here is the same for every persona.
 
+<div className="doc-half">
+
 ![The right toolbar. The top group holds weather, history, and simulation; the bottom group holds search and zoom.](02-interface-toolbar.jpg)
+
+</div>
 
 ## Personas and your login
 
@@ -63,14 +83,6 @@ The IOC has four persona views: Guest Experience Manager, Operations Manager, En
 2. Select a district to drop to the district view, and watch the bottom strip rescope.
 3. Select a site to drop to the close-up view, where the recommended-action cards appear.
 4. Zoom back out with the toolbar, or step up one level at a time.
-
-## Shortcuts
-
-| Action | Shortcut |
-|---|---|
-| Open search | <Kbd>Ctrl</Kbd> + <Kbd>K</Kbd> |
-| Open or close simulation | <Kbd>S</Kbd> |
-| Step out one map detail level | <Kbd>Esc</Kbd> |
 
 <Callout type="tip">
 The frame is constant but everything inside it is persona-scoped. The numbers, cameras, and alerts you see always belong to your persona, which is set by your login.
