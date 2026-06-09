@@ -2,10 +2,10 @@
 title: "Simulation"
 order: 7
 section: "Simulation"
-description: "Rehearse a what-if on the twin across three operator views: Guest Experience forecasts where guests build up, Operations forecasts the fleet and road traffic, and Marine Operations forecasts how wind and storms hit the reef."
+description: "Rehearse a what-if on the twin across three operator views. Guest Experience forecasts where guests build up, Operations forecasts the fleet and road traffic, and Marine Operations forecasts how wind and storms hit the reef. Every run ends in dispatchable recommended actions."
 ---
 
-Simulation lets operators rehearse a what-if on the twin without touching live data or live operations. You build a scenario, run it, and read the forecast the system returns, using the same recommended-action thinking that drives live operation. It lets a team walk a busy day through from start to finish before it happens, and decide in advance which response holds best.
+Simulation lets operators rehearse a what-if on the twin without touching live data or live operations. You build a scenario, run it, read the forecast, and dispatch the recommended actions the run surfaces, the same recommended-action thinking that drives live operation. It lets a team walk a busy day through before it happens and decide which response holds the service level best.
 
 The client scopes simulation as two what-if families, both ending in recommended actions:
 
@@ -20,6 +20,8 @@ All three open from the top button on the right toolbar and follow the same rhyt
 4. Dispatch a recommended action, or compare to the baseline.
 5. Exit to return to live data.
 
+Every run closes with recommended-action cards. Each carries a trigger badge naming the condition, a plain-language action as the headline, the numbers behind it, and a dispatch control, the same shape as the live recommended-action card so a forecast leads straight to a decision.
+
 ## Guest Experience simulation: the crowd
 
 Answers where guests build up across the destination. The shift: from a Guest Experience Manager who finds out a station is overwhelmed when guests complain, to one who sees demand building and acts before anyone waits too long.
@@ -30,28 +32,33 @@ Answers where guests build up across the destination. The shift: from a Guest Ex
 
 | Control | What it sets |
 | --- | --- |
-| Event to simulate | Conditions to model such as Peak Arrival Surge or VIP Convoy, ticked or added with New Event |
-| Guest volume | Guests expected on the island |
-| Intensity preset | Normal, Peak, Surge, or VIP, a one-tap starting pattern |
-| Pre-trip variables | Marina capacity per hour and buffer time |
-| Response plan | Response to test: Baseline, Recall and Relieve, or Reroute and Advise |
+| Phase | Pre-Trip, Trip, or Post-Trip |
+| Event to simulate | Peak Arrival Surge (+180% transfer wave at Marina), VIP Convoy (reserved routing), Weather Disruption (tender hold, wind 24 kn), or a New Event |
+| Guest volume | Guests expected on the island, here 2,500 |
+| Intensity preset | Normal, Peak, Surge, or VIP |
+| Pre-trip variables | Marina capacity 32 per hour, buffer time 6 minutes |
+| Response plan | Baseline (do nothing), Recall and Relieve (3 actions), or Reroute and Advise (2 actions) |
 
-Live baseline on the right: transfer variance +18, 412 booking requests, 28 of 46 vehicles free, average request age 2.4 minutes, top station requesting Marina.
+Live baseline on the right: transfer variance +18%, 412 booking requests, 28 of 46 vehicles free, average request age 2.4 minutes, top station requesting Marina.
 
 ### After running
 
-![Guest Experience simulation, after running. A crowd heatmap fills the map and the right rail reads the capacity outlook, the resource demand, the mobility health index, and the projected KPIs.](07-simulation-after.jpg)
+![Guest Experience simulation, after running. A crowd heatmap fills the map and the right rail reads the outcome, resource demand, mobility health, projected KPIs, and recommended actions.](07-simulation-after.jpg)
 
-The map fills with a crowd heatmap, cool blue where flow is light through red where it is heaviest, so a developing crowd shows up exactly where it would form. A sustained heavy area is the same signal that raises a crowd density alert in live operation.
+The map fills with a crowd heatmap, cool blue where flow is light through red where it is heaviest, so a developing crowd shows up where it would form. A sustained heavy area is the same signal that raises a crowd density alert in live operation.
 
 | Forecast | Reading |
 | --- | --- |
-| Forecasted outcome | Capacity at risk: the guest increase outpaces fleet and charger capacity within 45 minutes |
+| Forecasted outcome | Capacity at risk: guest increase outpaces fleet and charger capacity at +45 minutes, 3 recommended actions |
 | Resource demand | Vehicles needed 52, EV chargers needed 18 |
 | Mobility health index | 68 of 100, strained at 2,400 guests per hour against a healthy threshold of 85 |
-| Projected KPI | Transfer variance +18 to +34, booking requests 412 to 680, available vehicles 28 to 18, request age 2.2 minutes |
+| Projected KPI | Transfer variance +18% to +34%, booking requests 412 to 680, available vehicles 28 to 18, request age 2.2 minutes |
+| Top stations requesting | Marina, then SLS |
 
-Compare to Baseline holds the forecast against now, and Exit Simulation returns to live data.
+| Trigger | Recommended action | Why |
+| --- | --- | --- |
+| Watch occupancy | Dispatch 2 buggies to the Spine Corridor | 318 traveling, lead buggy at 5 of 6 seats, occupancy tightening |
+| Over target | Follow up on low-rated arrival, review Marina to villas leg | Service score slipping on that leg |
 
 ### Reading the crowd forecast
 
@@ -59,16 +66,13 @@ Read it in three moves: the heatmap shows where pressure builds, the mobility he
 
 | Metric | What it measures | Watch when |
 | --- | --- | --- |
-| Mobility health index | Whole-network health, 0 to 100, against a healthy threshold of 85 | Falls below 85; the lower it goes, the closer to capacity |
-| Transfer variance | Gap between planned and actual transfers | Climbs off the baseline, here +18 to +34 |
+| Mobility health index | Whole-network health, 0 to 100, healthy at 85 | Falls below 85; the lower it goes, the closer to capacity |
+| Transfer variance | Gap between planned and actual transfers | Climbs off the baseline, here +18% to +34% |
 | Booking requests | Demand on the mobility service | Rises faster than vehicles can clear, here 412 to 680 |
 | Available vehicles | Free vehicles against the fleet | Falls toward zero, here 28 to 18 |
 | Request age | How long the average request has waited | Rises past the service target |
 
-| Verdict | What it means | Recommended action |
-| --- | --- | --- |
-| Healthy | Demand sits within capacity | Hold the baseline |
-| Capacity at risk | Guest increase outpaces fleet and charger capacity within the horizon | Dispatch Recall and Relieve, or Reroute and Advise, to mobility |
+Compare to Baseline holds the forecast against now; Exit Simulation returns to live data.
 
 ## Operations simulation: the fleet and traffic
 
@@ -76,7 +80,7 @@ Answers how the fleet and the road network hold up under the same pressure. The 
 
 ### Before running
 
-![Operations simulation, before running. The Simulation tab sets the forecast type, the scenario, and the fleet assumptions, with the live baseline on the right.](07-simulation-ops-before.jpg)
+![Operations simulation, before running. The Simulation tab sets the forecast type, the scenario, the fleet assumptions, the buildings, and the vehicle mix, with the live baseline on the right.](07-simulation-ops-before.jpg)
 
 | Control | What it sets |
 | --- | --- |
@@ -86,15 +90,17 @@ Answers how the fleet and the road network hold up under the same pressure. The 
 | Number of vehicles | Available on-island, here 800 |
 | Vehicle capacity | Average per vehicle, here 2,500 |
 | Active EV chargers | Active charger count |
-| Speed on road | Average km/h, here 100 |
+| Speed on road | Average km per hour, here 100 |
+| Buildings | Marina Hub, Spine Hub, Bridge Point, Beach Cluster, toggled in or out of scope |
+| Vehicle types | Shuttles (16, 92% util), Buggies (22, 78% util), Tenders (6, marina), VIP cars (2, reserved) |
 
-Live baseline on the right: transfer variance +18, 412 booking requests, 28 of 46 vehicles free, average request age 2.4 minutes, top station requesting Marina.
+Live baseline on the right: transfer variance +18%, 412 booking requests, 28 of 46 vehicles free, average request age 2.4 minutes, top station requesting Marina.
 
 ### After running
 
-![Operations simulation, after running. A traffic heatmap lights the road network and the right rail reads the fleet capacity outlook, the projected metrics, and the forecast spec.](07-simulation-ops-after.jpg)
+![Operations simulation, after running. A traffic heatmap lights the road network and the right rail reads the fleet capacity outlook, projected metrics, and recommended actions.](07-simulation-ops-after.jpg)
 
-The road network lights with a traffic heatmap, cool blue where roads are clear through red where they are congested, so the bottlenecks show up as the roads that would jam.
+The road network lights with a traffic heatmap, cool blue where roads are clear through red where they are congested, so bottlenecks show up as the roads that would jam.
 
 Forecasted outcome: Fleet Capacity Risk, 8 vehicles over-utilized at peak within 45 minutes and 3 chargers projected at capacity.
 
@@ -109,11 +115,16 @@ Forecasted outcome: Fleet Capacity Risk, 8 vehicles over-utilized at peak within
 | Fatigue risk | 3 | bridge drivers |
 | Fuel deficit | -2% | vs fleet |
 
+| Trigger | Recommended action | Why |
+| --- | --- | --- |
+| Idle asset | Reposition idle pod to Turtle Bay demand | Pod idle at 0 pax, 4 single-occupant sedans queued, 5 assets under-used |
+| Low occupancy | Pool reception trips to lift buggy occupancy | 18 of 24 buggies in use at 2.0 of 6 seats, pooling frees about 6 vehicles |
+
 Forecast spec: model Guest Flow AI v2, forecast type Guest Flow, window Now +60 minutes, buildings 6 of 6, stations 12 of 14, scenario Normal, seed #8836, last run 14:32 AST.
 
 ### Reading the fleet forecast
 
-Read the verdict first, then the metric that drove it: utilization and charging set capacity risk, while fatigue and maintenance set continuity risk.
+Read the verdict first, then the metric that drove it: utilization and charging set capacity risk, fatigue and maintenance set continuity risk.
 
 | Metric | What it measures | Watch when |
 | --- | --- | --- |
@@ -123,11 +134,6 @@ Read the verdict first, then the metric that drove it: utilization and charging 
 | Energy needed | Extra energy the scenario draws | Rises against typical, here +620 kWh |
 | Maintenance backlog | Vehicles waiting on service | Grows across the shift, here +2 by end of shift |
 | Fatigue risk | Drivers near a fatigue limit | Any count above zero, here 3 on the bridge |
-
-| Verdict | What it means | Recommended action |
-| --- | --- | --- |
-| Nominal | Fleet sits within capacity | Hold |
-| Fleet Capacity Risk | Vehicles over-utilized at peak and chargers projected at capacity within the horizon | Dispatch the vehicle or charging action the run surfaces |
 
 ## Marine Operations simulation: wind and storm
 
@@ -146,7 +152,7 @@ Answers how wind and storm conditions hit the reef and outdoor activity. The shi
 
 ### After running
 
-![Marine Operations simulation, after running. A wind field sweeps the map and the right rail reads the forecasted outcome, the projected conditions, and the forecast spec.](07-simulation-storm-after.jpg)
+![Marine Operations simulation, after running. A wind field sweeps the map and the right rail reads the forecasted outcome, projected conditions, and recommended actions.](07-simulation-storm-after.jpg)
 
 The map fills with a wind field streaming across the water, so the exposed stretches read as places rather than numbers.
 
@@ -158,6 +164,12 @@ Forecasted outcome: a Wind Advisory with a one-line read on whether marine and o
 | Wind at reef | 21 kn | dive threshold 20 |
 | AQI shift | 48 | +6, dust |
 | Water turbidity | +18% | beach zone |
+
+| Trigger | Recommended action | Why |
+| --- | --- | --- |
+| Temp rising | Rest Site B, shift afternoon groups to Site C | Water temp 29.8C trending toward the 30.5 threshold at Site B; resting it protects coral recovery |
+| Capacity watch | Hold new arrivals at North Reef, route to Site B | 11 of 12 boats and 17 of 18 moorings in use; holding keeps North Reef within capacity |
+| Over target | Follow up on low-rated arrival, review Marina to villas leg | Service score slipping on that leg |
 
 Forecast spec: forecast type Environmental (marine lens), model Wind/Reef AI v1, horizon 60 minutes, seed #8835.
 
@@ -178,11 +190,6 @@ Read wind against the dive threshold first, then turbidity and air, since those 
 | Moderate | 10 to 14 kn | Breeze |
 | High Wind | 22 to 30 kn | Advisory |
 | Storm | 35 kn and up | Suspend |
-
-| Verdict | What it means | Recommended action |
-| --- | --- | --- |
-| Wind Advisory | Conditions noted, activity can continue | Advise the dive and mooring teams |
-| Suspend | Wind or turbidity past the safe limit | Hold dives and water activities, divert to sheltered zones |
 
 ## Running a simulation
 
