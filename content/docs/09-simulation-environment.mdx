@@ -7,6 +7,8 @@ description: "The Marine Operations what-if: forecast how wind and storm conditi
 
 The Storm simulation lets the Marine Operations Manager rehearse a weather change, principally wind, and read how it would hit the reef and outdoor activity. The shift it gives the operator: from finding out conditions are unsafe once guests or the reef are already affected, to rehearsing a wind change and seeing the effect before it lands. In the Marine Operations view, scoped to North Reef here, Simulation sits alongside Reef Monitoring.
 
+Every run follows the same arc: you set the forecast conditions, the model forecasts the effect on the reef and the marine assets, and it proposes the rests, holds, and reroutes that protect both guests and the coral. The difference from Crowd and Traffic is the constraint, here the limits are environmental and safety thresholds, dive wind limits, water temperature, turbidity, and capacity at the reef, and the run is read against those thresholds.
+
 The run follows the same rhythm:
 
 {/* run-flow-steps: ["Choose the event to simulate, or create a new one.", "Set the forecast type, the wind condition, and the forecasted gust.", "Choose the reef zones in scope.", "Choose an action plan, or create a new one.", "Run it.", "Read the conditions forecast.", "Implement a plan from the right panel."] */}
@@ -17,11 +19,13 @@ The run follows the same rhythm:
 
 ![Storm simulation, before running. The left panel sets the wind scenario and the zones, with the forecasted conditions on the right.](07-simulation-storm-before.jpg)
 
+Before running sets the forecast conditions and the area in scope. Forecast type chooses what the wind is tested against, because the same wind matters differently to a dive boat than to a moored vessel. Wind condition is the trigger band and Wind speed the forecasted gust within it. Push the band up or add zones and the forecast tightens, crossing dive thresholds, lifting turbidity, and pulling more sites toward their limits, which is how the team tests a deteriorating forecast before committing the day's dive and marine schedule.
+
 | Control | What it sets |
 | --- | --- |
 | Forecast type | Wind on Dive, Wind on Mooring, or Combined |
 | Wind condition | Calm (under 6 kn), Moderate (10-14 kn), High Wind (22-30 kn, advisory), or Storm (35 kn+, suspend) |
-| Wind speed | Projected gust, here 14 kn |
+| Wind speed | Forecasted gust, here 14 kn |
 | Zones included | Gaia Reef North, Gaia Reef South, Coral Garden E, House Reef |
 
 ## After running
@@ -38,6 +42,8 @@ Forecasted outcome: a Wind Advisory with a one-line read on whether marine and o
 | Wind at reef | 21 kn | dive threshold 20 |
 | AQI shift | 48 | +6, dust |
 | Water turbidity | +18% | beach zone |
+
+The chain here is condition to threshold to call: the forecast pushes wind at the reef to the dive line and lifts turbidity, and the outcome banner translates that into whether the day's activities hold. Read each value against its named limit rather than on its own, since 21 kn at the reef matters because the dive threshold is 20.
 
 | Trigger | Recommended action | Why |
 | --- | --- | --- |
@@ -65,6 +71,11 @@ Read wind against the dive threshold first, then turbidity and air, since those 
 | High Wind | 22 to 30 kn | Advisory |
 | Storm | 35 kn and up | Suspend |
 
+Two habits make the read reliable:
+
+- Separate safety from comfort. Wind and dive limits are safety and they suspend activity; AQI and turbidity are mostly experience and reef health, they degrade the day and stress the coral without necessarily stopping operations.
+- Act ahead of the threshold, not on it. The recommended actions rest a site as it trends toward a limit, water temp 29.8C toward a 30.5 threshold, because protecting coral recovery is cheaper before a breach than after. Watch capacity alongside conditions too: 11 of 12 boats and 17 of 18 moorings in use is a capacity call even on a calm forecast.
+
 <Callout type="warning">
 While simulation is on, the alert tray shows scenario alerts, not live ones. Live incidents are held until you close simulation.
 </Callout>
@@ -79,12 +90,12 @@ A plan can be implemented as forecasted, or adjusted first by reopening it under
 
 ## Creating an event
 
-Under Event to simulate, New Event opens a builder for a condition the presets do not cover. You name the event and set its effect, then it joins the event list and can be selected into any run alongside the built-in events. This lets the environment persona model a scenario specific to the day rather than only the standard ones.
+Under Event to simulate, New Event opens a builder for a condition the presets do not cover. You name the event and set its effect, then it joins the event list and can be selected into any run alongside the built-in events. This lets the environment persona model a known incoming weather pattern or a site-specific event, a storm front, a sandstorm raising AQI and turbidity, a localized swell, rather than only the standard wind bands.
 
 <div className="doc-placeholder" data-ph="event-creation">Screenshot placeholder: event creation</div>
 
 ## Creating an action plan
 
-Under Action plan, View All lists the saved plans and New Plan creates one. A plan is a named set of actions, with the action count shown beside it. Once saved, a custom plan is selectable and forecasts against any event the same way as the built-in plans, so the environment persona can prepare a tailored response and test it before committing.
+Under Action plan, View All lists the saved plans and New Plan creates one. A plan is a named set of actions, with the action count shown beside it. Once saved, a custom plan is selectable and forecasts against any event the same way as the built-in plans, so the environment persona can prepare a standard response to a recurring threat, the high-wind dive protocol, the heat-stress reef rest, and confirm its forecasted effect before a deteriorating day arrives.
 
 <div className="doc-placeholder" data-ph="action-plan-creation">Screenshot placeholder: action plan creation</div>

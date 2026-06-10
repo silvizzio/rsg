@@ -7,6 +7,8 @@ description: "The Operations what-if: forecast how the fleet, charging, and the 
 
 The Traffic simulation lets the Operations Manager rehearse the same pressure from the fleet side: how vehicles, chargers, and the road network hold up when demand rises. The shift it gives the operator: from finding out something is wrong too late, to always knowing what is running, what is at risk, and what is out of service. In the Operations Manager view, scoped to Turtle Bay here, Simulation sits alongside Fleet, Utilization, Drivers, and EV.
 
+Every run follows the same arc: you set the operating conditions, the model forecasts utilization and charging strain, and it proposes the repositioning and pooling moves that recover headroom. Where Crowd is read from the guest's side, waits and station demand, Traffic is read from the asset's side, utilization, idle time, charging, and driver fatigue. Same day, same island, the operational half of the picture.
+
 The run follows the same rhythm:
 
 {/* run-flow-steps: ["Choose the event to simulate, or create a new one.", "Set the forecast type and the fleet assumptions.", "Choose the buildings and vehicle types in scope.", "Choose an action plan, or create a new one.", "Run it.", "Read the fleet and traffic forecast.", "Implement a plan from the right panel."] */}
@@ -16,6 +18,8 @@ The run follows the same rhythm:
 ## Before running
 
 ![Traffic simulation before a run: the left panel sets the forecast type, scenario, fleet assumptions, buildings, and vehicle mix, with the current readings on the right.](08-simulation-traffic-before.jpg)
+
+Before running sets the operating conditions for the day. The Scenario preset is the headline assumption, Maintenance for instance takes assets offline and tightens everything downstream. The fleet assumptions follow, and Speed on road matters more than it looks: it sets how fast a vehicle completes a leg and returns to service. Lower the fleet or the chargers, or drop road speed, and the same guest volume produces a sharper utilization and charging forecast, which is how you find the point where the day stops being comfortable.
 
 | Control | What it sets |
 | --- | --- |
@@ -50,6 +54,8 @@ Forecasted outcome: Fleet Capacity Risk, with 8 vehicles over-utilized at peak w
 | Fatigue risk | 3 | bridge drivers |
 | Fuel deficit | -2% | vs fleet |
 
+The chain reads cleanly: the day's load pushes utilization to 96% and charging to 84%, idle time collapses, and a handful of vehicles and chargers tip over the line at the peak. Nothing is broken at the start of the run, the risk is concentrated within 45 minutes.
+
 | Trigger | Recommended action | Why |
 | --- | --- | --- |
 | Idle asset | Reposition idle pod to Turtle Bay demand | Pod idle at 0 pax, 4 single-occupant sedans queued, 5 assets under-used |
@@ -70,6 +76,12 @@ Read the verdict first, then the metric that drove it: utilization and charging 
 | Maintenance backlog | Vehicles waiting on service | Grows across the shift, here +2 by end of shift |
 | Fatigue risk | Drivers near a fatigue limit | Any count above zero, here 3 on the bridge |
 
+Three rules sharpen the read:
+
+- Utilization and idle time go together. 96% utilization with 6% idle means no buffer; high utilization with healthy idle is a busy day, high utilization with near-zero idle is a fragile one.
+- Treat charging as its own ceiling. Vehicles needed can look solvable while charging at 84% with three chargers maxed is the real limit, you cannot dispatch what cannot charge.
+- Read the peak, not the average. The metrics are framed at the peak because that is where the day fails; a comfortable daily average can still hide a peak that tips the fleet over.
+
 <Callout type="warning">
 While simulation is on, the alert tray shows scenario alerts, not live ones. Live incidents are held until you close simulation.
 </Callout>
@@ -84,12 +96,12 @@ A plan can be implemented as forecasted, or adjusted first by reopening it under
 
 ## Creating an event
 
-Under Event to simulate, New Event opens a builder for a condition the presets do not cover. You name the event and set its effect, then it joins the event list and can be selected into any run alongside the built-in events. This lets the operations persona model a scenario specific to the day rather than only the standard ones.
+Under Event to simulate, New Event opens a builder for a condition the presets do not cover. You name the event and set its effect, then it joins the event list and can be selected into any run alongside the built-in events. This lets the operations persona model a specific operational reality, a maintenance window, known road works, a depleted depot, rather than only Normal, Peak, Surge, and Maintenance.
 
 <div className="doc-placeholder" data-ph="event-creation">Screenshot placeholder: event creation</div>
 
 ## Creating an action plan
 
-Under Action plan, View All lists the saved plans and New Plan creates one. A plan is a named set of actions, with the action count shown beside it. Once saved, a custom plan is selectable and forecasts against any event the same way as the built-in plans, so the operations persona can prepare a tailored response and test it before committing.
+Under Action plan, View All lists the saved plans and New Plan creates one. A plan is a named set of actions, with the action count shown beside it. Once saved, a custom plan is selectable and forecasts against any event the same way as the built-in plans, so the operations persona can prepare a standard response to a recurring strain, the peak-hour pooling play, the maintenance-day reroute, and confirm its forecasted effect before running it live.
 
 <div className="doc-placeholder" data-ph="action-plan-creation">Screenshot placeholder: action plan creation</div>

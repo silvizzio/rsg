@@ -7,6 +7,8 @@ description: "The Guest Experience what-if: forecast where guests build up acros
 
 The Crowd simulation lets the Guest Experience Manager rehearse a busy day on the twin without touching live operations. You build a demand scenario, run it, and read where guests would pile up, using the same recommended-action thinking that drives live operation. The shift it gives the operator: from finding out a station is overwhelmed when guests complain, to seeing the pressure form and acting before it lands.
 
+Every run follows the same arc. You set a trigger, the event and how intense it is, the model forecasts the effect, the resource demand and the guest-experience metrics that move, and it proposes a response, the recommended actions you implement. Reading a run is reading that chain: what we are putting on the island, what it does to capacity, and what closes the gap.
+
 It opens from the top button on the right toolbar in the Guest Experience view, scoped to Marina here, and follows the same rhythm as every simulation:
 
 {/* run-flow-steps: ["Choose the event to simulate, or create a new one.", "Set up the scenario: the event, the volume, and the response to test.", "Choose an action plan, or create a new one.", "Run it.", "Read the crowd forecast.", "Implement a plan from the right panel."] */}
@@ -16,6 +18,8 @@ It opens from the top button on the right toolbar in the Guest Experience view, 
 ## Before running
 
 ![Crowd simulation before a run: the left panel builds the scenario, the right panel shows the current live readings, and Run Simulation starts it.](07-simulation-crowd-before.jpg)
+
+Before running sets the trigger and the assumptions the forecast leans on. The left panel builds the scenario, the right panel shows the live baseline it departs from. The Event to simulate is the trigger itself, and the Intensity preset shapes how the day's volume arrives: Peak front-loads it into the arrival window rather than spreading it evenly, which is what turns a manageable headcount into a capacity event.
 
 | Control | What it sets |
 | --- | --- |
@@ -34,6 +38,8 @@ The right panel holds the live baseline the run measures against: transfer varia
 
 The map fills with a crowd heatmap, cool blue where flow is light through red where it is heaviest, so a developing crowd is visible exactly where it would form. A sustained heavy area is the same signal that raises a crowd density alert in live operation, which makes the run a safe way to find those hotspots in advance.
 
+Read the right panel top to bottom, because it is ordered as cause to consequence. The Forecasted outcome banner names the problem and its timing, capacity at risk at +45 minutes. The Forecasted resource demand quantifies the squeeze, 52 vehicles needed against a thin ready pool and 18 chargers. The Mobility health index rolls that into one number against the healthy threshold of 85, and the Forecasted KPIs show the movers underneath.
+
 | Forecast | Reading |
 | --- | --- |
 | Forecasted outcome | Capacity at risk: the guest increase outpaces fleet and charger capacity at +45 minutes, with 3 recommended actions |
@@ -41,6 +47,8 @@ The map fills with a crowd heatmap, cool blue where flow is light through red wh
 | Mobility health index | 68 of 100, strained at 2,400 guests per hour against a healthy threshold of 85 |
 | Forecasted KPI | Transfer variance +18% to +34%, booking requests 412 to 680, available vehicles 28 to 18, request age 2.2 minutes |
 | Top stations requesting | Marina, then SLS |
+
+Together they tell one story: a front-loaded 2,500-guest day outpaces a thin ready pool inside the hour, and the Marina is where it concentrates.
 
 The run closes with recommended-action cards, each carrying a trigger badge, a plain-language action, the numbers behind it, and a dispatch control.
 
@@ -61,6 +69,13 @@ Read it in three moves: the heatmap shows where pressure builds, the mobility he
 | Available vehicles | Free vehicles against the fleet | Falls toward zero, here 28 to 18 |
 | Request age | How long the average request has waited | Rises past the service target |
 
+A few rules make the table quicker to read:
+
+- Read the deltas, not just the values. The move from +18% to +34% on transfer variance, or the jump in booking requests, is the story; a number without its baseline hides whether the day is normal or exceptional.
+- Anchor on the mobility health index. It is the composite, so it decides whether to act at all. Above 85 the day absorbs the event, in the 68 range it is strained and the recommended actions are worth taking, far below it is recovery rather than prevention.
+- Mind the lead time in the outcome banner. The +45 minutes is the decision window: actions inside it prevent the queue, the same actions after it only shorten it.
+- Follow the top stations to place the response. The index says there is a problem, the stations say where to put the buggies.
+
 Exit Simulation returns the twin to live data.
 
 <Callout type="warning">
@@ -77,12 +92,12 @@ A plan can be implemented as forecasted, or adjusted first by reopening it under
 
 ## Creating an event
 
-Under Event to simulate, New Event opens a builder for a condition the presets do not cover. You name the event and set its effect, then it joins the event list and can be selected into any run alongside the built-in events. This lets the guest experience persona model a scenario specific to the day rather than only the standard ones.
+Under Event to simulate, New Event opens a builder for a condition the presets do not cover. You name the event and set its effect, then it joins the event list and can be selected into any run alongside the built-in events. This lets the guest experience persona model a scenario specific to the day, a chartered group, a one-off event, a known VIP pattern, rather than only the standard ones.
 
 ![The New Event panel: name the event, set the expected guest volume, and adjust the pre-trip variables, then save it into the event list.](07-simulation-crowd-event.jpg)
 
 ## Creating an action plan
 
-Under Action plan, View All lists the saved plans and New Plan creates one. A plan is a named set of actions, with the action count shown beside it. Once saved, a custom plan is selectable and forecasts against any event the same way as Baseline, Recall and Relieve, and Reroute and Advise, so the guest experience persona can prepare a tailored response and test it before committing.
+Under Action plan, View All lists the saved plans and New Plan creates one. A plan is a named set of actions, with the action count shown beside it. Once saved, a custom plan is selectable and forecasts against any event the same way as Baseline, Recall and Relieve, and Reroute and Advise, so the guest experience persona can prepare a tailored response, dispatching buggies, holding arrivals, or rerouting a leg, and test its forecasted effect before committing.
 
 <div className="doc-placeholder" data-ph="action-plan-creation">Screenshot placeholder: action plan creation</div>
