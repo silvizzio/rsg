@@ -1,0 +1,44 @@
+---
+title: "Overview"
+order: 7
+section: "Simulation"
+description: "What the simulation layer is, how a run reads, and where events and action plans come from."
+---
+
+Simulation is the IOC's what-if layer. It lets an operator rehearse a busy day or a deteriorating condition on the digital twin before it happens, and see where things would strain while there is still time to act. It is organized by persona: Crowd for guest experience, Traffic for operations, and Environment for marine. Whatever the type, every run shares the same spine: a trigger, a forecast of the effect, and a proposed response.
+
+The point of the layer is lead time. A run surfaces the squeeze at +45 minutes, while the day can still be changed, rather than after guests are already waiting or a reef is already over capacity.
+
+## How a run works
+
+Every run follows the same rhythm: choose the event to simulate, set the parameters, choose an action plan, run it, read the forecast, then implement a plan. Reading any run is reading that chain: what is being put on the island, what it does to capacity, and what closes the gap.
+
+## The page at a glance
+
+The layout is the same across all three types; only the controls and metrics change.
+
+![The simulation page anatomy: the top toolbar, the left setup panel, the central digital twin, the right forecast panel, and the run navigation.](07-simulation-overview-anatomy.svg)
+
+- Top toolbar: the brand and the active persona and place on the left, the live environment readouts across the top (wind, sea, air, AQI), the time, and the view controls.
+- Left panel, the setup: the scenario. The forecast type or journey phase, the Event to simulate selected from the library, the parameters for that type, and the Action plan to test. Run Simulation starts it.
+- Center, the digital twin: the Shura Island twin carrying the live visualization layer, where the run is shown as a crowd heatmap, a traffic heatmap, or a wind field, so a developing problem reads as a place rather than a number.
+- Right panel, the forecast: the forecasted outcome banner, the forecasted metrics and KPIs, and the recommended actions, each with an Implement control.
+- Navigation: Run Simulation and Stop Simulation control the run, and Exit Simulation returns the twin to live data.
+
+## Where events and action plans come from
+
+The IOC does not author events or action plans. They are modeled upstream in the specialist simulation tools and made available in the IOC as the library you select from. Pedestrian and human crowd events are modeled in MassMotion; vehicle and traffic events are modeled in PTV and Aimsun.
+
+![Where events and action plans come from: MassMotion and PTV with Aimsun model them upstream, and the IOC twin selects, runs, visualizes, and implements.](07-simulation-overview-sources.svg)
+
+The digital twin's job is narrower and complementary: it runs the selected scenario and visualizes it, especially human crowd density and vehicle traffic, and surfaces the forecast and recommended actions on top of that picture. Creating, editing, and calibrating the underlying events and plans happens in those upstream tools, not in the IOC. In the IOC you choose from what they have produced, set the run parameters, and act on the result.
+
+## The three simulations
+
+- Crowd, the guest experience persona, scoped to the Marina. Forecasts where guests build up and the mobility response that keeps them moving.
+- Traffic, the operations persona, scoped to the road network and fleet. Forecasts how vehicles, charging, and road capacity hold up under load, and where to rebalance.
+- Environment, the marine persona, scoped to North Reef. Forecasts how wind and conditions hit the reef and outdoor activity, and what to hold or move.
+
+## Implementing
+
+Once a run is forecasted, the right panel lists the prepared actions, each with its forecasted effect and an Implement control. Selecting Implement enacts that action: the dispatch routes to the relevant teams, the action moves into the live operations view, and the forecast baseline re-anchors to track it. This is the step that turns a what-if into an executed response.

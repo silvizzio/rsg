@@ -1,0 +1,32 @@
+<svg viewBox="0 0 920 560" xmlns="http://www.w3.org/2000/svg">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#94a3b8"/></marker></defs>
+<rect x="16" y="16" width="888" height="528" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+<rect x="28" y="28" width="864" height="52" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="44" y="52" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#0f172a" font-weight="700" text-anchor="start">Top toolbar</text>
+<text x="44" y="70" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#64748b" font-weight="normal" text-anchor="start">brand · persona and place · live readouts (wind, sea, air, AQI) · time · view controls</text>
+<rect x="28" y="92" width="236" height="392" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+<text x="44" y="116" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#0f172a" font-weight="700" text-anchor="start">Left panel — Setup</text>
+<rect x="44" y="132" width="204" height="26" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/><text x="54" y="149" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#475569" font-weight="normal" text-anchor="start">Forecast type / phase</text>
+<rect x="44" y="168" width="204" height="26" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/><text x="54" y="185" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#475569" font-weight="normal" text-anchor="start">Event to simulate · from library</text>
+<rect x="44" y="204" width="204" height="26" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/><text x="54" y="221" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#475569" font-weight="normal" text-anchor="start">Parameters</text>
+<rect x="44" y="240" width="204" height="26" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/><text x="54" y="257" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#475569" font-weight="normal" text-anchor="start">Action plan · from library</text>
+<rect x="44" y="296" width="204" height="34" rx="8" fill="#7c3aed" stroke="#7c3aed" stroke-width="1.5"/>
+<text x="146" y="318" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#ffffff" font-weight="700" text-anchor="middle">Run Simulation</text>
+<rect x="272" y="92" width="376" height="392" rx="8" fill="#eef2ff" stroke="#c7d2fe" stroke-width="1.5"/>
+<text x="290" y="116" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#0f172a" font-weight="700" text-anchor="start">Center — Digital twin</text>
+<text x="290" y="138" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#475569" font-weight="normal" text-anchor="start">Shura Island twin with the live visualization layer</text>
+<rect x="290" y="152" width="340" height="248" rx="6" fill="#e0e7ff" stroke="#c7d2fe" stroke-width="1.5"/>
+<text x="460" y="266" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#4338ca" font-weight="700" text-anchor="middle">visualizes the run</text>
+<text x="460" y="288" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#4f46e5" font-weight="normal" text-anchor="middle">crowd density · vehicle traffic · wind field</text>
+<text x="290" y="432" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#64748b" font-weight="normal" text-anchor="start">A developing problem reads as a place, not a number.</text>
+<rect x="656" y="92" width="236" height="392" rx="8" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1.5"/>
+<text x="672" y="116" font-family="ui-sans-serif, system-ui, sans-serif" font-size="13" fill="#0f172a" font-weight="700" text-anchor="start">Right panel — Forecast</text>
+<rect x="672" y="132" width="204" height="26" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/><text x="682" y="149" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#475569" font-weight="normal" text-anchor="start">Forecasted outcome</text>
+<rect x="672" y="168" width="204" height="26" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/><text x="682" y="185" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#475569" font-weight="normal" text-anchor="start">Forecasted metrics + KPIs</text>
+<rect x="672" y="204" width="204" height="26" rx="6" fill="#ffffff" stroke="#e2e8f0" stroke-width="1.5"/><text x="682" y="221" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#475569" font-weight="normal" text-anchor="start">Recommended actions</text>
+<rect x="672" y="256" width="204" height="34" rx="8" fill="#10b981" stroke="#10b981" stroke-width="1.5"/>
+<text x="774" y="278" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#ffffff" font-weight="700" text-anchor="middle">Implement</text>
+<rect x="28" y="496" width="864" height="40" rx="8" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="1.5"/>
+<text x="44" y="521" font-family="ui-sans-serif, system-ui, sans-serif" font-size="12" fill="#0f172a" font-weight="700" text-anchor="start">Navigation</text>
+<text x="140" y="521" font-family="ui-sans-serif, system-ui, sans-serif" font-size="11" fill="#64748b" font-weight="normal" text-anchor="start">Run / Stop Simulation · Exit Simulation returns the twin to live data</text>
+</svg>

@@ -28,9 +28,9 @@ export default function Home() {
       { label: 'Marine Operations Manager', desc: 'Reef health, dive capacity, and response', href: '/docs/06-mo', cover: '06-mo-lod3-active-response.jpg' },
     ]},
     { title: 'Simulation', desc: 'Rehearse crowd, fleet, and wind what-ifs on the twin.', links: [
-      { label: 'Crowd', desc: 'Crowd density forecasts on the twin', href: '/docs/07-simulation-crowd', cover: '07-simulation-after.jpg' },
-      { label: 'Traffic', desc: 'Fleet and vehicle flow forecasts', href: '/docs/08-simulation-traffic', cover: '07-simulation-ops-after.jpg' },
-      { label: 'Environment', desc: 'Wind and storm impact on the reef', href: '/docs/09-simulation-environment', cover: '07-simulation-storm-after.jpg' },
+      { label: 'Crowd', desc: 'Crowd density forecasts on the twin', href: '/docs/08-simulation-crowd', cover: '07-simulation-after.jpg' },
+      { label: 'Traffic', desc: 'Fleet and vehicle flow forecasts', href: '/docs/09-simulation-traffic', cover: '07-simulation-ops-after.jpg' },
+      { label: 'Environment', desc: 'Wind and storm impact on the reef', href: '/docs/10-simulation-environment', cover: '07-simulation-storm-after.jpg' },
     ]},
   ]
 
@@ -83,7 +83,7 @@ export default function Home() {
               Interface guide
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
             </Link>
-            <Link href="/docs/10-reference" className="inline-flex items-center gap-1.5 text-xs rounded-md px-3 py-1.5" style={{ background: 'transparent', color: 'hsl(var(--foreground))', border: '1px solid hsl(var(--border))', whiteSpace: 'nowrap' }}>
+            <Link href="/docs/11-reference" className="inline-flex items-center gap-1.5 text-xs rounded-md px-3 py-1.5" style={{ background: 'transparent', color: 'hsl(var(--foreground))', border: '1px solid hsl(var(--border))', whiteSpace: 'nowrap' }}>
               Reference
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
             </Link>
