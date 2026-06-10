@@ -30,7 +30,7 @@ export default function Home() {
     { title: 'Simulation', desc: 'Rehearse crowd, fleet, and wind what-ifs on the twin.', links: [
       { label: 'Crowd', desc: 'Crowd density forecasts on the twin', href: '/docs/07-simulation-crowd', cover: '07-simulation-after.jpg' },
       { label: 'Traffic', desc: 'Fleet and vehicle flow forecasts', href: '/docs/08-simulation-traffic', cover: '07-simulation-ops-after.jpg' },
-      { label: 'Storm', desc: 'Wind and storm impact on the reef', href: '/docs/09-simulation-storm', cover: '07-simulation-storm-after.jpg' },
+      { label: 'Environment', desc: 'Wind and storm impact on the reef', href: '/docs/09-simulation-environment', cover: '07-simulation-storm-after.jpg' },
     ]},
   ]
 
