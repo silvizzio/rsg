@@ -3,6 +3,7 @@ import type { CSSProperties, ReactNode } from 'react'
 const N = { bg: '#F1F2F4', border: '#D7DAE0', cardBg: '#E4E7EC', cardBorder: '#C4C9D2', text: '#374151', muted: '#6b7280' }
 const SETUP = { bg: '#EEEDFE', border: '#C7C2F0', text: '#26215C' }
 const RUN = { bg: '#6D5BD0', text: '#FFFFFF' }
+const STOP = { bg: '#DC2626', text: '#FFFFFF' }
 const TWIN = { bg: '#E6F1FB', border: '#A9CBEC' }
 const WARN = { bg: '#FAEEDA', border: '#EECDA0', text: '#854F0B' }
 const GOOD = { bg: '#E1F5EE', border: '#A7DDC9', text: '#0F6E56' }
@@ -50,7 +51,7 @@ function SetupCol({ cta }: { cta: string }) {
     <div style={{ flex: '0 0 27%', background: SETUP.bg, border: `1px solid ${SETUP.border}`, borderRadius: '8px', padding: '10px' }}>
       <Label text="Setup" />
       {['Forecast type/phase', 'Event to simulate', 'Parameters', 'Action plan'].map((x, i) => <Pill key={i} text={x} />)}
-      <div style={{ background: RUN.bg, color: RUN.text, textAlign: 'center', fontSize: '11px', fontWeight: 700, borderRadius: '6px', padding: '8px', marginTop: '8px' }}>{cta}</div>
+      <div style={{ background: cta === 'Stop Simulation' ? STOP.bg : RUN.bg, color: RUN.text, textAlign: 'center', fontSize: '11px', fontWeight: 700, borderRadius: '6px', padding: '8px', marginTop: '8px' }}>{cta}</div>
     </div>
   )
 }
