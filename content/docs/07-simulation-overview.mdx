@@ -5,46 +5,52 @@ section: "Simulation"
 description: "What the simulation layer is, how a run reads, and where events and action plans come from."
 ---
 
-Simulation is the IOC's what-if layer. It lets an operator rehearse a busy day or a deteriorating condition on the digital twin before it happens, and see where things would strain while there is still time to act. It is organized by persona: Crowd for guest experience, Traffic for operations, and Environment for marine. Whatever the type, every run shares the same spine: a trigger, a forecast of the effect, and a proposed response.
+Simulation is where the IOC stops reacting and starts rehearsing. It takes the live state of the destination and carries it forward under a chosen pressure, a surge of arrivals, a fleet drawn down, a wind shift onto the reef, and shows where the day would strain before it actually does. The point is not to predict the future precisely; it is to surface the squeeze early enough to act on it.
 
-The point of the layer is lead time. A run surfaces the squeeze at +45 minutes, while the day can still be changed, rather than after guests are already waiting or a reef is already over capacity.
+Every run is built on the same spine, whatever the persona: a trigger that puts load on the island, the forecasted effect of that load on capacity, and a response that closes the gap. Read that way, a simulation is never just a number on a panel. It is a short causal story: this is what we are putting on the island, this is what it does to the system, and this is what we would do about it.
+
+That spine is why the layer earns its place. A run surfaces a problem at +45 minutes, while the schedule, the fleet, and the routing can all still be changed, rather than after a guest is already waiting at the Marina or a reef is already over its dive capacity. The shift is from explaining a problem after it has been felt to seeing it build and moving first.
 
 ## How a run works
 
-Every run follows the same rhythm: choose the event to simulate, set the parameters, choose an action plan, run it, read the forecast, then implement a plan. Reading any run is reading that chain: what is being put on the island, what it does to capacity, and what closes the gap.
+Every run follows the same rhythm: choose the event to simulate, set the parameters that size it, choose an action plan to test against it, run it, read the forecast it returns, then implement the plan that holds up best. Nothing here is freeform. The event and the action plan are both drawn from a prepared library, so a run is an act of selection and comparison rather than authoring.
+
+Reading a run means reading that chain back out of the screen. The left of the page is the cause: what is being put on the island and how hard. The center is the system under that load: the twin showing where the pressure lands. The right is the consequence and the choices: the forecasted outcome, the metrics that move, and the actions that would bend the curve. Because the action plan is only one input, the same scenario can be run again with a different plan, which is how an operator compares doing nothing against recall and relieve and sees the difference before committing to either.
 
 ## The page at a glance
 
-The layout is the same across all three types; only the controls and metrics change. Three columns do the work:
+The layout is the same across all three simulation types, so an operator learns it once and then only the controls and the metrics change. Three columns do the work:
 
-- Left, the setup: the forecast type or phase, the event to simulate, the parameters, and the action plan to test, with Run Simulation to start.
-- Center, the digital twin: the Shura Island twin carrying the visualization layer, where the run reads as a heatmap or a field so a problem shows as a place rather than a number.
-- Right, the forecast: the forecasted outcome, the metrics and KPIs, and the recommended actions, each with an Implement control.
+- Left, the setup: the forecast type or journey phase, the event to simulate, the parameters that scale it (volume, presets, variables), and the action plan to test. Run Simulation commits the scenario and starts the forecast.
+- Center, the digital twin: the Shura Island twin carrying the visualization layer. The run is drawn straight onto the island as a density heatmap, a traffic heatmap, or a wind field, so a developing problem reads as a place an operator recognizes rather than a figure they have to interpret.
+- Right, the forecast: the forecasted outcome banner, the forecasted metrics and KPIs that move under the scenario, and the recommended actions, each carrying its own forecasted effect and an Implement control.
 
 The same working area moves through three states, from setup to run to implement.
 
 <SimState state="default" />
 
-**Default, setup.** The scenario is built on the left, the twin is live, and the right shows current readings. Nothing is forecast yet.
+**Default, setup.** The operator composes the scenario on the left while the twin shows the island live and the right reads current conditions. Nothing is forecasted yet. This state is the baseline the run will be measured against, so it is worth a glance before committing.
 
 <SimState state="running" />
 
-**Running, the forecast.** The twin visualizes the run and the right panel fills in: the forecasted outcome, the metrics and KPIs, and the recommended actions, each ready to implement.
+**Running, the forecast.** Running the scenario carries it forward in time. The twin lights up with the forecasted pattern, where crowd density gathers or where vehicle traffic thickens, and the right panel resolves into the forecasted outcome, the metrics and KPIs that shift, and the recommended actions, each ready to implement. This is the moment the squeeze becomes visible while it is still a forecast.
 
 <SimState state="implement" />
 
-**Implementation, acting.** An action is implemented and the forecast re-runs with it applied: the outcome and metrics shift, the chosen action is marked while the rest stay open. Behind that, Implement routes the dispatch to the relevant teams, moves the action into the live operations view, and re-anchors the forecast baseline to track it. This is the step that turns a what-if into an executed response.
+**Implementation, acting.** Choosing an action re-runs the forecast with that action applied, so the outcome and the metrics shift to show its effect, and the chosen action is marked while the rest stay open to compare. This is the step that turns a what-if into a decision. Implement routes the dispatch to the relevant teams, moves the action into the live operations view, and re-anchors the forecast baseline so the real outcome can be tracked against what was forecast.
 
 ## Where events and action plans come from
 
-The IOC does not author events or action plans. They are modeled upstream in the specialist simulation tools and made available in the IOC as the library you select from. Pedestrian and human crowd events are modeled in MassMotion; vehicle and traffic events are modeled in PTV and Aimsun.
+The IOC is the cockpit, not the modeling engine. It does not author events or action plans, because the modeling behind them, pedestrian dynamics for crowds and traffic assignment for vehicles, is heavy, calibrated work that belongs in specialist tools. Pedestrian and human crowd events are modeled in MassMotion; vehicle and traffic events are modeled in PTV and Aimsun. Those tools publish into the IOC as the library an operator selects from.
 
 <SimSources />
 
-**Reading it.** Everything left of the divider is authored upstream and handed to the IOC as a library. Everything right of it happens in the twin: you pick an event and plan, set the parameters, run, and the twin visualizes the scenario, especially crowd density and vehicle traffic, then surfaces the forecast and recommended actions. Implement routes to live operations. The twin runs and shows the scenario; it does not author it.
+**Reading it.** Everything left of the divider is authored upstream and handed to the IOC as a ready library. Everything right of it happens in the twin: the operator picks an event and an action plan, sets the parameters, runs it, and the twin visualizes the scenario, above all crowd density and vehicle traffic, then surfaces the forecasted outcome and the recommended actions on the island. The split keeps the operator on the decision, not on configuring a model. The twin runs and shows the scenario; it does not build it.
 
 ## The three simulations
 
-- Crowd, the guest experience persona, scoped to the Marina. Forecasts where guests build up and the mobility response that keeps them moving.
-- Traffic, the operations persona, scoped to the road network and fleet. Forecasts how vehicles, charging, and road capacity hold up under load, and where to rebalance.
-- Environment, the marine persona, scoped to North Reef. Forecasts how wind and conditions hit the reef and outdoor activity, and what to hold or move.
+The three types share the spine and the page, and differ in the persona they serve, the place they are scoped to, and the pressure they model.
+
+- Crowd, the guest experience persona, scoped to the Marina. The trigger is an arrival surge; the effect is guests building up faster than the fleet can clear them; the response is the mobility plan that keeps them moving. The run is read against the mobility health index, with vehicles and chargers as the binding constraints.
+- Traffic, the operations persona, scoped to the road network and the fleet. The trigger is peak vehicle and charging load; the effect is utilization, charging, and road segments approaching capacity; the response is rebalancing, diverting, and routing assets so the network holds. The run is read against fleet utilization and the capacity outlook.
+- Environment, the marine persona, scoped to North Reef. The trigger is a wind or condition shift; the effect is dive and outdoor thresholds being approached and reef capacity tightening; the response is holding, rerouting, or resting sites to protect both guests and the reef.
