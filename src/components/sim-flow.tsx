@@ -45,14 +45,6 @@ function ActionRow({ done }: { done: boolean }) {
     </div>
   )
 }
-function Connector({ label }: { label: string }) {
-  return (
-    <div style={{ textAlign: 'center', color: '#9aa0a6', margin: '6px 0 0' }}>
-      <div style={{ fontSize: '16px' }}>↓</div>
-      <div style={{ fontSize: '11px' }}>{label}</div>
-    </div>
-  )
-}
 function SetupCol() {
   return (
     <div style={{ flex: '0 0 27%', background: SETUP.bg, border: `1px solid ${SETUP.border}`, borderRadius: '8px', padding: '10px' }}>
@@ -108,31 +100,24 @@ function RightImplement() {
 }
 function StateCard({ tag, children }: { tag: string; children: ReactNode }) {
   return (
-    <div style={{ background: '#FFFFFF', border: `1px solid ${N.cardBorder}`, borderRadius: '10px', padding: '12px', marginTop: '10px' }}>
+    <div style={{ background: '#FFFFFF', border: `1px solid ${N.cardBorder}`, borderRadius: '10px', padding: '12px' }}>
       <Tag label={tag} />
       <div style={{ display: 'flex', gap: '8px', alignItems: 'stretch', marginTop: '10px' }}>{children}</div>
     </div>
   )
 }
-export function SimStates() {
+export function SimState({ state }: { state: 'default' | 'running' | 'implement' }) {
+  const cfg = {
+    default: { tag: 'Default · Setup', sub: 'live, no forecast yet', bg: MAP_PLAIN, cap: 'live twin', right: <RightDefault /> },
+    running: { tag: 'Running · Forecast', sub: 'forecast visualization', bg: MAP_HEAT, cap: 'crowd density, vehicle traffic', right: <RightRunning /> },
+    implement: { tag: 'Implementation · Acting', sub: 're-run, action applied', bg: MAP_EASE, cap: 'easing after the action', right: <RightImplement /> },
+  }[state]
   return (
-    <div style={{ margin: '24px 0', fontSize: '13px', lineHeight: 1.4 }}>
-      <StateCard tag="Default · Setup">
+    <div style={{ margin: '20px 0', fontSize: '13px', lineHeight: 1.4 }}>
+      <StateCard tag={cfg.tag}>
         <SetupCol />
-        <TwinCol sub="live, no forecast yet" mapBg={MAP_PLAIN} caption="live twin" />
-        <RightDefault />
-      </StateCard>
-      <Connector label="Run Simulation" />
-      <StateCard tag="Running · Forecast">
-        <SetupCol />
-        <TwinCol sub="forecast visualization" mapBg={MAP_HEAT} caption="crowd density, vehicle traffic" />
-        <RightRunning />
-      </StateCard>
-      <Connector label="Implement an action" />
-      <StateCard tag="Implementation · Acting">
-        <SetupCol />
-        <TwinCol sub="re-run, action applied" mapBg={MAP_EASE} caption="easing after the action" />
-        <RightImplement />
+        <TwinCol sub={cfg.sub} mapBg={cfg.bg} caption={cfg.cap} />
+        {cfg.right}
       </StateCard>
     </div>
   )

@@ -23,15 +23,17 @@ The layout is the same across all three types; only the controls and metrics cha
 
 The same working area moves through three states, from setup to run to implement.
 
-<SimStates />
+<SimState state="default" />
 
 **Default, setup.** The scenario is built on the left, the twin is live, and the right shows current readings. Nothing is forecast yet.
 
+<SimState state="running" />
+
 **Running, the forecast.** The twin visualizes the run and the right panel fills in: the forecasted outcome, the metrics and KPIs, and the recommended actions, each ready to implement.
 
-**Implementation, acting.** An action is implemented, the forecast re-runs with it applied, and the outcome and metrics shift in response. The implemented action is marked, the rest stay open.
+<SimState state="implement" />
 
-**Implementing.** Once a run is forecasted, the right panel lists the prepared actions, each with its forecasted effect and an Implement control. Selecting Implement enacts that action: the dispatch routes to the relevant teams, the action moves into the live operations view, and the forecast baseline re-anchors to track it. This is the step that turns a what-if into an executed response.
+**Implementation, acting.** An action is implemented and the forecast re-runs with it applied: the outcome and metrics shift, the chosen action is marked while the rest stay open. Behind that, Implement routes the dispatch to the relevant teams, moves the action into the live operations view, and re-anchors the forecast baseline to track it. This is the step that turns a what-if into an executed response.
 
 ## Where events and action plans come from
 
@@ -39,9 +41,7 @@ The IOC does not author events or action plans. They are modeled upstream in the
 
 <SimSources />
 
-**Modeled upstream.** The events and action plans come from the specialist tools, MassMotion for crowd and PTV with Aimsun for traffic, not from the IOC. They surface here as the library you select from.
-
-**Run in the twin.** The IOC picks from that library, sets the run parameters, and runs the scenario; the twin visualizes it, especially crowd density and vehicle traffic, and surfaces the forecast and recommended actions. Implement routes to live operations.
+**Reading it.** Everything left of the divider is authored upstream and handed to the IOC as a library. Everything right of it happens in the twin: you pick an event and plan, set the parameters, run, and the twin visualizes the scenario, especially crowd density and vehicle traffic, then surfaces the forecast and recommended actions. Implement routes to live operations. The twin runs and shows the scenario; it does not author it.
 
 ## The three simulations
 
