@@ -45,12 +45,12 @@ function ActionRow({ done }: { done: boolean }) {
     </div>
   )
 }
-function SetupCol() {
+function SetupCol({ cta }: { cta: string }) {
   return (
     <div style={{ flex: '0 0 27%', background: SETUP.bg, border: `1px solid ${SETUP.border}`, borderRadius: '8px', padding: '10px' }}>
       <Label text="Setup" />
       {['Forecast type/phase', 'Event to simulate', 'Parameters', 'Action plan'].map((x, i) => <Pill key={i} text={x} />)}
-      <div style={{ background: RUN.bg, color: RUN.text, textAlign: 'center', fontSize: '11px', fontWeight: 700, borderRadius: '6px', padding: '8px', marginTop: '8px' }}>Run Simulation</div>
+      <div style={{ background: RUN.bg, color: RUN.text, textAlign: 'center', fontSize: '11px', fontWeight: 700, borderRadius: '6px', padding: '8px', marginTop: '8px' }}>{cta}</div>
     </div>
   )
 }
@@ -108,14 +108,14 @@ function StateCard({ tag, children }: { tag: string; children: ReactNode }) {
 }
 export function SimState({ state }: { state: 'default' | 'running' | 'implement' }) {
   const cfg = {
-    default: { tag: 'Default · Setup', sub: 'live, no forecast yet', bg: MAP_PLAIN, cap: 'live twin', right: <RightDefault /> },
-    running: { tag: 'Running · Forecast', sub: 'forecast visualization', bg: MAP_HEAT, cap: 'crowd density, vehicle traffic', right: <RightRunning /> },
-    implement: { tag: 'Implementation · Acting', sub: 're-run, action applied', bg: MAP_EASE, cap: 'easing after the action', right: <RightImplement /> },
+    default: { tag: 'Default · Setup', sub: 'live, no forecast yet', bg: MAP_PLAIN, cap: 'live twin', right: <RightDefault />, cta: 'Run Simulation' },
+    running: { tag: 'Running · Forecast', sub: 'forecast visualization', bg: MAP_HEAT, cap: 'crowd density, vehicle traffic', right: <RightRunning />, cta: 'Stop Simulation' },
+    implement: { tag: 'Implementation · Acting', sub: 're-run, action applied', bg: MAP_EASE, cap: 'easing after the action', right: <RightImplement />, cta: 'Stop Simulation' },
   }[state]
   return (
     <div style={{ margin: '20px 0', fontSize: '13px', lineHeight: 1.4 }}>
       <StateCard tag={cfg.tag}>
-        <SetupCol />
+        <SetupCol cta={cfg.cta} />
         <TwinCol sub={cfg.sub} mapBg={cfg.bg} caption={cfg.cap} />
         {cfg.right}
       </StateCard>
