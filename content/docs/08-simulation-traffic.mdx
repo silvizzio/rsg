@@ -33,6 +33,14 @@ The run follows the same rhythm:
 
 The right panel holds the live baseline: transfer variance +18%, 412 booking requests, 28 of 46 vehicles free, average request age 2.4 minutes, top station requesting Marina.
 
+### Creating an event
+
+Under Event to simulate, New Event opens a builder for a condition the presets do not cover. You name the event and set its effect, then it joins the event list and can be selected into any run alongside the built-in events. This lets the operations persona model a scenario specific to the day rather than only the standard ones.
+
+### Creating a response plan
+
+Under Response plan, View All lists the saved plans and New Plan creates one. A plan is a named set of actions, with the action count shown beside it. Once saved, a custom plan is selectable and forecasts against any event the same way as the built-in plans, so the operations persona can prepare a tailored response and test it before committing.
+
 ## After running
 
 ![Traffic simulation, after running. A traffic heatmap lights the road network and the right panel reads the fleet capacity outlook, the forecasted metrics, and the recommended actions.](07-simulation-ops-after.jpg)
@@ -75,3 +83,9 @@ Read the verdict first, then the metric that drove it: utilization and charging 
 <Callout type="warning">
 While simulation is on, the alert tray shows scenario alerts, not live ones. Live incidents are held until you close simulation.
 </Callout>
+
+## Implementing a plan
+
+Once a run is forecasted, the right panel turns the result into action. It lists the plans the operations persona prepared for the event, each with its forecasted effect and an Implement control. Selecting Implement enacts that plan's actions: the dispatch goes to the fleet and building teams, the action moves into the live operations view, and the forecast baseline re-anchors to track the plan as it runs. This is the step that takes a run from a what-if to an executed response.
+
+A plan can be implemented as forecasted, or adjusted first by reopening it under Response plan, editing its actions, and re-running to confirm the new effect before dispatch.

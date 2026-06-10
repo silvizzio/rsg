@@ -30,12 +30,13 @@ It opens from the top button on the right toolbar in the Guest Experience view, 
 
 The right panel holds the live baseline the run measures against: transfer variance +18%, 412 booking requests, 28 of 46 vehicles free, average request age 2.4 minutes, and the Marina as the top station requesting.
 
-### Custom events and plans
+### Creating an event
 
-The setup is not limited to the presets. Two controls let an operator model a scenario the built-ins do not cover.
+Under Event to simulate, New Event opens a builder for a condition the presets do not cover. You name the event and set its effect, then it joins the event list and can be selected into any run alongside the built-in events. This lets the guest experience persona model a scenario specific to the day rather than only the standard ones.
 
-- New Event: under Event to simulate, New Event opens a builder to define a condition of your own, naming it and setting its effect, for example a custom transfer wave or a routing change. Once added it sits in the event list and can be ticked into any run alongside Peak Arrival Surge, VIP Convoy, and Weather Disruption.
-- New response plan: under Response plan, View All lists the saved plans and lets you create a new one. A plan is a named set of actions, with the action count shown beside it, so a new plan can be built once and then tested against any event the same way as Baseline, Recall and Relieve, or Reroute and Advise.
+### Creating a response plan
+
+Under Response plan, View All lists the saved plans and New Plan creates one. A plan is a named set of actions, with the action count shown beside it. Once saved, a custom plan is selectable and forecasts against any event the same way as Baseline, Recall and Relieve, and Reroute and Advise, so the guest experience persona can prepare a tailored response and test it before committing.
 
 ## After running
 
@@ -75,3 +76,9 @@ Compare to Baseline holds the forecast against now; Exit Simulation returns the 
 <Callout type="warning">
 While simulation is on, the alert tray shows scenario alerts, not live ones. Live incidents are held until you close simulation.
 </Callout>
+
+## Implementing a plan
+
+Once a run is forecasted, the right panel turns the result into action. It lists the plans the guest experience persona prepared for the event, each with its forecasted effect and an Implement control. Selecting Implement enacts that plan's actions: the dispatch goes to the guest-mobility teams and the affected stations, the action moves into the live operations view, and the forecast baseline re-anchors to track the plan as it runs. This is the step that takes a run from a what-if to an executed response.
+
+A plan can be implemented as forecasted, or adjusted first by reopening it under Response plan, editing its actions, and re-running to confirm the new effect before dispatch.

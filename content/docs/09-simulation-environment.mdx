@@ -26,6 +26,14 @@ The run follows the same rhythm:
 | Wind speed | Projected gust, here 14 kn |
 | Zones included | Gaia Reef North, Gaia Reef South, Coral Garden E, House Reef |
 
+### Creating an event
+
+Under Event to simulate, New Event opens a builder for a condition the presets do not cover. You name the event and set its effect, then it joins the event list and can be selected into any run alongside the built-in events. This lets the environment persona model a scenario specific to the day rather than only the standard ones.
+
+### Creating a response plan
+
+Under Response plan, View All lists the saved plans and New Plan creates one. A plan is a named set of actions, with the action count shown beside it. Once saved, a custom plan is selectable and forecasts against any event the same way as the built-in plans, so the environment persona can prepare a tailored response and test it before committing.
+
 ## After running
 
 ![Storm simulation, after running. A wind field sweeps the map and the right panel reads the forecasted outcome, the conditions, and the recommended actions.](07-simulation-storm-after.jpg)
@@ -70,3 +78,9 @@ Read wind against the dive threshold first, then turbidity and air, since those 
 <Callout type="warning">
 While simulation is on, the alert tray shows scenario alerts, not live ones. Live incidents are held until you close simulation.
 </Callout>
+
+## Implementing a plan
+
+Once a run is forecasted, the right panel turns the result into action. It lists the plans the environment persona prepared for the event, each with its forecasted effect and an Implement control. Selecting Implement enacts that plan's actions: the dispatch goes to the marine and field teams, the action moves into the live operations view, and the forecast baseline re-anchors to track the plan as it runs. This is the step that takes a run from a what-if to an executed response.
+
+A plan can be implemented as forecasted, or adjusted first by reopening it under Response plan, editing its actions, and re-running to confirm the new effect before dispatch.
