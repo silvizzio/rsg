@@ -31,20 +31,20 @@ The same working area moves through three states, from setup to run to implement
 
 **Implementation, acting.** An action is implemented, the forecast re-runs with it applied, and the outcome and metrics shift in response. The implemented action is marked, the rest stay open.
 
+**Implementing.** Once a run is forecasted, the right panel lists the prepared actions, each with its forecasted effect and an Implement control. Selecting Implement enacts that action: the dispatch routes to the relevant teams, the action moves into the live operations view, and the forecast baseline re-anchors to track it. This is the step that turns a what-if into an executed response.
+
 ## Where events and action plans come from
 
 The IOC does not author events or action plans. They are modeled upstream in the specialist simulation tools and made available in the IOC as the library you select from. Pedestrian and human crowd events are modeled in MassMotion; vehicle and traffic events are modeled in PTV and Aimsun.
 
 <SimSources />
 
-The digital twin's job is narrower and complementary: it runs the selected scenario and visualizes it, especially human crowd density and vehicle traffic, and surfaces the forecast and recommended actions on top of that picture. Creating, editing, and calibrating the underlying events and plans happens in those upstream tools, not in the IOC. In the IOC you choose from what they have produced, set the run parameters, and act on the result.
+**Modeled upstream.** The events and action plans come from the specialist tools, MassMotion for crowd and PTV with Aimsun for traffic, not from the IOC. They surface here as the library you select from.
+
+**Run in the twin.** The IOC picks from that library, sets the run parameters, and runs the scenario; the twin visualizes it, especially crowd density and vehicle traffic, and surfaces the forecast and recommended actions. Implement routes to live operations.
 
 ## The three simulations
 
 - Crowd, the guest experience persona, scoped to the Marina. Forecasts where guests build up and the mobility response that keeps them moving.
 - Traffic, the operations persona, scoped to the road network and fleet. Forecasts how vehicles, charging, and road capacity hold up under load, and where to rebalance.
 - Environment, the marine persona, scoped to North Reef. Forecasts how wind and conditions hit the reef and outdoor activity, and what to hold or move.
-
-## Implementing
-
-Once a run is forecasted, the right panel lists the prepared actions, each with its forecasted effect and an Implement control. Selecting Implement enacts that action: the dispatch routes to the relevant teams, the action moves into the live operations view, and the forecast baseline re-anchors to track it. This is the step that turns a what-if into an executed response.
