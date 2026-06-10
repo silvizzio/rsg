@@ -271,3 +271,19 @@ article ul > li > p {
 .doc-split-media.cap-right > p > span { display: flex !important; align-items: flex-end; gap: 12px; margin-bottom: 0 !important; }
 .doc-split-media.cap-right > p > span > canvas, .doc-split-media.cap-right > p > span > img { width: 60px !important; max-width: 60px !important; flex: 0 0 60px; }
 .doc-split-media.cap-right > p > span > span { text-align: left !important; margin-top: 0 !important; flex: 1 1 auto; }
+
+.doc-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  margin: 1.25rem 0;
+  padding: 1rem;
+  border: 2px dashed #cbd5e1;
+  border-radius: 8px;
+  background: repeating-linear-gradient(45deg, #f8fafc, #f8fafc 12px, #f1f5f9 12px, #f1f5f9 24px);
+  color: #64748b;
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-align: center;
+}

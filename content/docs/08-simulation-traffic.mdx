@@ -12,7 +12,7 @@ The run follows the same rhythm:
 1. Choose the event to simulate, or create a new one.
 2. Set the forecast type and the fleet assumptions.
 3. Choose the buildings and vehicle types in scope.
-4. Choose a response plan, or create a new one.
+4. Choose an action plan, or create a new one.
 5. Run it.
 6. Read the fleet and traffic forecast.
 7. Implement a plan from the right panel, or compare to the baseline.
@@ -39,9 +39,13 @@ The right panel holds the live baseline: transfer variance +18%, 412 booking req
 
 Under Event to simulate, New Event opens a builder for a condition the presets do not cover. You name the event and set its effect, then it joins the event list and can be selected into any run alongside the built-in events. This lets the operations persona model a scenario specific to the day rather than only the standard ones.
 
-### Creating a response plan
+<div className="doc-placeholder" data-ph="event-creation">Screenshot placeholder: event creation</div>
 
-Under Response plan, View All lists the saved plans and New Plan creates one. A plan is a named set of actions, with the action count shown beside it. Once saved, a custom plan is selectable and forecasts against any event the same way as the built-in plans, so the operations persona can prepare a tailored response and test it before committing.
+### Creating an action plan
+
+Under Action plan, View All lists the saved plans and New Plan creates one. A plan is a named set of actions, with the action count shown beside it. Once saved, a custom plan is selectable and forecasts against any event the same way as the built-in plans, so the operations persona can prepare a tailored response and test it before committing.
+
+<div className="doc-placeholder" data-ph="action-plan-creation">Screenshot placeholder: action plan creation</div>
 
 ## After running
 
@@ -90,4 +94,6 @@ While simulation is on, the alert tray shows scenario alerts, not live ones. Liv
 
 Once a run is forecasted, the right panel turns the result into action. It lists the plans the operations persona prepared for the event, each with its forecasted effect and an Implement control. Selecting Implement enacts that plan's actions: the dispatch goes to the fleet and building teams, the action moves into the live operations view, and the forecast baseline re-anchors to track the plan as it runs. This is the step that takes a run from a what-if to an executed response.
 
-A plan can be implemented as forecasted, or adjusted first by reopening it under Response plan, editing its actions, and re-running to confirm the new effect before dispatch.
+A plan can be implemented as forecasted, or adjusted first by reopening it under Action plan, editing its actions, and re-running to confirm the new effect before dispatch.
+
+<div className="doc-placeholder" data-ph="plan-implementation">Screenshot placeholder: plan implementation</div>

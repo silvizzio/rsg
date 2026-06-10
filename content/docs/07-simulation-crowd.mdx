@@ -11,7 +11,7 @@ It opens from the top button on the right toolbar in the Guest Experience view, 
 
 1. Choose the event to simulate, or create a new one.
 2. Set up the scenario: the event, the volume, and the response to test.
-3. Choose a response plan, or create a new one.
+3. Choose an action plan, or create a new one.
 4. Run it.
 5. Read the crowd forecast.
 6. Implement a plan from the right panel, or compare to the baseline.
@@ -28,7 +28,7 @@ It opens from the top button on the right toolbar in the Guest Experience view, 
 | Guest volume | Guests expected on the island, here 2,500 |
 | Intensity preset | Normal, Peak, Surge, or VIP, a one-tap starting pattern you can fine-tune |
 | Pre-trip variables | The assumptions the run leans on, here marina capacity 32 per hour and buffer time 6 minutes |
-| Response plan | The response to test: Baseline (do nothing), Recall and Relieve (3 actions), or Reroute and Advise (2 actions) |
+| Action plan | The response to test: Baseline (do nothing), Recall and Relieve (3 actions), or Reroute and Advise (2 actions) |
 
 The right panel holds the live baseline the run measures against: transfer variance +18%, 412 booking requests, 28 of 46 vehicles free, average request age 2.4 minutes, and the Marina as the top station requesting.
 
@@ -36,9 +36,13 @@ The right panel holds the live baseline the run measures against: transfer varia
 
 Under Event to simulate, New Event opens a builder for a condition the presets do not cover. You name the event and set its effect, then it joins the event list and can be selected into any run alongside the built-in events. This lets the guest experience persona model a scenario specific to the day rather than only the standard ones.
 
-### Creating a response plan
+<div className="doc-placeholder" data-ph="event-creation">Screenshot placeholder: event creation</div>
 
-Under Response plan, View All lists the saved plans and New Plan creates one. A plan is a named set of actions, with the action count shown beside it. Once saved, a custom plan is selectable and forecasts against any event the same way as Baseline, Recall and Relieve, and Reroute and Advise, so the guest experience persona can prepare a tailored response and test it before committing.
+### Creating an action plan
+
+Under Action plan, View All lists the saved plans and New Plan creates one. A plan is a named set of actions, with the action count shown beside it. Once saved, a custom plan is selectable and forecasts against any event the same way as Baseline, Recall and Relieve, and Reroute and Advise, so the guest experience persona can prepare a tailored response and test it before committing.
+
+<div className="doc-placeholder" data-ph="action-plan-creation">Screenshot placeholder: action plan creation</div>
 
 ## After running
 
@@ -83,4 +87,6 @@ While simulation is on, the alert tray shows scenario alerts, not live ones. Liv
 
 Once a run is forecasted, the right panel turns the result into action. It lists the plans the guest experience persona prepared for the event, each with its forecasted effect and an Implement control. Selecting Implement enacts that plan's actions: the dispatch goes to the guest-mobility teams and the affected stations, the action moves into the live operations view, and the forecast baseline re-anchors to track the plan as it runs. This is the step that takes a run from a what-if to an executed response.
 
-A plan can be implemented as forecasted, or adjusted first by reopening it under Response plan, editing its actions, and re-running to confirm the new effect before dispatch.
+A plan can be implemented as forecasted, or adjusted first by reopening it under Action plan, editing its actions, and re-running to confirm the new effect before dispatch.
+
+<div className="doc-placeholder" data-ph="plan-implementation">Screenshot placeholder: plan implementation</div>
