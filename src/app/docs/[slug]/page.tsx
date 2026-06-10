@@ -19,6 +19,7 @@ import {
 } from '@/components/mdx-components'
 import { DocImage } from '@/components/doc-image'
 import { SystemMap } from '@/components/system-map'
+import { SimStates, SimSources } from '@/components/sim-flow'
 
 export async function generateStaticParams() {
   const docs = getAllDocs()
@@ -47,6 +48,8 @@ export default async function DocPage({
     ArchitectureDiagram,
     CoreWorkflowDiagram,
     SystemMap,
+    SimStates,
+    SimSources,
         img: DocImage,
   }
 
