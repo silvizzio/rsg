@@ -1,0 +1,72 @@
+---
+title: "Storm"
+order: 9
+section: "Simulation"
+description: "The Marine Operations what-if: forecast how wind and storm conditions hit the reef and outdoor activity, and what to hold or move."
+---
+
+The Storm simulation lets the Marine Operations Manager rehearse a weather change, principally wind, and read how it would hit the reef and outdoor activity. The shift it gives the operator: from finding out conditions are unsafe once guests or the reef are already affected, to rehearsing a wind change and seeing the effect before it lands. In the Marine Operations view, scoped to North Reef here, Simulation sits alongside Reef Monitoring.
+
+The run follows the same rhythm:
+
+1. Set the forecast type, the wind condition, and the projected gust.
+2. Choose the reef zones in scope.
+3. Run it.
+4. Read the conditions forecast.
+5. Dispatch a recommended action, or compare to the baseline.
+
+## Before running
+
+![Storm simulation, before running. The left rail sets the wind scenario and the zones, with the forecasted conditions on the right.](07-simulation-storm-before.jpg)
+
+| Control | What it sets |
+| --- | --- |
+| Forecast type | Wind on Dive, Wind on Mooring, or Combined |
+| Wind condition | Calm (under 6 kn), Moderate (10-14 kn), High Wind (22-30 kn, advisory), or Storm (35 kn+, suspend) |
+| Wind speed | Projected gust, here 14 kn |
+| Zones included | Gaia Reef North, Gaia Reef South, Coral Garden E, House Reef |
+
+## After running
+
+![Storm simulation, after running. A wind field sweeps the map and the right rail reads the forecasted outcome, the conditions, and the recommended actions.](07-simulation-storm-after.jpg)
+
+The map fills with a wind field streaming across the water, so the exposed stretches read as places rather than numbers.
+
+Forecasted outcome: a Wind Advisory with a one-line read on whether marine and outdoor activity is affected.
+
+| Condition | Reading | Note |
+| --- | --- | --- |
+| Wind at bridge | 2.4 kn | +6 vs now |
+| Wind at reef | 21 kn | dive threshold 20 |
+| AQI shift | 48 | +6, dust |
+| Water turbidity | +18% | beach zone |
+
+| Trigger | Recommended action | Why |
+| --- | --- | --- |
+| Temp rising | Rest Site B, shift afternoon groups to Site C | Water temp 29.8C trending toward the 30.5 threshold at Site B; resting it protects coral recovery |
+| Capacity watch | Hold new arrivals at North Reef, route to Site B | 11 of 12 boats and 17 of 18 moorings in use; holding keeps North Reef within capacity |
+| Over target | Follow up on low-rated arrival, review Marina to villas leg | Service score slipping on that leg |
+
+Forecast spec: forecast type Environmental (marine lens), model Wind/Reef AI v1, horizon 60 minutes, seed #8835.
+
+## Reading the wind forecast
+
+Read wind against the dive threshold first, then turbidity and air, since those decide whether activity continues.
+
+| Metric | What it measures | Watch when |
+| --- | --- | --- |
+| Wind at reef | Wind over the dive zones | Crosses the dive threshold of 20 kn |
+| Wind at bridge | Wind at the crossing | Rises against now, here +6 |
+| Water turbidity | Sediment stirred into the water | Climbs in the beach zone, here +18% |
+| AQI shift | Air quality change, often dust | Moves up, here +6 |
+
+| Wind band | Wind | Posture |
+| --- | --- | --- |
+| Calm | under 6 kn | Settled |
+| Moderate | 10 to 14 kn | Breeze |
+| High Wind | 22 to 30 kn | Advisory |
+| Storm | 35 kn and up | Suspend |
+
+<Callout type="warning">
+While simulation is on, the alert tray shows scenario alerts, not live ones. Live incidents are held until you close simulation.
+</Callout>

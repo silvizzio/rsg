@@ -1,0 +1,70 @@
+---
+title: "Crowd"
+order: 7
+section: "Simulation"
+description: "The Guest Experience what-if: forecast where guests build up across the destination and dispatch the response before anyone waits too long."
+---
+
+The Crowd simulation lets the Guest Experience Manager rehearse a busy day on the twin without touching live operations. You build a demand scenario, run it, and read where guests would pile up, using the same recommended-action thinking that drives live operation. The shift it gives the operator: from finding out a station is overwhelmed when guests complain, to seeing the pressure form and acting before it lands.
+
+It opens from the top button on the right toolbar in the Guest Experience view, scoped to Marina here, and follows the same rhythm as every simulation:
+
+1. Set up the scenario: the event, the volume, and the response to test.
+2. Run it.
+3. Read the crowd forecast.
+4. Dispatch a recommended action, or compare to the baseline.
+5. Exit to return to live data.
+
+## Before running
+
+![Crowd simulation, before running. The left rail builds the scenario, the right rail shows the live baseline, and Run Simulation starts it.](07-simulation-before.jpg)
+
+| Control | What it sets |
+| --- | --- |
+| Phase | Pre-Trip, Trip, or Post-Trip, the part of the guest journey to model |
+| Event to simulate | Peak Arrival Surge (+180% transfer wave at Marina), VIP Convoy (reserved routing), Weather Disruption (tender hold, wind 24 kn), or a New Event you define |
+| Guest volume | Guests expected on the island, here 2,500 |
+| Intensity preset | Normal, Peak, Surge, or VIP, a one-tap starting pattern you can fine-tune |
+| Pre-trip variables | The assumptions the run leans on, here marina capacity 32 per hour and buffer time 6 minutes |
+| Response plan | The response to test: Baseline (do nothing), Recall and Relieve (3 actions), or Reroute and Advise (2 actions) |
+
+The right rail holds the live baseline the run measures against: transfer variance +18%, 412 booking requests, 28 of 46 vehicles free, average request age 2.4 minutes, and the Marina as the top station requesting.
+
+## After running
+
+![Crowd simulation, after running. A crowd heatmap fills the map and the right rail reads the outcome, resource demand, mobility health, forecasted KPIs, and recommended actions.](07-simulation-after.jpg)
+
+The map fills with a crowd heatmap, cool blue where flow is light through red where it is heaviest, so a developing crowd is visible exactly where it would form. A sustained heavy area is the same signal that raises a crowd density alert in live operation, which makes the run a safe way to find those hotspots in advance.
+
+| Forecast | Reading |
+| --- | --- |
+| Forecasted outcome | Capacity at risk: the guest increase outpaces fleet and charger capacity at +45 minutes, with 3 recommended actions |
+| Forecasted resource demand | Vehicles needed 52, EV chargers needed 18 |
+| Mobility health index | 68 of 100, strained at 2,400 guests per hour against a healthy threshold of 85 |
+| Forecasted KPI | Transfer variance +18% to +34%, booking requests 412 to 680, available vehicles 28 to 18, request age 2.2 minutes |
+| Top stations requesting | Marina, then SLS |
+
+The run closes with recommended-action cards, each carrying a trigger badge, a plain-language action, the numbers behind it, and a dispatch control.
+
+| Trigger | Recommended action | Why |
+| --- | --- | --- |
+| Watch occupancy | Dispatch 2 buggies to the Spine Corridor | 318 traveling, lead buggy at 5 of 6 seats, occupancy tightening |
+| Over target | Follow up on low-rated arrival, review Marina to villas leg | Service score slipping on that leg |
+
+## Reading the crowd forecast
+
+Read it in three moves: the heatmap shows where pressure builds, the mobility health index shows how bad, and the forecasted KPIs show why.
+
+| Metric | What it measures | Watch when |
+| --- | --- | --- |
+| Mobility health index | Whole-network health, 0 to 100, healthy at 85 | Falls below 85; the lower it goes, the closer to capacity |
+| Transfer variance | Gap between planned and actual transfers | Climbs off the baseline, here +18% to +34% |
+| Booking requests | Demand on the mobility service | Rises faster than vehicles can clear, here 412 to 680 |
+| Available vehicles | Free vehicles against the fleet | Falls toward zero, here 28 to 18 |
+| Request age | How long the average request has waited | Rises past the service target |
+
+Compare to Baseline holds the forecast against now; Exit Simulation returns the twin to live data.
+
+<Callout type="warning">
+While simulation is on, the alert tray shows scenario alerts, not live ones. Live incidents are held until you close simulation.
+</Callout>

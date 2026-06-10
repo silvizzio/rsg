@@ -1,0 +1,77 @@
+---
+title: "Traffic"
+order: 8
+section: "Simulation"
+description: "The Operations what-if: forecast how the fleet, charging, and the road network hold up under load, down to the vehicle mix and the buildings in scope."
+---
+
+The Traffic simulation lets the Operations Manager rehearse the same pressure from the fleet side: how vehicles, chargers, and the road network hold up when demand rises. The shift it gives the operator: from finding out something is wrong too late, to always knowing what is running, what is at risk, and what is out of service. In the Operations Manager view, scoped to Turtle Bay here, Simulation sits alongside Fleet, Utilization, Drivers, and EV.
+
+The run follows the same rhythm:
+
+1. Set the forecast type and the fleet assumptions.
+2. Choose the buildings and vehicle types in scope.
+3. Run it.
+4. Read the fleet and traffic forecast.
+5. Dispatch a recommended action, or compare to the baseline.
+
+## Before running
+
+![Traffic simulation, before running. The Simulation tab sets the forecast type, the scenario, the fleet assumptions, the buildings, and the vehicle mix, with the live baseline on the right.](07-simulation-ops-before.jpg)
+
+| Control | What it sets |
+| --- | --- |
+| Forecast type | Vehicle, Charging, or Combined |
+| Scenario preset | Normal, Peak, Surge, or Maintenance |
+| Guest volume | Expected on-island, here 2,500 |
+| Number of vehicles | Available on-island, here 800 |
+| Vehicle capacity | Average per vehicle, here 2,500 |
+| Active EV chargers | The active charger count |
+| Speed on road | Average km per hour, here 100 |
+| Buildings | Marina Hub, Spine Hub, Bridge Point, Beach Cluster, toggled in or out of scope |
+| Vehicle types | Shuttles (16, 92% util), Buggies (22, 78% util), Tenders (6, marina), VIP cars (2, reserved) |
+
+The right rail holds the live baseline: transfer variance +18%, 412 booking requests, 28 of 46 vehicles free, average request age 2.4 minutes, top station requesting Marina.
+
+## After running
+
+![Traffic simulation, after running. A traffic heatmap lights the road network and the right rail reads the fleet capacity outlook, the forecasted metrics, and the recommended actions.](07-simulation-ops-after.jpg)
+
+The road network lights with a traffic heatmap, cool blue where roads are clear through red where they are congested, so the bottlenecks show up as the roads that would actually jam.
+
+Forecasted outcome: Fleet Capacity Risk, with 8 vehicles over-utilized at peak within 45 minutes and 3 chargers forecast to reach capacity.
+
+| Metric | Reading | Against now |
+| --- | --- | --- |
+| Vehicles needed | 52 | +10 |
+| Utilization at peak | 96% | +5 |
+| Idle time | 6% | -8 |
+| Maintenance backlog | 2 | +2 by end of shift |
+| Charging demand | 84% | 3 chargers maxed |
+| Energy needed | +620 kWh | vs typical |
+| Fatigue risk | 3 | bridge drivers |
+| Fuel deficit | -2% | vs fleet |
+
+| Trigger | Recommended action | Why |
+| --- | --- | --- |
+| Idle asset | Reposition idle pod to Turtle Bay demand | Pod idle at 0 pax, 4 single-occupant sedans queued, 5 assets under-used |
+| Low occupancy | Pool reception trips to lift buggy occupancy | 18 of 24 buggies in use at 2.0 of 6 seats, pooling frees about 6 vehicles |
+
+Forecast spec: model Guest Flow AI v2, forecast type Guest Flow, window Now +60 minutes, buildings 6 of 6, stations 12 of 14, scenario Normal, seed #8836, last run 14:32 AST.
+
+## Reading the fleet forecast
+
+Read the verdict first, then the metric that drove it: utilization and charging set capacity risk, fatigue and maintenance set continuity risk.
+
+| Metric | What it measures | Watch when |
+| --- | --- | --- |
+| Utilization at peak | Share of the fleet in use at peak | Approaches 100%, here 96% |
+| Idle time | Share of the fleet sitting unused | Very low means over-stretched, very high means waste |
+| Charging demand | Load on the EV chargers | Chargers hit capacity, here 3 maxed at 84% |
+| Energy needed | Extra energy the scenario draws | Rises against typical, here +620 kWh |
+| Maintenance backlog | Vehicles waiting on service | Grows across the shift, here +2 by end of shift |
+| Fatigue risk | Drivers near a fatigue limit | Any count above zero, here 3 on the bridge |
+
+<Callout type="warning">
+While simulation is on, the alert tray shows scenario alerts, not live ones. Live incidents are held until you close simulation.
+</Callout>
