@@ -17,14 +17,7 @@ export default function DocHeader({ searchDocs }: Props) {
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '48px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
             <MobileNav docsBySection={docsBySection} />
-            <div style={{ width: '20px', height: '20px', background: 'hsl(var(--foreground))', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <svg width="11" height="11" viewBox="0 0 14 14" fill="none">
-                <rect x="1" y="1" width="5" height="5" fill="white" rx="1"/>
-                <rect x="8" y="1" width="5" height="5" fill="white" rx="1" opacity="0.6"/>
-                <rect x="1" y="8" width="5" height="5" fill="white" rx="1" opacity="0.6"/>
-                <rect x="8" y="8" width="5" height="5" fill="white" rx="1" opacity="0.3"/>
-              </svg>
-            </div>
+            <img src="/rsg-logo.svg" alt="RSG IOC" width={20} height={20} style={{ display: 'block' }} />
             <span style={{ fontSize: '13px', fontWeight: 500 }}>RSG IOC</span>
             <span style={{ color: 'hsl(var(--muted-foreground))', opacity: 0.4 }}>/</span>
             <Link href="/" style={{ fontSize: '13px', color: 'hsl(var(--muted-foreground))', textDecoration: 'none' }}>Documentation</Link>

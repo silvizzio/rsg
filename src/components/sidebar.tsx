@@ -21,14 +21,7 @@ export default function Sidebar({ docsBySection }: Props) {
       <div style={{ position: 'sticky', top: 0, height: '100vh', overflowY: 'auto', borderRight: '1px solid hsl(var(--border))', background: 'hsl(var(--background))' }} className="sidebar-scroll">
         <div style={{ padding: '16px 0 16px', borderBottom: '1px solid hsl(var(--border))', marginBottom: '12px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', padding: '0 16px' }}>
-            <div style={{ width: '24px', height: '24px', background: 'hsl(var(--foreground))', borderRadius: '4px', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                <rect x="1" y="1" width="5" height="5" fill="white" rx="1"/>
-                <rect x="8" y="1" width="5" height="5" fill="white" rx="1" opacity="0.6"/>
-                <rect x="1" y="8" width="5" height="5" fill="white" rx="1" opacity="0.6"/>
-                <rect x="8" y="8" width="5" height="5" fill="white" rx="1" opacity="0.3"/>
-              </svg>
-            </div>
+            <img src="/rsg-logo.svg" alt="RSG IOC" width={24} height={24} style={{ flexShrink: 0, display: 'block' }} />
             <div>
               <p style={{ fontSize: '12px', fontWeight: 500, lineHeight: 1.3 }}>RSG IOC</p>
               <p style={{ fontSize: '10px', color: 'hsl(var(--muted-foreground))' }}>v1.0 · June 2026</p>
