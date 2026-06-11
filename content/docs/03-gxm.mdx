@@ -13,24 +13,39 @@ It does three things in particular. It shows demand rising before it turns into 
 
 ## What you see
 
-At the wide view, the strip along the bottom is the guest mobility read for the whole destination. Each field answers a different question about how guests are moving right now.
+At the wide view, the strip along the bottom is the guest mobility read for the whole destination. It is organised into the three phases of the guest journey, read left to right: what is building before a trip, what is moving during it, and what the trip left behind. Two station lists sit alongside, breaking the same picture down by where the demand is concentrating.
+
+**Pre-trip** is the supply and demand picture before guests move.
 
 | Field | Example | What it tells you |
 |---|---|---|
-| Guest travel satisfaction | 4.4 of 5 | How guests are rating their transfers right now |
-| Guests travelling | 42 | Guests on the move from the focused station |
-| Transfer variance | +42% | How far transfer demand is running above or below plan |
-| Booking requests | 86 | Open mobility requests, flagged when over capacity |
-| Available vehicles | 6 of 12 | Vehicles free to assign |
-| Vehicle mix | 58% buggy, 32% shuttle | What guests are riding in |
-| Stations over capacity | 3 of 5 | Stations running beyond their limit |
-| Average trip | 6.8 min, 1.8 km | Typical travel time and distance |
+| Available vehicles | 6 of 12 | Vehicles free to assign now, and how many are Marina-assigned |
+| Transfer variance | +18% | How far transfer demand is running above or below the planned 240 per hour |
+| Booking requests | 412 | Mobility requests received in the last 60 minutes |
+
+**Trip** is who is moving right now and in what.
+
+| Field | Example | What it tells you |
+|---|---|---|
+| Vehicle type mix | 22 buggy, 9 shuttle, 5 bus, 4 tender | The active fleet broken down by vehicle class |
+| Guest per vehicle type | 22 buggy, 9 shuttle, 5 bus, 4 tender | How guests on the move split across those same classes |
+| Guests travelling | 186 | Guests in transit right now |
+
+**After-trip** is the outcome once guests have arrived.
+
+| Field | Example | What it tells you |
+|---|---|---|
+| Avg travel distance | 2.4 km | Typical distance covered per trip today |
+| Avg travel time | 8.4 min | Typical door-to-door time today |
+| Guest travel satisfaction | 4.6 of 5 | How guests are rating transfers, across 920 trips today, with the change on last week |
+
+Two station lists sit to the left of the strip. Request time by station ranks where requests are landing, here Marina Arrival, SLS Lobby, and EDITION Beach Club. Top stations ranks the busiest pickup points by request volume, here Marina, Turtle Bay Arrival, and Spine Corridor. Together they point to the part of the destination driving the destination-wide numbers.
 
 ## The district view
 
-At the district level the view narrows to a single district, here the Marina, and the guest mobility strip rescopes with it. The same themes now describe one district rather than the whole destination, which is usually where a destination-wide signal resolves into the place that is driving it.
+At the district level the view narrows to a single district, here the Marina, and the guest mobility strip rescopes with it. The same three phases now describe one district rather than the whole destination, which is usually where a destination-wide signal resolves into the place that is driving it.
 
-![The Marina district. The bottom strip shows 3 of 5 stations over capacity, 42 guests on the move from the Marina, a 4.4 of 5 travel rating, transfer variance of +42%, and 6 of 12 vehicles free.](03-gxm-lod2.jpg)
+![The Marina district. The strip now reads for the Marina alone: 4 of 12 vehicles free, transfer variance of +42% against plan, 86 booking requests in the last hour, 32 guests on the move, and a 4.6 of 5 travel rating across 240 trips today. The station lists confirm the Marina is driving its own demand, with Marina Arrival, Boardwalk, and Boat Slip taking the top requests.](03-gxm-lod2.jpg)
 
 ## Following a guest trip
 
