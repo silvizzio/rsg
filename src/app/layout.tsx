@@ -5,6 +5,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://rsg-vizzio.vercel.app'),
   title: 'RSG IOC — Platform Documentation',
   description: 'RSG Integrated Operations Centre user guide and platform documentation.',
 }
