@@ -26,6 +26,9 @@ function getSlugsInOrder(): string[] {
 async function launchBrowser() {
   const isVercel = process.env.VERCEL === '1'
   if (isVercel) {
+    // @sparticuz/chromium selects its bundled system libs from this at import time.
+    // Node 24 has no profile it recognizes, so force the AL2023 (22.x) lib set.
+    process.env.AWS_LAMBDA_JS_RUNTIME = 'nodejs22.x'
     const chromium = await import('@sparticuz/chromium-min')
     const puppeteer = await import('puppeteer-core')
     return puppeteer.default.launch({
