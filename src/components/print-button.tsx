@@ -8,14 +8,25 @@ type Props = {
   slug: string
 }
 
-export default function PrintButton({ title, section, slug }: Props) {
+export default function PrintButton({ slug }: Props) {
   const [loading, setLoading] = useState(false)
 
   async function handle() {
     setLoading(true)
     try {
-      const { generateDocPDF } = await import('@/lib/generate-pdf')
-      await generateDocPDF(title, section, slug)
+      const res = await fetch('/api/pdf?slug=' + encodeURIComponent(slug))
+      if (!res.ok) {
+        let msg = 'Failed'
+        try { msg = (await res.json()).error || msg } catch {}
+        throw new Error(msg)
+      }
+      const blob = await res.blob()
+      const url = URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = 'RSG-IOC-' + slug + '.pdf'
+      a.click()
+      URL.revokeObjectURL(url)
     } catch (e) {
       console.error(e)
       alert('PDF generation failed. Please try again.')
