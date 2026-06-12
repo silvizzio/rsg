@@ -14,15 +14,8 @@ export default function PrintButton({ title, section, slug }: Props) {
   async function handle() {
     setLoading(true)
     try {
-      const res = await fetch('/api/pdf?slug=' + slug)
-      if (!res.ok) throw new Error('Failed')
-      const blob = await res.blob()
-      const url = URL.createObjectURL(blob)
-      const a = document.createElement('a')
-      a.href = url
-      a.download = 'EFM-' + slug + '.pdf'
-      a.click()
-      URL.revokeObjectURL(url)
+      const { generateDocPDF } = await import('@/lib/generate-pdf')
+      await generateDocPDF(title, section, slug)
     } catch (e) {
       console.error(e)
       alert('PDF generation failed. Please try again.')

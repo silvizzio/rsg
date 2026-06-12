@@ -288,7 +288,7 @@ export async function generateDocPDF(title: string, section: string, slug: strin
   if (article) renderBody(doc, article, pw, ph, ml, mr, cw, y)
 
   drawFooters(doc, pw, ph, ml, mr)
-  doc.save('EFM-' + slug + '.pdf')
+  doc.save('RSG-IOC-' + slug + '.pdf')
 }
 
 export async function generateFullPDF() {
@@ -362,5 +362,5 @@ export async function generateFullPDF() {
   }
 
   drawFooters(doc, pw, ph, ml, mr)
-  doc.save('EFM-Platform-Documentation.pdf')
+  doc.save('RSG-IOC-Platform-Documentation.pdf')
 }
