@@ -1,5 +1,9 @@
 import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
+  outputFileTracingIncludes: {
+    "/api/pdf": ["./content/docs/**/*"],
+  },
+  serverExternalPackages: ["@sparticuz/chromium-min", "puppeteer-core", "pdf-lib"],
   async redirects() {
     return [
       { source: '/docs/09-simulation-storm', destination: '/docs/10-simulation-environment', permanent: true },
