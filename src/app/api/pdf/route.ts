@@ -63,6 +63,17 @@ async function renderChapter(browser: Browser, origin: string, slug: string): Pr
   const page = await browser.newPage()
   try {
     await page.goto(`${origin}/docs/${slug}`, { waitUntil: 'networkidle0', timeout: 45000 })
+    await page.evaluate(() => {
+      const article = document.querySelector('article')
+      if (!article) return
+      const h1 = document.querySelector('h1')
+      if (!h1 || article.contains(h1)) return
+      const header = (h1.closest('header') as HTMLElement) || (h1.parentElement as HTMLElement)
+      if (!header) return
+      const clone = header.cloneNode(true) as HTMLElement
+      clone.querySelectorAll('button, a, .no-print').forEach((el) => el.remove())
+      article.insertBefore(clone, article.firstChild)
+    })
     await page.addStyleTag({ content: PRINT_CSS })
     await page.emulateMediaType('print')
     return await page.pdf({
