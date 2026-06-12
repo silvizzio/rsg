@@ -332,3 +332,5 @@ article ul > li > p {
   font-size: 0.9rem;
   line-height: 1.45;
 }
+
+.doc-flow-gxm > li:last-child::before { background: #639922; }
