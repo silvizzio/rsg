@@ -3,7 +3,7 @@ import { PDFDocument } from 'pdf-lib'
 import fs from 'fs'
 import path from 'path'
 
-export const maxDuration = 300
+export const maxDuration = 120
 
 const HDR = "<div style=\"width:100%;font-family:Inter,system-ui,sans-serif;font-size:7pt;color:#999;display:flex;justify-content:space-between;align-items:center;padding:0 20mm 2mm;border-bottom:0.3pt solid #e5e5e5\"><span style=\"font-weight:600\">RSG IOC · Platform Documentation v1.0</span><span>Confidential</span></div>"
 const FTR = "<div style=\"width:100%;font-family:Inter,system-ui,sans-serif;font-size:7pt;color:#999;display:flex;justify-content:space-between;align-items:center;padding:2mm 20mm 0;border-top:0.3pt solid #e5e5e5\"><span>Vizzio · June 2026</span><span style=\"font-weight:600\"><span class=\"pageNumber\"></span> / <span class=\"totalPages\"></span></span></div>"
@@ -46,7 +46,7 @@ async function launchBrowser() {
 async function renderPage(browser: Awaited<ReturnType<typeof launchBrowser>>, url: string): Promise<Buffer> {
   const page = await browser.newPage()
   await page.setViewport({ width: 1280, height: 900 })
-  await page.goto(url, { waitUntil: 'networkidle2', timeout: 30000 }).catch(() => {})
+  await page.goto(url, { waitUntil: 'domcontentloaded', timeout: 30000 })
   await page.addStyleTag({ content: CSS })
   await page.waitForSelector('article', { timeout: 15000 }).catch(() => {})
   await page.evaluateHandle('document.fonts.ready')
@@ -68,11 +68,12 @@ async function renderPage(browser: Awaited<ReturnType<typeof launchBrowser>>, ur
         return false
       }
     }
-    const deadline = Date.now() + 6000
+    const start = Date.now()
+    const deadline = start + 8000
     for (;;) {
       const canvases = Array.from(document.querySelectorAll('canvas')) as HTMLCanvasElement[]
-      if (canvases.length === 0) break
-      if (canvases.every((c) => !isBlank(c))) break
+      if (canvases.length > 0 && canvases.every((c) => !isBlank(c))) break
+      if (canvases.length === 0 && Date.now() - start > 2000) break
       if (Date.now() > deadline) break
       await new Promise((r) => setTimeout(r, 200))
     }
