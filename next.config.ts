@@ -1,6 +1,5 @@
 import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
-  serverExternalPackages: ["puppeteer-core", "@sparticuz/chromium", "@sparticuz/chromium-min"],
   async redirects() {
     return [
       { source: '/docs/09-simulation-storm', destination: '/docs/10-simulation-environment', permanent: true },

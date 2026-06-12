@@ -11,8 +11,7 @@ function registerInter(doc: jsPDF) {
   doc.addFont('Inter-Bold.ttf', 'Inter', 'bold')
 }
 
-
-// Typography scale — following corporate doc standards (Zebra/Inter equiv)
+// Typography scale, following corporate doc standards (Zebra/Inter equiv)
 // Body: 10pt, leading 6mm (1.4x), paragraph gap 4mm
 // H2: 15pt bold, 10mm pre-gap, 2mm post-gap, rule below
 // H3: 11pt bold, 6mm pre-gap, 2mm post-gap
@@ -59,7 +58,7 @@ function drawHeader(doc: jsPDF, pw: number, ml: number, mr: number) {
 
   doc.setFontSize(7)
   doc.setTextColor(100,100,100)
-  doc.text('Confidential — Authorized Stakeholders Only', pw-mr, 8.5, { align:'right' })
+  doc.text('Confidential · Authorized Stakeholders Only', pw-mr, 8.5, { align:'right' })
 }
 
 function drawFooters(doc: jsPDF, pw: number, ph: number, ml: number, mr: number) {
@@ -73,7 +72,7 @@ function drawFooters(doc: jsPDF, pw: number, ph: number, ml: number, mr: number)
     doc.setFontSize(7.5)
     doc.setTextColor(...C.muted)
     doc.setCharSpace(0)
-    doc.text('RSG IOC  —  Vizzio  ·  June 2026  ·  Confidential', ml, ph-5.5)
+    doc.text('RSG IOC  ·  Vizzio  ·  June 2026  ·  Confidential', ml, ph-5.5)
     doc.setFont('Inter','bold')
     doc.text(String(i) + ' / ' + String(total), pw-mr, ph-5.5, { align:'right' })
   }
@@ -98,7 +97,6 @@ function renderBody(
     const text = node.innerText?.trim()
     if (!text) continue
 
-    // ── H2 ──────────────────────────────────────────────
     if (tag === 'h2') {
       guard(18)
       y += 7
@@ -114,7 +112,6 @@ function renderBody(
       doc.line(ml, y, pw-mr, y)
       y += 4
 
-    // ── H3 ──────────────────────────────────────────────
     } else if (tag === 'h3') {
       guard(12)
       y += 4
@@ -126,7 +123,6 @@ function renderBody(
       doc.text(ls, ml, y)
       y += ls.length * 5.2 + 1.5
 
-    // ── Paragraph ────────────────────────────────────────
     } else if (tag === 'p') {
       doc.setFont('Inter','normal')
       doc.setFontSize(9)
@@ -137,7 +133,6 @@ function renderBody(
       doc.text(ls, ml, y)
       y += ls.length * 5.2 + 2.5
 
-    // ── Lists ────────────────────────────────────────────
     } else if (tag === 'ul' || tag === 'ol') {
       doc.setFont('Inter','normal')
       doc.setFontSize(9)
@@ -156,7 +151,6 @@ function renderBody(
       }
       y += 2
 
-    // ── Screenshot placeholder ───────────────────────────
     } else if (tag === 'div' && node.classList?.contains('not-prose')) {
       const cap = node.querySelector('p:last-child')
       const capText = (cap as HTMLElement)?.innerText?.trim() || ''
@@ -165,7 +159,6 @@ function renderBody(
       guard(boxH + 4.2)
       y += 4.2
 
-      // Box fill + dashed border
       doc.setFillColor(249, 249, 249)
       doc.roundedRect(ml, y, cw, boxH, 2, 2, 'F')
       doc.setDrawColor(210, 210, 210)
@@ -175,11 +168,10 @@ function renderBody(
       const cx = ml + cw / 2
       const iconY = y + 5
 
-      // Image icon — rounded rect frame
+      // Image icon, rounded rect frame
       doc.setDrawColor(190, 190, 190)
       doc.setLineWidth(0.5)
       doc.roundedRect(cx - 5, iconY, 10, 7, 0.8, 0.8, 'S')
-      // Mountain shape inside
       doc.setDrawColor(190, 190, 190)
       doc.setLineWidth(0.4)
       doc.circle(cx - 2, iconY + 2.2, 1.1, 'S')
@@ -187,14 +179,12 @@ function renderBody(
       doc.line(cx - 1.5, iconY + 3.5, cx + 2.5, iconY + 5.2)
       doc.line(cx + 2.5, iconY + 5.2, cx + 5, iconY + 3.8)
 
-      // Label
       doc.setFont('Inter', 'bold')
       doc.setFontSize(8)
       doc.setTextColor(150, 150, 150)
       doc.setCharSpace(0)
       doc.text('Screenshot placeholder', cx, iconY + 10, { align: 'center' })
 
-      // Caption
       if (capText) {
         doc.setFont('Inter', 'normal')
         doc.setFontSize(7.5)
@@ -213,7 +203,6 @@ function renderBody(
       const rowH = 7.5
       const px = 3.2
 
-      // Outer border
       const tableH = rows.length * rowH + 1
       guard(tableH)
 
@@ -261,7 +250,7 @@ export async function generateDocPDF(title: string, section: string, slug: strin
   drawHeader(doc, pw, ml, mr)
   let y = 24
 
-  // Section label — uppercase, no char spacing
+  // Section label, uppercase, no char spacing
   doc.setFont('Inter','normal')
   doc.setFontSize(7)
   doc.setTextColor(...C.muted)
@@ -269,7 +258,6 @@ export async function generateDocPDF(title: string, section: string, slug: strin
   doc.text(section.toUpperCase(), ml, y)
   y += 4
 
-  // Page title
   doc.setFont('Inter','bold')
   doc.setFontSize(20)
   doc.setTextColor(...C.ink)
@@ -278,7 +266,6 @@ export async function generateDocPDF(title: string, section: string, slug: strin
   doc.text(tl, ml, y)
   y += tl.length * 9 + 3
 
-  // Title rule
   doc.setDrawColor(...C.rule)
   doc.setLineWidth(0.3)
   doc.line(ml, y, pw-mr, y)
@@ -315,11 +302,18 @@ export async function generateFullPDF() {
   doc.line(ml, 105, pw-mr, 105)
   doc.setFontSize(8.5)
   doc.setTextColor(...C.muted)
-  doc.text('Confidential — For Authorized Stakeholders Only', ml, 113)
+  doc.text('Confidential · For Authorized Stakeholders Only', ml, 113)
 
-  // Collect slugs from sidebar
+  // Collect slugs from sidebar, ordered by chapter number to match the web
   const navLinks = Array.from(document.querySelectorAll('aside a[href^="/docs/"]')) as HTMLAnchorElement[]
-  const slugs = [...new Set(navLinks.map(a => a.getAttribute('href')?.replace('/docs/','') || '').filter(Boolean))]
+  const slugs = [...new Set(
+    navLinks
+      .map(a => (a.getAttribute('href') || '').replace('/docs/', '').split('#')[0].split('?')[0])
+      .filter(Boolean)
+  )].sort((a, b) => {
+    const na = parseInt(a, 10), nb = parseInt(b, 10)
+    return (isNaN(na) ? 999 : na) - (isNaN(nb) ? 999 : nb)
+  })
 
   for (const slug of slugs) {
     const res = await fetch('/docs/' + slug)

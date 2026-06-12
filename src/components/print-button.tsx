@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { generateDocPDF } from '@/lib/generate-pdf'
 
 type Props = {
   title: string
@@ -8,25 +9,13 @@ type Props = {
   slug: string
 }
 
-export default function PrintButton({ slug }: Props) {
+export default function PrintButton({ title, section, slug }: Props) {
   const [loading, setLoading] = useState(false)
 
   async function handle() {
     setLoading(true)
     try {
-      const res = await fetch('/api/pdf?slug=' + encodeURIComponent(slug))
-      if (!res.ok) {
-        let msg = 'Failed'
-        try { msg = (await res.json()).error || msg } catch {}
-        throw new Error(msg)
-      }
-      const blob = await res.blob()
-      const url = URL.createObjectURL(blob)
-      const a = document.createElement('a')
-      a.href = url
-      a.download = 'RSG-IOC-' + slug + '.pdf'
-      a.click()
-      URL.revokeObjectURL(url)
+      await generateDocPDF(title, section, slug)
     } catch (e) {
       console.error(e)
       alert('PDF generation failed. Please try again.')
