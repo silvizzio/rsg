@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 const SECRET = process.env.IMG_SECRET || 'efm-internal-2026'
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   if (pathname.startsWith('/images/docs/')) {
