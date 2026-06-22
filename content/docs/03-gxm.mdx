@@ -41,35 +41,65 @@ At the wide view, the strip along the bottom is the guest mobility read for the 
 
 Two station lists sit to the left of the strip. Request time by station ranks where requests are landing, here Marina Arrival, SLS Lobby, and EDITION Beach Club. Top stations ranks the busiest pickup points by request volume, here Marina, Turtle Bay Arrival, and Spine Corridor. Together they point to the part of the destination driving the destination-wide numbers.
 
-## The district view
+## Reading demand across the destination
 
-At the district level the view narrows to a single district, here the Marina, and the guest mobility strip rescopes with it. The same three phases now describe one district rather than the whole destination, which is usually where a destination-wide signal resolves into the place that is driving it.
+The read works at two levels. At the wide view the strip covers the whole destination across the three phases. Drop into a district, here the Marina, and the same read rescopes to that one area, which is usually where a destination-wide signal resolves into the place that is driving it.
+
+| Aspect | Detail |
+|---|---|
+| Problem | A station can look healthy right up until guests are queuing, by which point it is already a guest experience problem. |
+| Goal | Surface demand as it builds, across the destination and within a district, so it can be acted on before anyone waits too long. |
+| Precondition | The guest experience feed is live: bookings, available vehicles, and trips in progress are reporting. |
+| Steps | 1. Open the Guest Experience Manager from the persona bar.<br/>2. Read the destination mobility strip across the three phases: pre-trip, trip, and after-trip.<br/>3. Use the two station lists to see where demand is concentrating.<br/>4. Select a district to rescope the same read to one area. |
+| Postcondition | The part of the destination driving the numbers is identified, early enough to act. |
 
 ![The Marina district. The strip now reads for the Marina alone: 4 of 12 vehicles free, transfer variance of +42% against plan, 86 booking requests in the last hour, 32 guests on the move, and 92% of guests satisfied with their transfers. The station lists confirm the Marina is driving its own demand, with Marina Arrival, Boardwalk, and Boat Slip taking the top requests.](03-gxm-lod2.jpg)
 
 ## Following a guest trip
 
-At the closest level the view follows a single guest trip through its three phases, and each phase surfaces its own recommended action. Read together, the three phases trace the journey from the demand that precedes a trip, through the trip itself, to the satisfaction it leaves behind.
+At the closest level the view follows a single guest trip through its three phases, and each phase surfaces its own recommended action. Each card carries the live feed for the flagged spot, opening it inside the card so the manager can confirm what is happening on the ground before acting, without leaving the card or hunting for the camera in the CCTV panel.
 
 ### Before the trip
 
-Previously, an overwhelmed station only became visible once guests were already complaining. Here, demand is visible early enough to do something about it, so extra capacity can be requested before the queue ever forms.
+Demand that used to be invisible until it became a queue is now legible while there is still room to add capacity.
+
+| Aspect | Detail |
+|---|---|
+| Problem | An overwhelmed station only became visible once guests were already complaining. |
+| Goal | See demand early enough to request extra capacity before the queue ever forms. |
+| Precondition | The pre-trip read is live for the station: demand against capacity, free vehicles, and the oldest request age. |
+| Steps | 1. The red card surfaces: demand 214 against a 150 capacity, 11 vehicles free, oldest request 8 minutes.<br/>2. Confirm the Marina feed inside the card.<br/>3. Request 6 more transfer boats from the Operations team, or defer with Remind me later. |
+| Postcondition | Extra capacity is requested before the queue forms; the dispatch itself is carried out in the Operations Manager view. |
 
 ![Close-up of the Marina, before the trip. The red card asks the Operations team for 6 more transfer boats, because demand has reached 214 against a capacity of 150, only 11 vehicles are free, and the oldest request has waited 8 minutes.](03-gxm-lod3-pre-trip.jpg)
 
 ### During the trip
 
-Previously, there was no clear picture of how many guests were actually moving at any moment. Here, every guest in motion is visible, along with the vehicle they are travelling in, so a developing pinch point can be relieved while the trip is still under way.
+With every guest in motion visible, a pinch point can be relieved while the trip is still under way rather than after it.
+
+| Aspect | Detail |
+|---|---|
+| Problem | There was no clear picture of how many guests were actually moving at any moment. |
+| Goal | See every guest in motion and the vehicle they are in, so a developing pinch point can be relieved mid-trip. |
+| Precondition | The trip read is live: guests travelling and per-vehicle occupancy are reporting. |
+| Steps | 1. The card surfaces: 318 guests on the move and the lead buggy already at 5 of 6 seats.<br/>2. Confirm the Spine Corridor feed inside the card.<br/>3. Send 2 buggies to the Spine Corridor, or defer with Remind me later. |
+| Postcondition | The pinch point is relieved while the trip is still under way. |
 
 ![Close-up of the Marina, during the trip. The card suggests sending 2 buggies to the Spine Corridor, because 318 guests are on the move and the lead buggy is already at 5 of 6 seats.](03-gxm-lod3-trip.jpg)
 
 ### After the trip
 
-Previously, satisfaction scores arrived after the fact with no link to a cause. Here, a low score points straight back to the leg that produced it, so the manager can trace dissatisfaction to a specific operational pattern rather than guessing at it.
+A low score that used to arrive with no explanation now points straight back to the leg that produced it.
+
+| Aspect | Detail |
+|---|---|
+| Problem | Satisfaction scores arrived after the fact with no link to a cause. |
+| Goal | Tie a low score straight back to the leg that produced it, so dissatisfaction can be traced rather than guessed at. |
+| Precondition | The after-trip read is live: per-group satisfaction and travel time against target are reporting. |
+| Steps | 1. The card flags a low-rated arrival: satisfaction averaging 4.1 of 5, one group at 3.6, travel time 8.4 minutes against a 6.3 target.<br/>2. Confirm the Marina Promenade feed, camera IB-03, inside the card.<br/>3. Open Route Review on the Marina to villas leg, or defer with Remind me later. |
+| Postcondition | The dissatisfaction is traced to a specific leg and pattern, not a guess. |
 
 ![Close-up of the Marina, after the trip. The recommended action card flags a low-rated arrival and suggests reviewing the Marina to villas leg, with the Marina Promenade camera open inside the card. Satisfaction is averaging 4.1 of 5 with one arriving group at 3.6, and travel time is 8.4 minutes against a 6.3 minute target.](03-gxm-lod3-after-trip.jpg)
-
-The recommended action carries its own CCTV popup. The live feed for the flagged leg, here Marina Promenade on camera IB-03, opens inside the card so the manager can confirm what is actually happening on the ground before acting, without leaving the card or hunting for the camera in the CCTV panel. The same pattern holds for the other phases: the pre-trip and trip cards open the Marina and Spine Corridor feeds the same way.
 
 ## Working in this view
 

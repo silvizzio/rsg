@@ -23,9 +23,17 @@ At the wide view, the bottom strip is the marine read for the destination waters
 | Visibility | 18 m | Underwater visibility, tied to turbidity |
 | Wind on marine | 15.2 kn NW | Wind over the water, with a 20 kn dive-closure trigger |
 
-## The marine zone view
+## Reading reef conditions across the waters
 
-At the district level the view sits over the dive and mooring water. Previously, there was no reliable count of how many boats and divers were near the reef. Here, capacity is visible in real time, so crowding can be prevented before it does any physical harm to the reef.
+The read works at two levels. At the wide view the strip covers the destination waters. Drop into a marine zone, here the Shura Marina dive and mooring water, and the read rescopes to that water, where boat and diver counts against capacity become legible.
+
+| Aspect | Detail |
+|---|---|
+| Problem | Reef damage tends to happen quietly, and by the time it is visible it is usually permanent. |
+| Goal | Hold live sight of reef turbidity and temperature, and of the boats and divers near the reef, so crowding or a condition shift can be caught before it does physical harm. |
+| Precondition | The marine feed is live: reef conditions, mooring, dive operation, and wind are reporting. |
+| Steps | 1. Open the Marine Operations Manager from the persona bar.<br/>2. Read the marine strip: reef conditions, mooring, dive operation, and wind.<br/>3. Select a marine zone to inspect dive and mooring capacity.<br/>4. Watch turbidity and temperature against their thresholds, and counts against capacity. |
+| Postcondition | Crowding or a reef-condition shift is visible in real time, before it does any physical harm. |
 
 ![The Shura Marina dive and mooring water. Mooring is full at 6 of 6 with a divert recommended, 4 divers are down in 2 groups, and visibility is 22 metres.](06-mo-lod2-1.jpg)
 
@@ -33,7 +41,15 @@ At the district level the view sits over the dive and mooring water. Previously,
 
 ## The close-up: active response
 
-Previously, dealing with a problem meant spotting it manually and then coordinating a response by hand. Here, when a threshold is crossed the system raises the alarm and assigns the task automatically, so the response is already moving by the time an operator looks.
+At the closest level the view drills into a reef site. When a threshold is crossed the system raises the alarm and assigns the task automatically, so the response is already moving by the time an operator looks.
+
+| Aspect | Detail |
+|---|---|
+| Problem | Dealing with a problem meant spotting it manually and then coordinating a response by hand. |
+| Goal | When a threshold is crossed, raise the alarm and assign the response automatically, so it is already moving by the time an operator looks. |
+| Precondition | Reef thresholds are set, here turbidity 5.0, and marine security is on call for auto-assignment. |
+| Steps | 1. The card fires: turbidity at 5.2 against a 5.0 threshold with 11 boats at the reef.<br/>2. The task to divert dive groups from North Reef to Site C is auto-assigned to marine security.<br/>3. Confirm or adjust the auto-assigned response. |
+| Postcondition | Dive groups are diverted and the response is already moving, without manual spotting or coordination. |
 
 ![Close-up of North Reef. The card diverts dive groups from North Reef to Site C, because turbidity has reached 5.2 against a 5.0 threshold with 11 boats at the reef, and the task is auto-assigned to marine security.](06-mo-lod3-active-response.jpg)
 

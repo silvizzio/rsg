@@ -26,9 +26,17 @@ At the wide view, the bottom strip is the operations read for the whole destinat
 | Accidents | 1 | Incidents today, with status |
 | EV charging | 18 of 22 active | Charging stations working, with energy delivered |
 
-## The hub view
+## Reading the fleet across the destination
 
-At the district level the view focuses on a single hub, here Turtle Bay, and the strip rescopes from the whole destination down to that hub. Reading a hub against the destination figure is what shows whether a problem is local to one hub or shared across the whole fleet.
+The read works at two levels. At the wide view the strip covers the whole destination. Drop into a hub, here Turtle Bay, and the same read rescopes to that hub, which is what shows whether a problem is local to one hub or shared across the whole fleet.
+
+| Aspect | Detail |
+|---|---|
+| Problem | Breakdowns, delays, and idle vehicles rarely announce themselves, and surface later as complaints, missed transfers, and rising cost. |
+| Goal | Keep early sight of the fleet across the destination and within a hub, so a problem can be caught while it is still small. |
+| Precondition | The operations feed is live: fleet and maintenance, utilization, driver safety, and EV charging are reporting. |
+| Steps | 1. Open the Operations Manager from the persona bar.<br/>2. Read the destination operations strip: fleet and maintenance, utilization, driver safety, and EV charging.<br/>3. Select a hub to rescope the same read to one hub.<br/>4. Read the hub figure against the destination figure to tell a local problem from a fleet-wide one. |
+| Postcondition | A problem is located to a hub or recognised as fleet-wide, early enough to rebalance. |
 
 ![Zoomed to the Turtle Bay hub. The strip rescopes to that hub: 14 of 16 vehicles in service, hub use of 68% against the island 79%, and all 6 EV bays active.](04-ops-lod2-1.jpg)
 
@@ -38,53 +46,79 @@ At the closest level the view drills into a site and raises a recommended action
 
 ### Fleet availability
 
-Previously, you found out something was wrong too late to prevent it. Here, you always know what is running, what is at risk, and what is out of service, so capacity can be rebalanced before it bites.
+What is running, at risk, and out of service is legible early, so capacity can be rebalanced before it bites.
+
+| Aspect | Detail |
+|---|---|
+| Problem | You found out something was wrong too late to prevent it. |
+| Goal | Always know what is running, what is at risk, and what is out of service, so capacity can be rebalanced before it bites. |
+| Precondition | Fleet and maintenance figures are reporting for the site. |
+| Steps | 1. The card surfaces: 18 of 24 buggies running at only 2 of 6 seats.<br/>2. Pool reception trips to fill buggies, freeing about 6 vehicles, or defer with Remind me later. |
+| Postcondition | Capacity is rebalanced before it bites, with about 6 vehicles freed. |
 
 ![Close-up of Turtle Bay, fleet availability. The card suggests pooling reception trips to fill buggies, because 18 of 24 buggies are running at only 2 of 6 seats, so pooling frees about 6 vehicles.](04-ops-lod3-fleet-availability.jpg)
 
 ### Utilization and efficiency
 
-Previously, there was no clear sense of whether the fleet was being used well. Here, overworked and idle assets show up early, so a vehicle sitting empty in one place can be moved to where demand is building.
+Overworked and idle assets show up early, so a vehicle sitting empty in one place can be moved to where demand is building.
+
+| Aspect | Detail |
+|---|---|
+| Problem | There was no clear sense of whether the fleet was being used well. |
+| Goal | Surface overworked and idle assets early, so an empty vehicle can be moved to where demand is building. |
+| Precondition | Utilization and idle figures are reporting for the site. |
+| Steps | 1. The card surfaces: an idle pod sitting empty while 4 single-rider sedans queue and 5 assets are under-used.<br/>2. Move the idle pod to where demand is, or defer with Remind me later. |
+| Postcondition | The idle asset is repositioned to where demand is building. |
 
 ![Close-up of Turtle Bay, utilization. The card suggests moving an idle pod to where demand is, because it is sitting empty while 4 single-rider sedans queue and 5 assets are under-used.](04-ops-lod3-utilization-efficiency.jpg)
 
 ### Safety and compliance
 
-Previously, violations and incidents were reported after they had happened. Here, driver behaviour and compliance gaps show up before they escalate, so a marshal can be sent while the situation is still recoverable.
+Driver behaviour and compliance gaps show up before they escalate, so a marshal can be sent while the situation is still recoverable.
+
+| Aspect | Detail |
+|---|---|
+| Problem | Violations and incidents were reported after they had happened. |
+| Goal | Surface driver behaviour and compliance gaps before they escalate, so a marshal can be sent while it is still recoverable. |
+| Precondition | Driver safety and compliance flags are reporting for the site. |
+| Steps | 1. The card surfaces: a buggy over capacity at 7 of 6, with helmet and tailgating flags rising on the bridge.<br/>2. Send a safety marshal to the causeway queue, or defer with Remind me later. |
+| Postcondition | A marshal is sent while the situation is still recoverable. |
 
 ![Close-up of Turtle Bay, safety. The card suggests sending a safety marshal to the causeway queue, because a buggy is over capacity at 7 of 6 and helmet and tailgating flags are rising on the bridge.](04-ops-lod3-safety-compliance.jpg)
 
 ### EV charging
 
-Previously, you learned a charger was down only when someone told you. Here, a live map shows what is working, what is not, and how much energy is left, so vehicles can be routed to the chargers that can actually serve them.
+A live map of what is working, what is not, and how much energy is left lets vehicles be routed to the chargers that can actually serve them.
+
+| Aspect | Detail |
+|---|---|
+| Problem | You learned a charger was down only when someone told you. |
+| Goal | Hold a live map of what is working, what is not, and how much energy is left, so vehicles route to chargers that can serve them. |
+| Precondition | The EV charging network is reporting, each charger over OCPP. |
+| Steps | 1. The card surfaces: 2 EVs under 65% and the Turtle Bay charger 84% free.<br/>2. Route the 2 EVs to the Turtle Bay charger after drop-off, or defer with Remind me later. |
+| Postcondition | The EVs are routed to a charger that can actually serve them. |
 
 ![Close-up of Turtle Bay, EV charging. The card suggests routing 2 EVs to the Turtle Bay charger after drop-off, because both are under 65% and the charger is 84% free.](04-ops-lod3-ev-infrastructure.jpg)
 
 ## The live site view
 
-At the closest level the view drops to a single site and shows it live, here the Turtle Bay depot where the fleet is based. There is no hub or destination breakdown at this level and no recommended action card. The strip holds the same operations read, now describing this one site, and the CCTV panel switches to the depot's own cameras, from the lobby and wings through each numbered gate.
+At the closest level the view drops to a single site and shows it live, here the Turtle Bay depot where the fleet is based. There is no hub or destination breakdown at this level and no recommended action card. It is where a figure from the strip becomes something you can see.
+
+| Aspect | Detail |
+|---|---|
+| Problem | A figure in the strip could be trusted or doubted, but not seen. |
+| Goal | Drop to the live site so a strip figure can be confirmed against what is actually on the ground. |
+| Precondition | The site has live cameras, charger telemetry over OCPP, and a building model with detection and occupancy layers. |
+| Steps | 1. Zoom to the depot for the live site view on the Depot tab, with the strip scoped to the site.<br/>2. Open the EV Hub tab to read the chargers, and select a charger for its full status card.<br/>3. Turn on the detection layer to see every tracked camera, charger, and vehicle pinned in place.<br/>4. Open the building model on the L1 and L2 selector for indoor pins and the human-occupancy heatmap. |
+| Postcondition | The number and the ground agree before any vehicle is moved. |
 
 ![Ground level at the Turtle Bay depot, on the Depot tab. The operations strip reads for the site alone, with 38 of 46 vehicles on service, a 1.8 hour average idle time, and a 92% inspection rate, while the CCTV panel lists the depot cameras from the lobby through each numbered gate.](04-ops-lod4-1.jpg)
 
-This is where a figure from the strip becomes something you can see. When fleet availability or idle time looks off, the live site shows the buggies actually parked and waiting, so the number and the yard agree before any vehicle is moved.
-
 ![The buggy depot at Turtle Bay. Buggies sit charged and idle along the depot front, the physical counterpart to the on service and idle time figures in the strip.](04-ops-lod4-7.jpg)
-
-### The chargers
-
-The EV Hub tab rescopes the same site to its charging infrastructure. The strip now reads energy charged, vehicles on service and available, power free, and live sessions, with the charger points laid out as a row of active, available, and inactive states and a detections list that surfaces any charger needing action. Selecting a charger in the scene opens its status card, so a unit flagged in the strip can be read in full without leaving the view.
 
 ![A charger selected at the Shura EV Hub. The status card reads charger RCTH-AC022-127 as connected, a Type 2 connector at 22 kW, with its session count, energy delivered, and last charge, reported over OCPP. The strip behind it shows 63% energy charged, 14 on service, and 8 live sessions, with two charger points down.](04-ops-lod4-3-popup.jpg)
 
-### Everything detected in the scene
-
-Pulling back to the depot complex, every tracked object is pinned in place: cameras, chargers, and vehicles each carry their own marker, so the whole site reads as a live inventory rather than a static render. A pin is the entry point to that object, the same way the charger card opens from its station.
-
 ![The Turtle Bay depot with its detection layer on. Camera, charger, and vehicle pins sit across the buildings and yard, each marking a tracked asset that can be opened from the scene.](04-ops-lod4-assets.jpg)
-
-### Inside the building
-
-The site view also cuts into the building itself. The roof lifts off to a floor by floor model, switched on the L1 and L2 selector, with the same detection pins now placed indoors. A second layer reads human occupancy as a heatmap across the floor, cool where it is quiet through warm where people gather, so indoor density is legible the same way crowd density is outside.
 
 ![The depot building opened to its first floor, roof removed, with camera pins placed across the interior and the L1 and L2 floor selector on the right.](04-ops-lod4-bim-1-assets.jpg)
 
