@@ -32,20 +32,13 @@ At the wide view, the bottom strip is the environmental read for the whole desti
 
 The read works at two levels. At the wide view the strip covers the whole destination. Drop into a zone, here Shura Marina, and the same air, wind, and water read rescopes to that one area, which is usually where a destination-wide signal resolves into the place driving it.
 
-**Problem.** Unsafe air, wind, or water was often only identified once guests had already been affected, or once an incident had begun to escalate.
-
-**Goal.** Hold a live, local read of air, wind, and water so a risk can be advised on, or an area closed, before guests feel it.
-
-**Precondition.** The environmental sensor feed is live: the air stations, the on-site wind station, and the water buoys are reporting.
-
-**Steps.**
-
-1. Open the Environment Manager from the persona bar.
-2. Read the destination strip: air quality and its pollutant breakdown, wind, and the water suite.
-3. Drop into a zone to see the same read scoped to one area.
-4. Watch for any band moving toward its threshold.
-
-**Postcondition.** A developing risk is visible early, with the zone driving it identified, while there is still time to act ahead of guest impact.
+| Aspect | Detail |
+|---|---|
+| Problem | Unsafe air, wind, or water was often only identified once guests had already been affected, or once an incident had begun to escalate. |
+| Goal | Hold a live, local read of air, wind, and water so a risk can be advised on, or an area closed, before guests feel it. |
+| Precondition | The environmental sensor feed is live: the air stations, the on-site wind station, and the water buoys are reporting. |
+| Steps | 1. Open the Environment Manager from the persona bar.<br/>2. Read the destination strip: air quality and its pollutant breakdown, wind, and the water suite.<br/>3. Drop into a zone to see the same read scoped to one area.<br/>4. Watch for any band moving toward its threshold. |
+| Postcondition | A developing risk is visible early, with the zone driving it identified, while there is still time to act ahead of guest impact. |
 
 ![The Shura Marina zone. The bottom strip carries air quality at 88, wind at 3.6 metres per second from the northwest, and a water quality index of 8.6 of 10 with turbidity of 2.4 NTU.](05-env-lod2-2.jpg)
 
@@ -65,19 +58,13 @@ At the closest level the view drills into a single site, and instead of a plain 
 
 A read is only as trustworthy as the sensors behind it. A probe that drops offline or a camera that degrades quietly opens a blind spot, and the strip can look healthy while one corner of the destination has gone dark.
 
-**Problem.** Monitoring is only useful for as long as the sensors are actually reporting, and a silent failure leaves a gap no one is watching.
-
-**Goal.** Catch a failing sensor the moment it stops reporting and restore coverage before the gap matters.
-
-**Precondition.** The environmental sensor feed is live and the asset health count is being tracked, here 43 monitoring assets.
-
-**Steps.**
-
-1. The Asset Offline card surfaces: water probe LG-04 offline for 6 minutes, reef camera RB-01 degraded, 41 of 43 assets reporting.
-2. Confirm the affected site, Lagoon East, on the live feed in the card.
-3. Dispatch a technician to restore coverage, or choose Remind me later to defer.
-
-**Postcondition.** A technician is en route to Lagoon East, the blind spot is closing, and the asset count returns toward 43 of 43.
+| Aspect | Detail |
+|---|---|
+| Problem | Monitoring is only useful for as long as the sensors are actually reporting, and a silent failure leaves a gap no one is watching. |
+| Goal | Catch a failing sensor the moment it stops reporting and restore coverage before the gap matters. |
+| Precondition | The environmental sensor feed is live and the asset health count is being tracked, here 43 monitoring assets. |
+| Steps | 1. The Asset Offline card surfaces: water probe LG-04 offline for 6 minutes, reef camera RB-01 degraded, 41 of 43 assets reporting.<br/>2. Confirm the affected site, Lagoon East, on the live feed in the card.<br/>3. Dispatch a technician to restore coverage, or choose Remind me later to defer. |
+| Postcondition | A technician is en route to Lagoon East, the blind spot is closing, and the asset count returns toward 43 of 43. |
 
 ![Close-up of Shura Marina. The red card sends a technician to Lagoon East because water probe LG-04 has been offline for 6 minutes and reef camera RB-01 is degraded, leaving 41 of 43 monitoring assets reporting.](05-env-lod3-monitoring-assets.jpg)
 
@@ -85,19 +72,13 @@ A read is only as trustworthy as the sensors behind it. A probe that drops offli
 
 Water can drift out of range well before it would be noticed from the shore, and by the time it shows it may already be affecting the lagoon.
 
-**Problem.** A shift in the water can build unseen, so without an early signal the first sign is often the visible change itself.
-
-**Goal.** Catch a shift in the water against its own baseline, confirm it against a probe, and get a team to the water before the change becomes visible.
-
-**Precondition.** The water buoys and probes are reporting, and a baseline colour index is established, here 94.
-
-**Steps.**
-
-1. The Water Anomaly card surfaces: colour index at 81 against a 94 baseline.
-2. Read the corroboration: probe LG-04 confirms the reading, and air quality and wind are both nominal, so the signal is in the water rather than the air.
-3. Dispatch a marine team to Lagoon East, or defer with Remind me later.
-
-**Postcondition.** A marine team is checking the lagoon, the anomaly is being traced to its source, and the colour index can be tracked back toward baseline.
+| Aspect | Detail |
+|---|---|
+| Problem | A shift in the water can build unseen, so without an early signal the first sign is often the visible change itself. |
+| Goal | Catch a shift in the water against its own baseline, confirm it against a probe, and get a team to the water before the change becomes visible. |
+| Precondition | The water buoys and probes are reporting, and a baseline colour index is established, here 94. |
+| Steps | 1. The Water Anomaly card surfaces: colour index at 81 against a 94 baseline.<br/>2. Read the corroboration: probe LG-04 confirms the reading, and air quality and wind are both nominal, so the signal is in the water rather than the air.<br/>3. Dispatch a marine team to Lagoon East, or defer with Remind me later. |
+| Postcondition | A marine team is checking the lagoon, the anomaly is being traced to its source, and the colour index can be tracked back toward baseline. |
 
 ![Close-up of Shura Marina. The amber card sends a marine team to Lagoon East for a water anomaly, because the colour index has dropped to 81 from a 94 baseline, probe LG-04 confirms the reading, and air quality and wind are both nominal.](05-env-lod3-environmental-monitoring.jpg)
 
@@ -105,19 +86,13 @@ Water can drift out of range well before it would be noticed from the shore, and
 
 A restricted area is restricted for a reason, usually a fragile reef or an unsafe stretch of water. The risk is that a breach is only found after the fact.
 
-**Problem.** Unauthorized access to a restricted area used to be discovered after the fact, if it was discovered at all, by which point the risk to the guest and the reef had already played out.
-
-**Goal.** Have the cameras catch the violation as it happens and put security on the exact spot in real time.
-
-**Precondition.** The violation-detection feed is running on the restricted-zone cameras.
-
-**Steps.**
-
-1. The Violation card fires: 2 swimmers in a restricted reef zone, alert 1 minute old, water quality reads 94.
-2. Confirm the detection on the live feed pinned inside the card.
-3. Dispatch security to the spot, SLS Red Sea, or defer with Remind me later.
-
-**Postcondition.** Security is moving to the exact location within a minute of detection, turning a delayed report into an immediate response.
+| Aspect | Detail |
+|---|---|
+| Problem | Unauthorized access to a restricted area used to be discovered after the fact, if it was discovered at all, by which point the risk to the guest and the reef had already played out. |
+| Goal | Have the cameras catch the violation as it happens and put security on the exact spot in real time. |
+| Precondition | The violation-detection feed is running on the restricted-zone cameras. |
+| Steps | 1. The Violation card fires: 2 swimmers in a restricted reef zone, alert 1 minute old, water quality reads 94.<br/>2. Confirm the detection on the live feed pinned inside the card.<br/>3. Dispatch security to the spot, SLS Red Sea, or defer with Remind me later. |
+| Postcondition | Security is moving to the exact location within a minute of detection, turning a delayed report into an immediate response. |
 
 ![Close-up of Shura Marina. The red card calls security to SLS Red Sea for unauthorized swimmers, because 2 people are in a restricted reef zone, the alert is 1 minute old, and water quality reads 94.](05-env-lod3-safety-violation-detection.jpg)
 
