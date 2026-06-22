@@ -44,7 +44,17 @@ The read works at two levels. At the wide view the strip covers the whole destin
 
 ## The close-up: four things to stay ahead of
 
-At the closest level the view drills into a site and raises a recommended action for each of the four areas. Each card frames the same shift, from reacting after the fact to acting on an early signal.
+At the closest level the view drills into a site, here Turtle Bay, and brings the four areas together in one panel before raising a recommended action for each. Each card frames the same shift, from reacting after the fact to acting on an early signal.
+
+![The Operations Manager close-up at Turtle Bay, with the consolidated site panel on the left and camera and charger pins across the campus.](04-ops-lod3-hq.jpg)
+
+| Field | Reads | What it tells you |
+|---|---|---|
+| Repair and return | 4.2 h | Average time to fix a vehicle and return it to service |
+| Inspection compliance | 96.6% | Share of the site fleet meeting inspection requirements |
+| Idle time | 22%, 3.1 h average | How long vehicles sit unused |
+| Fuel and battery | 72% | Average charge across the site fleet |
+| Top used vehicle types | Buggy, shuttle bus, EV sedan | The most used classes, in order |
 
 ### Fleet availability
 
@@ -102,37 +112,23 @@ A live map of what is working, what is not, and how much energy is left lets veh
 
 ![Close-up of Turtle Bay, EV charging. The card suggests routing 2 EVs to the Turtle Bay charger after drop-off, because both are under 65% and the charger is 84% free.](04-ops-lod3-ev-infrastructure.jpg)
 
-## The live site view
+## The building model
 
-At the closest level the view drops to a single site and shows it live, here the Turtle Bay depot where the fleet is based. There is no hub or destination breakdown at this level and no recommended action card. It is where a figure from the strip becomes something you can see, navigable as a virtual tour of the site and overlaid with the detection and building-model layers.
+At this level the site also opens into its building model. The roofs lift off and the interior is read floor by floor on the L1 and L2 selector, with the tracked cameras pinned in place and a heatmap showing where people are.
 
-| Aspect | Detail |
-|---|---|
-| Problem | A figure in the strip could be trusted or doubted, but not seen. |
-| Goal | Drop to the live site so a strip figure can be confirmed against what is actually on the ground. |
-| Precondition | The site has live cameras, charger telemetry over OCPP, a virtual tour, and a building model with detection and occupancy layers. |
-| Steps | 1. Zoom to the site for the live view, navigable as a virtual tour of fixed ground-level viewpoints.<br/>2. Move through the tour and open an info popup on an asset, such as a charger status card.<br/>3. Turn on the detection layer to see every tracked camera, charger, and vehicle pinned in place.<br/>4. Open the building model on the L1 and L2 selector for indoor pins and the human-occupancy heatmap. |
-| Postcondition | The number and the ground agree before any vehicle is moved. |
+![The Intelligence Operation Centre buildings opened with the roofs removed, camera pins placed across the floor plates, and the L1 and L2 selector on the right.](04-ops-lod3-bim-1-assets.jpg)
 
-### Virtual tour
+![A floor with the human occupancy heatmap on. Warm zones mark where people are gathering across the floor plate, with the figures at their desks beneath.](04-ops-lod3-bim-2-human.jpg)
 
-The site is navigable as a virtual tour, a set of fixed ground-level viewpoints you can move between, with info popups on the assets you pass. The frames below are samples.
+## Virtual tour (preview)
 
-![Ground level at the Turtle Bay depot, on the Depot tab. The operations strip reads for the site alone, with 38 of 46 vehicles on service, a 1.8 hour average idle time, and a 92% inspection rate, while the CCTV panel lists the depot cameras from the lobby through each numbered gate.](04-ops-lod4-1.jpg)
+The site is also navigable as a CCTV virtual tour, a set of fixed ground-level viewpoints you can move between, with info popups on the assets you pass. This is in preview. The frames below are samples.
 
-![The buggy depot at Turtle Bay. Buggies sit charged and idle along the depot front, the physical counterpart to the on service and idle time figures in the strip.](04-ops-lod4-7.jpg)
+![Ground level at the site, the arrival view onto the operations campus, with a buggy at the entrance canopy and the live map legend in the corner.](04-ops-vt-1.jpg)
 
-![A charger selected at the Shura EV Hub. The status card reads charger RCTH-AC022-127 as connected, a Type 2 connector at 22 kW, with its session count, energy delivered, and last charge, reported over OCPP. The strip behind it shows 63% energy charged, 14 on service, and 8 live sessions, with two charger points down.](04-ops-lod4-3-popup.jpg)
+![A charger at the Central Transport Hub, an EV connected at the bay beside the parking, before the status card is opened.](04-ops-vt-8.jpg)
 
-### Detection and the building model
-
-On top of the tour, two layers turn the scene into data: the detection layer that pins every tracked asset, and the building model that opens the depot floor by floor.
-
-![The Turtle Bay depot with its detection layer on. Camera, charger, and vehicle pins sit across the buildings and yard, each marking a tracked asset that can be opened from the scene.](04-ops-lod4-assets.jpg)
-
-![The depot building opened to its first floor, roof removed, with camera pins placed across the interior and the L1 and L2 floor selector on the right.](04-ops-lod4-bim-1-assets.jpg)
-
-![The same floor with the human occupancy heatmap on. Warm areas mark where people are gathering across the floor plate, with the figures at their desks beneath.](04-ops-lod4-bim-2-human.jpg)
+![The same charger selected. The status card reads RCTH-AC022-127 at the Central Transport Hub, Shura, connected, a Type 2 connector at 22 kW with a single connector. It logs 38 sessions in March, 247 kWh delivered, an average session of 19 minutes and 4.2 kWh, a last session of 12 Mar 08:24, and a last charge from 35% to 70%, reported over OCPP 1.6.](04-ops-vt-9.jpg)
 
 ## Working in this view
 
@@ -140,7 +136,7 @@ On top of the tour, two layers turn the scene into data: the detection layer tha
 2. Read the destination operations strip at the wide view.
 3. Select a hub to rescope the fleet, utilization, safety, and EV figures.
 4. Open a site to read its recommended action and dispatch a response.
-5. Zoom into the depot for the live site view, move through the virtual tour, then turn on the detection layer or open the building model to confirm a figure against what is actually on the ground.
+5. Open the site close-up for the consolidated panel, the building model, and the CCTV virtual tour preview.
 
 <Callout type="note">
 Alert states and the full incident lifecycle are documented in the Interface Guide.
