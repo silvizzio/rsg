@@ -104,21 +104,29 @@ A live map of what is working, what is not, and how much energy is left lets veh
 
 ## The live site view
 
-At the closest level the view drops to a single site and shows it live, here the Turtle Bay depot where the fleet is based. There is no hub or destination breakdown at this level and no recommended action card. It is where a figure from the strip becomes something you can see.
+At the closest level the view drops to a single site and shows it live, here the Turtle Bay depot where the fleet is based. There is no hub or destination breakdown at this level and no recommended action card. It is where a figure from the strip becomes something you can see, navigable as a virtual tour of the site and overlaid with the detection and building-model layers.
 
 | Aspect | Detail |
 |---|---|
 | Problem | A figure in the strip could be trusted or doubted, but not seen. |
 | Goal | Drop to the live site so a strip figure can be confirmed against what is actually on the ground. |
-| Precondition | The site has live cameras, charger telemetry over OCPP, and a building model with detection and occupancy layers. |
-| Steps | 1. Zoom to the depot for the live site view on the Depot tab, with the strip scoped to the site.<br/>2. Open the EV Hub tab to read the chargers, and select a charger for its full status card.<br/>3. Turn on the detection layer to see every tracked camera, charger, and vehicle pinned in place.<br/>4. Open the building model on the L1 and L2 selector for indoor pins and the human-occupancy heatmap. |
+| Precondition | The site has live cameras, charger telemetry over OCPP, a virtual tour, and a building model with detection and occupancy layers. |
+| Steps | 1. Zoom to the site for the live view, navigable as a virtual tour of fixed ground-level viewpoints.<br/>2. Move through the tour and open an info popup on an asset, such as a charger status card.<br/>3. Turn on the detection layer to see every tracked camera, charger, and vehicle pinned in place.<br/>4. Open the building model on the L1 and L2 selector for indoor pins and the human-occupancy heatmap. |
 | Postcondition | The number and the ground agree before any vehicle is moved. |
+
+### Virtual tour
+
+The site is navigable as a virtual tour, a set of fixed ground-level viewpoints you can move between, with info popups on the assets you pass. The frames below are samples.
 
 ![Ground level at the Turtle Bay depot, on the Depot tab. The operations strip reads for the site alone, with 38 of 46 vehicles on service, a 1.8 hour average idle time, and a 92% inspection rate, while the CCTV panel lists the depot cameras from the lobby through each numbered gate.](04-ops-lod4-1.jpg)
 
 ![The buggy depot at Turtle Bay. Buggies sit charged and idle along the depot front, the physical counterpart to the on service and idle time figures in the strip.](04-ops-lod4-7.jpg)
 
 ![A charger selected at the Shura EV Hub. The status card reads charger RCTH-AC022-127 as connected, a Type 2 connector at 22 kW, with its session count, energy delivered, and last charge, reported over OCPP. The strip behind it shows 63% energy charged, 14 on service, and 8 live sessions, with two charger points down.](04-ops-lod4-3-popup.jpg)
+
+### Detection and the building model
+
+On top of the tour, two layers turn the scene into data: the detection layer that pins every tracked asset, and the building model that opens the depot floor by floor.
 
 ![The Turtle Bay depot with its detection layer on. Camera, charger, and vehicle pins sit across the buildings and yard, each marking a tracked asset that can be opened from the scene.](04-ops-lod4-assets.jpg)
 
@@ -132,7 +140,7 @@ At the closest level the view drops to a single site and shows it live, here the
 2. Read the destination operations strip at the wide view.
 3. Select a hub to rescope the fleet, utilization, safety, and EV figures.
 4. Open a site to read its recommended action and dispatch a response.
-5. Zoom into the depot for the live site view, then open the EV Hub tab, a charger card, or the building model to confirm a figure against what is actually on the ground.
+5. Zoom into the depot for the live site view, move through the virtual tour, then turn on the detection layer or open the building model to confirm a figure against what is actually on the ground.
 
 <Callout type="note">
 Alert states and the full incident lifecycle are documented in the Interface Guide.
