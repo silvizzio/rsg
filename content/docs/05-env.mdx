@@ -5,13 +5,15 @@ section: "Persona Views"
 description: "Keep air, wind, and water safe for guests, and catch violations like restricted-area swimming the moment they happen."
 ---
 
-The Environment Manager view exists to keep air, wind, and water conditions safe for guests, and to catch anything unsafe before guests are affected by it. It does this in two ways at once. It shows live environmental conditions across the resort, and, just as importantly, it watches the camera feeds for violations such as swimming in a restricted area, alerting security the moment one is detected rather than after the fact.
+The Environment Manager view exists to keep air, wind, and water conditions safe and comfortable for guests, and to catch anything unsafe before guests are affected by it. It is the conditions guardian for the destination: a live read of the air people breathe, the wind across the bays, and the water they swim in, paired with the cameras that watch the restricted areas.
+
+It does this in two ways at once. It holds a live read of environmental conditions across the resort, and it watches the camera feeds for violations such as swimming in a restricted area, alerting security the moment one is detected rather than after the fact. The shift it is built around is simple: from finding out conditions are unsafe once guests are already affected, to seeing air, wind, and water move and acting before any impact reaches a guest.
 
 ![The wide view of the destination, with the environmental read along the bottom: air quality, wind, and water.](05-env-lod1-1.jpg)
 
 ## What you see
 
-At the wide view, the bottom strip is the environmental read for the whole destination, covering air quality, wind, and water.
+At the wide view, the bottom strip is the environmental read for the whole destination, covering air quality, wind, and water. This strip is the baseline picture. It does not ask for an action on its own; it is the read that every response below starts from.
 
 | Field | Example | What it tells you |
 |---|---|---|
@@ -26,15 +28,28 @@ At the wide view, the bottom strip is the environmental read for the whole desti
 | Blue/green algae | 0.2 µg/l | Cyanobacteria level, running average |
 | TDS | 39,400 mg/l | Total dissolved solids, running average |
 
-## The zone view
+## Reading conditions across the destination
 
-At the district level, the view focuses on a single zone, in this example Shura Marina, with the environmental monitoring strip displayed along the bottom of the screen.
+The read works at two levels. At the wide view the strip covers the whole destination. Drop into a zone, here Shura Marina, and the same air, wind, and water read rescopes to that one area, which is usually where a destination-wide signal resolves into the place driving it.
 
-Previously, unsafe conditions were often only identified after guests had already been affected, or after an incident had begun to escalate. With this view, the key environmental factors, air quality, wind conditions, and water status, are monitored and displayed in real time.
+**Problem.** Unsafe air, wind, or water was often only identified once guests had already been affected, or once an incident had begun to escalate.
 
-This gives the team earlier visibility of potential risks and allows safety-related decisions to be made proactively, before guest experience or operations are impacted. In short, the zone view shifts the response from reacting to issues after they occur to making informed safety calls ahead of time.
+**Goal.** Hold a live, local read of air, wind, and water so a risk can be advised on, or an area closed, before guests feel it.
+
+**Precondition.** The environmental sensor feed is live: the air stations, the on-site wind station, and the water buoys are reporting.
+
+**Steps.**
+
+1. Open the Environment Manager from the persona bar.
+2. Read the destination strip: air quality and its pollutant breakdown, wind, and the water suite.
+3. Drop into a zone to see the same read scoped to one area.
+4. Watch for any band moving toward its threshold.
+
+**Postcondition.** A developing risk is visible early, with the zone driving it identified, while there is still time to act ahead of guest impact.
 
 ![The Shura Marina zone. The bottom strip carries air quality at 88, wind at 3.6 metres per second from the northwest, and a water quality index of 8.6 of 10 with turbidity of 2.4 NTU.](05-env-lod2-2.jpg)
+
+The same read holds across the zone from other vantage points.
 
 ![The Shura Marina zone, across the villa clusters along the channel.](05-env-lod2-3.jpg)
 
@@ -42,34 +57,76 @@ This gives the team earlier visibility of potential risks and allows safety-rela
 
 ![The Shura Marina zone, angled across the villa island toward the next key.](05-env-lod2-5.jpg)
 
-## The close-up
+## Responding at a single site
 
-At the closest level the view drills into a single site for the things that keep the resort safe: the monitoring staying live, the water staying in range, and violations being caught the moment they happen.
+At the closest level the view drills into a single site, and instead of a plain reading it surfaces a recommended action. Each card states the situation, carries the live feed for the spot so it can be confirmed without leaving the card, and offers two choices: a primary action that acts now, and Remind me later to defer and resurface it. Three situations recur.
 
 ### Keeping monitoring live
 
-Monitoring is only useful for as long as the sensors are actually reporting. Here, a probe dropping offline or a camera degrading is caught at once, with a clear instruction to restore coverage before a blind spot can open up.
+A read is only as trustworthy as the sensors behind it. A probe that drops offline or a camera that degrades quietly opens a blind spot, and the strip can look healthy while one corner of the destination has gone dark.
+
+**Problem.** Monitoring is only useful for as long as the sensors are actually reporting, and a silent failure leaves a gap no one is watching.
+
+**Goal.** Catch a failing sensor the moment it stops reporting and restore coverage before the gap matters.
+
+**Precondition.** The environmental sensor feed is live and the asset health count is being tracked, here 43 monitoring assets.
+
+**Steps.**
+
+1. The Asset Offline card surfaces: water probe LG-04 offline for 6 minutes, reef camera RB-01 degraded, 41 of 43 assets reporting.
+2. Confirm the affected site, Lagoon East, on the live feed in the card.
+3. Dispatch a technician to restore coverage, or choose Remind me later to defer.
+
+**Postcondition.** A technician is en route to Lagoon East, the blind spot is closing, and the asset count returns toward 43 of 43.
 
 ![Close-up of Shura Marina. The red card sends a technician to Lagoon East because water probe LG-04 has been offline for 6 minutes and reef camera RB-01 is degraded, leaving 41 of 43 monitoring assets reporting.](05-env-lod3-monitoring-assets.jpg)
 
 ### Spotting a water anomaly
 
-Water can drift out of range long before it would be noticed from the shore. Here, a shift in the colour index is caught against its baseline and tied to a confirming probe, so a marine team can be sent to check the water itself rather than waiting for the change to become visible.
+Water can drift out of range well before it would be noticed from the shore, and by the time it shows it may already be affecting the lagoon.
+
+**Problem.** A shift in the water can build unseen, so without an early signal the first sign is often the visible change itself.
+
+**Goal.** Catch a shift in the water against its own baseline, confirm it against a probe, and get a team to the water before the change becomes visible.
+
+**Precondition.** The water buoys and probes are reporting, and a baseline colour index is established, here 94.
+
+**Steps.**
+
+1. The Water Anomaly card surfaces: colour index at 81 against a 94 baseline.
+2. Read the corroboration: probe LG-04 confirms the reading, and air quality and wind are both nominal, so the signal is in the water rather than the air.
+3. Dispatch a marine team to Lagoon East, or defer with Remind me later.
+
+**Postcondition.** A marine team is checking the lagoon, the anomaly is being traced to its source, and the colour index can be tracked back toward baseline.
 
 ![Close-up of Shura Marina. The amber card sends a marine team to Lagoon East for a water anomaly, because the colour index has dropped to 81 from a 94 baseline, probe LG-04 confirms the reading, and air quality and wind are both nominal.](05-env-lod3-environmental-monitoring.jpg)
 
 ### Catching a violation
 
-Previously, unauthorized access to a restricted area was discovered after the fact, if it was discovered at all. Here, the cameras detect it and alert security in real time, turning a delayed report into an immediate response.
+A restricted area is restricted for a reason, usually a fragile reef or an unsafe stretch of water. The risk is that a breach is only found after the fact.
+
+**Problem.** Unauthorized access to a restricted area used to be discovered after the fact, if it was discovered at all, by which point the risk to the guest and the reef had already played out.
+
+**Goal.** Have the cameras catch the violation as it happens and put security on the exact spot in real time.
+
+**Precondition.** The violation-detection feed is running on the restricted-zone cameras.
+
+**Steps.**
+
+1. The Violation card fires: 2 swimmers in a restricted reef zone, alert 1 minute old, water quality reads 94.
+2. Confirm the detection on the live feed pinned inside the card.
+3. Dispatch security to the spot, SLS Red Sea, or defer with Remind me later.
+
+**Postcondition.** Security is moving to the exact location within a minute of detection, turning a delayed report into an immediate response.
 
 ![Close-up of Shura Marina. The red card calls security to SLS Red Sea for unauthorized swimmers, because 2 people are in a restricted reef zone, the alert is 1 minute old, and water quality reads 94.](05-env-lod3-safety-violation-detection.jpg)
 
 ## Working in this view
 
 1. Open the Environment Manager from the persona bar.
-2. Read the destination air, wind, and water bands at the wide view.
-3. Select a zone to inspect its environmental detail.
-4. Open a violation alert to see the affected site and the recommended action.
+2. Read the destination air, wind, and water strip at the wide view.
+3. Drop into a zone to inspect its environmental detail.
+4. Drill into a site when a card surfaces, confirm it on the live feed, and act or defer.
 
 <Callout type="note">
 Reef and marine detail sits in the Marine Operations Manager view.
