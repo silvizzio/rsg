@@ -15,18 +15,24 @@ It watches four things at once: what is running and what is at risk, whether the
 
 ## What you see
 
-At the wide view, the bottom strip is the operations read for the whole destination, grouped into fleet and maintenance, utilization, driver safety, and EV charging.
+At the wide view, the bottom strip is the operations read for the whole destination, grouped into fleet availability, utilization and efficiency, driver safety, and EV infrastructure. A map legend in the corner counts the open items by severity and confirms the operational sensor feed is live.
 
-| Field | Example | What it tells you |
-|---|---|---|
-| On service | 42 of 46 | Vehicles available, with any in maintenance or out of order |
-| Repair and return | 3.2 h | Average time to fix a vehicle and get it back in service |
-| Utilization | 79% | How hard the fleet is working, with over and under used flagged |
-| Idle time | 14% | Time vehicles sit unused, against a 12% target |
-| Fuel and battery | 68% | Average charge across the fleet |
-| Driver safety | 2 behaviour, 2 fatigue | Behaviour and fatigue flags today |
-| Accidents | 1 | Incidents today, with status |
-| EV charging | 18 of 22 active | Charging stations working, with energy delivered |
+| Group | Field | Reads | What it tells you |
+|---|---|---|---|
+| Fleet availability | On service vs maintenance | bar | Share of the fleet in service against those in maintenance |
+| Fleet availability | Repair and return | 4.2 h | Average time to fix a vehicle and return it to service |
+| Utilization and efficiency | Top used vehicle types | Buggy 1,240, shuttle bus 980, EV sedan 610 | The most used classes, by trip count |
+| Utilization and efficiency | Fuel and battery hub | 72% avg | Average charge across the fleet |
+| Utilization and efficiency | Hub idle time | 22% avg | Time vehicles sit unused |
+| Utilization and efficiency | Hub peak | 17:00 to 18:00, 34 vehicles, 318 guests | Busiest hour and its load |
+| Utilization and efficiency | Under and over use | bar | Balance of over-used against under-used assets |
+| Utilization and efficiency | Inspection and inspection compliance | 96.6%, Compliant | Share of the fleet meeting inspection requirements |
+| Driver safety | Violation, fatigue, accidents | 0, 0, 0 | Driver behaviour, fatigue, and incident counts today |
+| EV infrastructure | Active vs inactive charging | bar | Charging stations working against those down |
+| EV infrastructure | Total energy charged | 63% capacity | Energy delivered against capacity |
+
+The map legend reads the open items by severity: 0 critical, 1 high, 2 medium, and 8 low or info, fed by the operational sensor feed running live.
+
 
 ## Reading the fleet across the destination
 
@@ -40,7 +46,7 @@ The read works at two levels. At the wide view the strip covers the whole destin
 | Steps | 1. Open the Operations Manager from the persona bar.<br/>2. Read the destination operations strip: fleet and maintenance, utilization, driver safety, and EV charging.<br/>3. Select a hub to rescope the same read to one hub.<br/>4. Read the hub figure against the destination figure to tell a local problem from a fleet-wide one. |
 | Postcondition | A problem is located to a hub or recognised as fleet-wide, early enough to rebalance. |
 
-![Zoomed to the Turtle Bay hub. The strip rescopes to that hub: 14 of 16 vehicles in service, hub use of 68% against the island 79%, and all 6 EV bays active.](04-ops-lod2-1.jpg)
+![Zoomed to the Turtle Bay hub. The strip rescopes to that hub, carrying the same grouped read as the destination: repair and return 4.2 hours, fuel and battery 72%, hub idle 22%, inspection compliance 96.6%, and total energy charged 63%, with the asset pins placed across the hub.](04-ops-lod2-1.jpg)
 
 ## The close-up: four things to stay ahead of
 
