@@ -13,17 +13,21 @@ The Marine Operations Manager view exists to protect the coral reef, Red Sea Glo
 
 ## What you see
 
-At the wide view, the bottom strip is the marine read for the destination waters, covering reef conditions, mooring, dive operation, and wind.
+At the wide view, the bottom strip is the marine read for the destination waters, grouped into reef conditions, capacity management, and active response. A map legend in the corner counts the open items by severity and confirms the environmental sensor feed is live.
 
-| Field | Example | What it tells you |
-|---|---|---|
-| Turbidity | 2.4, clear | Reef water cloudiness against a 5.0 threshold |
-| Reef temperature | 26.4 C | Sea temperature, with a bleach-risk flag above threshold |
-| Mooring | 18 of 24 used | Moorings in use and free |
-| Dive sites | 3 of 4 open | Sites open, with any closed |
-| Divers in water | 12 | Divers down across active sites |
-| Visibility | 18 m | Underwater visibility, tied to turbidity |
-| Wind on marine | 15.2 kn NW | Wind over the water, with a 20 kn dive-closure trigger |
+| Group | Field | Reads | What it tells you |
+|---|---|---|---|
+| Reef conditions | Water turbidity | 2.1 NTU, Stable | Reef water cloudiness, trended against threshold |
+| Reef conditions | Reef temperature | 22 C, Stable | Sea temperature, trended against bleach-risk threshold |
+| Capacity management | Boats near reef | 9 of 12 | Boats at the reef against capacity |
+| Capacity management | Divers near reef | 26 of 40, across 5 sites | Divers down against capacity, spread over the open sites |
+| Capacity management | Capacity-aware mooring allocation | bar | Moorings occupied against those available |
+| Active response | Threshold alarms | All clear | Whether turbidity, temperature, and capacity sit within thresholds |
+| Active response | Dynamic dive-site switching | Recommended action | A suggested reroute when a cluster is better served elsewhere |
+| Active response | Task triggered | Dispatch patrol boat, notify dive operator | The security and operations tasks a recommendation raises |
+
+The map legend reads the open items by severity: 0 critical, 1 high, 2 medium, and 8 low or info, fed by the environmental sensor feed running live.
+
 
 ## Reading reef conditions across the waters
 
@@ -37,23 +41,24 @@ The read works at two levels. At the wide view the strip covers the destination 
 | Steps | 1. Open the Marine Operations Manager from the persona bar.<br/>2. Read the marine strip: reef conditions, mooring, dive operation, and wind.<br/>3. Select a marine zone to inspect dive and mooring capacity.<br/>4. Watch turbidity and temperature against their thresholds, and counts against capacity. |
 | Postcondition | Crowding or a reef-condition shift is visible in real time, before it does any physical harm. |
 
-![The Shura Marina dive and mooring water. Mooring is full at 6 of 6 with a divert recommended, 4 divers are down in 2 groups, and visibility is 22 metres.](06-mo-lod2-1.jpg)
+![The Shura Marina marine zone. The strip rescopes to this water: turbidity 2.1 NTU and reef temperature 22 C both stable, 9 of 12 boats near the reef, and 26 of 40 divers down across 5 sites.](06-mo-lod2-1.jpg)
 
-![The same water, wider, looking across the bay to the causeway.](06-mo-lod2-2.jpg)
+![The Shura Marina zone across the villa clusters, the same reef read holding: turbidity 2.1 NTU stable, boats 9 of 12, divers 26 of 40 across 5 sites.](06-mo-lod2-2.jpg)
 
 ## The close-up: active response
 
-At the closest level the view drills into a reef site. When a threshold is crossed the system raises the alarm and assigns the task automatically, so the response is already moving by the time an operator looks.
+At the closest level the view drills into a reef site. Conditions can read all clear, turbidity, temperature, and capacity all within thresholds, and the view still surfaces a recommendation when a cluster would be better served at another site. The recommendation, once applied, raises the security and operations tasks behind it rather than leaving them to manual coordination.
 
 | Aspect | Detail |
 |---|---|
-| Problem | Dealing with a problem meant spotting it manually and then coordinating a response by hand. |
-| Goal | When a threshold is crossed, raise the alarm and assign the response automatically, so it is already moving by the time an operator looks. |
-| Precondition | Reef thresholds are set, here turbidity 5.0, and marine security is on call for auto-assignment. |
-| Steps | 1. The card fires: turbidity at 5.2 against a 5.0 threshold with 11 boats at the reef.<br/>2. The task to divert dive groups from North Reef to Site C is auto-assigned to marine security.<br/>3. Confirm or adjust the auto-assigned response. |
-| Postcondition | Dive groups are diverted and the response is already moving, without manual spotting or coordination. |
+| Problem | Spreading boats and divers well across the reef meant watching capacity by hand and coordinating any reroute manually, even when nothing had breached a threshold. |
+| Goal | Surface a dive-site switch while conditions are still all clear, and on apply, raise the patrol and dive-operator tasks automatically so the reroute is already moving. |
+| Precondition | Reef conditions, capacity, and the dive-site network are reporting, with thresholds reading all clear. |
+| Steps | 1. The threshold alarms read all clear: turbidity, temperature, and capacity within thresholds.<br/>2. The recommended action surfaces: divert the Shebara Cluster to Shebara Wall.<br/>3. Apply the action, or defer with Remind me later.<br/>4. On apply, the task triggers: dispatch a patrol boat and notify the dive operator, tagged to security and operations. |
+| Postcondition | The cluster is rerouted to Shebara Wall, with the patrol and dive-operator tasks already assigned, before any threshold is approached. |
 
-![Close-up of North Reef. The card diverts dive groups from North Reef to Site C, because turbidity has reached 5.2 against a 5.0 threshold with 11 boats at the reef, and the task is auto-assigned to marine security.](06-mo-lod3-active-response.jpg)
+![Close-up of Shura Marina. With threshold alarms reading all clear, the recommended action diverts the Shebara Cluster to Shebara Wall, and on apply triggers a patrol boat dispatch and a dive-operator notification, tagged to security and operations.](06-mo-lod2-3.jpg)
+
 
 ## Working in this view
 
