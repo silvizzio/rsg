@@ -263,6 +263,7 @@ article ul > li > p {
 .doc-split-media.size-half { flex-basis: 50%; max-width: 50%; }
 .doc-split-media.size-third { flex-basis: 32%; max-width: 32%; }
 .doc-split-media.size-narrow { flex-basis: 6%; max-width: 6%; min-width: 48px; }
+.doc-split-media.size-tool { flex-basis: 26%; max-width: 26%; }
 .doc-split-media * { max-width: 100% !important; }
 .doc-split-media canvas, .doc-split-media img { width: 100% !important; height: auto !important; }
 
