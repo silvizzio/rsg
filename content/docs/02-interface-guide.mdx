@@ -85,25 +85,50 @@ The right side of the screen is the camera wall for the area in focus. Its heade
 
 ## The toolbar
 
-The toolbar is the control cluster on the right edge, the same in every persona. A vertical stack holds the controls that stay constant: the map markers, the alerts, and recenter. Beside it the Assets control expands a row of layer toggles, and search and the zoom controls sit at the bottom throughout.
+The toolbar is the control cluster on the right edge, the same in every persona. The top of the strip holds the controls that stay constant: the map markers, the alerts, and recenter. The Assets control expands a row of layer toggles beside them, and search and the zoom controls sit at the foot. What the Assets row offers, and the treatment of the strip, change with the level of detail and the context.
 
-What that row offers changes with the level of detail and with context. The treatment is lighter across the wide LOD 1 and LOD 2 views and darker in the LOD 3 close-up. In the normal context the Assets row toggles the physical layers: cameras, vehicles, and chargers. In simulation it swaps to the simulation layers: airflow, temperature, cameras, and crowd.
+<div className="doc-split">
+<div className="doc-split-text">
 
-**LOD 1 and 2.** The collapsed stack, then the Assets row expanded.
+**LOD 1 and 2.** Across the wide views the strip takes the lighter treatment and stays short: the markers, alerts, and recenter at the top, with search and zoom at the foot. Opening Assets expands the physical layers beside the stack: cameras, vehicles, and chargers.
 
-![The toolbar at LOD 1 and 2, collapsed to the map markers, alerts, and recenter controls.](02-interface-toolbar-lod12.png)
+</div>
+<div className="doc-split-media cap-right">
+
+![The toolbar at LOD 1 and 2, collapsed to the map markers, alerts, and recenter, with search and zoom at the foot.](02-interface-toolbar-lod12.png)
 
 ![The same toolbar with the Assets row expanded, toggling the camera, vehicle, and charger layers.](02-interface-toolbar-lod12-assets.png)
 
-**LOD 3.** The same controls in the close-up treatment.
+</div>
+</div>
 
-![The toolbar at LOD 3, the markers, alerts, and recenter controls in the darker close-up treatment.](02-interface-toolbar-lod3.png)
+<div className="doc-split">
+<div className="doc-split-text">
+
+**LOD 3.** In the close-up the same controls take the darker treatment, and a level selector, 2 over 1, sits in the middle of the strip to step between detail levels. Assets again expands the camera, vehicle, and charger layers.
+
+</div>
+<div className="doc-split-media cap-right">
+
+![The toolbar at LOD 3 in the darker close-up treatment, with the level selector in the middle of the strip.](02-interface-toolbar-lod3.png)
 
 ![The LOD 3 toolbar with the Assets row expanded to the camera, vehicle, and charger layers.](02-interface-toolbar-lod3-assets.png)
 
-**In simulation.** The Assets row carries the simulation layers instead.
+</div>
+</div>
+
+<div className="doc-split">
+<div className="doc-split-text">
+
+**In simulation.** A back control sits at the top to leave the run, and the Assets row swaps from the physical layers to the simulation layers: airflow, temperature, cameras, and crowd.
+
+</div>
+<div className="doc-split-media cap-right">
 
 ![The LOD 3 toolbar in simulation, the Assets row swapped to the airflow, temperature, camera, and crowd layers.](02-interface-toolbar-lod3-sim-assets.png)
+
+</div>
+</div>
 
 ## Personas and your login
 
