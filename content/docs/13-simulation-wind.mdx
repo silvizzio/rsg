@@ -11,13 +11,15 @@ The run is a selection, not free authoring. A scenario preset and a few boxed in
 
 It opens in the Marine Operations view, scoped to North Reef, and the model behind it is WRF plus CFD.
 
-![Wind simulation: the left panel sets the wind scenario, the twin carries the wind-speed field and airflow direction, and the right panel reads the marine wind window.](06-mo-lod3-simulation-wind.jpg)
+## Before running
 
-## Setting up the run
+![Wind simulation before a run: the left panel builds the scenario, the right panel reads idle, and Run Simulation starts it.](06-mo-lod3-simulation-wind-before.jpg)
 
-The left panel composes the scenario. Scenario preset is the one-tap starting point: Calm, Breezy, or Storm. Breezy is shown, a working wind that sits inside the operating range.
+Before running sets the inputs the forecast departs from. Scenario preset is the one-tap starting point: Calm, Breezy, or Storm. Breezy is shown, a working wind that sits inside the operating range.
 
 The boxed inputs size it. Wind speed (Calm, Breeze, Strong, Gale) sets the band, Breeze here. Direction (NW, W, SW) sets where it comes from, W here, across the marina mouth. Gust factor (Low, High) sets how peaky it is, Low here. Layers shown carries the wind speed, the airflow direction, and the operating-limit zone onto the twin.
+
+Until the run starts the right panel is idle: the forecasted outcome reads Not running, and the marine wind window, wind over water, gusts, small-craft limit, and mooring exposure all read empty. Run Simulation plays the scenario forward from these inputs.
 
 | Control | What it sets |
 | --- | --- |
@@ -27,7 +29,9 @@ The boxed inputs size it. Wind speed (Calm, Breeze, Strong, Gale) sets the band,
 | Gust factor | Low or High peakiness, here Low |
 | Layers shown | Wind speed, airflow direction, operating-limit zone |
 
-## Reading the forecast
+## After running
+
+![Wind simulation after a run: the wind field sweeps the map and the right panel reads the marine wind window, the conditions, and the responses.](06-mo-lod3-simulation-wind.jpg)
 
 The right panel reads top to bottom. The Forecasted Outcome banner is the headline, and here it is the stable case: Within normal range, inputs are at a breezy setting, no action needed. This is the read an operator wants to confirm before committing the day's marine schedule.
 
