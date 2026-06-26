@@ -6,19 +6,14 @@ const RUN = { bg: '#6D5BD0', text: '#FFFFFF' }
 const STOP = { bg: '#DC2626', text: '#FFFFFF' }
 const TWIN = { bg: '#E6F1FB', border: '#A9CBEC' }
 const WARN = { bg: '#FAEEDA', border: '#EECDA0', text: '#854F0B' }
-const GOOD = { bg: '#E1F5EE', border: '#A7DDC9', text: '#0F6E56' }
-const IMPL = { bg: '#1D9E75', text: '#FFFFFF' }
-const DONE = { bg: '#D6F0E5', border: '#A7DDC9', text: '#0F6E56' }
+const IDLE = { bg: '#F1F2F4', border: '#D7DAE0', text: '#6b7280' }
 const MAP_PLAIN = '#EAF1F4'
 const MAP_HEAT = 'radial-gradient(circle at 36% 40%, rgba(232,64,64,0.42), rgba(232,64,64,0) 44%), radial-gradient(circle at 64% 62%, rgba(245,166,35,0.40), rgba(245,166,35,0) 48%), #EAF1F4'
-const MAP_EASE = 'radial-gradient(circle at 50% 48%, rgba(29,158,117,0.32), rgba(29,158,117,0) 54%), #EAF1F4'
-const MM = { bg: '#FAEEDA', border: '#EECDA0', text: '#854F0B' }
-const PTV = { bg: '#E6F1FB', border: '#A9CBEC', text: '#1f4e79' }
 const LIB = { bg: '#FFFFFF', border: '#C4C9D2', text: '#374151' }
 const STEP = { bg: '#EEEDFE', border: '#C7C2F0', text: '#26215C' }
 const VISA = { bg: '#E2F3F4', border: '#A6D5DA', text: '#134a52' }
 const VISB = { bg: '#E1F5EE', border: '#A7DDC9', text: '#0F6E56' }
-const STEPI = { bg: '#E1F5EE', border: '#A7DDC9', text: '#0F6E56' }
+const ENG = { bg: '#FAEEDA', border: '#EECDA0', text: '#854F0B' }
 
 const rightWrap: CSSProperties = { flex: '0 0 30%', background: '#FBFCFD', border: `1px solid ${N.cardBorder}`, borderRadius: '8px', padding: '10px' }
 
@@ -34,15 +29,11 @@ function Pill({ text }: { text: string }) {
 function Banner({ tone, text }: { tone: { bg: string; border: string; text: string }; text: string }) {
   return <div style={{ background: tone.bg, border: `1px solid ${tone.border}`, color: tone.text, fontSize: '11px', fontWeight: 700, borderRadius: '6px', padding: '6px 8px', marginTop: '4px' }}>{text}</div>
 }
-function ActionRow({ done }: { done: boolean }) {
+function ResponseRow({ label, muted }: { label: string; muted?: boolean }) {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '6px', background: '#FFFFFF', border: `1px solid ${N.cardBorder}`, borderRadius: '6px', padding: '6px 8px', marginTop: '6px', fontSize: '11px', color: N.text }}>
-      <span>Recommended action</span>
-      {done ? (
-        <span style={{ background: DONE.bg, border: `1px solid ${DONE.border}`, color: DONE.text, fontSize: '10px', fontWeight: 700, borderRadius: '5px', padding: '3px 8px', whiteSpace: 'nowrap' }}>Implemented</span>
-      ) : (
-        <span style={{ background: IMPL.bg, color: IMPL.text, fontSize: '10px', fontWeight: 700, borderRadius: '5px', padding: '3px 8px', whiteSpace: 'nowrap' }}>Implement</span>
-      )}
+    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', background: '#FFFFFF', border: `1px solid ${N.cardBorder}`, borderRadius: '6px', padding: '6px 8px', marginTop: '6px', fontSize: '11px', color: muted ? N.muted : N.text }}>
+      <span style={{ width: '12px', height: '12px', borderRadius: '999px', border: `1.5px solid ${N.cardBorder}`, flex: '0 0 auto' }} />
+      <span>{label}</span>
     </div>
   )
 }
@@ -50,7 +41,7 @@ function SetupCol({ cta }: { cta: string }) {
   return (
     <div style={{ flex: '0 0 27%', background: SETUP.bg, border: `1px solid ${SETUP.border}`, borderRadius: '8px', padding: '10px' }}>
       <Label text="Setup" />
-      {['Forecast type/phase', 'Event to simulate', 'Parameters', 'Action plan'].map((x, i) => <Pill key={i} text={x} />)}
+      {['Simulation', 'Scenario preset', 'Scenario inputs', 'Layers shown'].map((x, i) => <Pill key={i} text={x} />)}
       <div style={{ background: cta === 'Stop Simulation' ? STOP.bg : RUN.bg, color: RUN.text, textAlign: 'center', fontSize: '11px', fontWeight: 700, borderRadius: '6px', padding: '8px', marginTop: '8px' }}>{cta}</div>
     </div>
   )
@@ -67,11 +58,11 @@ function TwinCol({ sub, mapBg, caption }: { sub: string; mapBg: string; caption:
 function RightDefault() {
   return (
     <div style={rightWrap}>
-      <Label text="Current readings" />
-      <Pill text="Live reading" />
-      <Pill text="Live reading" />
-      <Pill text="Live reading" />
-      <div style={{ fontSize: '10px', color: N.muted, marginTop: '6px' }}>Forecast appears after the run</div>
+      <Label text="Forecast" />
+      <Banner tone={IDLE} text="Not running" />
+      <Pill text="Hero metric, idle" />
+      <Pill text="KPI, idle" />
+      <div style={{ fontSize: '10px', color: N.muted, marginTop: '6px' }}>Set the scenario, then Run</div>
     </div>
   )
 }
@@ -80,22 +71,10 @@ function RightRunning() {
     <div style={rightWrap}>
       <Label text="Forecast" />
       <Banner tone={WARN} text="Forecasted outcome" />
-      <Pill text="Forecasted metric" />
+      <Pill text="Hero metric" />
       <Pill text="Forecasted KPI" />
-      <ActionRow done={false} />
-      <ActionRow done={false} />
-    </div>
-  )
-}
-function RightImplement() {
-  return (
-    <div style={rightWrap}>
-      <Label text="Forecast" />
-      <Banner tone={GOOD} text="Outcome shifting" />
-      <Pill text="Re-anchored metric" />
-      <Pill text="Re-anchored KPI" />
-      <ActionRow done={true} />
-      <ActionRow done={false} />
+      <ResponseRow label="Recommended response" />
+      <ResponseRow label="Do nothing" muted />
     </div>
   )
 }
@@ -107,11 +86,10 @@ function StateCard({ tag, children }: { tag: string; children: ReactNode }) {
     </div>
   )
 }
-export function SimState({ state }: { state: 'default' | 'running' | 'implement' }) {
+export function SimState({ state }: { state: 'default' | 'running' }) {
   const cfg = {
     default: { tag: 'Default · Setup', sub: 'live, no forecast yet', bg: MAP_PLAIN, cap: 'live twin', right: <RightDefault />, cta: 'Run Simulation' },
-    running: { tag: 'Running · Forecast', sub: 'forecast visualization', bg: MAP_HEAT, cap: 'crowd density, vehicle traffic', right: <RightRunning />, cta: 'Stop Simulation' },
-    implement: { tag: 'Implementation · Acting', sub: 're-run, action applied', bg: MAP_EASE, cap: 'easing after the action', right: <RightImplement />, cta: 'Stop Simulation' },
+    running: { tag: 'Running · Forecast', sub: 'forecast visualization', bg: MAP_HEAT, cap: 'wind field, coastal overlay, heatmap', right: <RightRunning />, cta: 'Stop Simulation' },
   }[state]
   return (
     <div style={{ margin: '20px 0', fontSize: '13px', lineHeight: 1.4 }}>
@@ -140,30 +118,36 @@ function StepBox({ tone, text, bold }: { tone: { bg: string; border: string; tex
 function ProvLabel({ text }: { text: string }) {
   return <div style={{ fontSize: '10px', fontWeight: 700, color: '#1f2937', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '4px' }}>{text}</div>
 }
+function EngLine({ text }: { text: string }) {
+  return <div style={{ fontSize: '10px', color: N.muted, marginTop: '4px', paddingLeft: '2px' }}>{text}</div>
+}
 export function SimSources() {
   return (
     <div style={{ margin: '24px 0', fontSize: '13px', lineHeight: 1.4 }}>
       <div style={{ background: N.bg, border: `1px solid ${N.border}`, borderRadius: '14px', padding: '18px', display: 'flex', gap: '0', alignItems: 'stretch', flexWrap: 'wrap' }}>
         <div style={{ flex: '1 1 240px', minWidth: '220px', borderRight: `1px dashed ${N.cardBorder}`, paddingRight: '18px' }}>
           <ProvLabel text="Modeled upstream (outside the twin)" />
-          <SrcBox tone={MM} title="MassMotion" sub="pedestrian and human crowd events" />
-          <SrcBox tone={PTV} title="PTV + Aimsun" sub="vehicle and traffic events" />
+          <SrcBox tone={ENG} title="Specialist engines" sub="one per simulation, movement, climate, energy, coastal" />
+          <EngLine text="MassMotion, PTV, Aimsun, Pathfinder, movement" />
+          <EngLine text="WRF + CFD, wind" />
+          <EngLine text="Ladybug Tools, thermal comfort" />
+          <EngLine text="HOMER Pro, energy" />
+          <EngLine text="ADCIRC, Delft3D, MIKE, SWAN, coastal" />
+          <EngLine text="ReefMod-GBR, coral reef" />
           <SrcArrow />
-          <SrcBox tone={LIB} title="Events and action plans" sub="the selectable library" />
+          <SrcBox tone={LIB} title="Scenario presets and inputs" sub="the selectable controls" />
         </div>
         <div style={{ flex: '1 1 300px', minWidth: '260px', paddingLeft: '18px' }}>
           <ProvLabel text="Run and visualized in the IOC twin" />
-          <StepBox tone={STEP} text="Select an event and action plan, set the run parameters" />
+          <StepBox tone={STEP} text="Set a scenario: preset, inputs, layers" />
           <SrcArrow />
           <StepBox tone={STEP} text="Run the forecast" bold />
           <SrcArrow />
           <div style={{ display: 'flex', gap: '6px', marginTop: '4px', flexWrap: 'wrap' }}>
-            <div style={{ flex: '1 1 120px', background: VISA.bg, border: `1px solid ${VISA.border}`, borderRadius: '6px', padding: '7px 9px', fontSize: '10px', color: VISA.text }}>Twin visualizes: crowd density, vehicle traffic</div>
-            <div style={{ flex: '1 1 120px', background: VISB.bg, border: `1px solid ${VISB.border}`, borderRadius: '6px', padding: '7px 9px', fontSize: '10px', color: VISB.text }}>Forecast and recommended actions</div>
+            <div style={{ flex: '1 1 120px', background: VISA.bg, border: `1px solid ${VISA.border}`, borderRadius: '6px', padding: '7px 9px', fontSize: '10px', color: VISA.text }}>Twin visualizes: heatmap, wind field, coastal overlay</div>
+            <div style={{ flex: '1 1 120px', background: VISB.bg, border: `1px solid ${VISB.border}`, borderRadius: '6px', padding: '7px 9px', fontSize: '10px', color: VISB.text }}>Forecast and recommended responses</div>
           </div>
-          <SrcArrow />
-          <StepBox tone={STEPI} text="Implement, routes to live operations" bold />
-          <div style={{ fontSize: '10px', color: N.muted, marginTop: '8px' }}>The twin runs and shows the scenario. It does not author events or action plans.</div>
+          <div style={{ fontSize: '10px', color: N.muted, marginTop: '8px' }}>Exploration only. Nothing is dispatched. The twin runs and shows the scenario; it does not author the model.</div>
         </div>
       </div>
     </div>

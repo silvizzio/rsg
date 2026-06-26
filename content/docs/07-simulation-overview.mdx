@@ -2,7 +2,7 @@
 title: "Overview"
 order: 7
 section: "Simulation"
-description: "What the simulation layer is, how a run reads, and where its events and forecasts come from."
+description: "What the simulation layer is, how a run reads, where its forecasts come from, and the engine behind each persona's read."
 ---
 
 Simulation is where the IOC stops reacting and starts rehearsing. It takes the live state of the destination and carries it forward under a chosen pressure, a surge of arrivals, a fleet drawn down, a wind shift onto the reef, and shows where the day would strain before it actually does. The point is not to predict the future precisely; it is to surface the squeeze early enough to act on it.
@@ -13,56 +13,70 @@ That spine is why the layer earns its place. A run surfaces a problem while the 
 
 ## How a run works
 
-Every run is an act of selection, not authoring, and it follows one of two rhythms depending on the simulation.
+Every run is an act of selection, not authoring. The operator chooses a simulation, picks a scenario preset, sets the boxed inputs that size it, runs it, reads the forecast, and weighs the recommended responses. Nothing here is freeform: the presets and inputs are prepared controls, and the responses are modeled previews. The run is exploration, so nothing is dispatched, and the lowest response, Do nothing, either holds at the modeled level or, for energy, trends to the projected worst.
 
-The operational runs, Crowd and Traffic, choose an event to simulate, set the parameters that size it, choose an action plan to test against it, run it, read the forecast, then implement the plan that holds up best. The event and the action plan are both drawn from a prepared library, so the run is selection and comparison rather than authoring, and the chosen plan is dispatched to the teams.
+Reading a run means reading that chain back out of the screen. The left of the page is the cause: the scenario being put on the island and how hard. The center is the system under that load: the twin showing where the pressure lands. The right is the consequence and the choices: the forecasted outcome, the conditions that move, and the responses that would bend the curve.
 
-The condition runs, the environment and marine simulations, choose a scenario preset, set the boxed inputs that size it, run it, read the forecast, then weigh the recommended responses. These are exploration runs: they dispatch nothing, and the lowest response, Do nothing, either holds at the modeled level or, for energy, trends to the projected worst.
-
-Reading any run means reading that chain back out of the screen. The left of the page is the cause: what is being put on the island and how hard. The center is the system under that load: the twin showing where the pressure lands. The right is the consequence and the choices: the forecasted outcome, the metrics that move, and the responses that would bend the curve.
+The Crowd and Traffic simulations still use an earlier flow, where the operator selects a prepared event and an action plan and can dispatch it. They are being redesigned to follow the arrangement described here.
 
 ## The page at a glance
 
 The layout is the same across every simulation, so an operator learns it once and then only the controls and the metrics change. Three columns do the work:
 
-- Left, the setup: the scenario preset or event, the inputs that scale it (volume, presets, boxed variables), the layers shown, and where it applies, the action plan to test. Run Simulation commits the scenario and starts the forecast.
-- Center, the digital twin: the Shura Island twin carrying the visualization layer. The run is drawn straight onto the island as a density heatmap, a traffic heatmap, a wind field, or a coastal overlay, so a developing problem reads as a place an operator recognizes rather than a figure they have to interpret.
-- Right, the forecast: the forecasted outcome banner, the forecasted conditions and KPIs that move under the scenario, and the recommended responses.
+- Left, the setup: the simulation, the scenario preset, the boxed scenario inputs that scale it, and the layers shown. Run Simulation commits the scenario and starts the forecast.
+- Center, the digital twin: the Shura Island twin carrying the visualization layer. The run is drawn straight onto the island as a heatmap, a wind field, or a coastal overlay, so a developing problem reads as a place an operator recognizes rather than a figure they have to interpret.
+- Right, the forecast: the forecasted outcome banner, the forecasted conditions (a hero metric and its KPIs), and the recommended responses, ending in Do nothing.
 
-The operational runs move through three states, from setup to run to implement. The condition runs share the first two and stop there, since they explore rather than dispatch.
+The working area moves through two states, from setup to run.
 
 <SimState state="default" />
 
-**Default, setup.** The operator composes the scenario on the left while the twin shows the island live and the right reads current conditions. Nothing is forecasted yet. This state is the baseline the run will be measured against, so it is worth a glance before committing.
+**Default, setup.** The operator composes the scenario on the left while the twin shows the island live and the right reads idle: the outcome reads Not running and the conditions are empty. This state is the baseline the run will be measured against, so it is worth a glance before committing.
 
 <SimState state="running" />
 
-**Running, the forecast.** Running the scenario carries it forward in time. The twin lights up with the forecasted pattern, where crowd density gathers, where vehicle traffic thickens, or where wind and water cross a limit, and the right panel resolves into the forecasted outcome, the metrics and KPIs that shift, and the recommended responses. This is the moment the squeeze becomes visible while it is still a forecast.
-
-<SimState state="implement" />
-
-**Implementation, acting.** On the operational runs, choosing an action re-runs the forecast with that action applied, so the outcome and the metrics shift to show its effect, and the chosen action is marked while the rest stay open to compare. Implement routes the dispatch to the relevant teams, moves the action into the live operations view, and re-anchors the forecast baseline so the real outcome can be tracked against what was forecast. The condition runs do not reach this state: their responses are modeled previews, not dispatched actions.
+**Running, the forecast.** Running the scenario carries it forward in time. The twin lights up with the forecasted pattern, where wind crosses a limit, where surge reaches the marina, or where shade runs short, and the right panel resolves into the forecasted outcome, the conditions that shift, and the recommended responses. Selecting a response previews its modeled effect; it is not dispatched.
 
 ## Where the models come from
 
-The IOC is the cockpit, not the modeling engine. It does not author events or forecasts, because the modeling behind them is heavy, calibrated work that belongs in specialist tools. The operational runs draw on pedestrian and traffic models: crowd events are modeled in MassMotion, and vehicle and traffic events in PTV and Aimsun. Those tools publish into the IOC as the library an operator selects from.
+The IOC is the cockpit, not the modeling engine. It does not author forecasts, because the modeling behind them is heavy, calibrated work that belongs in specialist tools. Each simulation is published from its own engine, and the IOC sets a scenario against it and visualizes the result.
 
 <SimSources />
 
-**Reading it.** Everything left of the divider is authored upstream and handed to the IOC as a ready library. Everything right of it happens in the twin: the operator picks an event and an action plan, sets the parameters, runs it, and the twin visualizes the scenario, then surfaces the forecasted outcome and the recommended actions on the island. The split keeps the operator on the decision, not on configuring a model. The twin runs and shows the scenario; it does not build it.
+**Reading it.** Everything left of the divider is modeled upstream and handed to the IOC. Everything right of it happens in the twin: the operator sets a scenario, runs it, and the twin visualizes the forecast and surfaces the recommended responses on the island. The split keeps the operator on the decision, not on configuring a model. The twin runs and shows the scenario; it does not build it.
 
-The condition runs are published the same way, each from its own engine: HOMER Pro for energy, Ladybug Tools for outdoor thermal comfort, WRF plus CFD for wind, Delft3D for flood and storm surge, Delft3D-WAQ for water quality, Delft3D-FLOW for ocean current, SWAN for wave, and ReefMod-GBR for coral reef. The operator sets a scenario rather than picking a prepared event, but the division holds: the engine models, the twin shows.
+## The engine behind each read
 
-## The simulations
+The same engine output is read differently by each persona, so one simulation can serve several lenses at once. The table maps each simulation to its engine and to the hero metric and KPIs each persona reads from it. The hero is the leading metric, and the KPIs that follow the dot are read against it.
 
-The simulations share the spine and the page, and differ in the persona they serve, the place they are scoped to, the pressure they model, and whether they dispatch or explore. They fall into two families.
+| Simulation | Engine(s) | Persona | Read (hero · KPIs) |
+| --- | --- | --- | --- |
+| Mobility | Aimsun, SUMO, MATSim (+PTV) | GXM | Arrival Transfer Time · Transfer Variance, Booking Requests, Request Age, Satisfaction |
+| Mobility | Aimsun, SUMO, MATSim (+PTV) | OPS | Utilization · Available Vehicles, Guests Travelling, Bus Load, EV Queue wait |
+| Crowd | MassMotion, AnyLogic | GXM | Beach club density · Queue length, Travel time to spots, Comfort, Peak area |
+| Crowd | MassMotion, AnyLogic | OPS | Gate throughput · Bottlenecks, Queue length, Staff on gates, Capacity use |
+| Evacuation | Pathfinder, MassMotion, Simulex | GXM | Evacuation time (guest zones) · Occupant flow, Nearest-exit bottleneck, Safety margin |
+| Evacuation | Pathfinder, MassMotion, Simulex | OPS | Total evacuation time · Bottleneck locations, Exit flow rates, ASET/RSET, Smoke spread |
+| Thermal comfort | Ladybug Tools, ENVI-met | GXM | UTCI feels-like (guest areas) · Heat-stress risk, Shade availability, Hot/cool zones |
+| Thermal comfort | Ladybug Tools, ENVI-met | ENV | Shade availability · Heat-stress across site, Surface comfort, Passive-cooling gain |
+| Wind | WRF + CFD (SimScale, OpenFOAM, Ansys, Ladybug-Butterfly, WindNinja) | GXM | Pedestrian wind comfort · Wind at beach/pool/deck, Comfort category, Debris risk |
+| Wind | WRF + CFD (SimScale, OpenFOAM, Ansys, Ladybug-Butterfly, WindNinja) | OPS | Wind hazard indicators · Wind speed map, Gust/turbulence, Helipad crosswind, Closure threshold |
+| Wind | WRF + CFD (SimScale, OpenFOAM, Ansys, Ladybug-Butterfly, WindNinja) | MO | Marine wind window · Wind speed/direction over water, Gusts, Small-craft limit, Mooring exposure |
+| Energy | HOMER Pro, PyPSA, PLEXOS | OPS | Supply-demand balance · Generation dispatch, Battery SoC, EV charging impact, Reserves/LOLE |
+| Energy | HOMER Pro, PyPSA, PLEXOS | ENV | Renewable share · CO2 emissions, Carbon avoided, Curtailment, Battery reserve |
+| Flood and surge | ADCIRC, Delft3D, MIKE (+SWMM/HEC) | OPS | Hazard map/flood extent · Depth at critical facilities, Affected zones, Evac timing |
+| Flood and surge | ADCIRC, Delft3D, MIKE (+SWMM/HEC) | ENV | Inundation of habitats · Water levels, Sediment/erosion, Affected ecosystems, Recovery |
+| Flood and surge | ADCIRC, Delft3D, MIKE (+SWMM/HEC) | MO | Surge level at marina · Flow velocity, Depth at jetties, Vessel risk, Surge arrival time |
+| Oil spill | OpenDrift (OpenOil) (+GNOME, OSCAR) | OPS | Arrival time to assets/intakes · Trajectory, Affected areas, Containment status, Notify |
+| Oil spill | OpenDrift (OpenOil) (+GNOME, OSCAR) | ENV | Environmental risk · Sensitive areas (reef/beach), Oil concentration, Shoreline impact, Priority |
+| Oil spill | OpenDrift (OpenOil) (+GNOME, OSCAR) | MO | Trajectory to marina/vessels · Arrival at marina, Affected water zones, Cleanup dispatch, Nav risk |
+| Water quality | Delft3D-WAQ, MIKE ECO Lab, WASP | ENV | Dissolved oxygen/ecosystem · Nutrients, Turbidity, Temperature, Source impact |
+| Water quality | Delft3D-WAQ, MIKE ECO Lab, WASP | MO | Water clarity (dive/swim) · Salinity, Temperature, DO at dive sites, Activity suitability |
+| Ocean current | Delft3D-FLOW, MIKE 21/3, ROMS | ENV | Residence time/flushing · Mixing, Current speed, Sediment transport, Intake quality |
+| Ocean current | Delft3D-FLOW, MIKE 21/3, ROMS | MO | Current speed/direction · Water level, Current at channels, Dive drift risk, Vessel handling |
+| Wave | SWAN (+MIKE 21 SW, Delft3D-WAVE) | ENV | Wave energy at shoreline · Breaking zones, Wave height at beach, Erosion driver |
+| Wave | SWAN (+MIKE 21 SW, Delft3D-WAVE) | MO | Wave height (Hs) at marina · Wave period, Direction, Breaking zones on routes, Small-craft window |
+| Coral reef | Delft3D + ReefMod-GBR (bleaching via NOAA CRW DHW) | ENV | Coral health index · Bleaching risk (DHW), Coral cover trend, Water quality, COTS risk |
+| Coral reef | Delft3D + ReefMod-GBR (bleaching via NOAA CRW DHW) | MO | Bleaching risk at dive sites · Reef health by zone, Disturbance impacts, Anchor/boat risk, Closure trigger |
 
-The operational what-ifs select an event and an action plan and can dispatch the response:
-
-- Crowd, the guest experience persona, scoped to the Marina. The trigger is an arrival surge; the effect is guests building up faster than the fleet can clear them; the response is the mobility plan that keeps them moving. The run is read against the mobility health index, with vehicles and chargers as the binding constraints.
-- Traffic, the operations persona, scoped to the road network and the fleet. The trigger is peak vehicle and charging load; the effect is utilization, charging, and road segments approaching capacity; the response is rebalancing, diverting, and routing assets so the network holds. The run is read against fleet utilization and the capacity outlook.
-
-The condition forecasts set a scenario and read it against a threshold, as exploration rather than dispatch:
-
-- Energy and Outdoor thermal comfort, the environment persona, scoped to Shura Island. The trigger is a demand and supply setting or a heat setting; the effect is renewable share falling toward diesel backup, or shade running short at peak sun; the response is dispatch and reserve choices, or canopy and shading.
-- Wind, Flood and storm surge, Water quality, Ocean current, Wave, and Coral reef, the marine persona, scoped to North Reef. The trigger is a wind, surge, water, current, wave, or heat-stress setting; the effect is a marine or environmental threshold being approached, the small-craft window, the vessel-risk level, dive clarity, drift, or the reef closure trigger; the response is holding, rerouting, restricting, or resting to protect both guests and the coast.
+The environment and marine simulations in this table each have their own chapter. Mobility, Crowd, and Evacuation are documented under Crowd and Traffic, which are being brought onto the same arrangement.
