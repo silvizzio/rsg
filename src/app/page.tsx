@@ -27,10 +27,17 @@ export default function Home() {
       { label: 'Environment Manager', desc: 'Air, wind, water, and violation detection', href: '/docs/05-env', cover: '05-env-lod3-safety-violation-detection.jpg' },
       { label: 'Marine Operations Manager', desc: 'Reef health, dive capacity, and response', href: '/docs/06-mo', cover: '06-mo-lod3-active-response.jpg' },
     ]},
-    { title: 'Simulation', desc: 'Rehearse crowd, fleet, and wind what-ifs on the twin.', links: [
-      { label: 'Crowd', desc: 'Crowd density forecasts on the twin', href: '/docs/08-simulation-crowd', cover: '07-simulation-after.jpg' },
-      { label: 'Traffic', desc: 'Fleet and vehicle flow forecasts', href: '/docs/09-simulation-traffic', cover: '07-simulation-ops-after.jpg' },
-      { label: 'Environment', desc: 'Wind and storm impact on the reef', href: '/docs/10-simulation-environment', cover: '07-simulation-storm-after.jpg' },
+    { title: 'Simulation', desc: 'Rehearse crowd, fleet, environment, and marine what-ifs on the twin.', links: [
+      { label: 'Crowd', desc: 'Crowd density forecasts on the twin', href: '/docs/08-simulation-crowd', cover: 'sim-opening-crowd.png' },
+      { label: 'Traffic', desc: 'Fleet and vehicle flow forecasts', href: '/docs/09-simulation-traffic', cover: 'sim-opening-mobility.png' },
+      { label: 'Energy', desc: 'Microgrid renewable share and reserve', href: '/docs/10-simulation-energy', cover: 'sim-opening-energy.png' },
+      { label: 'Outdoor thermal comfort', desc: 'Shade and heat-stress forecasts', href: '/docs/11-simulation-thermal-comfort', cover: 'sim-opening-outdoor-thermal-comfort.png' },
+      { label: 'Wind', desc: 'Marine wind window and small-craft limits', href: '/docs/12-simulation-wind', cover: 'sim-opening-wind.png' },
+      { label: 'Flood and storm surge', desc: 'Surge reach and marina vessel risk', href: '/docs/13-simulation-flood-surge', cover: 'sim-opening-flood.png' },
+      { label: 'Water quality', desc: 'Dive-site clarity and condition', href: '/docs/14-simulation-water-quality', cover: 'sim-opening-water-quality.png' },
+      { label: 'Ocean current', desc: 'Channel flow and dive-drift risk', href: '/docs/15-simulation-ocean-current', cover: 'sim-opening-ocean-current.png' },
+      { label: 'Wave', desc: 'Sea state and the small-craft window', href: '/docs/16-simulation-wave', cover: 'sim-opening-wave.png' },
+      { label: 'Coral reef', desc: 'Reef heat stress and bleaching risk', href: '/docs/17-simulation-coral', cover: 'sim-opening-coral-reef.png' },
     ]},
   ]
 
