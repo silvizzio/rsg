@@ -5,6 +5,8 @@ section: "Simulation"
 description: "The Environment what-if for the island microgrid: forecast when renewable share falls toward diesel backup, and what to dispatch before it does."
 ---
 
+![Energy simulation opening](sim-opening-energy.png)
+
 The Energy simulation is the environment team's what-if for the island microgrid. It takes a demand and supply setting, an evening peak on a cloudy day with the battery starting low, and plays it forward against the renewable balance to forecast when the island would lean on diesel backup before it happens. The value is lead time: the run surfaces a falling renewable share while dispatch, charging, and reserve can still be shaped.
 
 The run is a selection, not free authoring. A scenario preset and a few boxed inputs on the left size the pressure, the twin carries an energy-flow and battery overlay, and the right panel reads the forecast: an outcome banner, the forecasted conditions, and the responses worth weighing. It is an exploration tool, so nothing dispatches from here. Do nothing is the lowest tier, and for energy it trends to the projected worst rather than holding, because a supply gap compounds.
