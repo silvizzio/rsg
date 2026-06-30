@@ -5,7 +5,7 @@ section: "Simulation"
 description: "The Traffic domain: mobility, energy, the shuttle network, the drop-off forecourt, and the marine flow reads, per persona."
 ---
 
-The Traffic domain covers movement and the systems that carry it: guest mobility, the shuttle network, the drop-off forecourt, the island microgrid that powers all of it, and, for Marine Operations, the water-flow conditions that govern how vessels move. Each persona below runs the sims relevant to its remit, read through its own lens.
+The Traffic domain covers movement and the systems that carry it: guest mobility, the shuttle network, the drop-off forecourt, the island microgrid that powers all of it, and, for Marine Operations, the water-flow conditions that govern how vessels move. Each persona below runs the sims relevant to its remit, read against its own goal.
 
 The scope label in the tool reads Shura Island as a placeholder and is not load-bearing in these descriptions.
 
@@ -13,25 +13,25 @@ The scope label in the tool reads Shura Island as a placeholder and is not load-
 
 ### Mobility
 
-Guest mobility is the connective tissue of the destination, and it tends to fail quietly: demand builds at a station, the wait for a ride creeps up, and the first real signal is a guest who has already been standing too long. The gap between transfers running to plan and transfers running behind is where the experience is won or lost.
+The guest experience manager's goal in a mobility scenario is simple to state and hard to hold: no guest should ever wait longer than feels effortless for a ride. The aim is to keep transfers running to plan so the connective tissue of the destination stays invisible, exactly as a premium experience requires.
 
-This run takes a demand scenario and plays it forward against the fleet and the schedule, surfacing where transfer times stretch and requests pile up before anyone is left waiting. It gives the team the lead time to anticipate the pinch, so the response is a measured adjustment ahead of the surge rather than a recovery after the queue has already formed.
+The twin protects that invisibility by seeing the strain before the guest does. It plays a demand scenario forward against the fleet and the schedule, surfacing where transfer times stretch and requests pile up ahead of anyone being left standing. The value is anticipation: a measured adjustment made before the surge, rather than a recovery scrambled after the queue has already formed.
 
 ![Mobility, Guest Experience read.](03-gxm-lod3-simulation-traffic-mobility.jpg)
 
 ### Shuttle network
 
-A shuttle network is only as good as its weakest link, and guests feel that link as a route they have learned not to trust. When one leg runs unreliably, the whole network quietly loses people to walking, which reshapes demand everywhere else in ways that are hard to see from a single timetable.
+The manager's goal with the shuttle network is a system guests actually trust, where no single unreliable leg quietly trains people to walk and reshapes demand everywhere else. The target is a network that works as a whole, not a collection of routes that each look fine alone.
 
-This run plays the network forward to show where reliance concentrates and where guests fall back to walking, exposing the legs that carry the most weight and the ones that are being quietly abandoned. It lets the team reason about the network as a whole, rather than tuning one route at a time and discovering the knock-on effects later.
+The twin makes the whole network legible at once. It plays the network forward to show where reliance concentrates and where guests fall back to walking, exposing the legs carrying the most weight and the ones being quietly abandoned. That lets the team reason about the network as a system and fix the leg that matters, rather than tuning one route and discovering the knock-on effects later.
 
 ![Shuttle network, Guest Experience read.](03-gxm-lod3-simulation-traffic-shuttle-network.jpg)
 
 ### Drop-off forecourt
 
-The forecourt is the first and last impression of an arrival, and it is also where small delays compound fastest. A few vehicles dwelling too long at the kerb turns a smooth drop-off into a backed-up approach, and the queue forms in exactly the place a guest is meant to feel welcomed.
+At the forecourt, the manager's goal is a first and last impression that feels seamless, an arrival where nobody queues at the kerb in the very place they are meant to feel welcomed. The aim is to keep the approach flowing even when arrivals bunch.
 
-This run plays an arrival pattern forward through the forecourt, reading how long vehicles dwell, how the queue builds, and how the bays fill. It surfaces the point where the forecourt tips from flowing to congested, so staging and kerb management can be set ahead of the rush rather than improvised once the approach is already blocked.
+The twin shows the forecourt tipping before it tips. It plays an arrival pattern forward, reading how long vehicles dwell, how the queue builds, and how the bays fill, and marks the point where flowing becomes congested. The value is that staging and kerb management can be set ahead of the rush, so the welcome stays a welcome rather than becoming a bottleneck.
 
 ![Drop-off forecourt, Guest Experience read.](03-gxm-lod3-simulation-traffic-drop-off.jpg)
 
@@ -39,33 +39,33 @@ This run plays an arrival pattern forward through the forecourt, reading how lon
 
 ### Mobility
 
-From the operations side, mobility is a question of whether the assets can meet the day. The same demand the guest experiences as a wait lands on operations as a capacity calculation: how many vehicles are in service, how the charging keeps up, and whether the whole system has any slack left when the peak hits.
+The operations manager's goal in a mobility scenario is to meet the day's demand with the assets actually on hand, keeping enough vehicles in service and enough charging behind them that the system never runs out of slack at the peak. Success is a fleet that copes, not one that just barely doesn't fail.
 
-This run plays the day's load forward against the fleet and the charging network, surfacing where the system runs flat-out and where it tips over. It shows the binding constraint, whether it is vehicles, charging, or both, so the team can rebalance before the peak rather than discover the shortfall in the middle of it.
+The twin turns that into a forecast instead of a gamble. It plays the day's load forward against the fleet and the charging network, naming the binding constraint, whether vehicles, charging, or both, before the peak arrives. The value is the chance to rebalance ahead of time, so the shortfall is solved on paper rather than discovered in the middle of the busiest hour.
 
 ![Mobility, Operations read.](placeholder-ops-mobility.jpg)
 
 ### Energy
 
-The island microgrid sits underneath everything that moves, and its failure mode is gradual rather than sudden: renewable supply slips, the battery buffer thins, and at some point the system leans on diesel backup. By the time that happens the window to avoid it has closed.
+For the operations manager, the goal with the microgrid is to keep the island running on its own clean supply, never quietly drifting to the point where diesel backup has to be called. The aim is to stay ahead of a supply gap while there is still room to shape it.
 
-This run plays a demand and supply scenario forward against the renewable balance, showing when the share of clean supply drifts toward the point where backup is called and how much reserve is left behind it. It hands the team the lead time to shape dispatch, charging, and reserve while there is still room to act, keeping a supply gap from compounding into a diesel call.
+The twin gives that lead time. It plays a demand and supply scenario forward against the renewable balance, showing when the clean share drifts toward the backup trigger and how much reserve sits behind it. The value is control: dispatch, charging, and reserve can be shaped before the gap compounds, keeping the island on renewables by choice rather than by luck.
 
 ![Energy, Operations read.](placeholder-ops-energy.jpg)
 
 ### Shuttle network
 
-Read from the operations side, the shuttle network is a fleet-and-route problem rather than a guest-trust one. The concern is how the vehicles and the routes hold up under load, where utilization concentrates, and which legs are carrying more than they comfortably can.
+Read from the operations side, the goal for the shuttle network is fleet health: keeping utilization balanced and no single leg carrying more than it was sized for, so reliability does not quietly erode under load. The measure is a network that holds up, not one that is running hot in places nobody is watching.
 
-This run plays the network forward from the asset's perspective, surfacing the routes that run hot and the capacity that is being stretched. It lets the team see where to add or rebalance service before a leg saturates, keeping the network's reliability from quietly eroding under a load it was never sized for.
+The twin surfaces that strain early. It plays the network forward from the asset's perspective, showing the routes running hot and the capacity being stretched. The value is the chance to add or rebalance service before a leg saturates, protecting the reliability the guest side depends on.
 
 ![Shuttle network, Operations read.](placeholder-ops-shuttle-network.jpg)
 
 ### Drop-off forecourt
 
-For operations, the forecourt is a throughput and staging problem. The question is whether the kerb, the bays, and the staff working them can clear vehicles fast enough to keep the approach moving, and where that clearance breaks down under an arrival surge.
+For operations, the forecourt goal is throughput: clearing vehicles fast enough through the kerb, the bays, and the staff working them that the approach never backs up under an arrival surge. Success is a forecourt that keeps moving, whatever the arrival pattern throws at it.
 
-This run plays the arrival pattern forward against the forecourt's capacity, showing where staging falls behind and the queue starts to back into the approach. It gives the team the basis to position staff and manage the kerb ahead of the rush, rather than reacting once the forecourt is already the bottleneck.
+The twin shows where that clearance breaks. It plays the arrival pattern forward against the forecourt's capacity, surfacing where staging falls behind and the queue starts to push into the approach. The value is the basis to position staff and manage the kerb ahead of the rush, rather than reacting once the forecourt has already become the constraint.
 
 ![Drop-off forecourt, Operations read.](placeholder-ops-drop-off.jpg)
 
@@ -73,9 +73,9 @@ This run plays the arrival pattern forward against the forecourt's capacity, sho
 
 ### Energy
 
-For the environment team, the microgrid is read as a sustainability question rather than a supply one. The concern is how much of the load is met by renewables, what carbon the mix is costing, and whether usable clean generation is being wasted while the reserve runs thin.
+The environment manager's goal with the microgrid is to protect the destination's sustainability commitment, maximising the share of load met by renewables and making sure clean generation is not wasted while the reserve thins. The measure of success is the carbon story holding up under real demand.
 
-This run plays a demand and supply scenario forward against the renewable balance and reads the climate cost of the drift: the renewable share, the emissions, the curtailment, and the reserve. It lets the team see where the clean-energy story is holding and where it is slipping, so dispatch and reserve choices can protect the renewable commitment, not just keep the lights on.
+The twin makes that story defensible. It plays a demand and supply scenario forward and reads the climate cost of any drift: the renewable share, the emissions, the curtailment, and the reserve. The value is visibility into where the clean-energy commitment is holding and where it is slipping, so dispatch and reserve choices protect the renewable target rather than merely keeping the lights on.
 
 ![Energy, Environment read.](05-env-lod3-simulation-energy.jpg)
 
@@ -83,16 +83,16 @@ This run plays a demand and supply scenario forward against the renewable balanc
 
 ### Wave
 
-Sea state at the marina and along the routes decides whether small craft can run, and it can change faster than a schedule can react. A workable morning can build into a closing window, and the call to hold craft is far better made early than once a boat is already exposed.
+The marine operations manager's goal in a wave scenario is to keep small craft running safely while the window allows, and to call the hold early enough that no boat is ever caught exposed. The aim is a marine schedule made with margin, not under pressure.
 
-This run plays an offshore swell scenario forward to the marina and the routes, showing where wave height climbs toward the limit for small craft and where waves break on the lines boats actually run. It surfaces the closing window ahead of time, so departures and beach calls can be made with margin rather than under pressure.
+The twin provides that margin. It plays an offshore swell scenario forward to the marina and the routes, showing where wave height climbs toward the small-craft limit and where waves break on the lines boats actually run. The value is the closing window surfaced ahead of time, so departures and beach calls are deliberate decisions rather than last-minute reactions.
 
 ![Wave, Marine Operations read.](06-mo-lod3-simulation-wave.jpg)
 
 ### Ocean current
 
-Current at the channel is the condition that quietly raises the stakes on a dive day. A flow that is manageable at slack can strengthen enough to make drift a real hazard, and because it concentrates at the channel rather than the average, it is easy to underread from a single number.
+The manager's goal with ocean current is a safe dive day: knowing when flow at the channel strengthens enough to make drift a real hazard, before boats are out rather than after. The target is dive routing and vessel calls made on a clear read of the channel, not the average.
 
-This run plays a tidal and wind scenario forward to show how current builds at the channel and along the dive routes, separating the site reading from the broad average. It gives the team the lead time to adjust dive routing and vessel calls before boats are out, rather than managing a stronger-than-expected flow once they already are.
+The twin gives that read. It plays a tidal and wind scenario forward to show how current builds at the channel and along the dive routes, separating the site reading from the broad average that hides it. The value is the lead time to adjust routing and vessel calls before boats are committed, rather than managing a stronger-than-expected flow once they already are.
 
 ![Ocean current, Marine Operations read.](06-mo-lod3-simulation-ocean-current.jpg)
