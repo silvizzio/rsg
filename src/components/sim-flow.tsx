@@ -153,3 +153,223 @@ export function SimSources() {
     </div>
   )
 }
+
+// ── SimGrid ────────────────────────────────────────────────────────────────
+// Domain → persona → sim matrix for the simulation overview.
+// Each cell carries the sim name, its specialist engine, and the persona's lens
+// (how that persona reads that sim). Data is lifted verbatim from the RSG
+// Simulation tool config so the docs and the tool stay in lockstep.
+//
+// Drop this block into src/components/sim-flow.tsx and export SimGrid alongside
+// SimState and SimSources. It uses only inline styles + CSS vars already in use
+// elsewhere in that file, so no new imports.
+
+type SimCell = { name: string; engine: string; lens: string }
+type DomainKey = 'People' | 'Traffic' | 'Transport' | 'Environment'
+type PersonaKey = 'GXM' | 'OPS' | 'ENV' | 'MO'
+
+const PERSONA_LABEL: Record<PersonaKey, string> = {
+  GXM: 'Guest Experience',
+  OPS: 'Operations',
+  ENV: 'Environment',
+  MO: 'Marine Operations',
+}
+
+const DOMAIN_ORDER: DomainKey[] = ['People', 'Traffic', 'Transport', 'Environment']
+const PERSONA_ORDER: PersonaKey[] = ['GXM', 'OPS', 'ENV', 'MO']
+
+// grid[domain][persona] = SimCell[]
+const SIM_GRID: Record<DomainKey, Partial<Record<PersonaKey, SimCell[]>>> = {
+  People: {
+    GXM: [
+      { name: 'Crowd', engine: 'MassMotion', lens: 'Crowd density at guest hotspots against the comfort line, with guests in the crush' },
+      { name: 'Evacuation', engine: 'MassMotion', lens: 'Time to clear guests to muster against the target' },
+      { name: 'Outdoor thermal comfort', engine: 'Ladybug Tools', lens: 'Outdoor heat stress across guest areas, with guests in discomfort' },
+      { name: 'Accessibility', engine: 'PTV Visum', lens: 'Time to reach key amenities, with guests beyond easy reach' },
+    ],
+    OPS: [
+      { name: 'Crowd', engine: 'MassMotion', lens: 'Crowd density against the safe-density line, with guests in the hotspot' },
+      { name: 'Evacuation', engine: 'MassMotion', lens: 'Total clear time against target, with guests still to move' },
+    ],
+    ENV: [
+      { name: 'Outdoor thermal comfort', engine: 'Ladybug Tools', lens: 'Site shade availability and the heat-stress footprint' },
+    ],
+  },
+  Traffic: {
+    GXM: [
+      { name: 'Mobility', engine: 'Aimsun Next', lens: 'Mobility health as guests rise, with buses in service and EV charging in view' },
+      { name: 'Shuttle network', engine: 'PTV Lines', lens: 'Shuttle line load and guest wait at stops' },
+      { name: 'Drop-off forecourt', engine: 'PTV Vissim', lens: 'Drop-off queue at arrival, with vehicles at the curb' },
+    ],
+    OPS: [
+      { name: 'Mobility', engine: 'Aimsun Next', lens: 'Mobility health, buses in service, and EV charging under guest load' },
+      { name: 'Energy', engine: 'HOMER Pro', lens: 'Renewable share and EV charging load against the trigger' },
+      { name: 'Shuttle network', engine: 'PTV Lines', lens: 'Shuttle line load and capacity against demand' },
+      { name: 'Drop-off forecourt', engine: 'PTV Vissim', lens: 'Drop-off curb queue and approach spillback' },
+    ],
+    ENV: [
+      { name: 'Energy', engine: 'HOMER Pro', lens: 'Renewable share against the diesel-backup trigger' },
+    ],
+    MO: [
+      { name: 'Wave', engine: 'SWAN', lens: 'Significant wave height against the small-craft limit' },
+      { name: 'Ocean current', engine: 'Delft3D-FLOW', lens: 'Drift risk on dive routes and vessel handling' },
+    ],
+  },
+  Transport: {
+    GXM: [
+      { name: 'Wind', engine: 'WRF + CFD', lens: 'Wind on exposed decks and routes, with guests and vehicles exposed' },
+      { name: 'Emissions and noise', engine: 'PTV Visum', lens: 'Noise across guest areas at peak traffic' },
+      { name: 'Safety conflicts', engine: 'PTV Viswalk', lens: 'Pedestrian and vehicle conflict at guest crossings' },
+    ],
+    OPS: [
+      { name: 'Wind', engine: 'WRF + CFD', lens: 'Exposed-deck and route wind, with guests and vehicles exposed' },
+      { name: 'Flood and storm surge', engine: 'Delft3D', lens: 'Inundation reach, with guests and vehicles exposed on land' },
+      { name: 'Safety conflicts', engine: 'PTV Viswalk', lens: 'Conflict points across crossings and shared spaces' },
+    ],
+    ENV: [
+      { name: 'Flood and storm surge', engine: 'Delft3D', lens: 'Inundation reach, with guests and vehicles exposed on land' },
+      { name: 'Emissions and noise', engine: 'PTV Visum', lens: 'Traffic emissions and noise footprint over the site' },
+    ],
+    MO: [
+      { name: 'Flood and storm surge', engine: 'Delft3D', lens: 'Surge at the marina, with people and vehicles on the marina front' },
+    ],
+  },
+  Environment: {
+    ENV: [
+      { name: 'Water quality', engine: 'Delft3D-WAQ', lens: 'Clarity and condition against the activity threshold' },
+      { name: 'Ocean current', engine: 'Delft3D-FLOW', lens: 'Current and flushing condition' },
+      { name: 'Wave', engine: 'SWAN', lens: 'Sea state and coastal exposure' },
+      { name: 'Coral reef', engine: 'ReefMod-GBR + NOAA DHW', lens: 'Bleaching risk on the DHW scale' },
+    ],
+    MO: [
+      { name: 'Wind', engine: 'WRF + CFD', lens: 'Marine wind window, small-craft limit, mooring exposure' },
+      { name: 'Water quality', engine: 'Delft3D-WAQ', lens: 'Dive-site clarity, DO, and activity' },
+      { name: 'Coral reef', engine: 'ReefMod-GBR + NOAA DHW', lens: 'Bleaching risk, closure trigger, anchor risk' },
+    ],
+  },
+}
+
+export function SimGrid() {
+  return (
+    <div className="not-prose" style={{ margin: '24px 0' }}>
+      {DOMAIN_ORDER.map((domain) => {
+        const personasInDomain = PERSONA_ORDER.filter(
+          (p) => (SIM_GRID[domain][p]?.length ?? 0) > 0
+        )
+        return (
+          <div
+            key={domain}
+            style={{
+              border: '1px solid hsl(var(--border))',
+              borderRadius: '10px',
+              overflow: 'hidden',
+              marginBottom: '14px',
+            }}
+          >
+            {/* Domain header */}
+            <div
+              style={{
+                padding: '12px 16px',
+                background: 'hsl(var(--muted) / 0.5)',
+                borderBottom: '1px solid hsl(var(--border))',
+              }}
+            >
+              <span
+                style={{
+                  fontSize: '13px',
+                  fontWeight: 600,
+                  color: 'hsl(var(--foreground))',
+                  letterSpacing: '0.01em',
+                }}
+              >
+                {domain}
+              </span>
+            </div>
+
+            {/* Persona rows */}
+            <div>
+              {personasInDomain.map((persona, pi) => (
+                <div
+                  key={persona}
+                  style={{
+                    display: 'grid',
+                    gridTemplateColumns: '140px 1fr',
+                    gap: '0',
+                    borderTop: pi === 0 ? 'none' : '1px solid hsl(var(--border))',
+                  }}
+                >
+                  {/* Persona label cell */}
+                  <div
+                    style={{
+                      padding: '14px 16px',
+                      borderRight: '1px solid hsl(var(--border))',
+                      background: 'hsl(var(--background))',
+                    }}
+                  >
+                    <p
+                      style={{
+                        fontSize: '11px',
+                        fontWeight: 600,
+                        color: 'hsl(var(--foreground))',
+                        margin: 0,
+                        lineHeight: 1.3,
+                      }}
+                    >
+                      {PERSONA_LABEL[persona]}
+                    </p>
+                    <p
+                      style={{
+                        fontSize: '10px',
+                        color: 'hsl(var(--muted-foreground))',
+                        margin: '2px 0 0',
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.06em',
+                      }}
+                    >
+                      {persona}
+                    </p>
+                  </div>
+
+                  {/* Sims cell */}
+                  <div style={{ padding: '12px 16px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                    {SIM_GRID[domain][persona]!.map((sim) => (
+                      <div key={sim.name}>
+                        <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px', flexWrap: 'wrap' }}>
+                          <span style={{ fontSize: '13px', fontWeight: 600, color: 'hsl(var(--foreground))' }}>
+                            {sim.name}
+                          </span>
+                          <span
+                            style={{
+                              fontSize: '10px',
+                              color: 'hsl(var(--muted-foreground))',
+                              border: '1px solid hsl(var(--border))',
+                              borderRadius: '4px',
+                              padding: '1px 6px',
+                              whiteSpace: 'nowrap',
+                            }}
+                          >
+                            {sim.engine}
+                          </span>
+                        </div>
+                        <p
+                          style={{
+                            fontSize: '12px',
+                            color: 'hsl(var(--muted-foreground))',
+                            margin: '3px 0 0',
+                            lineHeight: 1.45,
+                          }}
+                        >
+                          {sim.lens}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  )
+}

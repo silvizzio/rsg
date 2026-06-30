@@ -47,36 +47,8 @@ The IOC is the cockpit, not the modeling engine. It does not author forecasts, b
 
 ## The engine behind each read
 
-The same engine output is read differently by each persona, so one simulation can serve several lenses at once. The table maps each simulation to its engine and to the hero metric and KPIs each persona reads from it. The hero is the leading metric, and the KPIs that follow the dot are read against it.
+One simulation is never a single number. The same engine output is read through a different lens by each persona that runs it, so a wind run means exposed decks to Guest Experience, a closure threshold to Operations, and a small-craft window to Marine Operations. That is the point of the layer: one specialist engine, many operator-specific reads.
 
-| Simulation | Engine(s) | Persona | Read (hero · KPIs) |
-| --- | --- | --- | --- |
-| Mobility | Aimsun, SUMO, MATSim (+PTV) | GXM | Arrival Transfer Time · Transfer Variance, Booking Requests, Request Age, Satisfaction |
-| Mobility | Aimsun, SUMO, MATSim (+PTV) | OPS | Utilization · Available Vehicles, Guests Travelling, Bus Load, EV Queue wait |
-| Crowd | MassMotion, AnyLogic | GXM | Beach club density · Queue length, Travel time to spots, Comfort, Peak area |
-| Crowd | MassMotion, AnyLogic | OPS | Gate throughput · Bottlenecks, Queue length, Staff on gates, Capacity use |
-| Evacuation | Pathfinder, MassMotion, Simulex | GXM | Evacuation time (guest zones) · Occupant flow, Nearest-exit bottleneck, Safety margin |
-| Evacuation | Pathfinder, MassMotion, Simulex | OPS | Total evacuation time · Bottleneck locations, Exit flow rates, ASET/RSET, Smoke spread |
-| Thermal comfort | Ladybug Tools, ENVI-met | GXM | UTCI feels-like (guest areas) · Heat-stress risk, Shade availability, Hot/cool zones |
-| Thermal comfort | Ladybug Tools, ENVI-met | ENV | Shade availability · Heat-stress across site, Surface comfort, Passive-cooling gain |
-| Wind | WRF + CFD (SimScale, OpenFOAM, Ansys, Ladybug-Butterfly, WindNinja) | GXM | Pedestrian wind comfort · Wind at beach/pool/deck, Comfort category, Debris risk |
-| Wind | WRF + CFD (SimScale, OpenFOAM, Ansys, Ladybug-Butterfly, WindNinja) | OPS | Wind hazard indicators · Wind speed map, Gust/turbulence, Helipad crosswind, Closure threshold |
-| Wind | WRF + CFD (SimScale, OpenFOAM, Ansys, Ladybug-Butterfly, WindNinja) | MO | Marine wind window · Wind speed/direction over water, Gusts, Small-craft limit, Mooring exposure |
-| Energy | HOMER Pro, PyPSA, PLEXOS | OPS | Supply-demand balance · Generation dispatch, Battery SoC, EV charging impact, Reserves/LOLE |
-| Energy | HOMER Pro, PyPSA, PLEXOS | ENV | Renewable share · CO2 emissions, Carbon avoided, Curtailment, Battery reserve |
-| Flood and surge | ADCIRC, Delft3D, MIKE (+SWMM/HEC) | OPS | Hazard map/flood extent · Depth at critical facilities, Affected zones, Evac timing |
-| Flood and surge | ADCIRC, Delft3D, MIKE (+SWMM/HEC) | ENV | Inundation of habitats · Water levels, Sediment/erosion, Affected ecosystems, Recovery |
-| Flood and surge | ADCIRC, Delft3D, MIKE (+SWMM/HEC) | MO | Surge level at marina · Flow velocity, Depth at jetties, Vessel risk, Surge arrival time |
-| Oil spill | OpenDrift (OpenOil) (+GNOME, OSCAR) | OPS | Arrival time to assets/intakes · Trajectory, Affected areas, Containment status, Notify |
-| Oil spill | OpenDrift (OpenOil) (+GNOME, OSCAR) | ENV | Environmental risk · Sensitive areas (reef/beach), Oil concentration, Shoreline impact, Priority |
-| Oil spill | OpenDrift (OpenOil) (+GNOME, OSCAR) | MO | Trajectory to marina/vessels · Arrival at marina, Affected water zones, Cleanup dispatch, Nav risk |
-| Water quality | Delft3D-WAQ, MIKE ECO Lab, WASP | ENV | Dissolved oxygen/ecosystem · Nutrients, Turbidity, Temperature, Source impact |
-| Water quality | Delft3D-WAQ, MIKE ECO Lab, WASP | MO | Water clarity (dive/swim) · Salinity, Temperature, DO at dive sites, Activity suitability |
-| Ocean current | Delft3D-FLOW, MIKE 21/3, ROMS | ENV | Residence time/flushing · Mixing, Current speed, Sediment transport, Intake quality |
-| Ocean current | Delft3D-FLOW, MIKE 21/3, ROMS | MO | Current speed/direction · Water level, Current at channels, Dive drift risk, Vessel handling |
-| Wave | SWAN (+MIKE 21 SW, Delft3D-WAVE) | ENV | Wave energy at shoreline · Breaking zones, Wave height at beach, Erosion driver |
-| Wave | SWAN (+MIKE 21 SW, Delft3D-WAVE) | MO | Wave height (Hs) at marina · Wave period, Direction, Breaking zones on routes, Small-craft window |
-| Coral reef | Delft3D + ReefMod-GBR (bleaching via NOAA CRW DHW) | ENV | Coral health index · Bleaching risk (DHW), Coral cover trend, Water quality, COTS risk |
-| Coral reef | Delft3D + ReefMod-GBR (bleaching via NOAA CRW DHW) | MO | Bleaching risk at dive sites · Reef health by zone, Disturbance impacts, Anchor/boat risk, Closure trigger |
+The grid below maps every simulation to the persona that runs it, grouped by domain. Each entry names the engine behind it and the lens that persona reads it through.
 
-The environment and marine simulations in this table each have their own chapter. Mobility, Crowd, and Evacuation are documented under Crowd and Traffic, which are being brought onto the same arrangement.
+<SimGrid />
