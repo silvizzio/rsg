@@ -27,17 +27,11 @@ export default function Home() {
       { label: 'Environment Manager', desc: 'Air, wind, water, and violation detection', href: '/docs/05-env', cover: '05-env-lod3-safety-violation-detection.jpg' },
       { label: 'Marine Operations Manager', desc: 'Reef health, dive capacity, and response', href: '/docs/06-mo', cover: '06-mo-lod3-active-response.jpg' },
     ]},
-    { title: 'Simulation', desc: 'Rehearse crowd, fleet, environment, and marine what-ifs on the twin.', links: [
-      { label: 'Crowd', desc: 'Crowd density forecasts on the twin', href: '/docs/08-simulation-crowd', cover: '03-gxm-lod3-simulation-crowd-after.jpg' },
-      { label: 'Traffic', desc: 'Fleet and vehicle flow forecasts', href: '/docs/09-simulation-traffic', cover: '08-simulation-traffic-after.jpg' },
-      { label: 'Energy', desc: 'Microgrid renewable share and reserve', href: '/docs/10-simulation-energy', cover: '05-env-lod3-simulation-energy.jpg' },
-      { label: 'Outdoor thermal comfort', desc: 'Shade and heat-stress forecasts', href: '/docs/11-simulation-thermal-comfort', cover: '05-env-lod3-simulation-outdoor-thermal-comfort.jpg' },
-      { label: 'Wind', desc: 'Marine wind window and small-craft limits', href: '/docs/12-simulation-wind', cover: '06-mo-lod3-simulation-wind.jpg' },
-      { label: 'Flood and storm surge', desc: 'Surge reach and marina vessel risk', href: '/docs/13-simulation-flood-surge', cover: '06-mo-lod3-simulation-flood-and-storm-surge.jpg' },
-      { label: 'Water quality', desc: 'Dive-site clarity and condition', href: '/docs/14-simulation-water-quality', cover: '06-mo-lod3-simulation-water-quality.jpg' },
-      { label: 'Ocean current', desc: 'Channel flow and dive-drift risk', href: '/docs/15-simulation-ocean-current', cover: '06-mo-lod3-simulation-ocean-current.jpg' },
-      { label: 'Wave', desc: 'Sea state and the small-craft window', href: '/docs/16-simulation-wave', cover: '06-mo-lod3-simulation-wave.jpg' },
-      { label: 'Coral reef', desc: 'Reef heat stress and bleaching risk', href: '/docs/17-simulation-coral', cover: '06-mo-lod3-simulation-coral.jpg' },
+    { title: 'Simulation', desc: 'Rehearse what-ifs on the twin, grouped by domain and read per persona.', links: [
+      { label: 'People', desc: 'Crowd, evacuation, thermal comfort, accessibility', href: '/docs/08-simulation-people', cover: '03-gxm-lod3-simulation-people-crowd.jpg' },
+      { label: 'Traffic', desc: 'Mobility, energy, shuttle network, drop-off, marine flow', href: '/docs/09-simulation-traffic', cover: '03-gxm-lod3-simulation-traffic-mobility.jpg' },
+      { label: 'Transport', desc: 'Wind, emissions and noise, safety conflicts, flood surge', href: '/docs/10-simulation-transport', cover: '03-gxm-lod3-simulation-transport-wind.jpg' },
+      { label: 'Environment', desc: 'Water quality, ocean current, wave, coral, marine wind', href: '/docs/11-simulation-environment', cover: '06-mo-lod3-simulation-water-quality.jpg' },
     ]},
   ]
 
@@ -90,7 +84,7 @@ export default function Home() {
               Interface guide
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
             </Link>
-            <Link href="/docs/11-reference" className="inline-flex items-center gap-1.5 text-xs rounded-md px-3 py-1.5" style={{ background: 'transparent', color: 'hsl(var(--foreground))', border: '1px solid hsl(var(--border))', whiteSpace: 'nowrap' }}>
+            <Link href="/docs/12-reference" className="inline-flex items-center gap-1.5 text-xs rounded-md px-3 py-1.5" style={{ background: 'transparent', color: 'hsl(var(--foreground))', border: '1px solid hsl(var(--border))', whiteSpace: 'nowrap' }}>
               Reference
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
             </Link>
