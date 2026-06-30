@@ -5,7 +5,7 @@ section: "Simulation"
 description: "The Transport domain: wind, emissions and noise, safety conflicts, and flood and storm surge, per persona."
 ---
 
-The Transport domain covers the conditions that move across the transport surface: wind over the resort, emissions and noise from the network, conflict points where movements cross, and flood and storm surge on the shore. Each persona below runs the sims relevant to its remit.
+The Transport domain covers the conditions that move across the transport surface and the hazards that ride on it: wind over the resort, the emissions and noise the network throws off, the points where pedestrian and vehicle movements cross, and the flood and storm surge that arrive from the water. Each persona below runs the sims relevant to its remit.
 
 The scope label in the tool reads Shura Island as a placeholder and is not load-bearing in these descriptions.
 
@@ -13,19 +13,25 @@ The scope label in the tool reads Shura Island as a placeholder and is not load-
 
 ### Wind
 
-_Placeholder. Pedestrian wind comfort at beach, pool, and deck; comfort category; debris risk._
+Wind shapes the guest experience in ways that are easy to underestimate until a beach, a pool deck, or an exposed walkway becomes unpleasant to be in. The same breeze that is refreshing in one spot accelerates around a building corner into something that drives people indoors, and the effect is local and hard to predict by eye.
+
+This run plays a wind setting forward across the resort, reading where airflow stays comfortable and where it funnels and accelerates between the buildings. It surfaces the exposed spots before guests find them, so layout, planting, or routing can soften the worst of it rather than leaving a corner that quietly empties out whenever the wind turns.
 
 ![Wind, Guest Experience read.](03-gxm-lod3-simulation-transport-wind.jpg)
 
 ### Emissions and noise
 
-_Placeholder. Emission and noise dispersion across guest areas, with the source attribution._
+Emissions and noise are the background texture of a place, and they degrade an experience subtly: a stretch of path that runs alongside the busiest road, a quiet garden that is not as quiet as it looks. The sources are discrete and the spread is continuous, which makes the problem hard to picture without putting the two together.
+
+This run plays the dispersion forward from the roads, service areas, and plant that produce it, showing how emission and noise spread across guest areas and which sources drive the worst of it. It lets the team see where the quiet is genuinely protected and where it only appears to be, so routing and screening can target the real sources rather than the assumed ones.
 
 ![Emissions and noise, Guest Experience read.](03-gxm-lod3-simulation-transport-emission.jpg)
 
 ### Safety conflicts
 
-_Placeholder. Pedestrian-vehicle conflict points across the site._
+The most dangerous spots on a resort are usually the ones where two ordinary movements cross: a pedestrian route and a vehicle lane that meet at a kerb, an entrance, or a parking aisle. Each is fine on its own, and the conflict only exists at the overlap, which is exactly why it is easy to miss in planning.
+
+This run identifies the specific points where guest and vehicle paths cross and grades them by how often and how sharply they clash. Rather than painting a vague risk across the whole site, it marks the handful of locations that actually warrant attention, so crossings, signage, or separation can be put where the real conflict is.
 
 ![Safety conflicts, Guest Experience read.](placeholder-gxm-safety-conflicts.jpg)
 
@@ -33,19 +39,25 @@ _Placeholder. Pedestrian-vehicle conflict points across the site._
 
 ### Wind
 
-_Placeholder. Wind hazard indicators, wind speed map, gust and turbulence, helipad crosswind, closure threshold._
+For operations, wind is a hazard threshold rather than a comfort question. Past a certain speed it constrains what can run safely, from exposed activities to a helipad crosswind, and the cost of crossing that line unprepared is far higher than the cost of anticipating it.
+
+This run plays a wind scenario forward as a hazard map, reading the speed, the gusts, and the turbulence against the thresholds that trigger a closure or a restriction. It gives the team the lead time to call the limit deliberately, sequencing closures and holds ahead of the wind rather than reacting once it is already over the line.
 
 ![Wind, Operations read.](placeholder-ops-wind.jpg)
 
 ### Flood and storm surge
 
-_Placeholder. Hazard map and flood extent, depth at critical facilities, affected zones, evacuation timing._
+A storm surge is one of the few hazards where the difference between a managed event and a damaging one is almost entirely about lead time. Water reaches critical facilities on its own schedule, and the assets that need to be moved or protected take time to move, time that only exists if the reach is forecast before it lands.
+
+This run plays a storm, tide, and rainfall scenario forward to show how far the surge reaches, how deep it gets at the facilities that matter, and how the evacuation timing stacks up against it. It hands operations the window to stage the response, securing what needs securing and clearing what needs clearing before the water is at the door.
 
 ![Flood and storm surge, Operations read.](placeholder-ops-flood-surge.jpg)
 
 ### Safety conflicts
 
-_Placeholder. Conflict points from the operations side._
+Read from the operations side, conflict points are an active management concern rather than a design one. The same crossings that planning wants to fix permanently, operations needs to manage day to day, knowing which ones flare up under load and which can be left alone.
+
+This run surfaces the conflict locations and grades them, so the team can see which crossings warrant staffing, signage, or temporary control during a busy period. It turns a diffuse safety worry into a short, ranked list of places to actually watch.
 
 ![Safety conflicts, Operations read.](placeholder-ops-safety-conflicts.jpg)
 
@@ -53,13 +65,17 @@ _Placeholder. Conflict points from the operations side._
 
 ### Flood and storm surge
 
-_Placeholder. Inundation of habitats, water levels, sediment and erosion, affected ecosystems, recovery._
+For the environment team, a surge is read through its effect on habitats rather than on facilities. The same water that threatens a marina also inundates sensitive ground, shifts sediment, and leaves a recovery problem behind it, and those impacts unfold on a slower, longer timescale.
+
+This run plays the surge forward to show where water reaches the habitats, how levels and sediment move, and which ecosystems carry the impact. It gives the team a view of the environmental cost ahead of the event, so protection and post-event recovery can be planned around the areas that actually bear the load.
 
 ![Flood and storm surge, Environment read.](placeholder-env-flood-surge.jpg)
 
 ### Emissions and noise
 
-_Placeholder. Emission and noise from the environmental side._
+The environment team reads emissions and noise as a site-condition question: not just whether a guest path is pleasant, but how the load sits across the wider footprint and where it concentrates against the places meant to stay clean and quiet.
+
+This run plays the dispersion forward across the site and reads where the load gathers and where it dissipates. It lets the team target the genuine sources and protect the areas that are supposed to stay low, rather than treating the whole site as uniformly affected.
 
 ![Emissions and noise, Environment read.](placeholder-env-emission.jpg)
 
@@ -67,6 +83,8 @@ _Placeholder. Emission and noise from the environmental side._
 
 ### Flood and storm surge
 
-_Placeholder. Surge level at the marina, flow velocity, depth at jetties, vessel risk, surge arrival._
+For marine operations, a surge is first and foremost a threat to vessels and the marina. Water climbing at the berths puts moored and small craft at risk, and the flow through the jetties is hard on the lines and fenders holding everything in place, so the call to move craft is one that has to be made before the peak.
+
+This run plays a storm, tide, and rainfall scenario forward to the marina, reading how high the surge climbs at the berths, how fast the water moves through them, and how soon it arrives. It gives the team the window to secure or relocate craft and raise barriers while there is still time, rather than reacting once the surge is already in the marina.
 
 ![Flood and storm surge, Marine Operations read.](06-mo-lod3-simulation-flood-and-storm-surge.jpg)

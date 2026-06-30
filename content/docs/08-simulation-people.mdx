@@ -5,64 +5,78 @@ section: "Simulation"
 description: "The People domain: how crowding, evacuation, thermal comfort, and accessibility read for each persona that runs them."
 ---
 
-The People domain covers the simulations that read the island through the people on it: how they crowd, how they clear a building, how heat sits on the ground, and how reachable the place is. Each persona below runs the sims relevant to its remit; the same sim can read differently for a different persona, so it is documented per persona here.
+The People domain covers the simulations that read the island through the people on it: how they gather, how they clear a building under pressure, how heat sits on the ground around them, and how easily they can reach where they are going. Each persona below runs the sims relevant to its remit, and the same sim is read differently depending on who is looking, so each read is documented separately.
 
 The scope label in the tool reads Shura Island as a placeholder and is not load-bearing in these descriptions.
 
 ## Guest Experience Manager
 
-The Guest Experience read is the guest's side: where guests build up, how they get out, how the heat feels, and how easily they reach what they came for.
+The Guest Experience read is the guest's side of the picture: where guests build up, how they get out, how the heat feels, and how easily they reach what they came for.
 
 ### Crowd
 
-_Placeholder. Crowd density at guest hotspots against the comfort line, with the guests in the crush._
+Guest density is one of those conditions that looks fine right up until it isn't. A plaza can sit comfortably busy for an hour, then a show finishes or two arrival waves overlap, and within minutes the same space crosses from lively to a genuine crush, the point where movement slows, comfort drops, and a safety concern starts to form. By the time that reads on the ground, the team is already behind it.
+
+This run takes a footfall scenario, an ordinary busy afternoon, a scheduled event, a compounding peak, and plays it forward against the density at which a space stops being comfortable. The squeeze becomes visible while it is still building rather than once it has arrived, so the guest experience team can meter flow, reroute foot traffic, or hold a show's release before the plaza fills, turning a crowd problem into a crowd decision made early.
 
 ![Crowd, Guest Experience read.](03-gxm-lod3-simulation-people-crowd.jpg)
 
 ### Evacuation
 
-_Placeholder. Guest-zone evacuation: occupant flow and the nearest-exit bottleneck._
+When a building has to be cleared, the thing that decides the outcome is not how many people are inside but how cleanly they can leave. A single congested stairwell or a doorway everyone funnels toward can turn an orderly exit into a dangerous one, and that weak point is rarely obvious from a floor plan alone.
+
+This run plays an evacuation forward through the guest-occupied spaces, following how people route to the nearest safe exit and where they bunch up on the way. It surfaces the bottleneck before a drill or an incident would, so the team can see which routes carry the load and which ones fail, and plan signage, capacity, or guidance around the spot that actually matters rather than the one that looks risky.
 
 ![Evacuation, Guest Experience read.](03-gxm-lod3-simulation-people-evacuation.jpg)
 
 ### Outdoor thermal comfort
 
-_Placeholder. Feels-like heat across guest areas and where shade runs short._
+Heat on the ground is felt long before it shows up as a complaint. A walkway or a deck that is pleasant in the morning can become genuinely uncomfortable by midday, and because the change is gradual, the first real signal is often a guest already standing in it.
+
+This run takes a time of day and a weather setting and plays the felt heat forward across the site, accounting for where shade actually falls rather than where it is supposed to. It shows where the comfortable footprint shrinks as the sun climbs, giving the team the lead time to add shade, adjust a route, or shift the timing of an activity before the exposed stretch becomes the part of the day guests remember.
 
 ![Outdoor thermal comfort, Guest Experience read.](03-gxm-lod3-simulation-people-outdoor-thermal-comfort.jpg)
 
 ### Accessibility
 
-_Placeholder. Reach to key amenities and where guests fall beyond easy walking range._
+A destination can be beautifully laid out and still be quietly hard to move through, with key amenities that sit just far enough, or just awkwardly enough, to be a strain for some guests. That gap is easy to miss because it is invisible to anyone who finds the place easy.
+
+This run reads the site by how reachable it is, mapping the walking effort from where guests are to the things they want, and surfacing the corners that fall beyond comfortable range. It turns a vague sense that "the far end feels cut off" into a clear picture of which routes and which destinations carry the cost, so reach can be designed for rather than assumed.
 
 ![Accessibility, Guest Experience read.](03-gxm-lod3-simulation-people-accessibility.jpg)
 
 ## Operations Manager
 
-The Operations read is the asset and staffing side of the same people movements: throughput at the gates and the total time to clear a building.
+The Operations read is the asset and staffing side of the same people movements: not how the space feels, but whether the site can physically move people through it.
 
 ### Crowd
 
-_Placeholder. Gate throughput and bottlenecks, staff on gates, capacity use._
+The same crowd reads very differently from the operations side, because the question is not how the space feels but whether the gates and the people working them can keep up. A density that guests experience as discomfort lands on operations as a throughput problem: entrances backing up, lanes saturating, and staff suddenly short exactly where the pressure concentrates.
+
+This run plays the same footfall scenario forward against the capacity of the gates and the staffing behind them, so the chokepoint shows up as a forecast rather than a queue someone radios in. The team can see which entrances tip first and how much extra staffing the peak will demand, which is the difference between positioning people ahead of the surge and scrambling once an entrance is already gridlocked.
 
 ![Crowd, Operations read.](placeholder-ops-crowd.jpg)
 
 ### Evacuation
 
-_Placeholder. Total evacuation time, bottleneck locations, exit flow rates._
+For operations, an evacuation is a clearance problem measured against the clock: how long the whole building takes to empty, where the flow stalls, and whether that total sits inside the margin the site is meant to hold. A plan that reads fine on paper can still hide a landing or a single exit doing more work than it can carry.
+
+This run plays the clearance forward across the structure and reports where the flow concentrates and how the total time builds, so the binding constraint is named before an incident finds it. The team can then act on the specific exit or route that drives the number, rather than treating every part of the building as equally urgent.
 
 ![Evacuation, Operations read.](placeholder-ops-evacuation.jpg)
 
 ## Environment Manager
 
-The Environment read is the site-wide heat picture rather than the guest-felt one.
+The Environment read is the site-wide heat picture rather than the guest-felt one: where exposure concentrates across the whole footprint and how the passive measures are holding up.
 
 ### Outdoor thermal comfort
 
-_Placeholder. Shade availability and heat-stress across the site, surface comfort, passive-cooling gain._
+For the environment team, thermal comfort is a property of the site itself, not just a guest's afternoon. The question is how much of the footprint stays within a comfortable range as conditions push, and whether the shading and surface choices already in place are doing the work they were meant to.
+
+This run plays the heat forward across the whole site and reads where exposure concentrates, how much of the ground stays shaded, and how far passive cooling carries before it runs out. It gives the team a site-wide view of where the design is coping and where it is not, so canopy, planting, and surface decisions can target the stretches that genuinely fail rather than the ones that merely look hot.
 
 ![Outdoor thermal comfort, Environment read.](05-env-lod3-simulation-outdoor-thermal-comfort.jpg)
 
 <Callout type="note">
-Marine Operations has no People simulations: there is no off-the-shelf tool to simulate people in the water environment at resort scale. Marine water simulations cover vessels only.
+Marine Operations has no People simulations. There is no off-the-shelf tool to simulate people in the water environment at resort scale, so the marine water simulations cover vessels only.
 </Callout>

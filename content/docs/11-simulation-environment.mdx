@@ -5,7 +5,7 @@ section: "Simulation"
 description: "The Environment domain: water quality, ocean current, wave, coral reef, and wind, per persona."
 ---
 
-The Environment domain covers the environmental simulations: water quality and clarity, ocean current, wave energy, coral reef heat stress, and, for Marine Operations, wind over the water. Each persona below runs the sims relevant to its remit.
+The Environment domain covers the simulations that read the natural systems around the destination: the clarity and condition of the water, how it flushes and flows, the energy the sea carries to the shore, the heat stress sitting on the reef, and, for Marine Operations, the wind over the water. Each persona below runs the sims relevant to its remit.
 
 The scope label in the tool reads Shura Island as a placeholder and is not load-bearing in these descriptions.
 
@@ -13,25 +13,33 @@ The scope label in the tool reads Shura Island as a placeholder and is not load-
 
 ### Water quality
 
-_Placeholder. Dissolved oxygen and ecosystem condition, nutrients, turbidity, temperature, source impact._
+Water quality is the kind of condition that decides whether the place stays the place people came for, and it shifts on its own timescale. A discharge event, weak flushing, or a warm spell can change the balance of the basin in ways that are invisible from the surface until the effect is already established.
+
+This run plays a wind, discharge, temperature, and flushing scenario forward across the lagoon, reading how dissolved oxygen, nutrients, turbidity, and temperature move together. It surfaces a developing condition while there is still time to respond, giving the team a view of where the water is holding and where the balance is starting to tip.
 
 ![Water quality, Environment read.](06-mo-lod3-simulation-water-quality.jpg)
 
 ### Ocean current
 
-_Placeholder. Residence time and flushing, mixing, current speed, sediment transport, intake quality._
+How the water moves determines how the basin keeps itself healthy. Residence time, mixing, and the way sediment is carried all turn on the current, and a slow-flushing basin holds onto whatever enters it, which is the quiet driver behind a lot of water-quality problems.
+
+This run plays a tidal, wind, and seasonal scenario forward to read how the basin flushes and mixes and where sediment is carried. It gives the team the underlying flow picture that explains the water-quality readings, so the cause can be reasoned about rather than just the symptom managed.
 
 ![Ocean current, Environment read.](06-mo-lod3-simulation-ocean-current.jpg)
 
 ### Wave
 
-_Placeholder. Wave energy at the shoreline, breaking zones, wave height at the beach, erosion driver._
+Wave energy is the engine of shoreline change. The same swell that makes for a lively beach also drives erosion and reshapes the coast over time, and the impact concentrates wherever the breaking energy lands hardest, which is not always where it looks roughest.
+
+This run plays an offshore swell scenario forward to the shoreline, reading where wave energy concentrates, where it breaks, and how it bears on the beach. It gives the team a view of the erosion driver ahead of the season, so the stretches of coast genuinely under pressure can be watched and protected rather than guessed at.
 
 ![Wave, Environment read.](06-mo-lod3-simulation-wave.jpg)
 
 ### Coral reef
 
-_Placeholder. Coral health index, bleaching risk on the DHW scale, coral cover trend, water quality, COTS risk._
+The reef is both an asset and a responsibility, and its stress builds invisibly. Accumulated heat pushes the reef toward bleaching well before the damage is visible, and the window to plan protection or rotation opens and closes on a longer horizon than most operational decisions.
+
+This run plays a heat-stress, water-quality, and disturbance scenario forward and reads the bleaching risk on the established degree-heating-weeks scale, projecting accumulated stress over the chosen horizon. It separates a rising risk from an actual breach, so the team can plan site rotation and protection while the reef is still approaching the line rather than once it has crossed it.
 
 ![Coral reef, Environment read.](06-mo-lod3-simulation-coral.jpg)
 
@@ -39,18 +47,24 @@ _Placeholder. Coral health index, bleaching risk on the DHW scale, coral cover t
 
 ### Wind
 
-_Placeholder. Marine wind window, wind speed and direction over water, gusts, small-craft limit, mooring exposure._
+For marine operations, wind over the water is the condition that sets the working day. It governs the marine wind window, the small-craft limit, and the load on moored vessels, and it can tighten faster than a schedule can absorb, so the dive, departure, and mooring calls are best made before it does.
+
+This run plays a wind speed and direction scenario forward over the resort and the water, reading the window, the gusts, and the mooring exposure against their limits. It surfaces a tightening window early, giving the team the lead time to set departure windows and secure moorings while the conditions still allow it.
 
 ![Wind, Marine Operations read.](06-mo-lod3-simulation-wind.jpg)
 
 ### Water quality
 
-_Placeholder. Water clarity for dive and swim, salinity, temperature, DO at dive sites, activity suitability._
+Marine operations reads water quality through the lens of what guests will be doing in it. Clarity and condition at the dive sites decide whether the day's diving and swimming can go ahead, and a drop below the workable threshold is far better known before guests are in the water than after.
+
+This run plays a discharge and flushing scenario forward at the dive sites, reading clarity, salinity, temperature, and dissolved oxygen together. It surfaces a clarity drop ahead of time, so dive scheduling and site choice can be adjusted before the activity call is forced on the water.
 
 ![Water quality, Marine Operations read.](06-mo-lod3-simulation-water-quality.jpg)
 
 ### Coral reef
 
-_Placeholder. Bleaching risk at dive sites, reef health by zone, disturbance impacts, anchor and boat risk, closure trigger._
+For marine operations, reef heat stress is a dive-site management question. Rising stress at the dive-site reefs approaches the point where a site should be rested or closed, and getting ahead of that line protects both the reef and the operation that depends on it.
+
+This run plays a heat-stress scenario forward and reads the bleaching risk at the dive sites against the closure trigger, with the anchor and boat pressure that compounds it. It lets the team plan rotation and protection while the risk is still building, so a site can be rested deliberately rather than closed reactively.
 
 ![Coral reef, Marine Operations read.](06-mo-lod3-simulation-coral.jpg)
