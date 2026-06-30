@@ -9,9 +9,11 @@ The Traffic domain covers movement and the systems that carry it: guest mobility
 
 The scope label in the tool reads Shura Island as a placeholder and is not load-bearing in these descriptions.
 
-## Guest Experience Manager
+## Mobility
 
-### Mobility
+How guest transfers hold up as demand rises against the fleet behind them, read by each persona that runs it.
+
+### Guest Experience Manager
 
 The guest experience manager's goal in a mobility scenario is simple to state and hard to hold: no guest should ever wait longer than feels effortless for a ride. The aim is to keep transfers running to plan so the connective tissue of the destination stays invisible, exactly as a premium experience requires.
 
@@ -19,25 +21,7 @@ The twin protects that invisibility by seeing the strain before the guest does. 
 
 ![Mobility, Guest Experience read.](03-gxm-lod3-simulation-traffic-mobility.jpg)
 
-### Shuttle network
-
-The manager's goal with the shuttle network is a system guests actually trust, where no single unreliable leg quietly trains people to walk and reshapes demand everywhere else. The target is a network that works as a whole, not a collection of routes that each look fine alone.
-
-The twin makes the whole network legible at once. It plays the network forward to show where reliance concentrates and where guests fall back to walking, exposing the legs carrying the most weight and the ones being quietly abandoned. That lets the team reason about the network as a system and fix the leg that matters, rather than tuning one route and discovering the knock-on effects later.
-
-![Shuttle network, Guest Experience read.](03-gxm-lod3-simulation-traffic-shuttle-network.jpg)
-
-### Drop-off forecourt
-
-At the forecourt, the manager's goal is a first and last impression that feels seamless, an arrival where nobody queues at the kerb in the very place they are meant to feel welcomed. The aim is to keep the approach flowing even when arrivals bunch.
-
-The twin shows the forecourt tipping before it tips. It plays an arrival pattern forward, reading how long vehicles dwell, how the queue builds, and how the bays fill, and marks the point where flowing becomes congested. The value is that staging and kerb management can be set ahead of the rush, so the welcome stays a welcome rather than becoming a bottleneck.
-
-![Drop-off forecourt, Guest Experience read.](03-gxm-lod3-simulation-traffic-drop-off.jpg)
-
-## Operations Manager
-
-### Mobility
+### Operations Manager
 
 The operations manager's goal in a mobility scenario is to meet the day's demand with the assets actually on hand, keeping enough vehicles in service and enough charging behind them that the system never runs out of slack at the peak. Success is a fleet that copes, not one that just barely doesn't fail.
 
@@ -45,7 +29,11 @@ The twin turns that into a forecast instead of a gamble. It plays the day's load
 
 ![Mobility, Operations read.](placeholder-ops-mobility.jpg)
 
-### Energy
+## Energy
+
+How the island microgrid balances clean supply against demand, read by each persona that runs it.
+
+### Operations Manager
 
 For the operations manager, the goal with the microgrid is to keep the island running on its own clean supply, never quietly drifting to the point where diesel backup has to be called. The aim is to stay ahead of a supply gap while there is still room to shape it.
 
@@ -53,25 +41,7 @@ The twin gives that lead time. It plays a demand and supply scenario forward aga
 
 ![Energy, Operations read.](placeholder-ops-energy.jpg)
 
-### Shuttle network
-
-Read from the operations side, the goal for the shuttle network is fleet health: keeping utilization balanced and no single leg carrying more than it was sized for, so reliability does not quietly erode under load. The measure is a network that holds up, not one that is running hot in places nobody is watching.
-
-The twin surfaces that strain early. It plays the network forward from the asset's perspective, showing the routes running hot and the capacity being stretched. The value is the chance to add or rebalance service before a leg saturates, protecting the reliability the guest side depends on.
-
-![Shuttle network, Operations read.](placeholder-ops-shuttle-network.jpg)
-
-### Drop-off forecourt
-
-For operations, the forecourt goal is throughput: clearing vehicles fast enough through the kerb, the bays, and the staff working them that the approach never backs up under an arrival surge. Success is a forecourt that keeps moving, whatever the arrival pattern throws at it.
-
-The twin shows where that clearance breaks. It plays the arrival pattern forward against the forecourt's capacity, surfacing where staging falls behind and the queue starts to push into the approach. The value is the basis to position staff and manage the kerb ahead of the rush, rather than reacting once the forecourt has already become the constraint.
-
-![Drop-off forecourt, Operations read.](placeholder-ops-drop-off.jpg)
-
-## Environment Manager
-
-### Energy
+### Environment Manager
 
 The environment manager's goal with the microgrid is to protect the destination's sustainability commitment, maximising the share of load met by renewables and making sure clean generation is not wasted while the reserve thins. The measure of success is the carbon story holding up under real demand.
 
@@ -79,9 +49,51 @@ The twin makes that story defensible. It plays a demand and supply scenario forw
 
 ![Energy, Environment read.](05-env-lod3-simulation-energy.jpg)
 
-## Marine Operations Manager
+## Shuttle network
 
-### Wave
+How the shuttle network carries load across its routes, read by each persona that runs it.
+
+### Guest Experience Manager
+
+The manager's goal with the shuttle network is a system guests actually trust, where no single unreliable leg quietly trains people to walk and reshapes demand everywhere else. The target is a network that works as a whole, not a collection of routes that each look fine alone.
+
+The twin makes the whole network legible at once. It plays the network forward to show where reliance concentrates and where guests fall back to walking, exposing the legs carrying the most weight and the ones being quietly abandoned. That lets the team reason about the network as a system and fix the leg that matters, rather than tuning one route and discovering the knock-on effects later.
+
+![Shuttle network, Guest Experience read.](03-gxm-lod3-simulation-traffic-shuttle-network.jpg)
+
+### Operations Manager
+
+Read from the operations side, the goal for the shuttle network is fleet health: keeping utilization balanced and no single leg carrying more than it was sized for, so reliability does not quietly erode under load. The measure is a network that holds up, not one that is running hot in places nobody is watching.
+
+The twin surfaces that strain early. It plays the network forward from the asset's perspective, showing the routes running hot and the capacity being stretched. The value is the chance to add or rebalance service before a leg saturates, protecting the reliability the guest side depends on.
+
+![Shuttle network, Operations read.](placeholder-ops-shuttle-network.jpg)
+
+## Drop-off forecourt
+
+How the arrival forecourt holds up as vehicles bunch at the kerb, read by each persona that runs it.
+
+### Guest Experience Manager
+
+At the forecourt, the manager's goal is a first and last impression that feels seamless, an arrival where nobody queues at the kerb in the very place they are meant to feel welcomed. The aim is to keep the approach flowing even when arrivals bunch.
+
+The twin shows the forecourt tipping before it tips. It plays an arrival pattern forward, reading how long vehicles dwell, how the queue builds, and how the bays fill, and marks the point where flowing becomes congested. The value is that staging and kerb management can be set ahead of the rush, so the welcome stays a welcome rather than becoming a bottleneck.
+
+![Drop-off forecourt, Guest Experience read.](03-gxm-lod3-simulation-traffic-drop-off.jpg)
+
+### Operations Manager
+
+For operations, the forecourt goal is throughput: clearing vehicles fast enough through the kerb, the bays, and the staff working them that the approach never backs up under an arrival surge. Success is a forecourt that keeps moving, whatever the arrival pattern throws at it.
+
+The twin shows where that clearance breaks. It plays the arrival pattern forward against the forecourt's capacity, surfacing where staging falls behind and the queue starts to push into the approach. The value is the basis to position staff and manage the kerb ahead of the rush, rather than reacting once the forecourt has already become the constraint.
+
+![Drop-off forecourt, Operations read.](placeholder-ops-drop-off.jpg)
+
+## Wave
+
+How offshore swell carries energy to the shore and the routes, read by each persona that runs it.
+
+### Marine Operations Manager
 
 The marine operations manager's goal in a wave scenario is to keep small craft running safely while the window allows, and to call the hold early enough that no boat is ever caught exposed. The aim is a marine schedule made with margin, not under pressure.
 
@@ -89,7 +101,11 @@ The twin provides that margin. It plays an offshore swell scenario forward to th
 
 ![Wave, Marine Operations read.](06-mo-lod3-simulation-wave.jpg)
 
-### Ocean current
+## Ocean current
+
+How flow builds through the channels and the basin, read by each persona that runs it.
+
+### Marine Operations Manager
 
 The manager's goal with ocean current is a safe dive day: knowing when flow at the channel strengthens enough to make drift a real hazard, before boats are out rather than after. The target is dive routing and vessel calls made on a clear read of the channel, not the average.
 
