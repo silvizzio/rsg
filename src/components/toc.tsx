@@ -1,11 +1,17 @@
 'use client'
-
 import { useEffect, useState } from 'react'
 
 type Heading = {
   id: string
   text: string
   level: number
+}
+
+function slugify(s: string): string {
+  return s
+    .toLowerCase()
+    .replace(/\s+/g, '-')
+    .replace(/[^a-z0-9-]/g, '')
 }
 
 export default function TableOfContents() {
@@ -15,25 +21,41 @@ export default function TableOfContents() {
   useEffect(() => {
     const elements = Array.from(
       document.querySelectorAll('article h2, article h3')
-    )
+    ) as HTMLElement[]
+
+    let currentSectionSlug = ''
     const parsed: Heading[] = elements.map((el) => {
-      if (!el.id) {
-        el.id = (el.textContent ?? '')
-          .toLowerCase()
-          .replace(/\s+/g, '-')
-          .replace(/[^a-z0-9-]/g, '')
+      const level = parseInt(el.tagName[1])
+      const base = slugify(el.textContent ?? '')
+
+      if (level === 2) {
+        currentSectionSlug = base
       }
+
+      // h3 ids are scoped under the nearest h2 so repeated persona names
+      // (e.g. "Guest Experience Manager" under every sim) stay unique.
+      const uniqueId =
+        level === 3 && currentSectionSlug
+          ? `${currentSectionSlug}__${base}`
+          : base
+
+      el.id = uniqueId
+
       return {
-        id: el.id,
+        id: uniqueId,
         text: el.textContent ?? '',
-        level: parseInt(el.tagName[1]),
+        level,
       }
     })
+
     setTimeout(() => setHeadings(parsed), 0)
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) setTimeout(() => setActive(entry.target.id), 0)
+          if (entry.isIntersecting) {
+            setTimeout(() => setActive((entry.target as HTMLElement).id), 0)
+          }
         })
       },
       { rootMargin: '0px 0px -60% 0px' }
