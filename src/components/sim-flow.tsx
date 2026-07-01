@@ -356,7 +356,7 @@ export function SimGrid() {
                             {sim.name}
                           </span>
                           {ENGINE_URL[sim.engine] ? (
-                            
+                            <a
                               href={ENGINE_URL[sim.engine]}
                               target="_blank"
                               rel="noopener noreferrer"
