@@ -179,6 +179,23 @@ const DOMAIN_ORDER: DomainKey[] = ['People', 'Traffic', 'Transport', 'Environmen
 const PERSONA_ORDER: PersonaKey[] = ['GXM', 'OPS', 'ENV', 'MO']
 
 // grid[domain][persona] = SimCell[]
+const ENGINE_URL: Record<string, string> = {
+  'MassMotion': 'https://www.oasys-software.com/products/pedestrian-simulation-software/massmotion/',
+  'Aimsun Next': 'https://www.aimsun.com/aimsun-next-transport-modelling-software/',
+  'PTV Lines': 'https://www.ptvgroup.com/en-us/products/ptv-lines',
+  'PTV Visum': 'https://www.ptvgroup.com/en-us/products/ptv-visum',
+  'PTV Vissim': 'https://www.ptvgroup.com/en-us/products/ptv-vissim',
+  'PTV Viswalk': 'https://www.ptvgroup.com/en-us/products/pedestrian-simulation-software-ptv-viswalk',
+  'Ladybug Tools': 'https://www.ladybug.tools/',
+  'HOMER Pro': 'https://www.homerenergy.com/products/pro/index.html',
+  'SWAN': 'https://swanmodel.sourceforge.io/',
+  'Delft3D': 'https://www.deltares.nl/en/software-and-data/products/delft3d-flexible-mesh-suite',
+  'Delft3D-FLOW': 'https://www.deltares.nl/en/software-and-data/products/delft3d-flexible-mesh-suite',
+  'Delft3D-WAQ': 'https://www.deltares.nl/en/software-and-data/products/delft3d-water-quality',
+  'ReefMod-GBR + NOAA DHW': 'https://coralreefwatch.noaa.gov/',
+  'WRF + CFD': 'https://www.mmm.ucar.edu/models/wrf',
+}
+
 const SIM_GRID: Record<DomainKey, Partial<Record<PersonaKey, SimCell[]>>> = {
   People: {
     GXM: [
@@ -338,18 +355,38 @@ export function SimGrid() {
                           <span style={{ fontSize: '13px', fontWeight: 600, color: 'hsl(var(--foreground))' }}>
                             {sim.name}
                           </span>
-                          <span
-                            style={{
-                              fontSize: '10px',
-                              color: 'hsl(var(--muted-foreground))',
-                              border: '1px solid hsl(var(--border))',
-                              borderRadius: '4px',
-                              padding: '1px 6px',
-                              whiteSpace: 'nowrap',
-                            }}
-                          >
-                            {sim.engine}
-                          </span>
+                          {ENGINE_URL[sim.engine] ? (
+                            
+                              href={ENGINE_URL[sim.engine]}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              style={{
+                                fontSize: '10px',
+                                color: 'hsl(var(--muted-foreground))',
+                                border: '1px solid hsl(var(--border))',
+                                borderRadius: '4px',
+                                padding: '1px 6px',
+                                whiteSpace: 'nowrap',
+                                textDecoration: 'none',
+                                cursor: 'pointer',
+                              }}
+                            >
+                              {sim.engine}
+                            </a>
+                          ) : (
+                            <span
+                              style={{
+                                fontSize: '10px',
+                                color: 'hsl(var(--muted-foreground))',
+                                border: '1px solid hsl(var(--border))',
+                                borderRadius: '4px',
+                                padding: '1px 6px',
+                                whiteSpace: 'nowrap',
+                              }}
+                            >
+                              {sim.engine}
+                            </span>
+                          )}
                         </div>
                         <p
                           style={{
