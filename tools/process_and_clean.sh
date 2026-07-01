@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-# Process raw PNGs -> JPGs, commit the JPGs, push, then empty raw-images.
+# Process raw PNGs -> JPGs, commit, empty raw-images, then push.
+# Empty-before-push so the pre-push hook (which blocks on non-empty raw-images) passes.
 # Usage: tools/process_and_clean.sh "commit message"
 set -euo pipefail
 cd "$(git rev-parse --show-toplevel)"
@@ -20,9 +21,9 @@ if git diff --cached --quiet; then
   echo "nothing to commit"
 else
   git commit -m "$MSG"
+  echo "== emptying local raw-images (before push, so pre-push hook passes) =="
+  find raw-images/ -type f ! -name '.gitkeep' -delete
+  echo "== pushing =="
   git push
+  echo "done. committed, raw-images cleared, pushed."
 fi
-
-echo "== emptying local raw-images =="
-find raw-images/ -type f -delete
-echo "done. raw-images cleared."
