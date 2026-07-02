@@ -125,8 +125,8 @@ export default function Home() {
       </main>
 
       <footer style={{ borderTop: '1px solid hsl(var(--border))', padding: '16px', maxWidth: '1440px', width: '100%', margin: '0 auto', display: 'flex', flexWrap: 'wrap', gap: '8px', justifyContent: 'space-between', alignItems: 'center', marginTop: 'auto' }}>
-        <p style={{ fontSize: '12px', color: 'hsl(var(--muted-foreground))' }}>RSG Integrated Operations Centre Documentation v1.0</p>
-        <p style={{ fontSize: '12px', color: 'hsl(var(--muted-foreground))' }}>Vizzio June 2026 Confidential</p>
+        <p style={{ fontSize: '12px', color: 'hsl(var(--muted-foreground))' }}>RSG Integrated Operations Centre Documentation v1.2</p>
+        <p style={{ fontSize: '12px', color: 'hsl(var(--muted-foreground))' }}>Vizzio July 2026 Confidential</p>
       </footer>
     </div>
   )

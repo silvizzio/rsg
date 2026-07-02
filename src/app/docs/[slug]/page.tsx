@@ -105,7 +105,7 @@ export default async function DocPage({
 
         <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid hsl(var(--border))' }}>
           <p style={{ fontSize: '12px', color: 'hsl(var(--muted-foreground))' }}>
-            © 2026 Vizzio · RSG Integrated Operations Centre Documentation v1.0 · Confidential
+            © 2026 Vizzio · RSG Integrated Operations Centre Documentation v1.2 · July 2026 · Confidential
           </p>
         </div>
 

@@ -24,7 +24,7 @@ export default function Sidebar({ docsBySection }: Props) {
             <img src="/rsg-logo.svg" alt="RSG IOC" width={24} height={24} style={{ flexShrink: 0, display: 'block' }} />
             <div>
               <p style={{ fontSize: '12px', fontWeight: 500, lineHeight: 1.3 }}>RSG IOC</p>
-              <p style={{ fontSize: '10px', color: 'hsl(var(--muted-foreground))' }}>v1.0 · June 2026</p>
+              <p style={{ fontSize: '10px', color: 'hsl(var(--muted-foreground))' }}>v1.2 · July 2026</p>
             </div>
           </div>
         </div>
