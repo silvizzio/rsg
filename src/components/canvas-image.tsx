@@ -1,6 +1,5 @@
 'use client'
 import { useEffect, useRef } from 'react'
-
 export function CanvasImage({ src, alt, style }: { src: string; alt?: string; style?: React.CSSProperties }) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   useEffect(() => {
@@ -10,6 +9,7 @@ export function CanvasImage({ src, alt, style }: { src: string; alt?: string; st
     const ctx = canvas.getContext('2d')
     if (!ctx) return
     const img = new window.Image()
+    img.decoding = 'async'
     const draw = () => {
       if (cancelled) return
       if (!img.naturalWidth || !img.naturalHeight) return
