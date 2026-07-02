@@ -105,20 +105,46 @@ A low score that used to arrive with no explanation now points straight back to 
 
 ## Simulations this view runs
 
-The Guest Experience Manager runs the simulations that read the island through the guest: how they gather, how a space clears, how heat and exposure sit on the routes they walk, and how the fleet and network carry them. The simulation object is Humans, or Combined where a run also carries the vehicles guests share the site with. Each read below is summarised here and documented in full in the Simulation chapters.
+The Guest Experience Manager runs the simulations that read the island through the guest: how they gather, how a space clears, how heat and exposure sit on the routes they walk, and how the fleet and network carry them. The simulation object is Humans, or Combined where a run also carries the vehicles guests share the site with. Each read is summarised below and documented in full in the Simulation chapters.
 
-| Category | Simulation | What it reads | What it drives | Read in full |
-|---|---|---|---|---|
-| People | Crowd | Density against the line where a space stops being comfortable | Meter flow or hold a release before a crush forms | [Crowd](/docs/08-simulation-people#crowd__guest-experience-manager) |
-| People | Evacuation | How guest spaces clear and where people bunch | Design signage and capacity around the real bottleneck | [Evacuation](/docs/08-simulation-people#evacuation__guest-experience-manager) |
-| People | Outdoor thermal comfort | Felt heat across the ground as shade shifts | Add shade or shift timing before an exposed stretch bites | [Outdoor thermal comfort](/docs/08-simulation-people#outdoor-thermal-comfort__guest-experience-manager) |
-| People | Accessibility | Reach to amenities by walking effort | Design reach in rather than discover the gaps by chance | [Accessibility](/docs/08-simulation-people#accessibility__guest-experience-manager) |
-| Traffic | Mobility | Transfer times and requests against the fleet | Adjust ahead of the surge, before anyone waits | [Mobility](/docs/09-simulation-traffic#mobility__guest-experience-manager) |
-| Traffic | Shuttle network | Where reliance concentrates and where guests walk | Fix the leg that carries the network, not one route | [Shuttle network](/docs/09-simulation-traffic#shuttle-network__guest-experience-manager) |
-| Traffic | Drop-off forecourt | Dwell, queue, and bay fill at the kerb | Set staging and kerb management ahead of the rush | [Drop-off forecourt](/docs/09-simulation-traffic#drop-off-forecourt__guest-experience-manager) |
-| Transport | Wind | Where airflow funnels and accelerates between buildings | Soften an exposed corner through layout or routing | [Wind](/docs/10-simulation-transport#wind__guest-experience-manager) |
-| Transport | Emissions and noise | How emission and noise carry across guest areas | Target routing and screening at the real sources | [Emissions and noise](/docs/10-simulation-transport#emissions-and-noise__guest-experience-manager) |
-| Transport | Safety conflicts | Where guest and vehicle paths cross and clash | Put crossings and separation where the conflict is | [Safety conflicts](/docs/10-simulation-transport#safety-conflicts__guest-experience-manager) |
+| Category | Simulation | What it reads | What it drives |
+|---|---|---|---|
+| People | Crowd | Density against the line where a space stops being comfortable | Meter flow or hold a release before a crush forms |
+| People | Evacuation | How guest spaces clear and where people bunch | Design signage and capacity around the real bottleneck |
+| People | Outdoor thermal comfort | Felt heat across the ground as shade shifts | Add shade or shift timing before an exposed stretch bites |
+| People | Accessibility | Reach to amenities by walking effort | Design reach in rather than discover the gaps by chance |
+| Traffic | Mobility | Transfer times and requests against the fleet | Adjust ahead of the surge, before anyone waits |
+| Traffic | Shuttle network | Where reliance concentrates and where guests walk | Fix the leg that carries the network, not one route |
+| Traffic | Drop-off forecourt | Dwell, queue, and bay fill at the kerb | Set staging and kerb management ahead of the rush |
+| Transport | Wind | Where airflow funnels and accelerates between buildings | Soften an exposed corner through layout or routing |
+| Transport | Emissions and noise | How emission and noise carry across guest areas | Target routing and screening at the real sources |
+| Transport | Safety conflicts | Where guest and vehicle paths cross and clash | Put crossings and separation where the conflict is |
+
+### People
+
+**Crowd.** Keep every space on the right side of comfortable, protecting the feel of an unhurried destination even when a show lets out or two arrival waves land at once. The twin plays a footfall scenario forward against the density at which a space stops being comfortable, so flow is metered, foot traffic rerouted, or a release held before a crush forms. [Read in full](/docs/08-simulation-people#crowd__guest-experience-manager)
+
+**Evacuation.** Confidence that guest-facing spaces clear cleanly, with no single stairwell or doorway quietly holding back the exit. The twin plays the evacuation forward through the occupied spaces, surfacing the bottleneck as a located finding, so signage and capacity are designed around the spot that matters. [Read in full](/docs/08-simulation-people#evacuation__guest-experience-manager)
+
+**Outdoor thermal comfort.** Keep the parts of the day guests remember on the good side, not the walkway that turned uncomfortable at midday. The twin plays felt heat forward using where shade actually falls, showing the comfortable footprint shrink as the sun climbs, so shade or timing is adjusted before an exposed stretch becomes a complaint. [Read in full](/docs/08-simulation-people#outdoor-thermal-comfort__guest-experience-manager)
+
+**Accessibility.** A destination effortless to move through, where no key amenity sits just far enough to quietly strain a guest. The twin reads the site by walking effort, mapping reach from where guests actually are and surfacing the corners beyond comfortable range, so reach is designed in rather than discovered by chance. [Read in full](/docs/08-simulation-people#accessibility__guest-experience-manager)
+
+### Traffic
+
+**Mobility.** No guest waiting longer than feels effortless for a ride. The twin plays a demand scenario forward against the fleet and schedule, surfacing where transfer times stretch and requests pile up ahead of anyone standing, so a measured adjustment lands before the surge. [Read in full](/docs/09-simulation-traffic#mobility__guest-experience-manager)
+
+**Shuttle network.** A network guests trust, where no unreliable leg quietly trains people to walk. The twin plays the network forward to show where reliance concentrates and where guests fall back to walking, so the leg carrying the network is fixed rather than one route tuned in isolation. [Read in full](/docs/09-simulation-traffic#shuttle-network__guest-experience-manager)
+
+**Drop-off forecourt.** An arrival that feels seamless, with nobody queuing at the kerb where they are meant to feel welcomed. The twin plays an arrival pattern forward, reading dwell, queue build, and bay fill, and marks where flowing becomes congested, so staging is set ahead of the rush. [Read in full](/docs/09-simulation-traffic#drop-off-forecourt__guest-experience-manager)
+
+### Transport
+
+**Wind.** Keep outdoor spaces genuinely usable, so a breeze does not accelerate around a corner into something that empties a deck. The twin plays a wind setting forward across the resort, reading where airflow funnels and accelerates between buildings, so an exposed corner is softened through layout, planting, or routing. [Read in full](/docs/10-simulation-transport#wind__guest-experience-manager)
+
+**Emissions and noise.** Protect the quiet, clean character of the destination, so a secluded garden actually delivers on the promise. The twin plays the dispersion forward from the roads, service areas, and plant, showing how emission and noise carry across guest areas, so routing and screening target the real sources. [Read in full](/docs/10-simulation-transport#emissions-and-noise__guest-experience-manager)
+
+**Safety conflicts.** A site guests and vehicles share without the few dangerous overlaps ordinary planning misses. The twin identifies where paths cross and grades them by how often and how sharply they clash, so crossings and separation go where the real conflict is. [Read in full](/docs/10-simulation-transport#safety-conflicts__guest-experience-manager)
 
 ## Working in this view
 
