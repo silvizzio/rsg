@@ -111,42 +111,42 @@ Marine Operations runs six simulations, grouped in the rail the way the platform
 
 Read as a set, each run turns an environmental field into a single operability call.
 
-| Category | Simulation | What it reads | The operability call it drives |
-|---|---|---|---|
-| Traffic | Wave | Wave height against the small-craft limit, and the vessels exposed on the lines boats run | Hold departures and beach calls before a boat is caught exposed |
-| Traffic | Ocean current | Drift at the channel and along the dive routes, and the vessels in the drift zone | Adjust dive routing and vessel calls before boats are committed |
-| Transport | Flood and storm surge | Surge height, speed, and arrival time at the berths | Secure or relocate craft and raise barriers while it still helps |
-| Environment | Wind | The marine window, the small-craft limit, and mooring exposure | Set departure windows and secure moorings before conditions tighten |
-| Environment | Water quality | Dive clarity, salinity, temperature, and dissolved oxygen at the dive sites | Call the day's diving and swimming before guests are in the water |
-| Environment | Coral reef | Bleaching risk against the closure trigger, with anchor and boat pressure | Rest or close a dive site deliberately, ahead of the trigger |
+| Category | Simulation | What it reads | What it drives | Read in full |
+|---|---|---|---|---|
+| Traffic | Wave | Wave height against the small-craft limit, and the vessels exposed on the lines boats run | Hold departures and beach calls before a boat is caught exposed | [Wave](/docs/09-simulation-traffic#wave__marine-operations-manager) |
+| Traffic | Ocean current | Drift at the channel and along the dive routes, and the vessels in the drift zone | Adjust dive routing and vessel calls before boats are committed | [Ocean current](/docs/09-simulation-traffic#ocean-current__marine-operations-manager) |
+| Transport | Flood and storm surge | Surge height, speed, and arrival time at the berths | Secure or relocate craft and raise barriers while it still helps | [Flood and storm surge](/docs/10-simulation-transport#flood-and-storm-surge__marine-operations-manager) |
+| Environment | Wind | The marine window, the small-craft limit, and mooring exposure | Set departure windows and secure moorings before conditions tighten | [Wind](/docs/11-simulation-environment#wind__marine-operations-manager) |
+| Environment | Water quality | Dive clarity, salinity, temperature, and dissolved oxygen at the dive sites | Call the day's diving and swimming before guests are in the water | [Water quality](/docs/11-simulation-environment#water-quality__marine-operations-manager) |
+| Environment | Coral reef | Bleaching risk against the closure trigger, with anchor and boat pressure | Rest or close a dive site deliberately, ahead of the trigger | [Coral reef](/docs/11-simulation-environment#coral-reef__marine-operations-manager) |
 
 ### Traffic
 
-**Wave.** The goal is to keep small craft running safely while the window allows, and to call the hold early enough that no boat is caught exposed. The twin plays an offshore swell scenario forward to the marina and the routes, showing where wave height climbs toward the small-craft limit and where waves break on the lines boats actually run, so departures and beach calls are deliberate rather than last-minute.
+**Wave.** The goal is to keep small craft running safely while the window allows, and to call the hold early enough that no boat is caught exposed. The twin plays an offshore swell scenario forward to the marina and the routes, showing where wave height climbs toward the small-craft limit and where waves break on the lines boats actually run, so departures and beach calls are deliberate rather than last-minute. [Read in full](/docs/09-simulation-traffic#wave__marine-operations-manager)
 
 ![Wave, Marine Operations read. Wave height 1.6m against the small-craft limit, 6 vessels exposed, marina surge watch.](06-mo-lod3-simulation-wave.jpg)
 
-**Ocean current.** The goal is a safe dive day: knowing when flow at the channel strengthens enough to make drift a real hazard, before boats are out. The twin plays a tidal and wind scenario forward to show how current builds at the channel and along the dive routes, separating the site reading from the broad average that hides it, so routing and vessel calls can be adjusted before boats are committed.
+**Ocean current.** The goal is a safe dive day: knowing when flow at the channel strengthens enough to make drift a real hazard, before boats are out. The twin plays a tidal and wind scenario forward to show how current builds at the channel and along the dive routes, separating the site reading from the broad average that hides it, so routing and vessel calls can be adjusted before boats are committed. [Read in full](/docs/09-simulation-traffic#ocean-current__marine-operations-manager)
 
 ![Ocean current, Marine Operations read. Drift risk at the channel, current 0.6 m/s, 5 vessels in the drift zone, handling harder.](06-mo-lod3-simulation-ocean-current.jpg)
 
 ### Transport
 
-**Flood and storm surge.** The goal is to protect vessels and the marina, getting craft secured or relocated and barriers raised before the peak puts moored and small boats at risk. The twin plays a storm, tide, and rainfall scenario forward to the marina, reading how high the surge climbs at the berths, how fast water moves through them, and how soon it arrives, so the marine response is made with time in hand.
+**Flood and storm surge.** The goal is to protect vessels and the marina, getting craft secured or relocated and barriers raised before the peak puts moored and small boats at risk. The twin plays a storm, tide, and rainfall scenario forward to the marina, reading how high the surge climbs at the berths, how fast water moves through them, and how soon it arrives, so the marine response is made with time in hand. [Read in full](/docs/10-simulation-transport#flood-and-storm-surge__marine-operations-manager)
 
 ![Flood and storm surge, Marine Operations read. Surge at the marina 1.8m, 210 guests and 24 vehicles in the depth zone, surge arrival 18 min.](06-mo-lod3-simulation-flood-and-storm-surge.jpg)
 
 ### Environment
 
-**Wind.** The goal is to set the working day with confidence, knowing the marine window, the small-craft limit, and the load on moorings before conditions tighten. The twin plays a wind speed and direction scenario forward over the resort and the water, reading the window, the gusts, and the mooring exposure against their limits, so departure windows and moorings are set while conditions still allow.
+**Wind.** The goal is to set the working day with confidence, knowing the marine window, the small-craft limit, and the load on moorings before conditions tighten. The twin plays a wind speed and direction scenario forward over the resort and the water, reading the window, the gusts, and the mooring exposure against their limits, so departure windows and moorings are set while conditions still allow. [Read in full](/docs/11-simulation-environment#wind__marine-operations-manager)
 
 ![Wind, Marine Operations read. Marine wind window 14 kn, small-craft limit clear, mooring exposure low.](06-mo-lod3-simulation-wind.jpg)
 
-**Water quality.** The goal is a clear call on whether the day's diving and swimming can go ahead, made before guests are in the water. The twin plays a discharge and flushing scenario forward at the dive sites, reading clarity, salinity, temperature, and dissolved oxygen together, so a clarity drop surfaces ahead of time and site choice can adapt before the activity call is forced.
+**Water quality.** The goal is a clear call on whether the day's diving and swimming can go ahead, made before guests are in the water. The twin plays a discharge and flushing scenario forward at the dive sites, reading clarity, salinity, temperature, and dissolved oxygen together, so a clarity drop surfaces ahead of time and site choice can adapt before the activity call is forced. [Read in full](/docs/11-simulation-environment#water-quality__marine-operations-manager)
 
 ![Water quality, Marine Operations read. Dive clarity 7.0m visibility below the activity threshold, DO low, activity limited.](06-mo-lod3-simulation-water-quality.jpg)
 
-**Coral reef.** The goal is dive-site management: getting ahead of the heat stress that pushes a site toward the point where it should be rested or closed. The twin plays a heat-stress scenario forward and reads bleaching risk at the dive sites against the closure trigger, with the anchor and boat pressure that compounds it, so rotation and protection are planned while the risk is still building.
+**Coral reef.** The goal is dive-site management: getting ahead of the heat stress that pushes a site toward the point where it should be rested or closed. The twin plays a heat-stress scenario forward and reads bleaching risk at the dive sites against the closure trigger, with the anchor and boat pressure that compounds it, so rotation and protection are planned while the risk is still building. [Read in full](/docs/11-simulation-environment#coral-reef__marine-operations-manager)
 
 ![Coral reef, Marine Operations read. Bleaching risk 5.2 DHW approaching the closure trigger, reef health good, anchor risk low.](06-mo-lod3-simulation-coral.jpg)
 
