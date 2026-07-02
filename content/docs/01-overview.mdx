@@ -2,7 +2,7 @@
 title: "Overview"
 order: 1
 section: "Getting Started"
-description: "What the RSG IOC Digital Twin is, the four operator personas, the map detail levels, and current destination coverage"
+description: "What the RSG IOC Digital Twin is, its two modes, the four operator personas, the map detail levels, and current destination coverage"
 ---
 
 The RSG Integrated Operations Centre (IOC) Digital Twin is Vizzio's live, three-dimensional operational picture of Red Sea Global destinations. It brings every operational layer of a destination, the guests, the fleet that moves them, the environment they move through, and the marine ecosystem the destination is built to protect, onto a single interactive map. The result is one shared, real-time view of the destination rather than a patchwork of separate dashboards.
@@ -16,6 +16,14 @@ The IOC gives four operator personas, the Guest Experience Manager, the Operatio
 The IOC renders each Red Sea Global destination as an interactive three-dimensional twin that mirrors what is happening on the ground in real time. An operator signs in to the persona that matches their role and immediately sees the destination through that lens. From there they can drill from the destination-wide overview down to a single site, watch live closed-circuit television (CCTV) feeds, respond to alerts the moment they surface, and rehearse what-if scenarios in simulation before they ever play out for real.
 
 What ties all of this together is the map. Every persona, every panel, and every alert resolves to a place on it, so a number in a panel, a camera tile, and an alert in the tray all point back to the same physical location. That shared surface is what lets the teams move from reacting to a problem after a guest has felt it to seeing the problem build and acting first.
+
+## One twin, two modes
+
+The IOC runs in two modes over the same twin: Live and Simulation. Both use the same map, the same four personas, and the same map LOD 1/2/3 structure. What changes is the question. Live answers what is happening on Shura Island right now, reading current detections, telemetry, and CCTV through each persona's dashboard. Simulation answers what would happen if, taking the live state of the destination and carrying it forward under a chosen pressure, a surge of arrivals, a fleet drawn down, a wind shift onto the reef, through an engine-backed forecast. A run moves between a default state, where the operator composes the scenario, and a running state, where the twin shows the forecast.
+
+The two modes split the guide. Everything in this overview so far is the Live twin, and the Persona Views chapters document Live in full. The Simulation chapters document Simulation: how a run is set up, how its forecast reads, and the engine behind each persona's read.
+
+![Simulation mode: an evacuation run in the Guest Experience Manager view. The same twin and persona as Live, carried forward under a chosen scenario.](03-gxm-lod3-simulation-people-evacuation.jpg)
 
 {/* SYSTEM_MAP_START */}
 
