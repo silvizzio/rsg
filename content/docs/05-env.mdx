@@ -129,6 +129,21 @@ A restricted area is restricted for a reason, usually a fragile reef or an unsaf
 
 ![Close-up of Shura Marina. The red card calls security to SLS Red Sea for unauthorized swimmers, because 2 people are in a restricted reef zone, the alert is 1 minute old, and water quality reads 94.](05-env-lod3-safety-violation-detection.jpg)
 
+## Simulations this view runs
+
+The Environment Manager runs the simulations that read the natural systems and the site's footprint on them: the clean-energy balance, the load the network throws off, the water around the destination, and the heat sitting on the ground. Each read below is summarised here and documented in full in the Simulation chapters.
+
+| Category | Simulation | What it reads | What it drives | Read in full |
+|---|---|---|---|---|
+| People | Outdoor thermal comfort | Site-wide exposure and how far passive cooling carries | Aim canopy and planting at the stretches that fail | [Outdoor thermal comfort](/docs/08-simulation-people#outdoor-thermal-comfort__environment-manager) |
+| Traffic | Energy | Renewable share, emissions, curtailment, reserve | Protect the renewable target under real demand | [Energy](/docs/09-simulation-traffic#energy__environment-manager) |
+| Transport | Emissions and noise | Where the load gathers and where it dissipates across the site | Target the genuine sources, not the whole site | [Emissions and noise](/docs/10-simulation-transport#emissions-and-noise__environment-manager) |
+| Transport | Flood and storm surge | Where water reaches habitats and how sediment moves | Plan protection and recovery around the areas that bear the load | [Flood and storm surge](/docs/10-simulation-transport#flood-and-storm-surge__environment-manager) |
+| Environment | Water quality | How dissolved oxygen, nutrients, turbidity, and temperature move together | Respond while a response still changes the outcome | [Water quality](/docs/11-simulation-environment#water-quality__environment-manager) |
+| Environment | Ocean current | How the basin flushes, mixes, and carries sediment | Address the mechanism behind water-quality outcomes | [Ocean current](/docs/11-simulation-environment#ocean-current__environment-manager) |
+| Environment | Wave | Where breaking energy concentrates and drives erosion | Protect the coast genuinely under pressure | [Wave](/docs/11-simulation-environment#wave__environment-manager) |
+| Environment | Coral reef | Bleaching risk on the degree-heating-weeks scale over the horizon | Plan protection while the reef is still approaching the line | [Coral reef](/docs/11-simulation-environment#coral-reef__environment-manager) |
+
 ## Working in this view
 
 1. Open the Environment Manager from the persona bar.

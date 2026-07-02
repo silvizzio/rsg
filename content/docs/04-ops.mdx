@@ -140,6 +140,21 @@ The site is also navigable as a CCTV virtual tour, a set of fixed ground-level v
 
 ![The same charger selected. The status card reads RCTH-AC022-127 at the Central Transport Hub, Shura, connected, a Type 2 connector at 22 kW with a single connector. It logs 38 sessions in March, 247 kWh delivered, an average session of 19 minutes and 4.2 kWh, a last session of 12 Mar 08:24, and a last charge from 35% to 70%, reported over OCPP 1.6.](04-ops-vt-9.jpg)
 
+## Simulations this view runs
+
+The Operations Manager runs the simulations that read the site as a system under load: how crowds and clearances stack against capacity, how the fleet and microgrid hold up, and where a hazard forces a response. The simulation object is Humans and Vehicles. Each read below is summarised here and documented in full in the Simulation chapters.
+
+| Category | Simulation | What it reads | What it drives | Read in full |
+|---|---|---|---|---|
+| People | Crowd | Gate capacity and staffing against footfall | Position staff and open lanes before an entrance gridlocks | [Crowd](/docs/08-simulation-people#crowd__operations-manager) |
+| People | Evacuation | Clearance time and the binding exit | Act on the exit or route that drives the number | [Evacuation](/docs/08-simulation-people#evacuation__operations-manager) |
+| Traffic | Mobility | The day's load against fleet and charging | Rebalance before the peak, naming the binding constraint | [Mobility](/docs/09-simulation-traffic#mobility__operations-manager) |
+| Traffic | Energy | Clean share against the backup trigger and reserve | Shape dispatch and reserve before the gap compounds | [Energy](/docs/09-simulation-traffic#energy__operations-manager) |
+| Traffic | Shuttle network | Utilization and the legs running hot | Add or rebalance service before a leg saturates | [Shuttle network](/docs/09-simulation-traffic#shuttle-network__operations-manager) |
+| Traffic | Drop-off forecourt | Throughput through kerb, bays, and staff | Position staff and manage the kerb ahead of the rush | [Drop-off forecourt](/docs/09-simulation-traffic#drop-off-forecourt__operations-manager) |
+| Transport | Safety conflicts | Which crossings flare up under load | Focus staffing and control where risk concentrates | [Safety conflicts](/docs/10-simulation-transport#safety-conflicts__operations-manager) |
+| Transport | Flood and storm surge | Surge reach and depth at critical facilities | Secure and clear before the surge lands | [Flood and storm surge](/docs/10-simulation-transport#flood-and-storm-surge__operations-manager) |
+
 ## Working in this view
 
 1. Open the Operations Manager from the persona bar.
