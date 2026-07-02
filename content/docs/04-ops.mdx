@@ -144,38 +144,54 @@ The site is also navigable as a CCTV virtual tour, a set of fixed ground-level v
 
 The Operations Manager runs the simulations that read the site as a system under load: how crowds and clearances stack against capacity, how the fleet and microgrid hold up, and where a hazard forces a response. The simulation object is Humans and Vehicles. Each read is summarised below and documented in full in the Simulation chapters.
 
-| Category | Simulation | What it reads | What it drives |
-|---|---|---|---|
-| People | Crowd | Gate capacity and staffing against footfall | Position staff and open lanes before an entrance gridlocks |
-| People | Evacuation | Clearance time and the binding exit | Act on the exit or route that drives the number |
-| Traffic | Mobility | The day's load against fleet and charging | Rebalance before the peak, naming the binding constraint |
-| Traffic | Energy | Clean share against the backup trigger and reserve | Shape dispatch and reserve before the gap compounds |
-| Traffic | Shuttle network | Utilization and the legs running hot | Add or rebalance service before a leg saturates |
-| Traffic | Drop-off forecourt | Throughput through kerb, bays, and staff | Position staff and manage the kerb ahead of the rush |
-| Transport | Safety conflicts | Which crossings flare up under load | Focus staffing and control where risk concentrates |
-| Transport | Flood and storm surge | Surge reach and depth at critical facilities | Secure and clear before the surge lands |
+| Category | Simulation | What it reads | What it drives | Read in full |
+|---|---|---|---|---|
+| People | Crowd | Gate capacity and staffing against footfall | Position staff and open lanes before an entrance gridlocks | [Crowd](/docs/08-simulation-people#crowd__operations-manager) |
+| People | Evacuation | Clearance time and the binding exit | Act on the exit or route that drives the number | [Evacuation](/docs/08-simulation-people#evacuation__operations-manager) |
+| Traffic | Mobility | The day's load against fleet and charging | Rebalance before the peak, naming the binding constraint | [Mobility](/docs/09-simulation-traffic#mobility__operations-manager) |
+| Traffic | Energy | Clean share against the backup trigger and reserve | Shape dispatch and reserve before the gap compounds | [Energy](/docs/09-simulation-traffic#energy__operations-manager) |
+| Traffic | Shuttle network | Utilization and the legs running hot | Add or rebalance service before a leg saturates | [Shuttle network](/docs/09-simulation-traffic#shuttle-network__operations-manager) |
+| Traffic | Drop-off forecourt | Throughput through kerb, bays, and staff | Position staff and manage the kerb ahead of the rush | [Drop-off forecourt](/docs/09-simulation-traffic#drop-off-forecourt__operations-manager) |
+| Transport | Safety conflicts | Which crossings flare up under load | Focus staffing and control where risk concentrates | [Safety conflicts](/docs/10-simulation-transport#safety-conflicts__operations-manager) |
+| Transport | Flood and storm surge | Surge reach and depth at critical facilities | Secure and clear before the surge lands | [Flood and storm surge](/docs/10-simulation-transport#flood-and-storm-surge__operations-manager) |
 
 ### People
 
 **Crowd.** Make sure the gates and the people working them keep up, so a busy period never becomes a backed-up entrance. The twin plays footfall forward against gate capacity and staffing, showing which entrances tip first and how much resourcing the peak demands, so staff are positioned and lanes opened ahead of the surge. [Read in full](/docs/08-simulation-people#crowd__operations-manager)
 
+![Crowd, Operations read.](04-ops-lod3-simulation-people-crowd.jpg)
+
 **Evacuation.** A clearance that comes in inside the margin the site is meant to hold, with visibility of where flow stalls. The twin plays the clearance forward across the structure, reporting where flow concentrates and naming the binding constraint, so the team acts on the specific exit that drives the number. [Read in full](/docs/08-simulation-people#evacuation__operations-manager)
+
+![Evacuation, Operations read.](04-ops-lod3-simulation-people-evacuation.jpg)
 
 ### Traffic
 
 **Mobility.** Meet the day's demand with the assets on hand, keeping enough vehicles and charging that the system never runs out of slack at the peak. The twin plays the load forward against the fleet and charging network, naming the binding constraint before the peak, so the shortfall is solved on paper. [Read in full](/docs/09-simulation-traffic#mobility__operations-manager)
 
+![Mobility, Operations read.](04-ops-lod3-simulation-traffic-mobility.jpg)
+
 **Energy.** Keep the island on its own clean supply, never drifting to where diesel backup is called. The twin plays demand and supply forward against the renewable balance, showing when the clean share drifts toward the backup trigger and how much reserve sits behind it, so dispatch and reserve are shaped before the gap compounds. [Read in full](/docs/09-simulation-traffic#energy__operations-manager)
+
+![Energy, Operations read.](04-ops-lod3-simulation-traffic-energy.jpg)
 
 **Shuttle network.** Fleet health, keeping utilization balanced so no leg carries more than it was sized for. The twin plays the network forward from the asset's side, showing the routes running hot and the capacity stretched, so service is added or rebalanced before a leg saturates. [Read in full](/docs/09-simulation-traffic#shuttle-network__operations-manager)
 
+![Shuttle network, Operations read.](04-ops-lod3-simulation-traffic-shuttle-network.jpg)
+
 **Drop-off forecourt.** Throughput, clearing vehicles fast enough through kerb, bays, and staff that the approach never backs up. The twin plays the arrival pattern forward against forecourt capacity, surfacing where staging falls behind, so staff are positioned and the kerb managed ahead of the rush. [Read in full](/docs/09-simulation-traffic#drop-off-forecourt__operations-manager)
+
+![Drop-off forecourt, Operations read.](04-ops-lod3-simulation-traffic-drop-off-forecourt.jpg)
 
 ### Transport
 
 **Safety conflicts.** Know which crossings flare up under load and warrant staffing or control, and which can be left alone. The twin surfaces the conflict locations and grades them, so attention goes where the risk concentrates rather than across every junction. [Read in full](/docs/10-simulation-transport#safety-conflicts__operations-manager)
 
+![Safety conflicts, Operations read.](04-ops-lod3-simulation-transport-safety.jpg)
+
 **Flood and storm surge.** Protect critical facilities and assets, where the whole game is lead time. The twin plays a storm, tide, and rainfall scenario forward, showing how far the surge reaches, how deep it gets at the facilities that matter, and how evacuation timing stacks up, so the response is staged before the water is at the door. [Read in full](/docs/10-simulation-transport#flood-and-storm-surge__operations-manager)
+
+![Flood and storm surge, Operations read.](04-ops-lod3-simulation-transport-flood-and-storm-surge.jpg)
 
 ## Working in this view
 
