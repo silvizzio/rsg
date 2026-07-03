@@ -130,6 +130,30 @@ At this level the site also opens into its building model. The roofs lift off an
 
 ![Temperature and airflow read together. Each tag pairs the zone temperature, 22.3 C, with the airflow being delivered to it, 927 CFM.](04-ops-lod3-bim-4-temperature-airflow.jpg)
 
+### Evacuation and bottleneck severity
+
+The building model also runs a live fire-evacuation simulation. A Pathfinder run plays the alarm forward through the occupied floors, reading clearance time against the safe limit, the egress rate and which routes are carrying it, and the bottlenecks forming across the plates. The left panel holds the run: percent evacuated, estimated clearance against the ASET margin, the egress routes with their per-minute throughput, and the bottlenecks building with their waiting counts.
+
+Bottlenecks surface as cards, and they carry a severity tier so an operator triages worst-first rather than reading every point equally. The three tiers use the same act-now grammar as the recommended-action cards: a state badge, the location, the density against its threshold, the projected impact, and a single recommendation. Read in order of what to take care of first.
+
+**Alert.** Egress has stalled at a chokepoint and the queue is backing up behind it, the point where a delay becomes a crush. This is the tier to clear first, because flow at the node is already near zero and every second adds to the upstream pressure.
+
+![The most urgent tier: egress has stalled at a single doorway and the queue is backing up behind it, the point where a delay turns into a crush.](04-ops-lod3-bim-2-human-evacuation-bottleneck-alert.jpg)
+
+**Critical.** A hard limit is close but not yet breached, here a stairwell approaching its descent capacity as two floors' flow merge into it. Flow is still moving, so the window is to relieve the merge before it stalls into an Alert.
+
+![A stairwell approaching its descent limit as two floors' flow merges, the squeeze to relieve before it stalls.](04-ops-lod3-bim-2-human-evacuation-bottleneck-critical.jpg)
+
+**Warning.** The earliest signal, density climbing in a space while flow still moves freely. There is the most headroom here, so it is caught and watched rather than acted on immediately, before it trends toward Critical.
+
+![The earliest signal: density climbing in a corridor while flow still moves, caught with room to act.](04-ops-lod3-bim-2-human-evacuation-bottleneck-warning.jpg)
+
+| Tier | Trigger | What is happening | Recommended action |
+|---|---|---|---|
+| Alert | Density past the crush band (5.4 against 4.0 pax/m2) | Egress near zero at the chokepoint, the queue backing into the corridor | Inspect this node |
+| Critical | Approaching a hard limit (82 against 85%) | Descent flow nearing stair capacity, a merge conflict projected next interval | Isolate the merge point |
+| Warning | Density above the comfortable line (2.8 against 2.5 pax/m2) | Flow still moving, density elevated and trending toward Critical | Check flow detail |
+
 ## Virtual tour (preview)
 
 The site is also navigable as a CCTV virtual tour, a set of fixed ground-level viewpoints you can move between, with info popups on the assets you pass. This is in preview. The frames below are samples.
