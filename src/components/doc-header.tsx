@@ -3,6 +3,7 @@ import MobileNav from '@/components/mobile-nav'
 import SearchBox from '@/components/search-box'
 import FullGuideButton from '@/components/full-guide-button'
 import { getDocsBySection } from '@/lib/docs'
+import { getLastUpdated } from '@/lib/last-updated'
 import type { SearchDoc } from '@/lib/search'
 
 type Props = {
@@ -16,7 +17,7 @@ export default function DocHeader({ searchDocs }: Props) {
       <div style={{ width: '100%', maxWidth: '1440px', margin: '0 auto', padding: '0 16px' }}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: '48px' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <MobileNav docsBySection={docsBySection} />
+            <MobileNav docsBySection={docsBySection} lastUpdated={getLastUpdated()} />
             <img src="/rsg-logo.svg" alt="RSG IOC" width={20} height={20} style={{ display: 'block' }} />
             <span style={{ fontSize: '13px', fontWeight: 500 }}>RSG IOC</span>
             <span style={{ color: 'hsl(var(--muted-foreground))', opacity: 0.4 }}>/</span>

@@ -1,4 +1,5 @@
 import { getDoc, getAllDocs, getPrevNext } from '@/lib/docs'
+import { getLastUpdated } from '@/lib/last-updated'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
@@ -105,7 +106,7 @@ export default async function DocPage({
 
         <div style={{ marginTop: '40px', paddingTop: '24px', borderTop: '1px solid hsl(var(--border))' }}>
           <p style={{ fontSize: '12px', color: 'hsl(var(--muted-foreground))' }}>
-            © 2026 Vizzio · RSG Integrated Operations Centre Documentation v1.2 · July 2026 · Confidential
+            © 2026 Vizzio · RSG Integrated Operations Centre Documentation v1.2 · {getLastUpdated().full} · Confidential
           </p>
         </div>
 

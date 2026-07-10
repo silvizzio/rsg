@@ -8,9 +8,10 @@ import { Badge } from '@/components/ui/badge'
 
 type Props = {
   docsBySection: Record<string, DocMeta[]>
+  lastUpdated?: { full: string; monthYear: string }
 }
 
-export default function Sidebar({ docsBySection }: Props) {
+export default function Sidebar({ docsBySection, lastUpdated }: Props) {
   const pathname = usePathname()
 
   return (
@@ -24,7 +25,7 @@ export default function Sidebar({ docsBySection }: Props) {
             <img src="/rsg-logo.svg" alt="RSG IOC" width={24} height={24} style={{ flexShrink: 0, display: 'block' }} />
             <div>
               <p style={{ fontSize: '12px', fontWeight: 500, lineHeight: 1.3 }}>RSG IOC</p>
-              <p style={{ fontSize: '10px', color: 'hsl(var(--muted-foreground))' }}>v1.2 · July 2026</p>
+              <p style={{ fontSize: '10px', color: 'hsl(var(--muted-foreground))' }}>v1.2 · {lastUpdated?.monthYear ?? 'July 2026'}</p>
             </div>
           </div>
         </div>
