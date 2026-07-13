@@ -28,7 +28,7 @@ export default function MobileNav({ docsBySection, currentSlug, lastUpdated }: {
             onClick={(e) => e.stopPropagation()}
           >
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 16px 16px', borderBottom: '1px solid hsl(var(--border))', marginBottom: '12px' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><img src="/rsg-logo.svg" alt="RSG IOC" width={24} height={24} style={{ flexShrink: 0, display: 'block' }} /><div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><img src="/rsg/rsg-logo.svg" alt="RSG IOC" width={24} height={24} style={{ flexShrink: 0, display: 'block' }} /><div>
                 <p style={{ fontSize: '12px', fontWeight: 500 }}>RSG IOC</p>
                 <p style={{ fontSize: '10px', color: 'hsl(var(--muted-foreground))' }}>v1.2 · {lastUpdated?.monthYear ?? 'July 2026'}</p>
               </div></div>
