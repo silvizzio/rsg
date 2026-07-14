@@ -3,7 +3,7 @@ import { PDFDocument } from 'pdf-lib'
 import fs from 'fs'
 import path from 'path'
 
-export const maxDuration = 120
+export const maxDuration = 300
 
 const HDR = "<div style=\"width:100%;font-family:Inter,system-ui,sans-serif;font-size:7pt;color:#999;display:flex;justify-content:space-between;align-items:center;padding:0 20mm 2mm;border-bottom:0.3pt solid #e5e5e5\"><span style=\"font-weight:600\">RSG IOC · Platform Documentation v1.2</span><span>Confidential</span></div>"
 const FTR = "<div style=\"width:100%;font-family:Inter,system-ui,sans-serif;font-size:7pt;color:#999;display:flex;justify-content:space-between;align-items:center;padding:2mm 20mm 0;border-top:0.3pt solid #e5e5e5\"><span>Vizzio · July 2026</span><span style=\"font-weight:600\"><span class=\"pageNumber\"></span> / <span class=\"totalPages\"></span></span></div>"
@@ -107,9 +107,16 @@ export async function GET(request: NextRequest) {
     if (full) {
       const slugs = getSlugsInOrder()
       const pdfBuffers: Buffer[] = []
+      let rendered = 0
       for (const s of slugs) {
         const buf = await renderPage(browser, baseUrl + '/docs/' + s)
         pdfBuffers.push(buf)
+        rendered++
+        // relaunch the browser every 3 pages to keep memory flat and avoid IO.read crashes
+        if (rendered % 3 === 0 && rendered < slugs.length) {
+          await browser.close()
+          browser = await launchBrowser()
+        }
       }
       const merged = await PDFDocument.create()
       for (const buf of pdfBuffers) {
