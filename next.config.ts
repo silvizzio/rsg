@@ -7,12 +7,6 @@ const nextConfig: NextConfig = {
   serverExternalPackages: ["@sparticuz/chromium-min", "puppeteer-core", "pdf-lib"],
   async redirects() {
     return [
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'rsg-vizzio.vercel.app' }],
-        destination: 'https://vizzio.space/rsg/:path*',
-        permanent: true,
-      },
       { source: '/docs/09-simulation-storm', destination: '/docs/10-simulation-environment', permanent: true },
       { source: '/docs/07-simulation', destination: '/docs/07-simulation-overview', permanent: true },
       { source: '/docs/08-reference', destination: '/docs/11-reference', permanent: true },
