@@ -5,7 +5,7 @@ section: "Getting Started"
 description: "The anatomy of the IOC: every region around the 3D map, what it shows, the pattern it follows, and how to use it, the same way across all four personas."
 ---
 
-The IOC is built around a single three-dimensional map, wrapped in a fixed frame of regions: a header across the top, a metrics panel down the left, a summary strip along the bottom, a legend and a recommended-action card laid over the map, a camera panel on the right, and a slim tool strip on the right edge. That frame never moves. It stays the same for every persona and every destination, and only the content inside each region changes with the role you are signed in as. The walkthrough below uses one persona for its examples, but every region behaves the same way for all four.
+The IOC is built around a single three-dimensional map, wrapped in a fixed frame of regions: a header across the top, a metrics panel down the left, a summary strip along the bottom, a legend and a recommended-action card laid over the map, and a camera panel on the right. That frame never moves. It stays the same for every persona and every destination, and only the content inside each region changes with the role you are signed in as. The walkthrough below uses one persona for its examples, but every region behaves the same way for all four.
 
 ## The header
 
@@ -83,55 +83,6 @@ The right side of the screen is the camera wall for the area in focus. Its heade
 </div>
 </div>
 
-## The toolbar
-
-The toolbar is the control cluster on the right edge, the same in every persona. The markers, alerts, and recenter sit at the top, and search with the zoom controls sit at the foot. The Assets control expands a row of layer toggles beside the stack. What that row offers, and the treatment of the strip, change with the level of detail and the context.
-
-<div className="doc-split">
-<div className="doc-split-text">
-
-**LOD 1 and 2:**
-
-Across the wide views the strip takes the lighter treatment: the markers, alerts, and recenter at the top, search and zoom at the foot. Opening Assets expands the physical layers beside the stack, cameras, vehicles, and chargers.
-
-</div>
-<div className="doc-split-media size-tool">
-
-![The LOD 1 and 2 toolbar, collapsed on the left and with the Assets row expanded on the right.](02-interface-toolbar-lod12.png)
-
-</div>
-</div>
-
-<div className="doc-split">
-<div className="doc-split-text">
-
-**LOD 3:**
-
-In the close-up the same controls take the darker treatment, and a history control appears in the middle of the strip. Assets again expands the camera, vehicle, and charger layers.
-
-</div>
-<div className="doc-split-media size-tool">
-
-![The LOD 3 toolbar, collapsed on the left and with the Assets row expanded on the right.](02-interface-toolbar-lod3.png)
-
-</div>
-</div>
-
-<div className="doc-split">
-<div className="doc-split-text">
-
-**In simulation:**
-
-A back control sits at the top to leave the run, a level selector, 2 over 1, sits in the middle to step between detail levels, and the Assets row swaps from the physical layers to the simulation layers: airflow, temperature, cameras, and crowd.
-
-</div>
-<div className="doc-split-media size-tool">
-
-![The LOD 3 toolbar in simulation, with the back control, the level selector, and the Assets row swapped to the simulation layers.](02-interface-toolbar-lod3-sim.png)
-
-</div>
-</div>
-
 ## Personas and your login
 
 The IOC has four persona views, Guest Experience Manager, Operations Manager, Environment Manager, and Marine Operations Manager, each documented in its own chapter. Your login is tied to one of them. When you sign in, the entire interface, the left panel, the bottom strip, the legend feed, and the cameras, loads for that persona, and that is the view you work in. Each persona is a separate signed-in experience, so you only ever see your own.
@@ -143,7 +94,7 @@ Moving through the map is the same gesture at every level: select to go deeper, 
 1. Start at the wide view for the whole destination.
 2. Select a district to drop to the district view, and watch the bottom strip rescope.
 3. Select a site to drop to the close-up view, where the recommended-action cards appear.
-4. Zoom back out with the toolbar, or step up one level at a time.
+4. Zoom back out, or step up one level at a time.
 
 <Callout type="tip">
 The frame is constant, but everything inside it is persona-scoped. The numbers, cameras, and alerts you see always belong to your persona, which is set by your login.
