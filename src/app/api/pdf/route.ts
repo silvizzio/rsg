@@ -112,8 +112,8 @@ export async function GET(request: NextRequest) {
         const buf = await renderPage(browser, baseUrl + '/docs/' + s)
         pdfBuffers.push(buf)
         rendered++
-        // relaunch the browser every 3 pages to keep memory flat and avoid IO.read crashes
-        if (rendered % 3 === 0 && rendered < slugs.length) {
+        // relaunch the browser after every page to keep memory flat and avoid IO.read crashes
+        if (rendered < slugs.length) {
           await browser.close()
           browser = await launchBrowser()
         }
