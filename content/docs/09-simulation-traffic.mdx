@@ -5,110 +5,110 @@ section: "Simulation"
 description: "The Traffic domain: mobility, energy, the shuttle network, the drop-off forecourt, and the marine flow reads, per persona."
 ---
 
-The Traffic domain covers movement and the systems that carry it: guest mobility, the shuttle network, the drop-off forecourt, the island microgrid that powers all of it, and, for Marine Operations, the water-flow conditions that govern how vessels move. Each persona below runs the sims relevant to its remit, read against its own goal.
+Traffic simulations cover guest transfers, shuttle routes, drop-off areas, and the island microgrid. For Marine Operations, this category also includes waves and currents that affect vessel movement. The sections below explain how each role uses the results.
 
-The scope label in the tool reads Shura Island as a placeholder and is not load-bearing in these descriptions.
+The scope label currently shows Shura Island as a placeholder; it does not define the scope of the examples below.
 
 ## Mobility
 
-How guest transfers hold up as demand rises against the fleet behind them, read by each persona that runs it.
+How rising demand affects guest transfers and fleet capacity.
 
 ### Guest Experience Manager
 
-The guest experience manager's goal in a mobility scenario is simple to state and hard to hold: no guest should ever wait longer than feels effortless for a ride. The aim is to keep transfers running to plan so the connective tissue of the destination stays invisible, exactly as a premium experience requires.
+Use the mobility simulation to assess guest waiting and transfer times under a chosen demand scenario. The aim is to keep trips running to plan when requests increase.
 
-The twin protects that invisibility by seeing the strain before the guest does. It plays a demand scenario forward against the fleet and the schedule, surfacing where transfer times stretch and requests pile up ahead of anyone being left standing. The value is anticipation: a measured adjustment made before the surge, rather than a recovery scrambled after the queue has already formed.
+The forecast compares demand with the fleet and schedule, showing where transfer times lengthen and requests accumulate. Use it to plan adjustments before the arrival peak, with particular attention to the stations where queues are likely to form.
 
-![Mobility, Guest Experience read. Transfers strain as guests surge and buses run short.](03-gxm-lod3-simulation-traffic-mobility.jpg)
+![Mobility, Guest Experience view. Transfer demand increases while bus availability falls.](03-gxm-lod3-simulation-traffic-mobility.jpg)
 
 ### Operations Manager
 
-The operations manager's goal in a mobility scenario is to meet the day's demand with the assets actually on hand, keeping enough vehicles in service and enough charging behind them that the system never runs out of slack at the peak. Success is a fleet that copes, not one that just barely doesn't fail.
+Operations uses the mobility simulation to check whether the available fleet and charging network can meet the day's demand. Both matter: a vehicle must be in service and have enough charge to carry out its trips.
 
-The twin turns that into a forecast instead of a gamble. It plays the day's load forward against the fleet and the charging network, naming the binding constraint, whether vehicles, charging, or both, before the peak arrives. The value is the chance to rebalance ahead of time, so the shortfall is solved on paper rather than discovered in the middle of the busiest hour.
+The forecast identifies whether vehicle availability, charging capacity, or both will constrain service at the peak. Review that shortfall before deciding how to rebalance the fleet and charging schedule.
 
-![Mobility, Operations read.](04-ops-lod3-simulation-traffic-mobility.jpg)
+![Mobility, Operations view.](04-ops-lod3-simulation-traffic-mobility.jpg)
 
 ## Energy
 
-How the island microgrid balances clean supply against demand, read by each persona that runs it.
+How the island microgrid balances clean supply against demand.
 
 ### Operations Manager
 
-For the operations manager, the goal with the microgrid is to keep the island running on its own clean supply, never quietly drifting to the point where diesel backup has to be called. The aim is to stay ahead of a supply gap while there is still room to shape it.
+Use the energy simulation to compare the island's electricity demand with its renewable supply and reserves. Watch for a supply gap that could trigger diesel backup.
 
-The twin gives that lead time. It plays a demand and supply scenario forward against the renewable balance, showing when the clean share drifts toward the backup trigger and how much reserve sits behind it. The value is control: dispatch, charging, and reserve can be shaped before the gap compounds, keeping the island on renewables by choice rather than by luck.
+The forecast shows the renewable share over time and the reserve available to cover a shortfall. Use these results to review dispatch, EV charging, and reserve choices before demand reaches its peak.
 
-![Energy, Operations read.](04-ops-lod3-simulation-traffic-energy.jpg)
+![Energy, Operations view.](04-ops-lod3-simulation-traffic-energy.jpg)
 
 ### Environment Manager
 
-The environment manager's goal with the microgrid is to protect the destination's sustainability commitment, maximising the share of load met by renewables and making sure clean generation is not wasted while the reserve thins. The measure of success is the carbon story holding up under real demand.
+The Environment Manager uses the energy simulation to assess progress towards the renewable-energy target under the selected demand and supply conditions. The view also helps identify when renewable generation would go unused while reserves decline.
 
-The twin makes that story defensible. It plays a demand and supply scenario forward and reads the climate cost of any drift: the renewable share, the emissions, the curtailment, and the reserve. The value is visibility into where the clean-energy commitment is holding and where it is slipping, so dispatch and reserve choices protect the renewable target rather than merely keeping the lights on.
+Review renewable share, emissions, curtailment, and reserve together. They show the environmental consequences of the scenario and help the team assess whether dispatch and reserve choices support the target.
 
-![Energy, Environment read.](05-env-lod3-simulation-energy.jpg)
+![Energy, Environment view.](05-env-lod3-simulation-energy.jpg)
 
 ## Shuttle network
 
-How the shuttle network carries load across its routes, read by each persona that runs it.
+How the shuttle network carries load across its routes.
 
 ### Guest Experience Manager
 
-The manager's goal with the shuttle network is a system guests actually trust, where no single unreliable leg quietly trains people to walk and reshapes demand everywhere else. The target is a network that works as a whole, not a collection of routes that each look fine alone.
+Use the shuttle-network simulation to assess how reliably guests can travel across the destination. A delay on one busy leg can affect demand elsewhere or lead guests to walk instead.
 
-The twin makes the whole network legible at once. It plays the network forward to show where reliance concentrates and where guests fall back to walking, exposing the legs carrying the most weight and the ones being quietly abandoned. That lets the team reason about the network as a system and fix the leg that matters, rather than tuning one route and discovering the knock-on effects later.
+The forecast shows where passengers depend most on the service and where they switch to walking. Review those connections together before changing an individual route, so the proposed improvement accounts for its effect on the wider network.
 
-![Shuttle network, Guest Experience read. The marina line runs full at peak, with waits building at the stops.](03-gxm-lod3-simulation-traffic-shuttle-network.jpg)
+![Shuttle network, Guest Experience view. The marina line runs full at peak, with waits building at the stops.](03-gxm-lod3-simulation-traffic-shuttle-network.jpg)
 
 ### Operations Manager
 
-Read from the operations side, the goal for the shuttle network is fleet health: keeping utilization balanced and no single leg carrying more than it was sized for, so reliability does not quietly erode under load. The measure is a network that holds up, not one that is running hot in places nobody is watching.
+Operations uses this simulation to compare demand with the capacity of each shuttle route. It helps identify heavily used legs and uneven fleet utilisation that could reduce reliability.
 
-The twin surfaces that strain early. It plays the network forward from the asset's perspective, showing the routes running hot and the capacity being stretched. The value is the chance to add or rebalance service before a leg saturates, protecting the reliability the guest side depends on.
+Check which routes approach capacity during the forecast period. Use the results to consider adding service or reallocating vehicles before those routes become overloaded.
 
-![Shuttle network, Operations read.](04-ops-lod3-simulation-traffic-shuttle-network.jpg)
+![Shuttle network, Operations view.](04-ops-lod3-simulation-traffic-shuttle-network.jpg)
 
 ## Drop-off forecourt
 
-How the arrival forecourt holds up as vehicles bunch at the kerb, read by each persona that runs it.
+How vehicle arrivals affect queues and capacity at the forecourt.
 
 ### Guest Experience Manager
 
-At the forecourt, the manager's goal is a first and last impression that feels seamless, an arrival where nobody queues at the kerb in the very place they are meant to feel welcomed. The aim is to keep the approach flowing even when arrivals bunch.
+Use the forecourt simulation to assess the arrival and departure experience when several vehicles reach the kerb together. The focus is on keeping guests moving through pickup and drop-off areas without long queues.
 
-The twin shows the forecourt tipping before it tips. It plays an arrival pattern forward, reading how long vehicles dwell, how the queue builds, and how the bays fill, and marks the point where flowing becomes congested. The value is that staging and kerb management can be set ahead of the rush, so the welcome stays a welcome rather than becoming a bottleneck.
+The forecast shows vehicle dwell time, queue growth, and bay occupancy. It identifies when congestion could begin, helping the team plan vehicle staging and kerb management before the rush.
 
-![Drop-off forecourt, Guest Experience read. The curb queue backs up at arrival, with vehicles spilling to the approach.](03-gxm-lod3-simulation-traffic-drop-off.jpg)
+![Drop-off forecourt, Guest Experience view. The kerbside queue grows during arrivals, with vehicles spilling to the approach.](03-gxm-lod3-simulation-traffic-drop-off.jpg)
 
 ### Operations Manager
 
-For operations, the forecourt goal is throughput: clearing vehicles fast enough through the kerb, the bays, and the staff working them that the approach never backs up under an arrival surge. Success is a forecourt that keeps moving, whatever the arrival pattern throws at it.
+Operations uses the forecourt simulation to check how quickly vehicles can pass through the kerbside bays with the staff available. The concern is a queue extending from the forecourt into the approach road.
 
-The twin shows where that clearance breaks. It plays the arrival pattern forward against the forecourt's capacity, surfacing where staging falls behind and the queue starts to push into the approach. The value is the basis to position staff and manage the kerb ahead of the rush, rather than reacting once the forecourt has already become the constraint.
+Compare the arrival pattern with the forecourt's capacity and watch where vehicle staging falls behind. Use the forecast to plan staff positions and kerb management for the expected peak.
 
-![Drop-off forecourt, Operations read.](04-ops-lod3-simulation-traffic-drop-off-forecourt.jpg)
+![Drop-off forecourt, Operations view.](04-ops-lod3-simulation-traffic-drop-off-forecourt.jpg)
 
 ## Wave
 
-How offshore swell carries energy to the shore and the routes, read by each persona that runs it.
+How offshore swell carries energy to the shore and the routes.
 
 ### Marine Operations Manager
 
-The marine operations manager's goal in a wave scenario is to keep small craft running safely while the window allows, and to call the hold early enough that no boat is ever caught exposed. The aim is a marine schedule made with margin, not under pressure.
+Use the wave simulation to assess when conditions on vessel routes and at the marina approach the small-craft limit. It helps plan departures and beach calls within the available operating window.
 
-The twin provides that margin. It plays an offshore swell scenario forward to the marina and the routes, showing where wave height climbs toward the small-craft limit and where waves break on the lines boats actually run. The value is the closing window surfaced ahead of time, so departures and beach calls are deliberate decisions rather than last-minute reactions.
+The forecast follows offshore swell towards the marina and along the routes, showing wave height and where waves break. Review exposed sections before deciding whether to hold a departure or change a beach call.
 
-![Wave, Marine Operations read. Wave height 1.6m against the small-craft limit, 6 vessels exposed, marina surge watch.](06-mo-lod3-simulation-wave.jpg)
+![Wave, Marine Operations view. Wave height 1.6m against the small-craft limit, 6 vessels exposed, marina surge watch.](06-mo-lod3-simulation-wave.jpg)
 
 ## Ocean current
 
-How flow builds through the channels and the basin, read by each persona that runs it.
+How flow builds through the channels and the basin.
 
 ### Marine Operations Manager
 
-The manager's goal with ocean current is a safe dive day: knowing when flow at the channel strengthens enough to make drift a real hazard, before boats are out rather than after. The target is dive routing and vessel calls made on a clear read of the channel, not the average.
+Use the current simulation to assess drift risk at the channel and along dive routes before boats depart. Conditions at a particular site can differ from the average across the destination.
 
-The twin gives that read. It plays a tidal and wind scenario forward to show how current builds at the channel and along the dive routes, separating the site reading from the broad average that hides it. The value is the lead time to adjust routing and vessel calls before boats are committed, rather than managing a stronger-than-expected flow once they already are.
+The forecast models the selected tide and wind conditions and shows where currents strengthen. Use those local readings to review dive routing and vessel movements before committing boats to a route.
 
-![Ocean current, Marine Operations read. Drift risk at the channel, current 0.6 m/s, 5 vessels in the drift zone, handling harder.](06-mo-lod3-simulation-ocean-current.jpg)
+![Ocean current, Marine Operations view. Drift risk at the channel, current 0.6 m/s, 5 vessels in the drift zone, handling harder.](06-mo-lod3-simulation-ocean-current.jpg)

@@ -5,17 +5,17 @@ section: "Persona Views"
 description: "Spot guest mobility problems before a guest feels them: demand building, who is on the move, and what a low rating traces back to."
 ---
 
-![The Guest Experience Manager at the operations console reading the live destination map, with the three jobs of the view around it: demand before it becomes a queue, every guest on the move and the vehicle they are in, and a low rating traced back to the trip that caused it.](03-gxm-hero.jpg)
+![The Guest Experience Manager console shows growing demand, guests in transit and their vehicles, and trip details linked to low satisfaction ratings.](03-gxm-hero.jpg)
 
-The Guest Experience Manager view exists to catch guest mobility problems before a guest ever feels one. In day-to-day operation a station can look perfectly healthy right up until the moment people are queuing and the complaints begin, and by then the problem is already a guest experience problem. This view is built to surface demand as it builds, so the manager can act while there is still time to keep anyone from waiting too long.
+The Guest Experience Manager view helps you identify transport problems before they cause long waits or complaints. It shows demand as it builds, including at stations that still appear to be running normally.
 
-It does three things in particular. It shows demand rising before it turns into a queue. It gives a live picture of every guest on the move and the vehicle they are travelling in. And it ties a low satisfaction rating back to the specific trip that caused it, so a soft number finally has a cause attached. This is a read and oversight view: the manager watches, judges, and recommends here, while the actual dispatching is carried out in the Operations Manager view.
+You can monitor rising demand, see guests in transit and the vehicles carrying them, and trace a low satisfaction rating to the relevant trip. Use this view to review conditions and recommend a response. The Operations team carries out dispatches in the Operations Manager view.
 
-![The wide view across Red Sea Global. The strip along the bottom is the guest mobility read for the whole destination.](03-gxm-lod1-1.jpg)
+![The wide view across Red Sea Global. The strip along the bottom is the guest mobility summary for the whole destination.](03-gxm-lod1-1.jpg)
 
 ## What you see
 
-At the wide view, the strip along the bottom is the guest mobility read for the whole destination. It is organised into the three phases of the guest journey, read left to right: what is building before a trip, what is moving during it, and what the trip left behind. Two station lists sit alongside, breaking the same picture down by where the demand is concentrating.
+At the destination overview, the bottom strip follows the guest journey from pre-trip demand through trips in progress to travel time and satisfaction after arrival. Two station lists show where requests are concentrated.
 
 **Pre-trip** is the supply and demand picture before guests move.
 
@@ -45,134 +45,134 @@ Two station lists sit to the left of the strip. Request time by station ranks wh
 
 ## Reading demand across the destination
 
-The read works at two levels. At the wide view the strip covers the whole destination across the three phases. Drop into a district, here the Marina, and the same read rescopes to that one area, which is usually where a destination-wide signal resolves into the place that is driving it.
+At the destination overview, the strip covers all three stages of the guest journey. Select a district, such as the Marina, to see its local figures and identify which stations are contributing to a wider change.
 
 | Aspect | Detail |
 |---|---|
-| Problem | A station can look healthy right up until guests are queuing, by which point it is already a guest experience problem. |
-| Goal | Surface demand as it builds, across the destination and within a district, so it can be acted on before anyone waits too long. |
-| Precondition | The guest experience feed is live: bookings, available vehicles, and trips in progress are reporting. |
-| Steps | 1. Open the Guest Experience Manager from the persona bar.<br/>2. Read the destination mobility strip across the three phases: pre-trip, trip, and after-trip.<br/>3. Use the two station lists to see where demand is concentrating.<br/>4. Select a district to rescope the same read to one area. |
-| Postcondition | The part of the destination driving the numbers is identified, early enough to act. |
+| Why it matters | Demand can rise at a station before queues or complaints make it obvious. |
+| What to check | Identify growing demand across the destination and within each district. |
+| Before you start | The guest experience feed is live: bookings, available vehicles, and trips in progress are reporting. |
+| What to do | 1. Sign in to the Guest Experience Manager view using your assigned account.<br/>2. Read the destination mobility strip across the three phases: pre-trip, trip, and after-trip.<br/>3. Use the two station lists to see where demand is concentrating.<br/>4. Select a district to view its local figures. |
+| Expected result | You have identified the district and stations contributing to the increase in demand. |
 
-![The Marina district. The strip now reads for the Marina alone: 4 of 12 vehicles free, transfer variance of +42% against plan, 86 booking requests in the last hour, 32 guests on the move, and 92% of guests satisfied with their transfers. The station lists confirm the Marina is driving its own demand, with Marina Arrival, Boardwalk, and Boat Slip taking the top requests.](03-gxm-lod2.jpg)
+![The Marina district. The strip shows figures for the Marina: 4 of 12 vehicles free, transfer variance of +42% against plan, 86 booking requests in the last hour, 32 guests on the move, and 92% of guests satisfied with their transfers. Marina Arrival, Boardwalk, and Boat Slip have the highest request volumes in the station lists.](03-gxm-lod2.jpg)
 
 ## Following a guest trip
 
-At the closest level the view follows a single guest trip through its three phases, and each phase surfaces its own recommended action. Each card carries the live feed for the flagged spot, opening it inside the card so the manager can confirm what is happening on the ground before acting, without leaving the card or hunting for the camera in the CCTV panel.
+At site level, you can follow the three stages of a guest trip and review the recommended action for each. Each card includes a live camera feed for the flagged location, so you can check conditions without opening a separate camera panel.
 
 ### Before the trip
 
-Demand that used to be invisible until it became a queue is now legible while there is still room to add capacity.
+Check demand against station capacity, available vehicles, and the age of the oldest request. Together, these readings help you decide whether to request more capacity.
 
 | Aspect | Detail |
 |---|---|
-| Problem | An overwhelmed station only became visible once guests were already complaining. |
-| Goal | See demand early enough to request extra capacity before the queue ever forms. |
-| Precondition | The pre-trip read is live for the station: demand against capacity, free vehicles, and the oldest request age. |
-| Steps | 1. The red card surfaces: demand 214 against a 150 capacity, 11 vehicles free, oldest request 8 minutes.<br/>2. Confirm the Marina feed inside the card.<br/>3. Request 6 more transfer boats from the Operations team, or defer with Remind me later. |
-| Postcondition | Extra capacity is requested before the queue forms; the dispatch itself is carried out in the Operations Manager view. |
+| Why it matters | A station may run short of capacity before the team receives a complaint. |
+| What to check | Request extra capacity while demand is still building. |
+| Before you start | Live pre-trip data is available for the station: demand against capacity, free vehicles, and the oldest request age. |
+| What to do | 1. The red card shows: demand 214 against a 150 capacity, 11 vehicles free, oldest request 8 minutes.<br/>2. Confirm the Marina feed inside the card.<br/>3. Request 6 more transfer boats from the Operations team, or defer with Remind me later. |
+| Expected result | The request for extra capacity goes to Operations, which handles the dispatch. |
 
 ![Close-up of the Marina, before the trip. The red card asks the Operations team for 6 more transfer boats, because demand has reached 214 against a capacity of 150, only 11 vehicles are free, and the oldest request has waited 8 minutes.](03-gxm-lod3-pre-trip.jpg)
 
 ### During the trip
 
-With every guest in motion visible, a pinch point can be relieved while the trip is still under way rather than after it.
+Check how many guests are travelling and how full the vehicles are. A busy route may need additional capacity while trips are still in progress.
 
 | Aspect | Detail |
 |---|---|
-| Problem | There was no clear picture of how many guests were actually moving at any moment. |
-| Goal | See every guest in motion and the vehicle they are in, so a developing pinch point can be relieved mid-trip. |
-| Precondition | The trip read is live: guests travelling and per-vehicle occupancy are reporting. |
-| Steps | 1. The card surfaces: 318 guests on the move and the lead buggy already at 5 of 6 seats.<br/>2. Confirm the Spine Corridor feed inside the card.<br/>3. Send 2 buggies to the Spine Corridor, or defer with Remind me later. |
-| Postcondition | The pinch point is relieved while the trip is still under way. |
+| Why it matters | Without live trip data, it is difficult to see how many guests are travelling or where vehicles are filling up. |
+| What to check | Identify busy routes and vehicles so Operations can adjust capacity during the trip. |
+| Before you start | Live trip data is available: guests travelling and per-vehicle occupancy are reporting. |
+| What to do | 1. The card shows: 318 guests on the move and the lead buggy already at 5 of 6 seats.<br/>2. Confirm the Spine Corridor feed inside the card.<br/>3. Ask Operations to send 2 buggies to the Spine Corridor, or defer with Remind me later. |
+| Expected result | Operations receives a recommendation to add capacity on the affected route. |
 
 ![Close-up of the Marina, during the trip. The card suggests sending 2 buggies to the Spine Corridor, because 318 guests are on the move and the lead buggy is already at 5 of 6 seats.](03-gxm-lod3-trip.jpg)
 
 ### After the trip
 
-A low score that used to arrive with no explanation now points straight back to the leg that produced it.
+Compare satisfaction with travel time and the route taken. This helps you investigate the trip behind a low score.
 
 | Aspect | Detail |
 |---|---|
-| Problem | Satisfaction scores arrived after the fact with no link to a cause. |
-| Goal | Tie a low score straight back to the leg that produced it, so dissatisfaction can be traced rather than guessed at. |
-| Precondition | The after-trip read is live: per-group satisfaction and travel time against target are reporting. |
-| Steps | 1. The card flags a low-rated arrival: satisfaction averaging 4.1 of 5, one group at 3.6, travel time 8.4 minutes against a 6.3 target.<br/>2. Confirm the Marina Promenade feed, camera IB-03, inside the card.<br/>3. Open Route Review on the Marina to villas leg, or defer with Remind me later. |
-| Postcondition | The dissatisfaction is traced to a specific leg and pattern, not a guess. |
+| Why it matters | A satisfaction score alone does not explain what went wrong on a trip. |
+| What to check | Link low satisfaction to the route and travel time for investigation. |
+| Before you start | Live after-trip data is available: per-group satisfaction and travel time against target are reporting. |
+| What to do | 1. The card flags a low-rated arrival: satisfaction averaging 4.1 of 5, one group at 3.6, travel time 8.4 minutes against a 6.3 target.<br/>2. Confirm the Marina Promenade feed, camera IB-03, inside the card.<br/>3. Open Route Review on the Marina to villas leg, or defer with Remind me later. |
+| Expected result | You can investigate the specific trip leg associated with the low rating. |
 
 ![Close-up of the Marina, after the trip. The recommended action card flags a low-rated arrival and suggests reviewing the Marina to villas leg, with the Marina Promenade camera open inside the card. Satisfaction is averaging 4.1 of 5 with one arriving group at 3.6, and travel time is 8.4 minutes against a 6.3 minute target.](03-gxm-lod3-after-trip.jpg)
 
 ## Simulations this view runs
 
-The Guest Experience Manager runs the simulations that read the island through the guest: how they gather, how a space clears, how heat and exposure sit on the routes they walk, and how the fleet and network carry them. The simulation object is Humans, or Combined where a run also carries the vehicles guests share the site with. Each read is summarised below and documented in full in the Simulation chapters.
+The Guest Experience Manager uses simulations to assess crowding, evacuation, walking conditions, and guest transport. The simulation object is Humans, or Combined when the scenario also includes vehicles. The table summarises the available simulations, with fuller explanations below and in the linked chapters.
 
-| Category | Simulation | What it reads | What it drives | Read in full |
+| Category | Simulation | What it shows | Decisions it supports | Details |
 |---|---|---|---|---|
-| People | Crowd | Density against the line where a space stops being comfortable | Meter flow or hold a release before a crush forms | [Crowd](/docs/08-simulation-people#crowd__guest-experience-manager) |
-| People | Evacuation | How guest spaces clear and where people bunch | Design signage and capacity around the real bottleneck | [Evacuation](/docs/08-simulation-people#evacuation__guest-experience-manager) |
-| People | Outdoor thermal comfort | Felt heat across the ground as shade shifts | Add shade or shift timing before an exposed stretch bites | [Outdoor thermal comfort](/docs/08-simulation-people#outdoor-thermal-comfort__guest-experience-manager) |
-| People | Accessibility | Reach to amenities by walking effort | Design reach in rather than discover the gaps by chance | [Accessibility](/docs/08-simulation-people#accessibility__guest-experience-manager) |
-| Traffic | Mobility | Transfer times and requests against the fleet | Adjust ahead of the surge, before anyone waits | [Mobility](/docs/09-simulation-traffic#mobility__guest-experience-manager) |
-| Traffic | Shuttle network | Where reliance concentrates and where guests walk | Fix the leg that carries the network, not one route | [Shuttle network](/docs/09-simulation-traffic#shuttle-network__guest-experience-manager) |
-| Traffic | Drop-off forecourt | Dwell, queue, and bay fill at the kerb | Set staging and kerb management ahead of the rush | [Drop-off forecourt](/docs/09-simulation-traffic#drop-off-forecourt__guest-experience-manager) |
-| Transport | Wind | Where airflow funnels and accelerates between buildings | Soften an exposed corner through layout or routing | [Wind](/docs/10-simulation-transport#wind__guest-experience-manager) |
-| Transport | Emissions and noise | How emission and noise carry across guest areas | Target routing and screening at the real sources | [Emissions and noise](/docs/10-simulation-transport#emissions-and-noise__guest-experience-manager) |
-| Transport | Safety conflicts | Where guest and vehicle paths cross and clash | Put crossings and separation where the conflict is | [Safety conflicts](/docs/10-simulation-transport#safety-conflicts__guest-experience-manager) |
+| People | Crowd | Crowd density against the comfort threshold | Manage entry and pedestrian flow before overcrowding develops | [Crowd](/docs/08-simulation-people#crowd__guest-experience-manager) |
+| People | Evacuation | Evacuation flow and bottlenecks in guest spaces | Review signage and capacity at the affected locations | [Evacuation](/docs/08-simulation-people#evacuation__guest-experience-manager) |
+| People | Outdoor thermal comfort | Heat exposure as shade changes | Review shade and activity timing in exposed areas | [Outdoor thermal comfort](/docs/08-simulation-people#outdoor-thermal-comfort__guest-experience-manager) |
+| People | Accessibility | Walking effort needed to reach amenities | Improve routes and access where gaps appear | [Accessibility](/docs/08-simulation-people#accessibility__guest-experience-manager) |
+| Traffic | Mobility | Transfer times and requests compared with fleet capacity | Plan capacity adjustments before demand peaks | [Mobility](/docs/09-simulation-traffic#mobility__guest-experience-manager) |
+| Traffic | Shuttle network | Busy shuttle connections and walking alternatives | Review the connections most important to the network | [Shuttle network](/docs/09-simulation-traffic#shuttle-network__guest-experience-manager) |
+| Traffic | Drop-off forecourt | Vehicle dwell time, queues, and bay occupancy | Plan staging and kerb management for busy periods | [Drop-off forecourt](/docs/09-simulation-traffic#drop-off-forecourt__guest-experience-manager) |
+| Transport | Wind | Where airflow funnels and accelerates between buildings | Reduce wind exposure through layout or routing | [Wind](/docs/10-simulation-transport#wind__guest-experience-manager) |
+| Transport | Emissions and noise | How emissions and noise spread across guest areas | Review routing and screening at the main sources | [Emissions and noise](/docs/10-simulation-transport#emissions-and-noise__guest-experience-manager) |
+| Transport | Safety conflicts | Where guest and vehicle routes conflict | Plan crossings and separation at conflict points | [Safety conflicts](/docs/10-simulation-transport#safety-conflicts__guest-experience-manager) |
 
 ### People
 
-**Crowd.** Keep every space on the right side of comfortable, protecting the feel of an unhurried destination even when a show lets out or two arrival waves land at once. The twin plays a footfall scenario forward against the density at which a space stops being comfortable, so flow is metered, foot traffic rerouted, or a release held before a crush forms. [Read in full](/docs/08-simulation-people#crowd__guest-experience-manager)
+**Crowd.** Use the crowd simulation to check how busy guest spaces could become when a show ends or arrival groups overlap. The focus is guest comfort: where people gather, how density changes, and when a space approaches its comfort limit. The forecast shows where to consider metering entry, rerouting pedestrians, or delaying a group release. Review those options before the expected peak so you can plan for queues rather than wait for them to develop. [Read in full](/docs/08-simulation-people#crowd__guest-experience-manager)
 
-![Crowd, Guest Experience read. Density at the plaza nears the safe line at peak, with guests in the crush.](03-gxm-lod3-simulation-people-crowd.jpg)
+![Crowd, Guest Experience view. Plaza density approaches the safety threshold at peak demand, with guests in the crowded area.](03-gxm-lod3-simulation-people-crowd.jpg)
 
-**Evacuation.** Confidence that guest-facing spaces clear cleanly, with no single stairwell or doorway quietly holding back the exit. The twin plays the evacuation forward through the occupied spaces, surfacing the bottleneck as a located finding, so signage and capacity are designed around the spot that matters. [Read in full](/docs/08-simulation-people#evacuation__guest-experience-manager)
+**Evacuation.** Use the evacuation simulation to examine how guests leave occupied spaces and reach a safe exit. Look for stairwells or doorways that slow the evacuation, even when the rest of the route is moving freely. The forecast locates those bottlenecks and shows where people are likely to queue. This helps the team review signage, route guidance, and capacity before a drill or incident. [Read in full](/docs/08-simulation-people#evacuation__guest-experience-manager)
 
-![Evacuation, Guest Experience read. Clear time runs past the target, with guests still to reach muster.](03-gxm-lod3-simulation-people-evacuation.jpg)
+![Evacuation, Guest Experience view. Clearance time exceeds the target, with guests still to reach muster.](03-gxm-lod3-simulation-people-evacuation.jpg)
 
-**Outdoor thermal comfort.** Keep the parts of the day guests remember on the good side, not the walkway that turned uncomfortable at midday. The twin plays felt heat forward using where shade actually falls, showing the comfortable footprint shrink as the sun climbs, so shade or timing is adjusted before an exposed stretch becomes a complaint. [Read in full](/docs/08-simulation-people#outdoor-thermal-comfort__guest-experience-manager)
+**Outdoor thermal comfort.** Use this simulation to check whether walking routes and activity areas remain comfortable as the day gets hotter. It accounts for where shade falls as the sun moves, so a route that is comfortable in the morning can be assessed for midday use. The forecast shows where the comfortable area shrinks and guests face greater heat exposure. Use it to consider extra shade, a different route, or a change to an activity's timing. [Read in full](/docs/08-simulation-people#outdoor-thermal-comfort__guest-experience-manager)
 
-![Outdoor thermal comfort, Guest Experience read. Shaded share drops as the midday sun peaks, with guests in the heat-stress zone.](03-gxm-lod3-simulation-people-outdoor-thermal-comfort.jpg)
+![Outdoor thermal comfort, Guest Experience view. Shaded share drops as the midday sun peaks, with guests in the heat-stress zone.](03-gxm-lod3-simulation-people-outdoor-thermal-comfort.jpg)
 
-**Accessibility.** A destination effortless to move through, where no key amenity sits just far enough to quietly strain a guest. The twin reads the site by walking effort, mapping reach from where guests actually are and surfacing the corners beyond comfortable range, so reach is designed in rather than discovered by chance. [Read in full](/docs/08-simulation-people#accessibility__guest-experience-manager)
+**Accessibility.** The accessibility simulation examines the effort guests need to reach amenities from different parts of the destination. It helps identify routes that are too long or difficult for comfortable access. The map shows which amenities are within reach and which areas fall outside the comfortable walking range. Review these gaps when planning routes and amenity access, including locations that may seem convenient to some guests but difficult for others. [Read in full](/docs/08-simulation-people#accessibility__guest-experience-manager)
 
-![Accessibility, Guest Experience read. The far villas fall outside the easy-reach window, with guests beyond easy reach.](03-gxm-lod3-simulation-people-accessibility.jpg)
+![Accessibility, Guest Experience view. The far villas fall outside the easy-reach window, leaving some guests beyond comfortable walking range.](03-gxm-lod3-simulation-people-accessibility.jpg)
 
 ### Traffic
 
-**Mobility.** No guest waiting longer than feels effortless for a ride. The twin plays a demand scenario forward against the fleet and schedule, surfacing where transfer times stretch and requests pile up ahead of anyone standing, so a measured adjustment lands before the surge. [Read in full](/docs/09-simulation-traffic#mobility__guest-experience-manager)
+**Mobility.** Use the mobility simulation to assess guest waiting and transfer times under a chosen demand scenario. The aim is to keep trips running to plan when requests increase. The forecast compares demand with the fleet and schedule, showing where transfer times lengthen and requests accumulate. Use it to plan adjustments before the arrival peak, with particular attention to the stations where queues are likely to form. [Read in full](/docs/09-simulation-traffic#mobility__guest-experience-manager)
 
-![Mobility, Guest Experience read. Transfers strain as guests surge and buses run short.](03-gxm-lod3-simulation-traffic-mobility.jpg)
+![Mobility, Guest Experience view. Transfer demand increases while bus availability falls.](03-gxm-lod3-simulation-traffic-mobility.jpg)
 
-**Shuttle network.** A network guests trust, where no unreliable leg quietly trains people to walk. The twin plays the network forward to show where reliance concentrates and where guests fall back to walking, so the leg carrying the network is fixed rather than one route tuned in isolation. [Read in full](/docs/09-simulation-traffic#shuttle-network__guest-experience-manager)
+**Shuttle network.** Use the shuttle-network simulation to assess how reliably guests can travel across the destination. A delay on one busy leg can affect demand elsewhere or lead guests to walk instead. The forecast shows where passengers depend most on the service and where they switch to walking. Review those connections together before changing an individual route, so the proposed improvement accounts for its effect on the wider network. [Read in full](/docs/09-simulation-traffic#shuttle-network__guest-experience-manager)
 
-![Shuttle network, Guest Experience read. The marina line runs full at peak, with waits building at the stops.](03-gxm-lod3-simulation-traffic-shuttle-network.jpg)
+![Shuttle network, Guest Experience view. The marina line runs full at peak, with waits building at the stops.](03-gxm-lod3-simulation-traffic-shuttle-network.jpg)
 
-**Drop-off forecourt.** An arrival that feels seamless, with nobody queuing at the kerb where they are meant to feel welcomed. The twin plays an arrival pattern forward, reading dwell, queue build, and bay fill, and marks where flowing becomes congested, so staging is set ahead of the rush. [Read in full](/docs/09-simulation-traffic#drop-off-forecourt__guest-experience-manager)
+**Drop-off forecourt.** Use the forecourt simulation to assess the arrival and departure experience when several vehicles reach the kerb together. The focus is on keeping guests moving through pickup and drop-off areas without long queues. The forecast shows vehicle dwell time, queue growth, and bay occupancy. It identifies when congestion could begin, helping the team plan vehicle staging and kerb management before the rush. [Read in full](/docs/09-simulation-traffic#drop-off-forecourt__guest-experience-manager)
 
-![Drop-off forecourt, Guest Experience read. The curb queue backs up at arrival, with vehicles spilling to the approach.](03-gxm-lod3-simulation-traffic-drop-off.jpg)
+![Drop-off forecourt, Guest Experience view. The kerbside queue grows during arrivals, with vehicles spilling to the approach.](03-gxm-lod3-simulation-traffic-drop-off.jpg)
 
 ### Transport
 
-**Wind.** Keep outdoor spaces genuinely usable, so a breeze does not accelerate around a corner into something that empties a deck. The twin plays a wind setting forward across the resort, reading where airflow funnels and accelerates between buildings, so an exposed corner is softened through layout, planting, or routing. [Read in full](/docs/10-simulation-transport#wind__guest-experience-manager)
+**Wind.** Use the wind simulation to assess comfort on outdoor decks, routes, and gathering spaces. Airflow can accelerate around corners and between buildings, leaving one area exposed while a nearby space remains comfortable. The forecast shows these local differences under the selected wind conditions. Use it to review building layout, planting, or routes where guests would otherwise be exposed to strong wind. [Read in full](/docs/10-simulation-transport#wind__guest-experience-manager)
 
-![Wind, Guest Experience read. Wind picks up on exposed decks and routes, with guests and vehicles in the exposed zone.](03-gxm-lod3-simulation-transport-wind.jpg)
+![Wind, Guest Experience view. Wind picks up on exposed decks and routes, with guests and vehicles in the exposed zone.](03-gxm-lod3-simulation-transport-wind.jpg)
 
-**Emissions and noise.** Protect the quiet, clean character of the destination, so a secluded garden actually delivers on the promise. The twin plays the dispersion forward from the roads, service areas, and plant, showing how emission and noise carry across guest areas, so routing and screening target the real sources. [Read in full](/docs/10-simulation-transport#emissions-and-noise__guest-experience-manager)
+**Emissions and noise.** Use this simulation to assess how roads, service areas, and plant affect the air and noise levels in guest spaces. Pay particular attention to paths beside busy roads and gardens intended to be quiet. The forecast shows how emissions and noise spread from their sources. It helps identify where routing or screening changes could reduce exposure and protect the intended character of those spaces. [Read in full](/docs/10-simulation-transport#emissions-and-noise__guest-experience-manager)
 
-![Emissions and noise, Guest Experience read. Noise near the plaza climbs at peak traffic, with guests exposed along the roads.](03-gxm-lod3-simulation-transport-emission.jpg)
+![Emissions and noise, Guest Experience view. Noise near the plaza climbs at peak traffic, with guests exposed along the roads.](03-gxm-lod3-simulation-transport-emission.jpg)
 
-**Safety conflicts.** A site guests and vehicles share without the few dangerous overlaps ordinary planning misses. The twin identifies where paths cross and grades them by how often and how sharply they clash, so crossings and separation go where the real conflict is. [Read in full](/docs/10-simulation-transport#safety-conflicts__guest-experience-manager)
+**Safety conflicts.** Use this simulation to identify where guest and vehicle routes intersect and could create a safety conflict. The focus is on specific crossing points and shared spaces. The forecast ranks those locations by the frequency and severity of the conflicts. Use the results to review crossings, signage, and separation where the model indicates the greatest risk. [Read in full](/docs/10-simulation-transport#safety-conflicts__guest-experience-manager)
 
-![Safety conflicts, Guest Experience read. The plaza crossing reaches conflict level at peak, with people and vehicles exposed.](03-gxm-lod3-simulation-transport-safety.jpg)
+![Safety conflicts, Guest Experience view. The plaza crossing reaches conflict level at peak, with people and vehicles exposed.](03-gxm-lod3-simulation-transport-safety.jpg)
 
 ## Working in this view
 
-1. Open the Guest Experience Manager from the persona bar.
+1. Sign in to the Guest Experience Manager view using your assigned account.
 2. Read the destination mobility strip at the wide view.
 3. Select a district to inspect its stations and demand.
 4. Open a station to follow its guest trip and read the recommended action.
 
 <Callout type="note">
-This is a read and oversight view. Dispatch and incident actions are carried out in the Operations Manager view.
+Use this view for monitoring and recommendations. The Operations Manager view handles dispatches and incident actions.
 </Callout>

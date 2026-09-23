@@ -22,12 +22,12 @@ export default function Home() {
 
   const sections = [
     { title: 'Persona Views', desc: 'The four operator roles and what each one sees.', links: [
-      { label: 'Guest Experience Manager', desc: 'Guest flow and experience, station by station', href: '/docs/03-gxm', cover: '03-gxm-lod3-pre-trip.jpg' },
-      { label: 'Operations Manager', desc: 'Fleet, utilization, safety, and EV charging', href: '/docs/04-ops', cover: '04-ops-lod3-fleet-availability.jpg' },
+      { label: 'Guest Experience Manager', desc: 'Guest demand, trips, and satisfaction at each station', href: '/docs/03-gxm', cover: '03-gxm-lod3-pre-trip.jpg' },
+      { label: 'Operations Manager', desc: 'Fleet availability, utilisation, safety, and EV charging', href: '/docs/04-ops', cover: '04-ops-lod3-fleet-availability.jpg' },
       { label: 'Environment Manager', desc: 'Air, wind, water, and violation detection', href: '/docs/05-env', cover: '05-env-lod3-safety-violation-detection.jpg' },
       { label: 'Marine Operations Manager', desc: 'Reef health, dive capacity, and response', href: '/docs/06-mo', cover: '06-mo-lod3-active-response.jpg' },
     ]},
-    { title: 'Simulation', desc: 'Rehearse what-ifs on the twin, grouped by domain and read per persona.', links: [
+    { title: 'Simulation', desc: 'Explore scenarios on the digital twin and review the results for your role.', links: [
       { label: 'People', desc: 'Crowd, evacuation, thermal comfort, accessibility', href: '/docs/08-simulation-people', cover: '03-gxm-lod3-simulation-people-crowd.jpg' },
       { label: 'Traffic', desc: 'Mobility, energy, shuttle network, drop-off, marine flow', href: '/docs/09-simulation-traffic', cover: '03-gxm-lod3-simulation-traffic-mobility.jpg' },
       { label: 'Transport', desc: 'Wind, emissions and noise, safety conflicts, flood surge', href: '/docs/10-simulation-transport', cover: '03-gxm-lod3-simulation-transport-wind.jpg' },
@@ -44,7 +44,7 @@ export default function Home() {
         <div className="mb-12">
           <h1 className="text-3xl font-medium mb-2">RSG Integrated Operations Centre</h1>
           <p className="text-muted-foreground text-sm">
-            Operator guide for the RSG IOC Digital Twin. Monitor Shura Island across four operator roles and three map detail levels.
+            Learn how to monitor Shura Island with the RSG IOC Digital Twin. Find guidance for your role, explore the map, and review simulation results.
           </p>
         </div>
 
@@ -64,7 +64,7 @@ export default function Home() {
             </div>
             <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, padding: '20px' }}>
               <p style={{ fontSize: '15px', fontWeight: 600, color: '#fff', marginBottom: '4px' }}>Interface guide</p>
-              <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5 }}>The persona bar, 3D map canvas, side panels, alert tray, and map LOD navigation.</p>
+              <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.85)', lineHeight: 1.5 }}>How to use the map, metrics, cameras, and recommended-action cards.</p>
             </div>
           </Link>
         </div>
@@ -73,7 +73,7 @@ export default function Home() {
           <div>
             <p className="text-xs uppercase tracking-wide mb-2" style={{ color: 'hsl(var(--muted-foreground))' }}>Getting started</p>
             <h2 className="text-base font-medium mb-1" style={{ color: 'hsl(var(--foreground))' }}>New to the RSG IOC?</h2>
-            <p className="text-xs leading-relaxed" style={{ color: 'hsl(var(--muted-foreground))' }}>Start with the overview to understand the personas and the map detail levels, then read the interface guide.</p>
+            <p className="text-xs leading-relaxed" style={{ color: 'hsl(var(--muted-foreground))' }}>Start with the overview to learn about the four roles and map detail levels. Then use the interface guide to find your way around.</p>
           </div>
           <div style={{ display: 'flex', flexWrap: 'nowrap', gap: '8px' }}>
             <Link href="/docs/01-overview" className="inline-flex items-center gap-1.5 text-xs rounded-md px-3 py-1.5" style={{ background: 'transparent', color: 'hsl(var(--foreground))', border: '1px solid hsl(var(--border))', whiteSpace: 'nowrap' }}>

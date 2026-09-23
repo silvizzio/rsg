@@ -5,17 +5,17 @@ section: "Persona Views"
 description: "Protect the coral reef: live turbidity and temperature, dive and mooring capacity, and automatic response when a threshold is crossed."
 ---
 
-![The Marine Operations Manager at the operations console reading the live marine map of the reef, with the three jobs of the view: live sight of reef turbidity and temperature, how many boats and divers are near the reef, and a threshold crossed with the response assigned automatically.](06-mo-hero.jpg)
+![The Marine Operations Manager console shows reef turbidity and temperature, nearby boats and divers, and automatically assigned responses to threshold breaches.](06-mo-hero.jpg)
 
-The Marine Operations Manager view exists to protect the coral reef, Red Sea Global's most valuable natural asset. Reef damage tends to happen quietly, and by the time it is visible it is usually permanent, so the only effective protection is early warning. This view provides that warning in three ways. It gives live sight of reef turbidity and temperature. It shows how many boats and divers are near the reef at any moment, so the site never becomes overcrowded. And when a threshold is crossed, it raises the alarm and assigns the response automatically, rather than leaving it to manual spotting and coordination.
+The Marine Operations Manager view helps protect the coral reef by monitoring turbidity, temperature, and the number of boats and divers at each site. Early warning matters because reef damage may be difficult to see as it develops and can be lasting. When a threshold is crossed, the system raises an alarm and automatically assigns the response.
 
-![The wide view of the destination waters. The bottom strip is the marine read: reef conditions, mooring, dive operation, and wind.](06-mo-lod1-1.jpg)
+![The wide view of the destination waters. The bottom strip is the marine summary: reef conditions, mooring, dive operation, and wind.](06-mo-lod1-1.jpg)
 
 ## What you see
 
-At the wide view, the bottom strip is the marine read for the destination waters, grouped into reef conditions, capacity management, and active response. A map legend in the corner counts the open items by severity and confirms the environmental sensor feed is live.
+At the destination overview, the bottom strip summarises reef conditions, site capacity, and active responses across the waters. The map legend counts open items by severity and shows whether the environmental sensor feed is live.
 
-| Group | Field | Reads | What it tells you |
+| Group | Field | Example | What it tells you |
 |---|---|---|---|
 | Reef conditions | Water turbidity | 2.1 NTU, Stable | Reef water cloudiness, trended against threshold |
 | Reef conditions | Reef temperature | 22 C, Stable | Sea temperature, trended against bleach-risk threshold |
@@ -26,80 +26,80 @@ At the wide view, the bottom strip is the marine read for the destination waters
 | Active response | Dynamic dive-site switching | Active route, Shebara Cluster to Shebara Wall (auto) | The dive-site switch currently running, updated automatically |
 | Active response | Task triggered | Dispatch patrol boat, notify dive operator | The security and operations tasks a recommendation raises |
 
-The map legend reads the open items by severity: 0 critical, 1 high, 2 medium, and 8 low or info, fed by the environmental sensor feed running live.
+The map legend shows open items by severity: 0 critical, 1 high, 2 medium, and 8 low or info, using the live environmental sensor feed.
 
 
 ## Reading reef conditions across the waters
 
-The read works at two levels. At the wide view the strip covers the destination waters. Drop into a marine zone, here the Shura Marina dive and mooring water, and the read rescopes to that water, where boat and diver counts against capacity become legible.
+Start with the destination waters, then select a marine zone such as the Shura Marina dive and mooring area. The strip updates to show local conditions and boat and diver counts against capacity.
 
 | Aspect | Detail |
 |---|---|
-| Problem | Reef damage tends to happen quietly, and by the time it is visible it is usually permanent. |
-| Goal | Hold live sight of reef turbidity and temperature, and of the boats and divers near the reef, so crowding or a condition shift can be caught before it does physical harm. |
-| Precondition | The marine feed is live: reef conditions, mooring, dive operation, and wind are reporting. |
-| Steps | 1. Open the Marine Operations Manager from the persona bar.<br/>2. Read the marine strip: reef conditions, mooring, dive operation, and wind.<br/>3. Select a marine zone to inspect dive and mooring capacity.<br/>4. Watch turbidity and temperature against their thresholds, and counts against capacity. |
-| Postcondition | Crowding or a reef-condition shift is visible in real time, before it does any physical harm. |
+| Why it matters | Reef damage can develop unnoticed and may have lasting effects. |
+| What to check | Monitor reef turbidity, temperature, and nearby boats and divers for changes or crowding. |
+| Before you start | The marine feed is live: reef conditions, mooring, dive operation, and wind are reporting. |
+| What to do | 1. Sign in to the Marine Operations Manager view using your assigned account.<br/>2. Read the marine strip: reef conditions, mooring, dive operation, and wind.<br/>3. Select a marine zone to inspect dive and mooring capacity.<br/>4. Watch turbidity and temperature against their thresholds, and counts against capacity. |
+| Expected result | You can identify local changes in reef conditions and capacity as they occur. |
 
-![The Shura Marina marine zone. The strip rescopes to this water: turbidity 2.1 NTU and reef temperature 22 C both stable, 9 of 12 boats near the reef, and 26 of 40 divers down across 5 sites.](06-mo-lod2-1.jpg)
+![The Shura Marina marine zone. The strip shows local conditions: turbidity 2.1 NTU and reef temperature 22 C both stable, 9 of 12 boats near the reef, and 26 of 40 divers down across 5 sites.](06-mo-lod2-1.jpg)
 
-![The Shura Marina zone across the villa clusters, the same reef read holding: turbidity 2.1 NTU stable, boats 9 of 12, divers 26 of 40 across 5 sites.](06-mo-lod2-2.jpg)
+![The Shura Marina zone across the villa clusters, with unchanged reef readings: turbidity 2.1 NTU stable, boats 9 of 12, divers 26 of 40 across 5 sites.](06-mo-lod2-2.jpg)
 
 ## The close-up: three things to act on
 
-At the closest level the view drills into a reef site. The destination strip can read all clear in aggregate while a single site surfaces a condition worth acting on, so the close-up is where those site-level cards appear. Each card states the situation, carries the live feed for the site so it can be confirmed without leaving the card, and offers a primary action plus Remind me later. Three recur, across three alert tiers.
+At site level, a recommended-action card can flag a local issue even when the destination summary reads All clear. Each card describes the condition, includes a live feed for checking the site, and offers a primary action or Remind me later. The examples below cover three alert types.
 
 ### Resting a site before a temperature breach
 
-Reef temperature can climb toward its bleach-risk threshold at one site while the rest of the water stays comfortable. Resting the site before the breach, rather than after, is what protects coral recovery.
+One site can approach its bleaching-risk temperature threshold while readings elsewhere remain within limits. The card recommends resting the affected site and moving groups before that threshold is reached.
 
 | Aspect | Detail |
 |---|---|
 | Tier | Temp rising (amber) |
-| Problem | A site could cross its temperature threshold before anyone moved groups off it, by which point the heat stress on the coral had already begun. |
-| Goal | Catch a site trending toward its temperature threshold and rest it ahead of the breach, shifting groups elsewhere while conditions are still within limits. |
-| Precondition | Per-site reef temperature is reporting against a threshold, here 30.5 C at Site B. |
-| Steps | 1. The card surfaces: water temp 29.8 C trending toward the 30.5 threshold at Site B.<br/>2. Confirm the Dive Site B feed, camera DB-02, inside the card.<br/>3. Rest Site B and shift afternoon groups to Site C, or defer with Remind me later. |
-| Postcondition | Site B is rested ahead of the breach and afternoon groups move to Site C, protecting coral recovery before any heat stress sets in. |
+| Why it matters | Groups may remain at a site while its temperature approaches the bleaching-risk threshold. |
+| What to check | Rest the affected site and move groups while its temperature is still within the limit. |
+| Before you start | Per-site reef temperature is reporting against a threshold, here 30.5 C at Site B. |
+| What to do | 1. The card shows: water temp 29.8 C trending toward the 30.5 threshold at Site B.<br/>2. Confirm the Dive Site B feed, camera DB-02, inside the card.<br/>3. Rest Site B and shift afternoon groups to Site C, or defer with Remind me later. |
+| Expected result | Site B is rested and afternoon groups are moved to Site C before the forecast threshold crossing. |
 
 ![Close-up of North Reef. With conditions reading all clear, the amber card rests Site B and shifts afternoon groups to Site C, because water temperature is 29.8 C trending toward the 30.5 threshold and resting the site ahead of breach protects coral recovery.](06-mo-lod3-reef-health-monitoring.jpg)
 
 ### Holding arrivals to keep a site within capacity
 
-A reef site fills before it is unsafe, and the risk is that one more arrival tips it over capacity. Holding new arrivals and routing them elsewhere keeps the site within its limit without turning anyone away from the water.
+When a site is close to its boat or mooring limit, further arrivals could put it over capacity. Hold those arrivals and redirect them to another site.
 
 | Aspect | Detail |
 |---|---|
 | Tier | Capacity watch (amber) |
-| Problem | A site could be pushed past its boat and mooring capacity by arrivals that no one was holding back, crowding the reef. |
-| Goal | Catch a site approaching capacity and hold new arrivals, routing them to another site so the reef stays within its limit. |
-| Precondition | Per-site boat and mooring counts are reporting against capacity, here North Reef. |
-| Steps | 1. The card surfaces: 11 of 12 boats and 17 of 18 moorings in use at North Reef.<br/>2. Confirm the North Reef feed, camera NR-02, inside the card.<br/>3. Hold new arrivals at North Reef and route them to Site B, or defer with Remind me later. |
-| Postcondition | New arrivals are held and routed to Site B, keeping North Reef within capacity rather than tipping it over. |
+| Why it matters | Further arrivals can push a busy site beyond its boat or mooring capacity. |
+| What to check | Hold new arrivals and redirect them to keep the site within its limit. |
+| Before you start | Per-site boat and mooring counts are reporting against capacity, here North Reef. |
+| What to do | 1. The card shows: 11 of 12 boats and 17 of 18 moorings in use at North Reef.<br/>2. Confirm the North Reef feed, camera NR-02, inside the card.<br/>3. Hold new arrivals at North Reef and route them to Site B, or defer with Remind me later. |
+| Expected result | New arrivals are redirected to Site B to keep North Reef within capacity. |
 
 ![Close-up of Shura Marina. The amber card holds new arrivals at North Reef and routes them to Site B, because 11 of 12 boats and 17 of 18 moorings are in use and holding arrivals keeps North Reef within capacity.](06-mo-lod3-capacity-management.jpg)
 
 ### Diverting on a threshold breach
 
-When a site does cross a threshold, the response should already be moving by the time an operator looks. The breach card raises the alarm and auto-assigns the task to marine security rather than waiting for a manual dispatch.
+When a threshold is breached, the card raises an alarm and automatically assigns a diversion task to marine security. Review the reading and live feed to confirm the situation.
 
 | Aspect | Detail |
 |---|---|
 | Tier | Threshold breach (red) |
-| Problem | Dealing with a breach meant spotting it and then coordinating a response by hand, losing time while the reef sat over threshold. |
-| Goal | On a threshold breach, raise the alarm and auto-assign the divert to marine security, so the response is already moving when an operator looks. |
-| Precondition | Per-site turbidity is reporting against a threshold, here 5.0 NTU at North Reef, with marine security on call for auto-assignment. |
-| Steps | 1. The card fires: turbidity 5.2 NTU over the 5.0 threshold with 11 boats at the reef.<br/>2. Confirm the North Reef feed, camera NR-02, inside the card.<br/>3. Divert and assign: the task to move dive groups from North Reef to Site C is auto-assigned to marine security, or defer with Remind me later. |
-| Postcondition | Dive groups are diverted from North Reef to Site C with the task already assigned to marine security, without manual spotting or coordination. |
+| Why it matters | Manual detection and coordination can delay the response to a threshold breach. |
+| What to check | Raise the alarm and automatically assign the diversion task to marine security. |
+| Before you start | Per-site turbidity is reporting against a threshold, here 5.0 NTU at North Reef, with marine security on call for auto-assignment. |
+| What to do | 1. The card reports: turbidity 5.2 NTU over the 5.0 threshold with 11 boats at the reef.<br/>2. Confirm the North Reef feed, camera NR-02, inside the card.<br/>3. Divert and assign: the task to move dive groups from North Reef to Site C is auto-assigned to marine security, or defer with Remind me later. |
+| Expected result | Marine security is assigned the task of diverting dive groups from North Reef to Site C. |
 
 ![Close-up of North Reef. The red card diverts dive groups from North Reef to Site C, because turbidity has reached 5.2 NTU over the 5.0 threshold with 11 boats at the reef, and the task is auto-assigned to marine security.](06-mo-lod3-active-response.jpg)
 
 
 ## Virtual tour (preview)
 
-The reef is also navigable as a virtual tour, a set of fixed underwater viewpoints you can move between, with info popups on the assets you pass. This is in preview. The frames below are samples.
+The underwater virtual tour lets you move between fixed reef viewpoints and open information cards for nearby assets. This feature is in preview; the images below show examples.
 
-The water-quality buoys are the clickable assets. Selecting one opens its live status card, reading from the Water Quality Sensor Feed, the same buoy data behind the reef conditions on the strip.
+Select a water-quality buoy to open its live status card. The card uses the Water Quality Sensor Feed, which also supplies the reef-condition readings in the bottom strip.
 
 ![A reef viewpoint in the virtual tour. A coral formation sits in the foreground with two water-quality buoys floating at the surface above, each a clickable marker, before a card is opened.](06-mo-vt-1.jpg)
 
@@ -107,57 +107,57 @@ The water-quality buoys are the clickable assets. Selecting one opens its live s
 
 ## Simulations this view runs
 
-Marine Operations runs six simulations, grouped in the rail the way the platform presents them: Wave and Ocean current under Traffic, Flood and storm surge under Transport, and Wind, Water quality, and Coral reef under Environment. Across all six the simulation object is locked to Vessels. In-water people modelling is not in scope, so a marine run couples an environmental field to vessels on the water, never to swimmers or divers as agents.
+Marine Operations has six simulations. The platform groups Wave and Ocean current under Traffic; Flood and storm surge under Transport; and Wind, Water quality, and Coral reef under Environment. The simulation object is fixed to Vessels. Marine runs model environmental conditions and vessels, but do not model swimmers or divers as agents.
 
-Read as a set, each run turns an environmental field into a single operability call.
+Use these simulations to assess whether marine activities can proceed and what restrictions or preparations may be needed.
 
-| Category | Simulation | What it reads | What it drives | Read in full |
+| Category | Simulation | What it shows | Decisions it supports | Details |
 |---|---|---|---|---|
-| Traffic | Wave | Wave height against the small-craft limit, and the vessels exposed on the lines boats run | Hold departures and beach calls before a boat is caught exposed | [Wave](/docs/09-simulation-traffic#wave__marine-operations-manager) |
+| Traffic | Wave | Wave height against the small-craft limit, and exposed vessels along their routes | Plan departure holds and beach calls around wave conditions | [Wave](/docs/09-simulation-traffic#wave__marine-operations-manager) |
 | Traffic | Ocean current | Drift at the channel and along the dive routes, and the vessels in the drift zone | Adjust dive routing and vessel calls before boats are committed | [Ocean current](/docs/09-simulation-traffic#ocean-current__marine-operations-manager) |
-| Transport | Flood and storm surge | Surge height, speed, and arrival time at the berths | Secure or relocate craft and raise barriers while it still helps | [Flood and storm surge](/docs/10-simulation-transport#flood-and-storm-surge__marine-operations-manager) |
+| Transport | Flood and storm surge | Surge height, speed, and arrival time at the berths | Plan when to secure or relocate craft and raise barriers | [Flood and storm surge](/docs/10-simulation-transport#flood-and-storm-surge__marine-operations-manager) |
 | Environment | Wind | The marine window, the small-craft limit, and mooring exposure | Set departure windows and secure moorings before conditions tighten | [Wind](/docs/11-simulation-environment#wind__marine-operations-manager) |
-| Environment | Water quality | Dive clarity, salinity, temperature, and dissolved oxygen at the dive sites | Call the day's diving and swimming before guests are in the water | [Water quality](/docs/11-simulation-environment#water-quality__marine-operations-manager) |
-| Environment | Coral reef | Bleaching risk against the closure trigger, with anchor and boat pressure | Rest or close a dive site deliberately, ahead of the trigger | [Coral reef](/docs/11-simulation-environment#coral-reef__marine-operations-manager) |
+| Environment | Water quality | Dive clarity, salinity, temperature, and dissolved oxygen at the dive sites | Review diving and swimming plans before guests enter the water | [Water quality](/docs/11-simulation-environment#water-quality__marine-operations-manager) |
+| Environment | Coral reef | Bleaching risk against the closure trigger, with anchor and boat pressure | Plan site rest or closure before the trigger is reached | [Coral reef](/docs/11-simulation-environment#coral-reef__marine-operations-manager) |
 
 ### Traffic
 
-**Wave.** The goal is to keep small craft running safely while the window allows, and to call the hold early enough that no boat is caught exposed. The twin plays an offshore swell scenario forward to the marina and the routes, showing where wave height climbs toward the small-craft limit and where waves break on the lines boats actually run, so departures and beach calls are deliberate rather than last-minute. [Read in full](/docs/09-simulation-traffic#wave__marine-operations-manager)
+**Wave.** Use the wave simulation to assess when conditions on vessel routes and at the marina approach the small-craft limit. It helps plan departures and beach calls within the available operating window. The forecast follows offshore swell towards the marina and along the routes, showing wave height and where waves break. Review exposed sections before deciding whether to hold a departure or change a beach call. [Read in full](/docs/09-simulation-traffic#wave__marine-operations-manager)
 
-![Wave, Marine Operations read. Wave height 1.6m against the small-craft limit, 6 vessels exposed, marina surge watch.](06-mo-lod3-simulation-wave.jpg)
+![Wave, Marine Operations view. Wave height 1.6m against the small-craft limit, 6 vessels exposed, marina surge watch.](06-mo-lod3-simulation-wave.jpg)
 
-**Ocean current.** The goal is a safe dive day: knowing when flow at the channel strengthens enough to make drift a real hazard, before boats are out. The twin plays a tidal and wind scenario forward to show how current builds at the channel and along the dive routes, separating the site reading from the broad average that hides it, so routing and vessel calls can be adjusted before boats are committed. [Read in full](/docs/09-simulation-traffic#ocean-current__marine-operations-manager)
+**Ocean current.** Use the current simulation to assess drift risk at the channel and along dive routes before boats depart. Conditions at a particular site can differ from the average across the destination. The forecast models the selected tide and wind conditions and shows where currents strengthen. Use those local readings to review dive routing and vessel movements before committing boats to a route. [Read in full](/docs/09-simulation-traffic#ocean-current__marine-operations-manager)
 
-![Ocean current, Marine Operations read. Drift risk at the channel, current 0.6 m/s, 5 vessels in the drift zone, handling harder.](06-mo-lod3-simulation-ocean-current.jpg)
+![Ocean current, Marine Operations view. Drift risk at the channel, current 0.6 m/s, 5 vessels in the drift zone, handling harder.](06-mo-lod3-simulation-ocean-current.jpg)
 
 ### Transport
 
-**Flood and storm surge.** The goal is to protect vessels and the marina, getting craft secured or relocated and barriers raised before the peak puts moored and small boats at risk. The twin plays a storm, tide, and rainfall scenario forward to the marina, reading how high the surge climbs at the berths, how fast water moves through them, and how soon it arrives, so the marine response is made with time in hand. [Read in full](/docs/10-simulation-transport#flood-and-storm-surge__marine-operations-manager)
+**Flood and storm surge.** Use this simulation to assess the effect of a storm, tide, and rainfall scenario on vessels and the marina. The aim is to plan when craft should be secured or relocated and when barriers should be raised. The forecast shows surge height at the berths, water speed, and arrival time. Compare those conditions with the time needed to prepare the marina and move vessels before the peak. [Read in full](/docs/10-simulation-transport#flood-and-storm-surge__marine-operations-manager)
 
-![Flood and storm surge, Marine Operations read. Surge at the marina 1.8m, 210 guests and 24 vehicles in the depth zone, surge arrival 18 min.](06-mo-lod3-simulation-flood-and-storm-surge.jpg)
+![Flood and storm surge, Marine Operations view. Surge at the marina 1.8m, 210 guests and 24 vehicles in the depth zone, surge arrival 18 min.](06-mo-lod3-simulation-flood-and-storm-surge.jpg)
 
 ### Environment
 
-**Wind.** The goal is to set the working day with confidence, knowing the marine window, the small-craft limit, and the load on moorings before conditions tighten. The twin plays a wind speed and direction scenario forward over the resort and the water, reading the window, the gusts, and the mooring exposure against their limits, so departure windows and moorings are set while conditions still allow. [Read in full](/docs/11-simulation-environment#wind__marine-operations-manager)
+**Wind.** Use the wind simulation to assess the operating window for diving and vessel departures, along with exposure at moorings. It helps the team plan the day around the small-craft limit and other operating limits. The forecast models wind speed and direction over the resort and water, including gusts and mooring exposure. Review it when setting departure windows and deciding when to secure moorings. [Read in full](/docs/11-simulation-environment#wind__marine-operations-manager)
 
-![Wind, Marine Operations read. Marine wind window 14 kn, small-craft limit clear, mooring exposure low.](06-mo-lod3-simulation-wind.jpg)
+![Wind, Marine Operations view. Marine wind window 14 kn, small-craft limit clear, mooring exposure low.](06-mo-lod3-simulation-wind.jpg)
 
-**Water quality.** The goal is a clear call on whether the day's diving and swimming can go ahead, made before guests are in the water. The twin plays a discharge and flushing scenario forward at the dive sites, reading clarity, salinity, temperature, and dissolved oxygen together, so a clarity drop surfaces ahead of time and site choice can adapt before the activity call is forced. [Read in full](/docs/11-simulation-environment#water-quality__marine-operations-manager)
+**Water quality.** Marine Operations uses this simulation to assess water conditions for planned diving and swimming activities. It helps the team review the schedule before guests enter the water. The forecast models discharge and flushing at dive sites and shows clarity, salinity, temperature, and dissolved oxygen. If visibility is expected to fall below the activity threshold, review the timing or choice of site. [Read in full](/docs/11-simulation-environment#water-quality__marine-operations-manager)
 
-![Water quality, Marine Operations read. Dive clarity 7.0m visibility below the activity threshold, DO low, activity limited.](06-mo-lod3-simulation-water-quality.jpg)
+![Water quality, Marine Operations view. Dive clarity 7.0m visibility below the activity threshold, DO low, activity limited.](06-mo-lod3-simulation-water-quality.jpg)
 
-**Coral reef.** The goal is dive-site management: getting ahead of the heat stress that pushes a site toward the point where it should be rested or closed. The twin plays a heat-stress scenario forward and reads bleaching risk at the dive sites against the closure trigger, with the anchor and boat pressure that compounds it, so rotation and protection are planned while the risk is still building. [Read in full](/docs/11-simulation-environment#coral-reef__marine-operations-manager)
+**Coral reef.** Marine Operations uses this simulation to plan when a dive site should be rested or closed as heat stress increases. The forecast compares bleaching risk with the closure trigger and includes the additional pressure from anchors and boats. Use it to plan site rotation and protection while risk is still building. [Read in full](/docs/11-simulation-environment#coral-reef__marine-operations-manager)
 
-![Coral reef, Marine Operations read. Bleaching risk 5.2 DHW approaching the closure trigger, reef health good, anchor risk low.](06-mo-lod3-simulation-coral.jpg)
+![Coral reef, Marine Operations view. Bleaching risk 5.2 DHW approaching the closure trigger, reef health good, anchor risk low.](06-mo-lod3-simulation-coral.jpg)
 
 ## Working in this view
 
-1. Open the Marine Operations Manager from the persona bar.
+1. Sign in to the Marine Operations Manager view using your assigned account.
 2. Read reef conditions, mooring, and dive operation across the waters at the wide view.
 3. Select a marine zone to inspect dive and mooring capacity.
 4. Open a reef site to read its recommended action.
 5. Move through the virtual tour to inspect the reef and open a buoy status card.
 
 <Callout type="note">
-Air and weather bands shared with the Environment Manager view are read-only here.
+Air and weather readings from the Environment Manager view are read-only in this view.
 </Callout>

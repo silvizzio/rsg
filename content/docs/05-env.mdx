@@ -5,17 +5,17 @@ section: "Persona Views"
 description: "Keep air, wind, and water safe for guests, and catch violations like restricted-area swimming the moment they happen."
 ---
 
-![The Environment Manager, the conditions guardian, at the operations console reading air, wind, and water alongside the restricted-area camera feeds, with the two jobs of the view: a live read of the air, the wind, and the water, and cameras catching a violation the moment it happens.](05-env-hero.jpg)
+![The Environment Manager console combines live air, wind, and water readings with restricted-area camera feeds and violation detection.](05-env-hero.jpg)
 
-The Environment Manager view exists to keep air, wind, and water conditions safe and comfortable for guests, and to catch anything unsafe before guests are affected by it. It is the conditions guardian for the destination: a live read of the air people breathe, the wind across the bays, and the water they swim in, paired with the cameras that watch the restricted areas.
+The Environment Manager view monitors air, wind, and water conditions across the destination. It combines live environmental readings with camera feeds from restricted areas to help you identify conditions that may affect guests.
 
-It does this in two ways at once. It holds a live read of environmental conditions across the resort, and it watches the camera feeds for violations such as swimming in a restricted area, alerting security the moment one is detected rather than after the fact. The shift it is built around is simple: from finding out conditions are unsafe once guests are already affected, to seeing air, wind, and water move and acting before any impact reaches a guest.
+Use the readings to assess changes in local conditions. The cameras also detect violations, such as swimming in a restricted area, and alert security when a violation is detected.
 
-![The wide view of the destination, with the environmental read along the bottom: air quality, wind, and water.](05-env-lod1-1.jpg)
+![The wide view of the destination, with environmental readings along the bottom: air quality, wind, and water.](05-env-lod1-1.jpg)
 
 ## What you see
 
-At the wide view, the bottom strip is the environmental read for the whole destination, covering air quality, wind, and water. This strip is the baseline picture. It does not ask for an action on its own; it is the read that every response below starts from.
+At the destination overview, the bottom strip summarises air quality, wind, and water conditions. These readings provide context for the recommended actions that appear at individual sites.
 
 | Field | Example | What it tells you |
 |---|---|---|
@@ -32,19 +32,19 @@ At the wide view, the bottom strip is the environmental read for the whole desti
 
 ## Reading conditions across the destination
 
-The read works at two levels. At the wide view the strip covers the whole destination. Drop into a zone, here Shura Marina, and the same air, wind, and water read rescopes to that one area, which is usually where a destination-wide signal resolves into the place driving it.
+The destination overview shows conditions across the resort. Select a zone, such as Shura Marina, to see the same metrics for that area and locate the source of a wider change.
 
 | Aspect | Detail |
 |---|---|
-| Problem | Unsafe air, wind, or water was often only identified once guests had already been affected, or once an incident had begun to escalate. |
-| Goal | Hold a live, local read of air, wind, and water so a risk can be advised on, or an area closed, before guests feel it. |
-| Precondition | The environmental sensor feed is live: the air stations, the on-site wind station, and the water buoys are reporting. |
-| Steps | 1. Open the Environment Manager from the persona bar.<br/>2. Read the destination strip: air quality and its pollutant breakdown, wind, and the water suite.<br/>3. Drop into a zone to see the same read scoped to one area.<br/>4. Watch for any band moving toward its threshold. |
-| Postcondition | A developing risk is visible early, with the zone driving it identified, while there is still time to act ahead of guest impact. |
+| Why it matters | A change in air, wind, or water conditions may be missed until guests are affected. |
+| What to check | Monitor local conditions so the team can issue advice or close an affected area. |
+| Before you start | The environmental sensor feed is live: the air stations, the on-site wind station, and the water buoys are reporting. |
+| What to do | 1. Sign in to the Environment Manager view using your assigned account.<br/>2. Read the destination strip: air quality and its pollutant breakdown, wind, and the water suite.<br/>3. Select a zone to see its local readings.<br/>4. Watch for any band moving toward its threshold. |
+| Expected result | You have identified the zone where conditions are changing and can review a response. |
 
 ![The Shura Marina zone. The bottom strip carries air quality at 88, wind at 3.6 metres per second from the northwest, and a water quality index of 8.6 of 10 with turbidity of 2.4 NTU.](05-env-lod2-2.jpg)
 
-The same read holds across the zone from other vantage points.
+Changing the viewing angle keeps the same zone selected, so its readings stay in view.
 
 ![The Shura Marina zone, across the villa clusters along the channel.](05-env-lod2-3.jpg)
 
@@ -54,142 +54,142 @@ The same read holds across the zone from other vantage points.
 
 ## Reading over time: sustainability and building systems
 
-The conditions read answers what is happening now. The same panel also answers a slower question the sustainability team owns: is this building using less than it did. One analysis window at the head of the panel switches the whole read between NOW, MONTHLY, and YEARLY, so a live snapshot and a long trend live in the same place.
+The panel shows both current environmental conditions and longer-term consumption trends. Use the analysis window at the top to switch the whole panel between NOW, MONTHLY, and YEARLY. This lets the sustainability team compare a building's use over time.
 
-![The top of the panel at NOW, the live conditions read: air quality and its pollutant breakdown, wind, and the water suite, each as a chart rather than a bare figure.](05-env-lod3-environmental-monitoring.jpg)
+![The NOW panel charts current air quality, individual pollutants, wind, and water readings.](05-env-lod3-environmental-monitoring.jpg)
 
-Scroll the same panel and the read shifts from conditions to consumption. The upper half is what the site is doing to the air and water around it right now; the lower half is what the site is drawing to run, and whether that draw is falling. Keeping both in one panel is deliberate: a manager reading a live spike can drop straight to the trend behind it without changing view.
+Scroll down to move from environmental conditions to electricity and water consumption, renewable share, and estimated CO2. Keeping these figures in the same panel lets you review a consumption trend alongside a current change in conditions.
 
-![The lower panel at NOW, the live draw: electricity, water, renewable share, and estimated CO2 as they stand this moment.](05-env-lod3-sustainability-bms-now.jpg)
+![The lower NOW panel shows current electricity and water use, renewable share, and estimated CO2.](05-env-lod3-sustainability-bms-now.jpg)
 
-![The lower panel at MONTHLY, the same fields read against the month.](05-env-lod3-sustainability-bms-monthly.jpg)
+![The MONTHLY panel shows the same metrics over the month.](05-env-lod3-sustainability-bms-monthly.jpg)
 
-![The lower panel at YEARLY, the scope the sustainability team uses to track reduction across a full year.](05-env-lod3-sustainability-bms-yearly.jpg)
+![The YEARLY panel lets the sustainability team track reductions over a full year.](05-env-lod3-sustainability-bms-yearly.jpg)
 
-Read as a set, the lower panel is three blocks with three jobs.
+The lower panel groups the controls and readings as follows.
 
-| Block | The question it answers | Why it is framed this way | What it drives |
+| Block | The question it answers | How it is organised | How to use it |
 |---|---|---|---|
-| Analysis window | Live state, or trend | One control over the whole panel, not per metric | Switches every figure between now, month, and year without leaving the site |
-| Sustainability | Is this building using less than it did | Per building, because reduction is won or lost building by building, not destination-wide | Whether an efficiency initiative is actually moving the number |
-| Building Management Systems | How hard is the building working right now | Live plant read, placed next to consumption | Explains a consumption spike by tying it to cooling load and occupancy |
+| Analysis window | Current conditions or a longer-term trend? | One time-window control applies to all metrics | Compare current, monthly, and yearly figures for the selected site |
+| Sustainability | Is this building using less than before? | Building-level readings show where consumption changes | Assess whether an efficiency initiative is reducing consumption |
+| Building Management Systems | How much work are the building systems doing? | Live plant readings sit beside consumption data | Investigate consumption changes alongside cooling load and occupancy |
 
-On MONTHLY and YEARLY, the tint reflects whether the change is favorable or adverse, not the direction of the number itself. NOW carries no tint, as there is no prior window to compare against.
+In MONTHLY and YEARLY, green indicates a favourable change and red an adverse change. The colour depends on what the change means: lower electricity use and a higher renewable share can both be favourable. NOW has no comparison tint because it has no previous window to compare with.
 
 | Tint | Meaning |
 |---|---|
-| Green | Favorable movement, such as lower electricity draw or higher renewable share |
+| Green | Favourable change, such as lower electricity draw or higher renewable share |
 | Red | Adverse movement against the target |
 
 
 
 ## Responding at a single site
 
-At the closest level the view drills into a single site, and instead of a plain reading it surfaces a recommended action. Each card states the situation, carries the live feed for the spot so it can be confirmed without leaving the card, and offers two choices: a primary action that acts now, and Remind me later to defer and resurface it. Three situations recur.
+At site level, recommended-action cards identify conditions that need attention. Each card describes the situation and includes a live camera feed for checking it. Select the primary action to respond or Remind me later to defer the card.
 
 ### Keeping monitoring live
 
-A read is only as trustworthy as the sensors behind it. A probe that drops offline or a camera that degrades quietly opens a blind spot, and the strip can look healthy while one corner of the destination has gone dark.
+An offline probe or degraded camera leaves a gap in monitoring, even if the other readings look normal. Check asset-health alerts to see where coverage needs restoring.
 
 | Aspect | Detail |
 |---|---|
-| Problem | Monitoring is only useful for as long as the sensors are actually reporting, and a silent failure leaves a gap no one is watching. |
-| Goal | Catch a failing sensor the moment it stops reporting and restore coverage before the gap matters. |
-| Precondition | The environmental sensor feed is live and the asset health count is being tracked, here 43 monitoring assets. |
-| Steps | 1. The Asset Offline card surfaces: water probe LG-04 offline for 6 minutes, reef camera RB-01 degraded, 41 of 43 assets reporting.<br/>2. Confirm the affected site, Lagoon East, on the live feed in the card.<br/>3. Dispatch a technician to restore coverage, or choose Remind me later to defer. |
-| Postcondition | A technician is en route to Lagoon East, the blind spot is closing, and the asset count returns toward 43 of 43. |
+| Why it matters | A failed sensor or degraded camera leaves a gap in monitoring. |
+| What to check | Identify the affected assets and arrange to restore coverage. |
+| Before you start | The environmental sensor feed is live and the asset health count is being tracked, here 43 monitoring assets. |
+| What to do | 1. The Asset Offline card shows: water probe LG-04 offline for 6 minutes, reef camera RB-01 degraded, 41 of 43 assets reporting.<br/>2. Confirm the affected site, Lagoon East, on the live feed in the card.<br/>3. Dispatch a technician to restore coverage, or choose Remind me later to defer. |
+| Expected result | A technician is dispatched to Lagoon East. Monitor the asset count as coverage is restored towards 43 of 43. |
 
 ![Close-up of Shura Marina. The red card sends a technician to Lagoon East because water probe LG-04 has been offline for 6 minutes and reef camera RB-01 is degraded, leaving 41 of 43 monitoring assets reporting.](05-env-lod3-monitoring-assets.jpg)
 
 ### Spotting a water anomaly
 
-Water can drift out of range well before it would be noticed from the shore, and by the time it shows it may already be affecting the lagoon.
+Water conditions can change before the difference is visible from shore. Compare a new reading with the baseline and supporting probe data before responding.
 
 | Aspect | Detail |
 |---|---|
-| Problem | A shift in the water can build unseen, so without an early signal the first sign is often the visible change itself. |
-| Goal | Catch a shift in the water against its own baseline, confirm it against a probe, and get a team to the water before the change becomes visible. |
-| Precondition | The water buoys and probes are reporting, and a baseline colour index is established, here 94. |
-| Steps | 1. The Water Anomaly card surfaces: colour index at 81 against a 94 baseline.<br/>2. Read the corroboration: probe LG-04 confirms the reading, and air quality and wind are both nominal, so the signal is in the water rather than the air.<br/>3. Dispatch a marine team to Lagoon East, or defer with Remind me later. |
-| Postcondition | A marine team is checking the lagoon, the anomaly is being traced to its source, and the colour index can be tracked back toward baseline. |
+| Why it matters | Water conditions can change before the difference is visible. |
+| What to check | Compare the change with its baseline and probe readings, then send a team to investigate. |
+| Before you start | The water buoys and probes are reporting, and a baseline colour index is established, here 94. |
+| What to do | 1. The Water Anomaly card shows: colour index at 81 against a 94 baseline.<br/>2. Check the supporting readings: probe LG-04 confirms the reading, and air quality and wind are both nominal, so the signal is in the water rather than the air.<br/>3. Dispatch a marine team to Lagoon East, or defer with Remind me later. |
+| Expected result | A marine team is sent to investigate Lagoon East, while the colour index remains available for tracking recovery. |
 
 ![Close-up of Shura Marina. The amber card sends a marine team to Lagoon East for a water anomaly, because the colour index has dropped to 81 from a 94 baseline, probe LG-04 confirms the reading, and air quality and wind are both nominal.](05-env-lod3-environmental-monitoring.jpg)
 
 ### Catching a violation
 
-A restricted area is restricted for a reason, usually a fragile reef or an unsafe stretch of water. The risk is that a breach is only found after the fact.
+Restricted-area cameras help detect access that could put guests or the reef at risk. Check the live feed to confirm a detection and its location.
 
 | Aspect | Detail |
 |---|---|
-| Problem | Unauthorized access to a restricted area used to be discovered after the fact, if it was discovered at all, by which point the risk to the guest and the reef had already played out. |
-| Goal | Have the cameras catch the violation as it happens and put security on the exact spot in real time. |
-| Precondition | The violation-detection feed is running on the restricted-zone cameras. |
-| Steps | 1. The Violation card fires: 2 swimmers in a restricted reef zone, alert 1 minute old, water quality reads 94.<br/>2. Confirm the detection on the live feed pinned inside the card.<br/>3. Dispatch security to the spot, SLS Red Sea, or defer with Remind me later. |
-| Postcondition | Security is moving to the exact location within a minute of detection, turning a delayed report into an immediate response. |
+| Why it matters | Delayed detection of restricted-area access can expose guests and the reef to harm. |
+| What to check | Confirm the camera detection and send security to the reported location. |
+| Before you start | The violation-detection feed is running on the restricted-zone cameras. |
+| What to do | 1. The Violation card reports: 2 swimmers in a restricted reef zone, alert 1 minute old, water quality reads 94.<br/>2. Confirm the detection on the live feed pinned inside the card.<br/>3. Dispatch security to the spot, SLS Red Sea, or defer with Remind me later. |
+| Expected result | Security is dispatched to SLS Red Sea in response to the detection. |
 
 ![Close-up of Shura Marina. The red card calls security to SLS Red Sea for unauthorized swimmers, because 2 people are in a restricted reef zone, the alert is 1 minute old, and water quality reads 94.](05-env-lod3-safety-violation-detection.jpg)
 
 ## Simulations this view runs
 
-The Environment Manager runs the simulations that read the natural systems and the site's footprint on them: the clean-energy balance, the load the network throws off, the water around the destination, and the heat sitting on the ground. Each read is summarised below and documented in full in the Simulation chapters.
+Environment simulations examine heat exposure, renewable energy, emissions, and conditions in the water and on the reef. The table summarises the available simulations, with fuller explanations below and in the linked chapters.
 
-| Category | Simulation | What it reads | What it drives | Read in full |
+| Category | Simulation | What it shows | Decisions it supports | Details |
 |---|---|---|---|---|
-| People | Outdoor thermal comfort | Site-wide exposure and how far passive cooling carries | Aim canopy and planting at the stretches that fail | [Outdoor thermal comfort](/docs/08-simulation-people#outdoor-thermal-comfort__environment-manager) |
-| Traffic | Energy | Renewable share, emissions, curtailment, reserve | Protect the renewable target under real demand | [Energy](/docs/09-simulation-traffic#energy__environment-manager) |
-| Transport | Emissions and noise | Where the load gathers and where it dissipates | Target the genuine sources, not the whole site | [Emissions and noise](/docs/10-simulation-transport#emissions-and-noise__environment-manager) |
-| Transport | Flood and storm surge | Where water reaches habitats and how sediment moves | Plan protection and recovery around the areas that bear the load | [Flood and storm surge](/docs/10-simulation-transport#flood-and-storm-surge__environment-manager) |
-| Environment | Water quality | How dissolved oxygen, nutrients, turbidity, and temperature move together | Respond while a response still changes the outcome | [Water quality](/docs/11-simulation-environment#water-quality__environment-manager) |
+| People | Outdoor thermal comfort | Heat exposure and the effect of passive cooling across the site | Target canopy and planting at areas with high heat exposure | [Outdoor thermal comfort](/docs/08-simulation-people#outdoor-thermal-comfort__environment-manager) |
+| Traffic | Energy | Renewable share, emissions, curtailment, reserve | Assess demand against the renewable-energy target | [Energy](/docs/09-simulation-traffic#energy__environment-manager) |
+| Transport | Emissions and noise | Where emissions and noise accumulate or dissipate | Prioritise the sources contributing most to exposure | [Emissions and noise](/docs/10-simulation-transport#emissions-and-noise__environment-manager) |
+| Transport | Flood and storm surge | Where water reaches habitats and how sediment moves | Plan protection and recovery for affected areas | [Flood and storm surge](/docs/10-simulation-transport#flood-and-storm-surge__environment-manager) |
+| Environment | Water quality | Changes in dissolved oxygen, nutrients, turbidity, and temperature | Investigate changes before water quality deteriorates | [Water quality](/docs/11-simulation-environment#water-quality__environment-manager) |
 | Environment | Ocean current | How the basin flushes, mixes, and carries sediment | Address the mechanism behind water-quality outcomes | [Ocean current](/docs/11-simulation-environment#ocean-current__environment-manager) |
-| Environment | Wave | Where breaking energy concentrates and drives erosion | Protect the coast genuinely under pressure | [Wave](/docs/11-simulation-environment#wave__environment-manager) |
-| Environment | Coral reef | Bleaching risk on the degree-heating-weeks scale over the horizon | Plan protection while the reef is still approaching the line | [Coral reef](/docs/11-simulation-environment#coral-reef__environment-manager) |
+| Environment | Wave | Where breaking energy concentrates and drives erosion | Identify coastal areas needing protection | [Wave](/docs/11-simulation-environment#wave__environment-manager) |
+| Environment | Coral reef | Bleaching risk over the forecast period in degree heating weeks | Plan protection before the bleaching-risk threshold is reached | [Coral reef](/docs/11-simulation-environment#coral-reef__environment-manager) |
 
 ### People
 
-**Outdoor thermal comfort.** A site that performs, where shading and surface choices keep the footprint comfortable as conditions push. The twin plays heat forward across the whole footprint, reading where exposure concentrates, how much ground stays shaded, and how far passive cooling carries, so canopy and planting are aimed at the stretches that genuinely fail. [Read in full](/docs/08-simulation-people#outdoor-thermal-comfort__environment-manager)
+**Outdoor thermal comfort.** The Environment Manager uses this simulation to assess heat exposure across the site. It shows how shading, surface choices, and passive cooling affect outdoor comfort as conditions change. Review where heat exposure concentrates, how much ground remains shaded, and where passive cooling is insufficient. These results help target canopy, planting, and surface changes at the areas that need them. [Read in full](/docs/08-simulation-people#outdoor-thermal-comfort__environment-manager)
 
-![Outdoor thermal comfort, Environment read. Site shade availability against the heat-stress footprint, exposure rising as midday peaks.](05-env-lod3-simulation-outdoor-thermal-comfort.jpg)
+![Outdoor thermal comfort, Environment view. Site shade availability against the heat-stress footprint, exposure rising as midday peaks.](05-env-lod3-simulation-outdoor-thermal-comfort.jpg)
 
 ### Traffic
 
-**Energy.** Protect the sustainability commitment, maximising the load met by renewables while clean generation is not wasted. The twin plays demand and supply forward and reads the climate cost of any drift: renewable share, emissions, curtailment, and reserve, so dispatch and reserve choices protect the renewable target. [Read in full](/docs/09-simulation-traffic#energy__environment-manager)
+**Energy.** The Environment Manager uses the energy simulation to assess progress towards the renewable-energy target under the selected demand and supply conditions. The view also helps identify when renewable generation would go unused while reserves decline. Review renewable share, emissions, curtailment, and reserve together. They show the environmental consequences of the scenario and help the team assess whether dispatch and reserve choices support the target. [Read in full](/docs/09-simulation-traffic#energy__environment-manager)
 
-![Energy, Environment read.](05-env-lod3-simulation-energy.jpg)
+![Energy, Environment view.](05-env-lod3-simulation-energy.jpg)
 
 ### Transport
 
-**Emissions and noise.** Keep the wider footprint clean and quiet where it is supposed to be, reading the load as a site condition. The twin plays the dispersion forward across the site, reading where it gathers and where it dissipates, so effort targets the genuine sources rather than treating the whole site as uniformly affected. [Read in full](/docs/10-simulation-transport#emissions-and-noise__environment-manager)
+**Emissions and noise.** The Environment Manager uses this simulation to assess emissions and noise across the whole site. It shows where exposure accumulates and where it dissipates under the selected conditions. Review the affected areas alongside their sources. This helps direct mitigation towards the sources contributing most to the problem and towards areas intended to remain clean and quiet. [Read in full](/docs/10-simulation-transport#emissions-and-noise__environment-manager)
 
-![Emissions and noise, Environment read.](05-env-lod3-simulation-transport-emission-and-noise.jpg)
+![Emissions and noise, Environment view.](05-env-lod3-simulation-transport-emission-and-noise.jpg)
 
-**Flood and storm surge.** Protect the habitats in the surge's path, the ground that floods, the sediment that shifts, and the recovery that follows. The twin plays the surge forward to show where water reaches the habitats and how sediment moves, so protection and post-event recovery are planned around the areas that bear the load. [Read in full](/docs/10-simulation-transport#flood-and-storm-surge__environment-manager)
+**Flood and storm surge.** The Environment Manager uses this simulation to assess habitats in the path of a flood or storm surge. It considers both inundation and the movement of sediment through sensitive areas. The forecast shows where water reaches, how levels change, and which ecosystems are exposed. Use it to plan protection and post-event recovery around the areas likely to be most affected. [Read in full](/docs/10-simulation-transport#flood-and-storm-surge__environment-manager)
 
-![Flood and storm surge, Environment read.](05-env-lod3-simulation-transport-flood-and-storm-surge.jpg)
+![Flood and storm surge, Environment view.](05-env-lod3-simulation-transport-flood-and-storm-surge.jpg)
 
 ### Environment
 
-**Water quality.** Keep the water the destination is built around in the condition guests came for, catching a problem while it can still be acted on. The twin plays a wind, discharge, temperature, and flushing scenario forward across the lagoon, reading how dissolved oxygen, nutrients, turbidity, and temperature move together, so the team responds while a response still changes the outcome. [Read in full](/docs/11-simulation-environment#water-quality__environment-manager)
+**Water quality.** Use the water-quality simulation to examine how lagoon conditions could change under a selected wind, discharge, temperature, and flushing scenario. The forecast shows dissolved oxygen, nutrients, turbidity, and temperature together. Review where those readings remain stable and where they begin to move out of balance, so the team can investigate a developing problem before visible deterioration. [Read in full](/docs/11-simulation-environment#water-quality__environment-manager)
 
-![Water quality, Marine Environment read.](05-env-lod3-simulation-environment-water-quality.jpg)
+![Water quality, Environment view.](05-env-lod3-simulation-environment-water-quality.jpg)
 
-**Ocean current.** Understand how the basin keeps itself healthy, since residence time, mixing, and sediment transport drive most water-quality outcomes. The twin plays a tidal, wind, and seasonal scenario forward to read how the basin flushes and mixes and where sediment is carried, so interventions address the mechanism rather than the symptom. [Read in full](/docs/11-simulation-environment#ocean-current__environment-manager)
+**Ocean current.** Use the current simulation to understand how water moves through the basin and how that movement affects water quality. The relevant factors include residence time, mixing, and sediment transport. The forecast models tide, wind, and seasonal conditions to show flushing, mixing, and sediment movement. These results help explain water-quality readings, such as a slow-flushing area retaining material that enters it, and support responses aimed at the cause. [Read in full](/docs/11-simulation-environment#ocean-current__environment-manager)
 
-![Ocean current, Marine Environment read.](05-env-lod3-simulation-environment-ocean-current.jpg)
+![Ocean current, Environment view.](05-env-lod3-simulation-environment-ocean-current.jpg)
 
-**Wave.** Stay ahead of shoreline change, knowing where breaking energy concentrates and drives erosion before a season reshapes the coast. The twin plays an offshore swell scenario forward to the shoreline, reading where wave energy concentrates and breaks, so the coast genuinely under pressure is protected rather than guessed at. [Read in full](/docs/11-simulation-environment#wave__environment-manager)
+**Wave.** The Environment Manager uses the wave simulation to assess where wave energy could contribute to shoreline erosion. The forecast follows offshore swell towards the shore and shows where energy concentrates and waves break. Use it to identify stretches of coast that need monitoring or protection before the season's conditions develop. [Read in full](/docs/11-simulation-environment#wave__environment-manager)
 
-![Wave, Marine Environment read.](05-env-lod3-simulation-environment-wave.jpg)
+![Wave, Environment view.](05-env-lod3-simulation-environment-wave.jpg)
 
-**Coral reef.** Protect an asset and a responsibility, getting ahead of heat stress that builds invisibly before bleaching shows. The twin plays a heat-stress, water-quality, and disturbance scenario forward, reading bleaching risk on the degree-heating-weeks scale and projecting accumulated stress over the horizon, so protection is planned while the reef is still approaching the line. [Read in full](/docs/11-simulation-environment#coral-reef__environment-manager)
+**Coral reef.** Use the coral-reef simulation to assess how heat stress, water quality, and disturbance could affect the reef over the selected forecast period. The forecast reports bleaching risk on the degree-heating-weeks scale and shows how stress accumulates. Compare rising risk with the relevant threshold when planning protection or site rotation, before a breach occurs. [Read in full](/docs/11-simulation-environment#coral-reef__environment-manager)
 
-![Coral reef, Marine Environment read.](05-env-lod3-simulation-environment-coral.jpg)
+![Coral reef, Environment view.](05-env-lod3-simulation-environment-coral.jpg)
 
 ## Working in this view
 
-1. Open the Environment Manager from the persona bar.
+1. Sign in to the Environment Manager view using your assigned account.
 2. Read the destination air, wind, and water strip at the wide view.
-3. Drop into a zone to inspect its environmental detail.
-4. Drill into a site when a card surfaces, confirm it on the live feed, and act or defer.
+3. Select a zone to inspect its environmental readings.
+4. Open the site associated with a card, check its live feed, and choose whether to respond or defer.
 
 <Callout type="note">
 Reef and marine detail sits in the Marine Operations Manager view.

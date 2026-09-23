@@ -6,11 +6,11 @@ type Frame = { scope: string; left: boolean; right: boolean; bottom: boolean; ac
 type Lod = { n: string; t: string; s: string; frame: Frame }
 
 const LODS: Lod[] = [
-  { n: 'LOD 1', t: 'Island level', s: 'Persona KPIs read across the whole island.',
+  { n: 'LOD 1', t: 'Island level', s: 'View the metrics for your role across the whole island.',
     frame: { scope: 'Island', left: false, right: false, bottom: true, action: false } },
-  { n: 'LOD 2', t: 'District level', s: 'Reached by zooming into a district, the same view scoped to that district.',
+  { n: 'LOD 2', t: 'District level', s: 'Zoom into a district to see its local metrics.',
     frame: { scope: 'District', left: false, right: false, bottom: true, action: false } },
-  { n: 'LOD 3', t: 'Site level', s: 'The bottom strip drops away and the left and right panels activate.',
+  { n: 'LOD 3', t: 'Site level', s: 'At site level, the side panels replace the bottom summary strip.',
     frame: { scope: 'Site', left: true, right: true, bottom: false, action: true } },
 ]
 
@@ -28,13 +28,13 @@ const PERSONAS: Persona[] = [
   { name: 'Guest Experience Manager', scope: 'Movement and logistics',
     bg: '#E8F6EE', border: '#9CD9B6', text: '#1c5b3c', chipBorder: '#7CC9A0',
     areas: ['Pre-Trip', 'Trip', 'After-Trip'] },
-  { name: 'Operations Manager', scope: 'Operational excellence',
+  { name: 'Operations Manager', scope: 'Fleet operations',
     bg: '#E5F1FB', border: '#ABCDEA', text: '#1f4e79', chipBorder: '#86B2E1',
     areas: ['Fleet Availability', 'Utilization and Efficiency', 'Safety and Compliance', 'EV Infrastructure'] },
   { name: 'Environment Manager', scope: 'Environment dashboard',
     bg: '#E2F3F4', border: '#A6D5DA', text: '#134a52', chipBorder: '#7FC2CB',
     areas: ['Environmental Monitoring', 'Safety and Violation Detection'] },
-  { name: 'Marine Operations Manager', scope: 'Guardian Reef',
+  { name: 'Marine Operations Manager', scope: 'Reef protection',
     bg: '#EDEBFB', border: '#BCB2EA', text: '#3a2e7d', chipBorder: '#A294E4',
     areas: ['Reef Health', 'Capacity Management', 'Active Response'] },
 ]
@@ -87,10 +87,10 @@ export function SystemMap() {
       <div style={{ background: NEUTRAL.bg, border: `1px solid ${NEUTRAL.border}`, borderRadius: '14px', padding: '20px' }}>
         <div style={{ textAlign: 'center', fontWeight: 700, fontSize: '15px', color: '#1f2937' }}>Shared frame</div>
         <div style={{ textAlign: 'center', fontSize: '12px', color: NEUTRAL.text, opacity: 0.85, marginTop: '4px' }}>The interface, map, and navigation are identical for every persona</div>
-        <div style={{ textAlign: 'center' }}><Tag label="Agnostic" color={NEUTRAL.text} border={NEUTRAL.cardBorder} /></div>
+        <div style={{ textAlign: 'center' }}><Tag label="Shared across roles" color={NEUTRAL.text} border={NEUTRAL.cardBorder} /></div>
         <div style={{ marginTop: '18px' }}>
           <div style={{ textAlign: 'center', fontSize: '12px', fontWeight: 700, color: '#1f2937' }}>Map detail levels</div>
-          <div style={{ textAlign: 'center', fontSize: '11px', color: '#6b7280', marginTop: '2px', marginBottom: '12px' }}>The 3D map is the shared surface. The detail level sets which panels show.</div>
+          <div style={{ textAlign: 'center', fontSize: '11px', color: '#6b7280', marginTop: '2px', marginBottom: '12px' }}>All roles use the same 3D map. The detail level determines which panels appear.</div>
           {LODS.map((l, i) => (
             <div key={l.n}>
               {i > 0 ? (
@@ -116,12 +116,12 @@ export function SystemMap() {
 
       <div style={{ textAlign: 'center', color: '#9aa0a6', margin: '8px 0' }}>
         <div style={{ fontSize: '18px' }}>↓</div>
-        <div style={{ fontSize: '12px' }}>your login fills the frame with one persona</div>
+        <div style={{ fontSize: '12px' }}>your login determines your role</div>
       </div>
 
       <div style={{ background: '#FAFAFB', border: '1px dashed #C4C9D2', borderRadius: '14px', padding: '20px' }}>
         <div style={{ textAlign: 'center', fontWeight: 700, fontSize: '15px', color: '#1f2937' }}>Persona views</div>
-        <div style={{ textAlign: 'center', fontSize: '12px', color: '#4b5563', opacity: 0.9, marginTop: '4px' }}>What fills the frame depends on the login, one persona per user</div>
+        <div style={{ textAlign: 'center', fontSize: '12px', color: '#4b5563', opacity: 0.9, marginTop: '4px' }}>Each account has one role, with its own metrics and actions</div>
         <div style={{ textAlign: 'center' }}><Tag label="Persona-based" color="#3a2e7d" border="#A294E4" /></div>
         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '12px', marginTop: '16px', alignItems: 'start' }}>
           {PERSONAS.map((p) => (

@@ -5,50 +5,50 @@ section: "Simulation"
 description: "What the simulation layer is, how a run reads, where its forecasts come from, and the engine behind each persona's read."
 ---
 
-Simulation is where the IOC stops reacting and starts rehearsing. It takes the live state of the destination and carries it forward under a chosen pressure, a surge of arrivals, a fleet drawn down, a wind shift onto the reef, and shows where the day would strain before it actually does. The point is not to predict the future precisely; it is to surface the squeeze early enough to act on it.
+Simulation mode lets you explore how the destination could respond to a change in conditions. Start with the live state, then test a scenario such as increased arrivals, fewer available vehicles, or a wind shift over the reef. The forecast helps identify where capacity or operating limits may be reached; it is a planning aid, not a precise prediction of the future.
 
-Every run is built on the same spine, whatever the persona: a trigger that puts load on the island, the forecasted effect of that load on capacity, and a response that closes the gap. Read that way, a simulation is never just a number on a panel. It is a short causal story: this is what we are putting on the island, this is what it does to the system, and this is what we would do about it.
+Each run links a scenario to its expected effect and the available responses. For example, a rise in arrivals may put pressure on transfer capacity. The forecast shows that pressure so you can compare possible responses.
 
-That spine is why the layer earns its place. A run surfaces a problem while the schedule, the fleet, the routing, or the day's marine plan can all still be changed, rather than after a guest is already waiting at the Marina or a reef is already over its dive capacity. The shift is from explaining a problem after it has been felt to seeing it build and moving first.
+Use the results while there is still time to change a schedule, adjust the fleet, review a route, or revise the marine plan.
 
 ## How a run works
 
-Every run is an act of selection, not authoring. The operator chooses a simulation, picks a scenario preset, sets the boxed inputs that size it, runs it, reads the forecast, and weighs the recommended responses. Nothing here is freeform: the presets and inputs are prepared controls, and the responses are modeled previews. The run is exploration, so nothing is dispatched, and the lowest response, Do nothing, either holds at the modeled level or, for energy, trends to the projected worst.
+Choose a simulation and scenario preset, adjust the available inputs, then run the forecast. The controls are predefined; you do not write a model or a freeform scenario. Recommended responses preview their modelled effects without dispatching an action. The final option, Do nothing, keeps the modelled outcome unchanged or, in the energy simulation, follows the projected worst case.
 
-Reading a run means reading that chain back out of the screen. The left of the page is the cause: the scenario being put on the island and how hard. The center is the system under that load: the twin showing where the pressure lands. The right is the consequence and the choices: the forecasted outcome, the conditions that move, and the responses that would bend the curve.
+Read the screen from left to right: the setup defines the scenario, the map shows where its effects occur, and the forecast panel explains the expected outcome and available responses.
 
-The Crowd and Traffic simulations still use an earlier flow, where the operator selects a prepared event and an action plan and can dispatch it. They are being redesigned to follow the arrangement described here.
+Crowd and Traffic simulations currently use an earlier workflow: operators select a prepared event and action plan, which can be dispatched. These simulations are being redesigned to use the preview workflow described here.
 
 ## The page at a glance
 
-The layout is the same across every simulation, so an operator learns it once and then only the controls and the metrics change. Three columns do the work:
+The standard simulation layout has three columns. The controls and metrics change with the simulation, but their positions stay the same:
 
-- Left, the setup: the simulation, the scenario preset, the boxed scenario inputs that scale it, and the layers shown. Run Simulation commits the scenario and starts the forecast.
-- Center, the digital twin: the Shura Island twin carrying the visualization layer. The run is drawn straight onto the island as a heatmap, a wind field, or a coastal overlay, so a developing problem reads as a place an operator recognizes rather than a figure they have to interpret.
-- Right, the forecast: the forecasted outcome banner, the forecasted conditions (a hero metric and its KPIs), and the recommended responses, ending in Do nothing.
+- **Setup, on the left:** choose the simulation, preset, input values, and visible layers. Select Run Simulation to start the forecast.
+- **Digital twin, in the centre:** view the forecast on Shura Island as a heatmap, wind field, or coastal overlay. The map shows where the predicted conditions occur.
+- **Forecast, on the right:** review the outcome banner, main metric, supporting KPIs, and recommended responses, including Do nothing.
 
 The working area moves through two states, from setup to run.
 
 <SimState state="default" />
 
-**Default, setup.** The operator composes the scenario on the left while the twin shows the island live and the right reads idle: the outcome reads Not running and the conditions are empty. This state is the baseline the run will be measured against, so it is worth a glance before committing.
+**Default, setup.** Set the scenario on the left while the map shows live conditions. The outcome reads Not running and the forecast metrics are empty. Review this baseline before starting the run.
 
 <SimState state="running" />
 
-**Running, the forecast.** Running the scenario carries it forward in time. The twin lights up with the forecasted pattern, where wind crosses a limit, where surge reaches the marina, or where shade runs short, and the right panel resolves into the forecasted outcome, the conditions that shift, and the recommended responses. Selecting a response previews its modeled effect; it is not dispatched.
+**Running, the forecast.** The map displays predicted conditions, such as wind above a limit, surge water reaching the marina, or reduced shade. The right panel shows the outcome, metrics, and response options. Select a response to preview its modelled effect without dispatching it.
 
 ## Where the models come from
 
-The IOC is the cockpit, not the modeling engine. It does not author forecasts, because the modeling behind them is heavy, calibrated work that belongs in specialist tools. Each simulation is published from its own engine, and the IOC sets a scenario against it and visualizes the result.
+Specialist engines provide the models used by the IOC. Modelling and calibration take place in those tools; the IOC lets an operator select a prepared scenario and view its forecast on the twin.
 
 <SimSources />
 
-**Reading it.** Everything left of the divider is modeled upstream and handed to the IOC. Everything right of it happens in the twin: the operator sets a scenario, runs it, and the twin visualizes the forecast and surfaces the recommended responses on the island. The split keeps the operator on the decision, not on configuring a model. The twin runs and shows the scenario; it does not build it.
+The left side of this diagram shows the specialist engines and the presets and inputs prepared outside the IOC. The right side shows the operator workflow: set up a scenario, run it, and review its forecast and responses on the map.
 
 ## The engine behind each read
 
-One simulation is never a single number. The same engine output is read through a different lens by each persona that runs it, so a wind run means exposed decks to Guest Experience, a closure threshold to Operations, and a small-craft window to Marine Operations. That is the point of the layer: one specialist engine, many operator-specific reads.
+Different roles use the same engine output to answer different questions. A wind forecast can help Guest Experience assess exposed decks, Operations review closure thresholds, and Marine Operations plan small-craft departures.
 
-The grid below maps every simulation to the persona that runs it, grouped by domain. Each entry names the engine behind it and the lens that persona reads it through.
+The grid groups simulations by domain and persona. Each entry identifies the specialist engine and the results relevant to that role.
 
 <SimGrid />

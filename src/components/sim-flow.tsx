@@ -60,9 +60,9 @@ function RightDefault() {
     <div style={rightWrap}>
       <Label text="Forecast" />
       <Banner tone={IDLE} text="Not running" />
-      <Pill text="Hero metric, idle" />
-      <Pill text="KPI, idle" />
-      <div style={{ fontSize: '10px', color: N.muted, marginTop: '6px' }}>Set the scenario, then Run</div>
+      <Pill text="Main metric, awaiting a run" />
+      <Pill text="KPI, awaiting a run" />
+      <div style={{ fontSize: '10px', color: N.muted, marginTop: '6px' }}>Set up a scenario, then select Run Simulation</div>
     </div>
   )
 }
@@ -126,8 +126,8 @@ export function SimSources() {
     <div style={{ margin: '24px 0', fontSize: '13px', lineHeight: 1.4 }}>
       <div style={{ background: N.bg, border: `1px solid ${N.border}`, borderRadius: '14px', padding: '18px', display: 'flex', gap: '0', alignItems: 'stretch', flexWrap: 'wrap' }}>
         <div style={{ flex: '1 1 240px', minWidth: '220px', borderRight: `1px dashed ${N.cardBorder}`, paddingRight: '18px' }}>
-          <ProvLabel text="Modeled upstream (outside the twin)" />
-          <SrcBox tone={ENG} title="Specialist engines" sub="one per simulation, movement, climate, energy, coastal" />
+          <ProvLabel text="Models prepared outside the twin" />
+          <SrcBox tone={ENG} title="Specialist engines" sub="models for movement, climate, energy, and coastal conditions" />
           <EngLine text="MassMotion, PTV, Aimsun, Pathfinder, movement" />
           <EngLine text="WRF + CFD, wind" />
           <EngLine text="Ladybug Tools, thermal comfort" />
@@ -138,7 +138,7 @@ export function SimSources() {
           <SrcBox tone={LIB} title="Scenario presets and inputs" sub="the selectable controls" />
         </div>
         <div style={{ flex: '1 1 300px', minWidth: '260px', paddingLeft: '18px' }}>
-          <ProvLabel text="Run and visualized in the IOC twin" />
+          <ProvLabel text="Run and displayed in the IOC twin" />
           <StepBox tone={STEP} text="Set a scenario: preset, inputs, layers" />
           <SrcArrow />
           <StepBox tone={STEP} text="Run the forecast" bold />
@@ -147,7 +147,7 @@ export function SimSources() {
             <div style={{ flex: '1 1 120px', background: VISA.bg, border: `1px solid ${VISA.border}`, borderRadius: '6px', padding: '7px 9px', fontSize: '10px', color: VISA.text }}>Twin visualizes: heatmap, wind field, coastal overlay</div>
             <div style={{ flex: '1 1 120px', background: VISB.bg, border: `1px solid ${VISB.border}`, borderRadius: '6px', padding: '7px 9px', fontSize: '10px', color: VISB.text }}>Forecast and recommended responses</div>
           </div>
-          <div style={{ fontSize: '10px', color: N.muted, marginTop: '8px' }}>Exploration only. Nothing is dispatched. The twin runs and shows the scenario; it does not author the model.</div>
+          <div style={{ fontSize: '10px', color: N.muted, marginTop: '8px' }}>Responses preview modelled effects without dispatching actions. Specialist tools provide the models.</div>
         </div>
       </div>
     </div>
@@ -199,14 +199,14 @@ const ENGINE_URL: Record<string, string> = {
 const SIM_GRID: Record<DomainKey, Partial<Record<PersonaKey, SimCell[]>>> = {
   People: {
     GXM: [
-      { name: 'Crowd', engine: 'MassMotion', lens: 'Crowd density at guest hotspots against the comfort line, with guests in the crush' },
-      { name: 'Evacuation', engine: 'MassMotion', lens: 'Time to clear guests to muster against the target' },
+      { name: 'Crowd', engine: 'MassMotion', lens: 'Crowd density at busy guest locations against the comfort threshold' },
+      { name: 'Evacuation', engine: 'MassMotion', lens: 'Time for guests to reach the assembly point compared with the target' },
       { name: 'Outdoor thermal comfort', engine: 'Ladybug Tools', lens: 'Outdoor heat stress across guest areas, with guests in discomfort' },
       { name: 'Accessibility', engine: 'PTV Visum', lens: 'Time to reach key amenities, with guests beyond easy reach' },
     ],
     OPS: [
-      { name: 'Crowd', engine: 'MassMotion', lens: 'Crowd density against the safe-density line, with guests in the hotspot' },
-      { name: 'Evacuation', engine: 'MassMotion', lens: 'Total clear time against target, with guests still to move' },
+      { name: 'Crowd', engine: 'MassMotion', lens: 'Crowd density against the safety threshold and guests in the affected area' },
+      { name: 'Evacuation', engine: 'MassMotion', lens: 'Total clearance time against the target and guests still to evacuate' },
     ],
     ENV: [
       { name: 'Outdoor thermal comfort', engine: 'Ladybug Tools', lens: 'Site shade availability and the heat-stress footprint' },
@@ -214,15 +214,15 @@ const SIM_GRID: Record<DomainKey, Partial<Record<PersonaKey, SimCell[]>>> = {
   },
   Traffic: {
     GXM: [
-      { name: 'Mobility', engine: 'Aimsun Next', lens: 'Mobility health as guests rise, with buses in service and EV charging in view' },
+      { name: 'Mobility', engine: 'Aimsun Next', lens: 'Mobility performance as guest demand rises, including buses and EV charging' },
       { name: 'Shuttle network', engine: 'PTV Lines', lens: 'Shuttle line load and guest wait at stops' },
       { name: 'Drop-off forecourt', engine: 'PTV Vissim', lens: 'Drop-off queue at arrival, with vehicles at the curb' },
     ],
     OPS: [
-      { name: 'Mobility', engine: 'Aimsun Next', lens: 'Mobility health, buses in service, and EV charging under guest load' },
+      { name: 'Mobility', engine: 'Aimsun Next', lens: 'Mobility performance, bus availability, and EV charging under guest demand' },
       { name: 'Energy', engine: 'HOMER Pro', lens: 'Renewable share and EV charging load against the trigger' },
       { name: 'Shuttle network', engine: 'PTV Lines', lens: 'Shuttle line load and capacity against demand' },
-      { name: 'Drop-off forecourt', engine: 'PTV Vissim', lens: 'Drop-off curb queue and approach spillback' },
+      { name: 'Drop-off forecourt', engine: 'PTV Vissim', lens: 'Kerbside queues and traffic backing into the approach road' },
     ],
     ENV: [
       { name: 'Energy', engine: 'HOMER Pro', lens: 'Renewable share against the diesel-backup trigger' },
