@@ -7,9 +7,7 @@ description: "Catch fleet problems before they reach a guest: what is running an
 
 ![The Operations Manager console shows fleet availability and risks, vehicle utilisation, driver safety and compliance, and EV charger status.](04-ops-hero.jpg)
 
-The Operations Manager view helps you monitor the fleet and address breakdowns, delays, and idle capacity before they lead to missed transfers or complaints.
-
-The view covers fleet availability, vehicle utilisation, driver safety and compliance, and EV charging. Read these together to see what is in service, where capacity is under pressure, and which vehicles or chargers need attention.
+The Operations Manager view shows which vehicles are in service, where capacity is under pressure and which vehicles or chargers need attention. It brings fleet availability, utilisation, driver safety and compliance, and EV charging together so you can investigate a delay or breakdown before it leads to missed transfers or complaints.
 
 ![The wide view of the destination. The bottom strip is the operations summary: fleet and maintenance, utilization, driver safety, and EV charging.](04-ops-lod1-1.jpg)
 
@@ -181,39 +179,39 @@ Operations simulations assess crowd and evacuation capacity, fleet and microgrid
 
 ### People
 
-**Crowd.** For Operations, the crowd simulation checks whether entrances and staffing can handle the expected footfall. It shows which gates are likely to reach capacity first and where queues could block entry. Compare the forecast with the available staff and lanes. Use it to plan where to position people and open extra lanes before the busiest period. [Read in full](/docs/08-simulation-people#crowd__operations-manager)
+**Crowd.** Compare expected footfall with gate capacity, lanes and staffing. Identify entrances where queues could block access, then plan extra lanes or staff before the busiest period. [Read in full](/docs/08-simulation-people#crowd__operations-manager)
 
 ![Crowd, Operations view.](04-ops-lod3-simulation-people-crowd.jpg)
 
-**Evacuation.** Operations uses the evacuation simulation to compare the estimated clearance time with the site's target and available safety margin. It shows how people move through the building, where flow slows, and which exits carry the greatest load. Check the route or exit that limits the overall clearance rate. That is where a change could have the greatest effect on evacuation time. The result supports planning and review; it describes the modelled scenario rather than guaranteeing how an incident will unfold. [Read in full](/docs/08-simulation-people#evacuation__operations-manager)
+**Evacuation.** Compare modelled clearance time with the site's target and safety margin, then inspect the exit or route that limits flow. The forecast supports planning; it does not guarantee what will happen during an incident. [Read in full](/docs/08-simulation-people#evacuation__operations-manager)
 
 ![Evacuation, Operations view.](04-ops-lod3-simulation-people-evacuation.jpg)
 
 ### Traffic
 
-**Mobility.** Operations uses the mobility simulation to check whether the available fleet and charging network can meet the day's demand. Both matter: a vehicle must be in service and have enough charge to carry out its trips. The forecast identifies whether vehicle availability, charging capacity, or both will constrain service at the peak. Review that shortfall before deciding how to rebalance the fleet and charging schedule. [Read in full](/docs/09-simulation-traffic#mobility__operations-manager)
+**Mobility.** Check whether both the fleet and the charging network can meet the day's demand. A shortage in either can constrain service, so review the forecast before changing vehicle assignments or charging schedules. [Read in full](/docs/09-simulation-traffic#mobility__operations-manager)
 
 ![Mobility, Operations view.](04-ops-lod3-simulation-traffic-mobility.jpg)
 
-**Energy.** Use the energy simulation to compare the island's electricity demand with its renewable supply and reserves. Watch for a supply gap that could trigger diesel backup. The forecast shows the renewable share over time and the reserve available to cover a shortfall. Use these results to review dispatch, EV charging, and reserve choices before demand reaches its peak. [Read in full](/docs/09-simulation-traffic#energy__operations-manager)
+**Energy.** Compare electricity demand with renewable supply and reserves. Look for a shortfall that could trigger diesel backup, then review dispatch, EV charging and reserve choices before the peak. [Read in full](/docs/09-simulation-traffic#energy__operations-manager)
 
 ![Energy, Operations view.](04-ops-lod3-simulation-traffic-energy.jpg)
 
-**Shuttle network.** Operations uses this simulation to compare demand with the capacity of each shuttle route. It helps identify heavily used legs and uneven fleet utilisation that could reduce reliability. Check which routes approach capacity during the forecast period. Use the results to consider adding service or reallocating vehicles before those routes become overloaded. [Read in full](/docs/09-simulation-traffic#shuttle-network__operations-manager)
+**Shuttle network.** Compare demand and capacity on each route, including uneven vehicle use. Use the forecast to identify where additional service or reassignment could prevent an overload. [Read in full](/docs/09-simulation-traffic#shuttle-network__operations-manager)
 
 ![Shuttle network, Operations view.](04-ops-lod3-simulation-traffic-shuttle-network.jpg)
 
-**Drop-off forecourt.** Operations uses the forecourt simulation to check how quickly vehicles can pass through the kerbside bays with the staff available. The concern is a queue extending from the forecourt into the approach road. Compare the arrival pattern with the forecourt's capacity and watch where vehicle staging falls behind. Use the forecast to plan staff positions and kerb management for the expected peak. [Read in full](/docs/09-simulation-traffic#drop-off-forecourt__operations-manager)
+**Drop-off forecourt.** Compare arriving vehicles with the capacity of the kerbside bays and available staff. Check when staging falls behind and queues could extend into the approach road before planning staff positions and kerb management. [Read in full](/docs/09-simulation-traffic#drop-off-forecourt__operations-manager)
 
 ![Drop-off forecourt, Operations view.](04-ops-lod3-simulation-traffic-drop-off-forecourt.jpg)
 
 ### Transport
 
-**Safety conflicts.** Operations uses this simulation to identify crossings and shared spaces that may need staff or temporary controls during busy periods. The forecast locates and ranks potential conflicts between pedestrians and vehicles. Review the highest-priority locations when planning staffing, signage, and temporary traffic control. [Read in full](/docs/10-simulation-transport#safety-conflicts__operations-manager)
+**Safety conflicts.** Review the crossings and shared spaces with the highest modelled conflict risk. Use the ranked locations to plan staffing, signage and temporary traffic controls during busy periods. [Read in full](/docs/10-simulation-transport#safety-conflicts__operations-manager)
 
 ![Safety conflicts, Operations view.](04-ops-lod3-simulation-transport-safety.jpg)
 
-**Flood and storm surge.** Use this simulation to assess flood exposure at critical facilities and assets under a selected storm, tide, and rainfall scenario. It helps the team plan what needs to be secured or cleared before the water arrives. The forecast shows how far the water reaches, its depth at affected facilities, and how its arrival compares with evacuation timing. Use those results to plan the response while there is still time to move people and assets. [Read in full](/docs/10-simulation-transport#flood-and-storm-surge__operations-manager)
+**Flood and storm surge.** Check flood reach, depth and arrival time at critical facilities under the selected storm, tide and rainfall scenario. Compare them with evacuation timing to plan when people and assets need to move. [Read in full](/docs/10-simulation-transport#flood-and-storm-surge__operations-manager)
 
 ![Flood and storm surge, Operations view.](04-ops-lod3-simulation-transport-flood-and-storm-surge.jpg)
 

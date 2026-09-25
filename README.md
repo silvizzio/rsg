@@ -46,3 +46,7 @@ npm run start
 ```
 
 The site also provides buttons to download a chapter or the full guide as a PDF.
+
+## Editorial reference
+
+Follow [Documentation writing style](./EDITORIAL-STYLE.md) when revising the guide. Keep explanations natural, practical, and consistent with the product.

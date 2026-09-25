@@ -7,9 +7,9 @@ description: "Spot guest mobility problems before a guest feels them: demand bui
 
 ![The Guest Experience Manager console shows growing demand, guests in transit and their vehicles, and trip details linked to low satisfaction ratings.](03-gxm-hero.jpg)
 
-The Guest Experience Manager view helps you identify transport problems before they cause long waits or complaints. It shows demand as it builds, including at stations that still appear to be running normally.
+Transport problems often begin with rising demand, before a station develops a visible queue or guests complain. The Guest Experience Manager view brings bookings, vehicles and trip results together so you can spot that pressure and trace it to the affected station or route.
 
-You can monitor rising demand, see guests in transit and the vehicles carrying them, and trace a low satisfaction rating to the relevant trip. Use this view to review conditions and recommend a response. The Operations team carries out dispatches in the Operations Manager view.
+Follow the journey from requests waiting for a vehicle to trips in progress and satisfaction after arrival. If a rating is low, open the relevant trip to investigate its route and travel time. This role monitors conditions and recommends a response; the Operations team handles dispatches in its own view.
 
 ![The wide view across Red Sea Global. The strip along the bottom is the guest mobility summary for the whole destination.](03-gxm-lod1-1.jpg)
 
@@ -122,47 +122,47 @@ The Guest Experience Manager uses simulations to assess crowding, evacuation, wa
 
 ### People
 
-**Crowd.** Use the crowd simulation to check how busy guest spaces could become when a show ends or arrival groups overlap. The focus is guest comfort: where people gather, how density changes, and when a space approaches its comfort limit. The forecast shows where to consider metering entry, rerouting pedestrians, or delaying a group release. Review those options before the expected peak so you can plan for queues rather than wait for them to develop. [Read in full](/docs/08-simulation-people#crowd__guest-experience-manager)
+**Crowd.** Compare crowd density with the comfort threshold when a show ends or arrival groups overlap. The forecast helps you plan entry limits, pedestrian routes and the timing of group releases before queues develop. [Read in full](/docs/08-simulation-people#crowd__guest-experience-manager)
 
 ![Crowd, Guest Experience view. Plaza density approaches the safety threshold at peak demand, with guests in the crowded area.](03-gxm-lod3-simulation-people-crowd.jpg)
 
-**Evacuation.** Use the evacuation simulation to examine how guests leave occupied spaces and reach a safe exit. Look for stairwells or doorways that slow the evacuation, even when the rest of the route is moving freely. The forecast locates those bottlenecks and shows where people are likely to queue. This helps the team review signage, route guidance, and capacity before a drill or incident. [Read in full](/docs/08-simulation-people#evacuation__guest-experience-manager)
+**Evacuation.** Check where guests queue on their way to an exit, particularly at doors and stairwells. Use the bottleneck locations to review signage, route guidance and capacity before a drill or incident. [Read in full](/docs/08-simulation-people#evacuation__guest-experience-manager)
 
 ![Evacuation, Guest Experience view. Clearance time exceeds the target, with guests still to reach muster.](03-gxm-lod3-simulation-people-evacuation.jpg)
 
-**Outdoor thermal comfort.** Use this simulation to check whether walking routes and activity areas remain comfortable as the day gets hotter. It accounts for where shade falls as the sun moves, so a route that is comfortable in the morning can be assessed for midday use. The forecast shows where the comfortable area shrinks and guests face greater heat exposure. Use it to consider extra shade, a different route, or a change to an activity's timing. [Read in full](/docs/08-simulation-people#outdoor-thermal-comfort__guest-experience-manager)
+**Outdoor thermal comfort.** Compare walking routes and activity areas as the sun moves and shade changes. The forecast identifies exposed areas where extra shade, a different route or a change of timing may help. [Read in full](/docs/08-simulation-people#outdoor-thermal-comfort__guest-experience-manager)
 
 ![Outdoor thermal comfort, Guest Experience view. Shaded share drops as the midday sun peaks, with guests in the heat-stress zone.](03-gxm-lod3-simulation-people-outdoor-thermal-comfort.jpg)
 
-**Accessibility.** The accessibility simulation examines the effort guests need to reach amenities from different parts of the destination. It helps identify routes that are too long or difficult for comfortable access. The map shows which amenities are within reach and which areas fall outside the comfortable walking range. Review these gaps when planning routes and amenity access, including locations that may seem convenient to some guests but difficult for others. [Read in full](/docs/08-simulation-people#accessibility__guest-experience-manager)
+**Accessibility.** Check the walking effort needed to reach amenities and identify areas outside a comfortable range. A route that looks convenient on the map may still be too long or difficult for some guests. [Read in full](/docs/08-simulation-people#accessibility__guest-experience-manager)
 
 ![Accessibility, Guest Experience view. The far villas fall outside the easy-reach window, leaving some guests beyond comfortable walking range.](03-gxm-lod3-simulation-people-accessibility.jpg)
 
 ### Traffic
 
-**Mobility.** Use the mobility simulation to assess guest waiting and transfer times under a chosen demand scenario. The aim is to keep trips running to plan when requests increase. The forecast compares demand with the fleet and schedule, showing where transfer times lengthen and requests accumulate. Use it to plan adjustments before the arrival peak, with particular attention to the stations where queues are likely to form. [Read in full](/docs/09-simulation-traffic#mobility__guest-experience-manager)
+**Mobility.** Compare transfer demand with the fleet and schedule to see where waits and journey times could increase. Focus capacity planning on the stations where requests accumulate before the arrival peak. [Read in full](/docs/09-simulation-traffic#mobility__guest-experience-manager)
 
 ![Mobility, Guest Experience view. Transfer demand increases while bus availability falls.](03-gxm-lod3-simulation-traffic-mobility.jpg)
 
-**Shuttle network.** Use the shuttle-network simulation to assess how reliably guests can travel across the destination. A delay on one busy leg can affect demand elsewhere or lead guests to walk instead. The forecast shows where passengers depend most on the service and where they switch to walking. Review those connections together before changing an individual route, so the proposed improvement accounts for its effect on the wider network. [Read in full](/docs/09-simulation-traffic#shuttle-network__guest-experience-manager)
+**Shuttle network.** Review busy connections and places where passengers switch to walking. A delay on one leg can change demand elsewhere, so check the wider network before adjusting a route. [Read in full](/docs/09-simulation-traffic#shuttle-network__guest-experience-manager)
 
 ![Shuttle network, Guest Experience view. The marina line runs full at peak, with waits building at the stops.](03-gxm-lod3-simulation-traffic-shuttle-network.jpg)
 
-**Drop-off forecourt.** Use the forecourt simulation to assess the arrival and departure experience when several vehicles reach the kerb together. The focus is on keeping guests moving through pickup and drop-off areas without long queues. The forecast shows vehicle dwell time, queue growth, and bay occupancy. It identifies when congestion could begin, helping the team plan vehicle staging and kerb management before the rush. [Read in full](/docs/09-simulation-traffic#drop-off-forecourt__guest-experience-manager)
+**Drop-off forecourt.** Check vehicle dwell time, queue growth and bay occupancy when arrivals overlap. These results help you plan staging and kerb management before queues reach the approach road. [Read in full](/docs/09-simulation-traffic#drop-off-forecourt__guest-experience-manager)
 
 ![Drop-off forecourt, Guest Experience view. The kerbside queue grows during arrivals, with vehicles spilling to the approach.](03-gxm-lod3-simulation-traffic-drop-off.jpg)
 
 ### Transport
 
-**Wind.** Use the wind simulation to assess comfort on outdoor decks, routes, and gathering spaces. Airflow can accelerate around corners and between buildings, leaving one area exposed while a nearby space remains comfortable. The forecast shows these local differences under the selected wind conditions. Use it to review building layout, planting, or routes where guests would otherwise be exposed to strong wind. [Read in full](/docs/10-simulation-transport#wind__guest-experience-manager)
+**Wind.** Look for exposed decks, paths and gathering spaces where wind accelerates around corners or between buildings. Review layout, planting or route changes at those locations. [Read in full](/docs/10-simulation-transport#wind__guest-experience-manager)
 
 ![Wind, Guest Experience view. Wind picks up on exposed decks and routes, with guests and vehicles in the exposed zone.](03-gxm-lod3-simulation-transport-wind.jpg)
 
-**Emissions and noise.** Use this simulation to assess how roads, service areas, and plant affect the air and noise levels in guest spaces. Pay particular attention to paths beside busy roads and gardens intended to be quiet. The forecast shows how emissions and noise spread from their sources. It helps identify where routing or screening changes could reduce exposure and protect the intended character of those spaces. [Read in full](/docs/10-simulation-transport#emissions-and-noise__guest-experience-manager)
+**Emissions and noise.** Trace exposure in guest spaces to roads, service areas and plant. Use the forecast to review routing or screening near busy roadside paths and gardens intended to be quiet. [Read in full](/docs/10-simulation-transport#emissions-and-noise__guest-experience-manager)
 
 ![Emissions and noise, Guest Experience view. Noise near the plaza climbs at peak traffic, with guests exposed along the roads.](03-gxm-lod3-simulation-transport-emission.jpg)
 
-**Safety conflicts.** Use this simulation to identify where guest and vehicle routes intersect and could create a safety conflict. The focus is on specific crossing points and shared spaces. The forecast ranks those locations by the frequency and severity of the conflicts. Use the results to review crossings, signage, and separation where the model indicates the greatest risk. [Read in full](/docs/10-simulation-transport#safety-conflicts__guest-experience-manager)
+**Safety conflicts.** Review crossings and shared spaces ranked by the frequency and severity of potential pedestrian and vehicle conflicts. The results help prioritise crossings, signage and separation. [Read in full](/docs/10-simulation-transport#safety-conflicts__guest-experience-manager)
 
 ![Safety conflicts, Guest Experience view. The plaza crossing reaches conflict level at peak, with people and vehicles exposed.](03-gxm-lod3-simulation-transport-safety.jpg)
 
